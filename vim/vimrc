@@ -1,0 +1,299 @@
+set nocompatible " Disable vi compatibility mode
+set showmatch " highlight matching brackets
+set vb t_vb= " Disable bell
+set incsearch " show highlights while typing in a search
+set hlsearch " highlights every instance of the search
+set ignorecase smartcase " enables case insensitive searching
+set ruler " show ruler in bottom right (ROW,COL)
+syntax on " Enable syntax highlighting
+set iskeyword+=_,$,@,%,# " set additional words for navigation purposes
+set number " Enables numbered columns
+set numberwidth=4 " Sets numbered column length to 4
+set colorcolumn=80 " Show where 80 characters are
+set autoread " Reload file if it has been changed outside of vim and not inside
+set wrap " Autowrap lines that hit the end of the screen
+set linebreak " Only wrap at a breakat option
+set backspace=indent,eol,start " allows backspace over everything
+set autochdir " Auto change windows CWD to the file's directory
+
+" Change ZZ to quit all buffers instead of just the current one
+map   ZZ :wqa<CR>
+
+" Change leader from \ to Space
+nnoremap <SPACE> <Nop>
+let mapleader = "\<Space>"
+
+" <leader>h hides left split. <leader>s adds 25 chars to left split
+set winminwidth=0
+map <leader>h <C-W>l<C-W>\|
+map <leader>s <C-W>h25<C-W>>
+
+" Copy to X CLIPBOARD
+map <leader>cc :w !xsel -i -b<CR>
+map <leader>cp :w !xsel -i -p<CR>
+map <leader>cs :w !xsel -i -s<CR>
+" Paste from X CLIPBOARD
+map <leader>pp :r!xsel -p<CR>
+map <leader>ps :r!xsel -s<CR>
+map <leader>pb :r!xsel -b<CR>
+
+" Load vundle plugin manager
+set rtp+=~/.vim/bundle/Vundle.vim
+call vundle#begin()
+
+" This command will sort ip addresses correctly.
+command SORTIP %!sort -n -t . -k 1,1 -k 2,2 -k 3,3 -k 4,4 | uniq
+
+" Load fzf plugin
+set rtp+=~/git/fzf
+" Set FZF shortcut
+map <leader>fzz :FZF<CR>
+map <leader>fzh :FZF ~<CR>
+" Vundle list of plugins
+" Manage vundle plugin
+Plugin 'gmarik/Vundle.vim'
+" fugitive - git plugin
+Plugin 'tpope/vim-fugitive'
+" nvim - notational velocity clone for vim
+Plugin 'soleblaze/nvim'
+" nerdtree - file browser in a split
+Bundle 'scrooloose/nerdtree'
+" Lightline - configurable statusline/tabline
+Bundle 'itchyny/lightline.vim'
+" vim-surround - implements the ability to change surroundings easier
+Bundle 'tpope/vim-surround'
+" gundo - visualize undo tree
+Bundle 'sjl/gundo.vim'
+" UltiSnips - snippet plugin
+Bundle 'SirVer/ultisnips'
+" ctrlp - fuzzy file search
+Bundle 'kien/ctrlp.vim'
+" targets.vim - Adds additional targets to operate on
+Bundle 'wellle/targets.vim'
+" Git gutter - shows git information on the side
+Plugin 'airblade/vim-gitgutter'
+" vim-easymotion - Simpler way to move around vim
+Bundle 'Lokaltog/vim-easymotion'
+" tabular - text aligning
+Bundle 'godlygeek/tabular'
+" vim-indent-guides - Show indents
+Bundle 'nathanaelkane/vim-indent-guides'
+" vim-repeat - Fixes . for some plugins
+Bundle 'tpope/vim-repeat'
+" syntastic - syntax checker for various languages
+Bundle 'scrooloose/syntastic'
+" vim-pencil - Better editing support for writing
+Bundle 'reedes/vim-pencil'
+" Jedi VIM - Autocompletion tool python
+"Bundle 'davidhalter/jedi-vim'
+" YouCompleteMe - Autocompletion tool
+"Bundle 'Valloric/YouCompleteMe'
+" Python Mode - Turn vim into a python IDE
+"Bundle 'klen/python-mode'
+" vim-seek - makes s act like a 2 char f
+" Bundle 'goldfeld/vim-seek'
+" vim-signature - Display marks to the left of text
+" Bundle 'kshenoy/vim-signature'
+" nerdcommenter - provides shortcuts for dealing with comments
+" Bundle 'scrooloose/nerdcommenter'
+" snipmate.vim - implements snippets in vim
+" Bundle 'msanders/snipmate.vim'
+" Solarized color scheme for lightline
+"Bundle 'pearofducks/vim-quack-lightline'
+" vim-snippets - Snippet repository
+"Bundle 'honza/vim-snippets'
+" End vundle plugin list
+call vundle#end()
+
+" This lets escape clear the search highlights
+map <F4> :noh<CR>:<backspace>
+
+" Toggle showing invisible characters
+noremap <F8> :set list!<CR>
+inoremap <F8> <C-o>:set list!<CR>
+cnoremap <F8> <C-c>:set list!<CR>
+
+" Toggle GitGutter
+noremap <F9> :GitGutterToggle<CR>
+inoremap <F9> <C-o>:GitGutterToggle<CR>
+cnoremap <F9> <C-c>:GitGutterToggle<CR>
+
+" setup spell checking
+set spelllang=en
+set spellsuggest=5
+:map <F7> :setlocal spell!<CR>
+
+" Setup colors
+set t_Co=256 " sets supported colors
+set background=dark
+colorscheme cobalt
+hi ColorColumn ctermbg=8
+
+" Setup Indenting
+set autoindent
+set smartindent
+filetype plugin indent on
+
+" Setup tabs to be 4 spaces by default
+set tabstop=4
+set shiftwidth=4
+set expandtab
+
+" Use a specific directory for backup and tmp files
+set backup
+set backupdir=~/.vim/backup
+set directory=~/.vim/tmp
+
+" Bind F2 to enable/disable paste mode
+set pastetoggle=<F2>
+" disable arrow keys
+map <up> <nop>
+map <down> <nop>
+map <left> <nop>
+map <right> <nop>
+imap <up> <nop>
+imap <down> <nop>
+imap <left> <nop>
+imap <right> <nop>
+
+" Treat .md files as markdown
+au BufRead,BufNewFile *.md set filetype=markdown textwidth=80
+" Plugin Configurations
+"
+" Toggle NerdTree View
+map <F3> :NERDTreeToggle<CR>
+
+" Disable python mode autocompletion in favor of jedi vim
+let g:pymode_rope = 0
+
+" Show python doc with K
+let g:pymode_doc = 1
+let g:pymode_doc_key = 'K'
+
+"Linting
+let g:pymode_lint = 1
+let g:pymode_lint_checker = "pyflakes,pep8"
+" Auto check on save
+let g:pymode_lint_write = 1
+
+" Support virtualenv
+let g:pymode_virtualenv = 0
+
+" Enable breakpoints plugin
+let g:pymode_breakpoint = 1
+let g:pymode_breakpoint_key = '<leader>b'
+
+" syntax highlighting
+let g:pymode_syntax = 1
+let g:pymode_syntax_all = 1
+let g:pymode_syntax_indent_errors = g:pymode_syntax_all
+let g:pymode_syntax_space_errors = g:pymode_syntax_all
+
+" Don't autofold code
+let g:pymode_folding = 0
+
+" Trim Whitespace on save
+let g:pymode_trim_whitespace = 1
+
+" Lightline configuration info for solarized 
+let g:lightline = {
+      \ 'colorscheme': 'jellybeans',
+      \ 'active': {
+      \   'left': [ [ 'mode', 'paste' ],
+      \             [ 'fugitive'],[ 'filename' ] ]
+      \ },
+      \ 'component_function': {
+      \   'fugitive': 'LLFugitive',
+      \   'readonly': 'LLReadonly',
+      \   'modified': 'LLModified',
+      \   'filename': 'LLFilename',
+      \   'mode': 'LLMode'
+      \ }
+      \ }
+
+function! LLMode()
+  let fname = expand('%:t')
+  return fname == '__Tagbar__' ? 'Tagbar' :
+        \ fname == 'ControlP' ? 'CtrlP' :
+        \ lightline#mode() == 'NORMAL' ? 'N' :
+        \ lightline#mode() == 'INSERT' ? 'I' :
+        \ lightline#mode() == 'VISUAL' ? 'V' :
+        \ lightline#mode() == 'V-LINE' ? 'V' :
+        \ lightline#mode() == 'V-BLOCK' ? 'V' :
+        \ lightline#mode() == 'REPLACE' ? 'R' : lightline#mode()
+endfunction
+
+function! LLModified()
+  if &filetype == "help"
+    return ""
+  elseif &modified
+    return "+"
+  elseif &modifiable
+    return ""
+  else
+    return ""
+  endif
+endfunction
+
+function! LLReadonly()
+  if &filetype == "help"
+    return ""
+  elseif &readonly
+    return "!"
+  else
+    return ""
+  endif
+endfunction
+
+function! LLFugitive()
+  return exists('*fugitive#head') ? fugitive#head() : ''
+endfunction
+
+function! LLFilename()
+  return ('' != LLReadonly() ? LLReadonly() . ' ' : '') .
+       \ ('' != expand('%:t') ? expand('%:t') : '[No Name]') .
+       \ ('' != LLModified() ? ' ' . LLModified() : '')
+endfunction
+set laststatus=2
+set noshowmode
+
+" Gundo setup
+nnoremap <F6> :GundoToggle<CR>
+
+" UltiSnips setup
+let g:UltiSnipsEditSplit="horizontal"
+let g:UltiSnipsExpandTrigger="<tab>"
+let g:UltiSnipsJumpForwardTrigger="<c-b>"
+let g:UltiSnipsJumpBackwardTrigger="<c-z>"
+
+" Fugitive leader mappings
+nmap <leader>gs :Gstatus<cr>
+nmap <leader>gc :Gcommit<cr>
+nmap <leader>ga :Gwrite<cr>
+nmap <leader>gl :Glog<cr>
+nmap <leader>gd :Gdiff<cr>
+
+"" easymotion bindings
+" nvim leader mappings
+nmap <leader>nrd :python nvimdb.rebuild_database()<CR>
+
+" map s to be single character easymotion search
+nmap s <Plug>(easymotion-s)
+
+" Setup easy motion line changes
+map <Leader>l <Plug>(easymotion-lineforward)
+map <Leader>j <Plug>(easymotion-j)
+map <Leader>k <Plug>(easymotion-k)
+map <Leader>h <Plug>(easymotion-linebackward)
+
+" Bidirectional & within line 't' motion
+omap t <Plug>(easymotion-bd-tl)
+" Use uppercase target labels and type as a lower case
+let g:EasyMotion_use_upper = 1
+ " type `l` and match `l`&`L`
+let g:EasyMotion_smartcase = 1
+" Smartsign (type `3` and match `3`&`#`)
+let g:EasyMotion_use_smartsign_us = 1
+
+let g:EasyMotion_startofline = 0 " keep cursor colum when JK motion
+let g:EasyMotion_smartcase = 1

@@ -10,9 +10,10 @@ various dotfiles, mostly for Linux.
 * Window rules are in ~/.config/awesome/rules.lua
 * Currently the only way to remove widgets is to comment them out in widgets.lua
 
+## vim
+* run setup_vim.sh to create ~/.vimrc and ~/.vim directory and setup symlinks
 
 ## zsh
 * zshrc should be copied/linked to ~/.zshrc
 * the rest of the files should be copied/linked under the ~/.zsh/ directory
 * any file ending in .zsh in ~/.zsh/ will be sourced
-
