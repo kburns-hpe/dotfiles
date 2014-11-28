@@ -13,6 +13,11 @@ various dotfiles, mostly for Linux.
 ## vim
 * run setup_vim.sh to create ~/.vimrc and ~/.vim directory and setup symlinks
 
+## xconfigs
+* Cobalt Theme for urxvt
+* Copy xresources to ~/.Xresources
+* xmodmap remaps right ctl to be a hyper key and right alt to be a super
+
 ## zsh
 * zshrc should be copied/linked to ~/.zshrc
 * the rest of the files should be copied/linked under the ~/.zsh/ directory
