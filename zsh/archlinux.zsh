@@ -1,0 +1,47 @@
+#!/bin/zsh
+
+# Set Variables
+export BROWSER=chromium
+export EDITOR=vim
+
+# Set Path
+export PATH="$HOME/.gem/ruby/2.1.0/bin:$HOME/bin:$PATH"
+
+# Arch PKG Management
+alias pacsyu="sudo snp pacman -Syu"
+alias pacsy="sudo pacman -Sy"
+alias pacr="sudo pacman -Rs"
+alias pac="sudo pacman -S"
+alias pacs="pacman -Ss"
+alias pacq="pacman -Q"
+alias pacu="sudo pacman -U"
+
+alias paca="pacaur -S"
+alias pacas="pacaur -Ss"
+#alias pacau="pacaur -Su"
+
+#alias yaos="yaourt -Ss"
+#alias yao="yaourt -S"
+#alias yaosyu="yaourt -Su"
+#alias yaor="yaourt -R"
+
+# Use keychain for global ssh-agent.  This will ask for passphrase on first use.
+export SSH_ASKPASS="/usr/bin/qt4-ssh-askpass"
+alias ssh='eval $(/usr/bin/keychain --eval --agents ssh -Q --quiet ~/.ssh/id_rsa) && ssh'
+alias scp='eval $(/usr/bin/keychain --eval --agents ssh -Q --quiet ~/.ssh/id_rsa) && scp'
+
+# Highlight a specific search and pipe it through less
+alias hl='ack --passthru --color --pager="less -R"'
+
+# Linux LS aliases
+alias ls="ls --color=auto -CFh"
+alias sl="ls"
+alias ll="ls -l"
+alias lx="ls -X"
+alias lv="ls -v"
+
+# Force tmux to always use 256 colors
+alias tmux="tmux -2"
+
+# BTRFS DF alias
+alias bdf="btrfs filesystem df"

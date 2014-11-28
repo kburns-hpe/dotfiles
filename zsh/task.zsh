@@ -1,0 +1,50 @@
+#!/bin/zsh
+
+# Task Warrior
+alias t="task"
+alias ta="t add"
+alias tn="t next"
+alias tnew="t newest"
+alias told="t oldest"
+alias tl="t ls"
+alias tp="t projects"
+alias tsum="t summary"
+alias th="t history"
+alias tcal="t calendar"
+alias tod="task overdue"
+
+function td {
+        task $1 done
+}
+
+function tlater {
+        task $1 modify +later
+}
+function tdel {
+        task $1 delete
+}
+
+function tap {
+        task add project:$*
+}
+
+function tlp {
+        task list project:$*
+}
+
+function tm {
+        tasknum=$1
+        shift
+        task $tasknum modify $*
+}
+
+function ts {
+        task $1 start
+}
+
+# Autocomplete
+
+zstyle ':completion:*:*:task:*' verbose yes
+zstyle ':completion:*:*:task:*:descriptions' format '%U%B%d%b%u'
+zstyle ':completion:*:*:task:*' group-name ''
+compdef _task t=task

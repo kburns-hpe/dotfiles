@@ -1,0 +1,8 @@
+#!/bin/zsh
+
+# Do not put any options in here
+
+# Source each file ending in .zsh in the .zsh directory
+for script in ~/.zsh/*.zsh; do
+  source "$script"
+done
