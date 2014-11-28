@@ -10,7 +10,7 @@ theme = (themes .. "cobalt.lua")
 terminal	= "urxvt -e tmux -2"
 browser		= "chromium"
 editor		= "vim"
-guieditor	= "subl"
+guieditor	= "subl3"
 
 -- fonts
 fontwidget = "Bitsumishi 8"
