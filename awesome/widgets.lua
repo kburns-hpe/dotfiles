@@ -183,7 +183,7 @@ local batwidget = wibox.widget.textbox()
 vicious.register(batwidget, vicious.widgets.bat, "$3 ($2%)", 60, widget.battery)
 
 function shdown()
-  sexec("sudo pm-suspend")
+  sexec("systemctl suspend")
 end
 
 function batstate()
@@ -230,7 +230,7 @@ mybaticon:connect_signal("mouse::enter", function()
         bg=red,
         ontop = true,
         screen = mouse.screen,
-        run = function () sexec("sudo pm-suspend") end
+        run = function () sexec("systemctl suspend") end
       })
   	  shdown()
 	  mybaticon:set_image(images .. "bat_empty_01.png")
@@ -290,8 +290,8 @@ for s = 1, screen.count() do
   end
   right_layout:add(doingicon)
   right_layout:add(doingwidget)
-  right_layout:add(updateicon)
-  right_layout:add(updatewidget)
+--  right_layout:add(updateicon)
+--  right_layout:add(updatewidget)
   right_layout:add(mycpuloadicon)
   right_layout:add(cpuwidget)
   right_layout:add(thermalwidget)
