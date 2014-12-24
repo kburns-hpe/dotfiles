@@ -1,5 +1,8 @@
 #!/bin/zsh
 
+# Setup directory for custom auto completion files
+fpath=(~/.zsh/completion $fpath) 
+
 # Enable smart autocompletion
 autoload -U compinit && compinit
 setopt complete_in_word
@@ -24,3 +27,10 @@ zstyle ':completion:*:approximate:*' max-errors 1 numeric
 
 # Don't auto complete parent directory when using cd ../
 zstyle ':completion:*:cd:*' ignore-parents parent pwd
+
+# Disable user auto completion for ssh
+zstyle ':completion:*:*:ssh*' users
+zstyle ':completion:*:*:scp*' users
+
+# Only complete hosts that are in the ~/.ssh/config file
+zstyle -e ':completion:*:hosts' hosts 'reply=( ${=${${${${(@M)${(f)"$(cat ~/.ssh/config 2>/dev/null)"}:#Host *}#Host }:#*\**}:#*\?*}})'
