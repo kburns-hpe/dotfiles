@@ -25,10 +25,8 @@ alias pacas="pacaur -Ss"
 #alias yaosyu="yaourt -Su"
 #alias yaor="yaourt -R"
 
-# Use keychain for global ssh-agent.  This will ask for passphrase on first use.
+# Use qt4-ssh-askpass for ssh ask dialog
 export SSH_ASKPASS="/usr/bin/qt4-ssh-askpass"
-alias ssh='eval $(/usr/bin/keychain --eval --agents ssh -Q --quiet ~/.ssh/id_rsa) && ssh'
-alias scp='eval $(/usr/bin/keychain --eval --agents ssh -Q --quiet ~/.ssh/id_rsa) && scp'
 
 # Highlight a specific search and pipe it through less
 alias hl='ack --passthru --color --pager="less -R"'
