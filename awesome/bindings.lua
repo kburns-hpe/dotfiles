@@ -42,6 +42,9 @@ globalkeys = awful.util.table.join(
   -- Change Monitors
   awful.key({ hyper, }, "F7", function () awful.util.spawn(home .. "/bin/dock.sh")  end),
 
+  -- Fix Copy/paste for windows
+  awful.key({ hyper, }, "c", function () awful.util.spawn("xsel -p | xsel -i -p")  end),
+
   -- Program Launches
   awful.key({ hyper, }, "l", function () awful.util.spawn("xscreensaver-command -lock")  end),
   awful.key({ hyper, }, "a", function () awful.util.spawn("pavucontrol")  end),
@@ -75,7 +78,7 @@ globalkeys = awful.util.table.join(
   -- Prompt: Add to doing
   awful.key({ modkey }, "d",
     function ()
-      awful.prompt.run({ prompt = "Doing: ", text="" },
+      awful.prompt.run({ prompt = "Doing: ", text="@" },
       mypromptbox[mouse.screen].widget,
       function(input)
         awful.util.spawn(home .. "/bin/doingnext " .. input)
