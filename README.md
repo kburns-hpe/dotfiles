@@ -10,6 +10,9 @@ various dotfiles, mostly for Linux.
 * Window rules are in ~/.config/awesome/rules.lua
 * Currently the only way to remove widgets is to comment them out in widgets.lua
 
+## tmux
+* run setup_tmux.sh to create ~/.tmux.conf symlink
+
 ## vim
 * run setup_vim.sh to create ~/.vimrc and ~/.vim directory and setup symlinks
 
