@@ -2,6 +2,8 @@
 
 # Configure ZLE.
 bindkey -v
+# Set timeout from .4 to .1
+export KEYTIMEOUT=1
 # Some vim and emacs keybindings.
 bindkey -M viins '^r' history-incremental-search-backward
 bindkey -M vicmd '^r' history-incremental-search-backward
