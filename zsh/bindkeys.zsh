@@ -18,10 +18,12 @@ bindkey "\e[5~" beginning-of-history # PageUp
 bindkey "\e[6~" end-of-history # PageDown
 bindkey "\e[2~" quoted-insert # Ins
 bindkey "\e[3~" delete-char # Del
-bindkey "\e[5C" forward-word
-bindkey "\eOc" emacs-forward-word
-bindkey "\e[5D" backward-word
-bindkey "\eOd" emacs-backward-word
-bindkey "^[[1;5C" forward-word
-bindkey "^[[1;5D" backward-word
+bindkey '^b' backward-word
+bindkey '^f' forward-word
 bindkey "\e[Z" reverse-menu-complete # Shift+n
+bindkey '^P' up-history
+bindkey '^N' down-history
+bindkey '^w' backward-kill-word
+bindkey '^r' history-incremental-search-backward
+bindkey '^A' vi-beginning-of-line
+bindkey '^E' vi-end-of-line
