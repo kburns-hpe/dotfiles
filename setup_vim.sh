@@ -21,4 +21,5 @@ for file in *; do
 done
 popd
 
-echo "Run vim and then :BundleInstall to setup the bundles"
+# Install plugins
+vim -c "BundleInstall" -c ":qa"
