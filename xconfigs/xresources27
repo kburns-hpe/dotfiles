@@ -1,0 +1,80 @@
+! urxvt
+URxvt*buffered: true
+URxvt*cursorBlink: true
+URxvt*underlineColor: yellow
+URxvt*font:  xft:DejaVu Sans Mono:style=Book:size=10:antialias=true
+!URxvt*font:  xft:Inconsolata:style=Medium:size=9:antialias=true
+URxvt*depth: 32
+URxvt*borderless: 1
+URxvt*scrollBar: false
+URxvt*scrollTtyOutput: false
+URxvt*scrollWithBuffer: true
+URxvt*scrollTtyKeypress: true
+URxvt*loginShell: true
+Urxvt*secondaryScroll: true    # Enable Shift-PageUp/Down in screen
+URxvt*saveLines: 5000
+URxvt*termName: rxvt-unicode
+URxvt.perl-ext-common: default,matcher,font-size
+URxvt.keysym.C-Up:     perl:font-size:increase
+URxvt.keysym.C-Down:   perl:font-size:decrease
+URxvt.keysym.C-S-Up:   perl:font-size:incglobal
+URxvt.keysym.C-S-Down: perl:font-size:decglobal
+URxvt.url-launcher: /usr/bin/chromium
+URxvt.perl-ext: default,url-select
+URxvt.keysym.M-u: perl:url-select:select_next
+URxvt.url-select.launcher: /usr/bin/chromium
+URxvt.url-select.underline: true
+URxvt.matcher.button: 1
+URxvt.fading: false
+URxvt*urgentOnBell: true
+
+Xft.dpi:    109
+Xft.antialias:  1
+Xft.autohint:   0
+Xft.hinting:    1
+Xft.hintstyle:  hintfull
+Xft.lcdfilter:  lcddefault
+Xft.rgba:       rgb
+
+URxvt*background:              #193549
+URxvt*foreground:              #FFFFFF
+!URxvt*fading:                  40
+!URxvt*fadeColor:               #132738
+URxvt*cursorColor:             #F0CC09
+URxvt*pointerColorBackground:  #18354F
+URxvt*pointerColorForeground:  #B5B5B5
+
+! Black
+URxvt*color0:   #000000
+! Red
+URxvt*color1:   #FF0900
+! Green
+URxvt*color2:   #38DE21
+! Yellow
+URxvt*color3:   #FFDD00
+! Blue
+URxvt*color4:   #0088FF
+! Magenta
+URxvt*color5:   #FF628C
+! Cyan
+URxvt*color6:   #80FFC2
+! White
+URxvt*color7:   #FFFFFF
+! Bright Black
+URxvt*color8:   #555555
+! Bright Red (Orange)
+URxvt*color9:   #FF9D00
+! Bright Green
+URxvt*color10:   #3BD01D
+! Bright Yellow
+URxvt*color11:   #EDC809
+! Bright Bluej
+URxvt*color12:   #5555FF
+! Bright Magenta
+URxvt*color13:   #FF55FF
+! Bright Cyan
+URxvt*color14:   #6AE3FA
+! Bright White
+URxvt*color15:   #FFFFFF
+
+URxvt.intensityStyles: false

@@ -1,0 +1,54 @@
+#!/bin/zsh
+
+# This needs to be set in order for autocomplete to work on run shortcut
+export PATH="$HOME/bin:$PATH"
+
+# Setup Monitors
+if [ "$(xrandr | grep 'DP3 connected')" ] ; then
+    # DPI for this monitor is actually 109, but that makes the fonts too small
+#    xrandr --output LVDS1 --off
+    xrandr --dpi 125 --output DP3 --auto --output LVDS1 --off
+    dispwin -d1 ~/.config/colors/U2713HM\ 2014-05-10\ 2.2\ M-S\ XYZLUT+MTX.icc
+    xrdb -merge ~/.Xresources27
+else
+    # Internal Monitor
+#    xrandr --output DP3 --off
+    xrandr --dpi 125 --output LVDS1 --auto --output DP3 --off
+    dispwin ~/.config/colors/"laptop.icc"
+    xrdb -merge ~/.Xresources
+fi
+
+# Start Programs
+anamnesis --start
+xscreensaver -no-splash &
+start-pulseaudio-x11
+udiskie &
+# autokey-gtk &
+unclutter &
+/usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1 &
+nm-applet &
+
+# enable ctrl-alt-backspace
+setxkbmap -option terminate:ctrl_alt_bksp
+# Setup keyboard
+xmodmap ~/.Xmodmap
+xcape -e 'Control_R=Escape'
+
+# Setup ssh-agent for all connections
+eval $(ssh-agent)
+
+# Setup gpg agent for all connections
+envfile="$HOME/.gnupg/gpg-agent.env"
+if [[ -e "$envfile" ]] && kill -0 $(grep GPG_AGENT_INFO "$envfile" | cut -d: -f 2) 2>/dev/null; then
+    eval "$(cat "$envfile")"
+else
+    eval "$(gpg-agent --daemon --write-env-file "$envfile")"
+fi
+# This is needed for mutt
+export GPG_AGENT_INFO=$HOME/.gnupg/S.gpg-agent
+
+# Start policy kit
+/usr/lib/polkit-1/polkitd --no-debug
+
+# Start awesome
+exec awesome
