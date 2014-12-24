@@ -22,6 +22,7 @@ various dotfiles, mostly for Linux.
 * xmodmap remaps right ctl to be a hyper key and right alt to be a super
 
 ## zsh
-* zshrc should be copied/linked to ~/.zshrc
+* run setup_zsh.sh to create zsh links.  
+    * additional options: archlinux archguest cygwin osx ubuntu
 * the rest of the files should be copied/linked under the ~/.zsh/ directory
 * any file ending in .zsh in ~/.zsh/ will be sourced
