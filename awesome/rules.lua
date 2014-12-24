@@ -18,6 +18,8 @@ awful.rules.rules = {
     properties = {floating = true , maximized_vertical = false, maximized_horizontal = false} },
   { rule = { class = "Autokey-gtk" }, 
     properties = {floating = true , maximized_vertical = false, maximized_horizontal = false} },
+  { rule = { class = "VMwareUnityWindow" },  
+    properties = { border_width = 0, floating = true } },
 
   -- 1: term
 
@@ -172,6 +174,18 @@ awful.rules.rules = {
   end },
 
   { rule = { class = "Geeqie" },
+    callback = function(c)
+      c.screen = mouse.screen
+      c:tags({tags[c.screen][8]})
+  end },
+
+  { rule = { class = "Seafile-applet" }, 
+    callback = function(c)
+      c.screen = mouse.screen
+      c:tags({tags[c.screen][8]})
+  end },
+
+  { rule = { class = "CrashPlan" }, 
     callback = function(c)
       c.screen = mouse.screen
       c:tags({tags[c.screen][8]})
