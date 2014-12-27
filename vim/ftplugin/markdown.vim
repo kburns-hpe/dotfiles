@@ -47,7 +47,7 @@ if has("folding") && exists("g:markdown_folding")
   let b:undo_ftplugin .= " foldexpr< foldmethod<"
 endif
 
-call pencil#init()
-let g:pencil#wrapModeDefault = 'soft'
+" call pencil#init()
+" let g:pencil#wrapModeDefault = 'soft'
 
 " vim:set sw=2:

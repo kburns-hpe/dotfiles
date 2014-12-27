@@ -83,7 +83,7 @@ Bundle 'tpope/vim-repeat'
 " syntastic - syntax checker for various languages
 Bundle 'scrooloose/syntastic'
 " vim-pencil - Better editing support for writing
-Bundle 'reedes/vim-pencil'
+" Bundle 'reedes/vim-pencil'
 " Jedi VIM - Autocompletion tool python
 "Bundle 'davidhalter/jedi-vim'
 " YouCompleteMe - Autocompletion tool
