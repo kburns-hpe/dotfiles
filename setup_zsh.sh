@@ -25,6 +25,7 @@ elif [ "$host" = "archguest" ]; then
 # Ubuntu Linux Machine
 elif [ "$host" = "ubuntu" ]; then
     zshconfs="$zshconfs ubuntu"
+fi
 
 # Create symlinks for zsh configs
 ln -s "$confdir/zshrc" ~/.zshrc
