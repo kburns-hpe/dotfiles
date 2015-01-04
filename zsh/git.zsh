@@ -22,3 +22,8 @@ alias gr="git rm"
 alias grb="git rebase"
 alias grh="git reset HEAD"
 alias gs="git status -s"
+
+# git functions
+function gacmp () {
+    git commit -a -m "$*" && git push -u origin master
+}
