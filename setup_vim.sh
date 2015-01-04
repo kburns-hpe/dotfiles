@@ -9,7 +9,7 @@ ln -s "$confdir/vimrc" ~/.vimrc
 # Setup .vim directory
 mkdir -p ~/.vim/{bundle,tmp,backup,colors,ftplugin,UltiSnips} 2>/dev/null
 ln -s $confdir/outline.vimrc ~/.vim/outline.vimrc
-ln -s $confdir/colors/solarized.vim ~/.vim/colors/solarized.vim
+ln -s $confdir/colors/cobalt.vim ~/.vim/colors/cobalt.vim
 
 # Setup vundle
 git clone https://github.com/gmarik/Vundle.vim.git ~/.vim/bundle/Vundle.vim
