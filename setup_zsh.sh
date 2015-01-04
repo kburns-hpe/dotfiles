@@ -37,3 +37,10 @@ ln -s "$confdir/gitstatus.py" ~/.zsh/gitstatus.py
 for conf in $zshconfs; do
     ln -s "$confdir/$conf.zsh" ~/.zsh/"$conf.zsh"
 done
+
+# Create links for completions
+mkdir -p ~/.zsh/completion
+completions="_doing.zsh _task"
+for completion in $completions; do
+    ln -s "$confdir/completion/$completion" ~/.zsh/completion/$completion
+done
