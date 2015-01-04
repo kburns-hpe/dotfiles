@@ -14,7 +14,7 @@ fc-cache
 
 # Link main configurations
 pushd "$confdir"
-for file in bindings eminent menu notification rules signals tags tasklist widgets; do
+for file in bindings eminent menu notification rc rules signals tags tasklist widgets; do
     ln -s "$confdir/$file.lua" ~/.config/awesome/$file.lua
 done
 
