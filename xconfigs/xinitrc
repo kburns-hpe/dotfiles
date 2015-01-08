@@ -17,13 +17,13 @@ else
 fi
 
 # Start Programs
-anamnesis --start
+anamnesis --start &
 xscreensaver -no-splash &
-start-pulseaudio-x11
+start-pulseaudio-x11 & 
 udiskie &
-# autokey-gtk &
+seaf-cli start &
 unclutter &
-/usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1 &
+#/usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1 &
 nm-applet &
 
 # enable ctrl-alt-backspace
