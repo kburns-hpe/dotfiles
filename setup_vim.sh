@@ -25,4 +25,4 @@ popd
 vim -c "BundleInstall" -c ":qa"
 
 # Create link for nvim script
-ln -s ~/.vim/bundle/nvin/nvim ~/bin/nvim
+ln -s ~/.vim/bundle/nvim/nvim ~/bin/nvim
