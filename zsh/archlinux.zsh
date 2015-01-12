@@ -5,7 +5,7 @@ export BROWSER=chromium
 export EDITOR=vim
 
 # Set Path
-export PATH="$HOME/.gem/ruby/2.1.0/bin:$HOME/bin:$PATH"
+export PATH="$HOME/.gem/ruby/2.2.0/bin:$HOME/bin:$PATH"
 
 # Arch PKG Management
 alias pacsyu="sudo snp pacman -Syu"
