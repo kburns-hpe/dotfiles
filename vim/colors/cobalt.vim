@@ -107,7 +107,7 @@ hi Underlined     guifg=#Cf6A4C
 hi Ignore         guifg=#666666
 hi Error          guifg=#CF6A4C    guibg=#420E09
 hi Todo           guifg=#7587A6    guibg=#0E2231
-hi Pmenu          guifg=#141414    guibg=#CDA869
+hi Pmenu          guifg=#141414    guibg=#CDA869 ctermbg=23 ctermfg=7
 hi PmenuSel       guifg=#F8F8F8    guibg=#9B703F
 hi PmenuSbar      guibg=#DAEFA3
 hi PmenuThumb     guifg=#8F9D6A
