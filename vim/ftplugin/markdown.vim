@@ -10,7 +10,9 @@ endif
 runtime! ftplugin/html.vim ftplugin/html_*.vim ftplugin/html/*.vim
 
 setlocal comments=n:*,n:-,fb:+,n:> commentstring=>\ %s
-setlocal formatoptions+=tcqlnro
+setlocal formatoptions+=cqlnro
+setlocal formatoptions-=t
+setlocal colorcolumn=0
 setlocal formatlistpat=^\\s*\\d\\+\\.\\s\\+\\\|^[-*+]\\s\\+\\\|^\\[^\\ze[^\\]]\\+\\]:
 
 if exists('b:undo_ftplugin')
@@ -46,8 +48,5 @@ if has("folding") && exists("g:markdown_folding")
   setlocal foldmethod=expr
   let b:undo_ftplugin .= " foldexpr< foldmethod<"
 endif
-
-" call pencil#init()
-" let g:pencil#wrapModeDefault = 'soft'
 
 " vim:set sw=2:
