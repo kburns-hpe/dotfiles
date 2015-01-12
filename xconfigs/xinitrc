@@ -3,18 +3,21 @@
 # This needs to be set in order for autocomplete to work on run shortcut
 export PATH="$HOME/bin:$PATH"
 
-# Setup Monitors
-if [ "$(xrandr | grep 'DP3 connected')" ] ; then
+# Setup Monitor
+#if [ "$(xrandr | grep 'DP3 connected')" ] ; then
     # DPI for this monitor is actually 109, but that makes the fonts too small
-    xrandr --dpi 125 --output DP3 --auto --output LVDS1 --off
-    dispwin -d1 ~/.config/colors/desktop.icc
-    xrdb -merge ~/.Xresources27
-else
+#    xrandr --dpi 125 --output DP3 --auto --output LVDS1 --off
+#    dispwin -d1 ~/.config/colors/desktop.icc
+#    xrdb -merge ~/.Xresources27
+#else
     # Internal Monitor
     xrandr --dpi 125 --output LVDS1 --auto --output DP3 --off
     dispwin ~/.config/colors/laptop.icc
     xrdb -merge ~/.Xresources
-fi
+#fi
+
+# Start recoll
+/usr/share/recoll/examples/rclmon.sh start
 
 # Start Programs
 anamnesis --start &
