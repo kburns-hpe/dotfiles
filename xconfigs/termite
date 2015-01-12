@@ -1,0 +1,69 @@
+[options]
+scroll_on_output = false
+scroll_on_keystroke = true
+audible_bell = false
+mouse_autohide = false
+allow_bold = true
+dynamic_title = true
+urgent_on_bell = true
+clickable_url = true
+font = DejaVu Sans Mono 8
+scrollback_lines = 5000
+search_wrap = true
+#icon_name = terminal
+#geometry = 640x480
+
+# "system", "on" or "off"
+cursor_blink = system
+
+# "block", "underline" or "ibeam"
+cursor_shape = block
+
+# $BROWSER is used by default
+browser = chromium
+
+# set size hints for the window
+#size_hints = false
+
+# emit escape sequences for other keys modified by Control
+#modify_other_keys = false
+
+[colors]
+cursor = #F0CC09
+foreground = #FFFFFF
+foreground_bold = #ffffff
+background = #193549
+
+# if unset, will reverse foreground and background
+highlight = #0050a4
+
+# colors from color0 to color254 can be set
+color0 = #000000
+color1 = #ff0900
+color2 = #38de21
+color3 = #ffdd00
+color4 = #0088ff
+color5 = #ff628c
+color6 = #80ffc2
+color7 = #ffffff
+color8 = #555555
+color9 = #ff9d00
+color10 = #3bd01d
+color11 = #edc809
+color12 = #5555ff
+color13 = #ff55ff
+color14 = #6ae3fa
+color15 = #ffffff
+
+[hints]
+font = DejaVu Sans Mono 10
+foreground = #ffffff
+background = #0050a4
+#active_foreground = #e68080
+#active_background = #3f3f3f
+padding = 2
+border = #3f3f3f
+#border_width = 0.5
+#roundness = 2.0
+
+# vim: ft=dosini cms=#%s
