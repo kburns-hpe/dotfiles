@@ -30,7 +30,7 @@ browser = chromium
 
 [colors]
 cursor = #F0CC09
-foreground = #FFFFFF
+foreground = #ffffff
 foreground_bold = #ffffff
 background = #193549
 
