@@ -34,7 +34,6 @@ function tap {
 
 function tlp {
         task list project:$*
-        task sync
 }
 
 function tm {
@@ -46,7 +45,6 @@ function tm {
 
 function ts {
         task $1 start
-        task sync
 }
 
 # Autocomplete
