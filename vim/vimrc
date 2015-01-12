@@ -127,7 +127,6 @@ set spellsuggest=5
 set t_Co=256 " sets supported colors
 set background=dark
 colorscheme cobalt
-hi ColorColumn ctermbg=8
 
 " Setup Indenting
 set autoindent
