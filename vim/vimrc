@@ -81,7 +81,7 @@ Bundle 'nathanaelkane/vim-indent-guides'
 " vim-repeat - Fixes . for some plugins
 Bundle 'tpope/vim-repeat'
 " syntastic - syntax checker for various languages
-"Bundle 'scrooloose/syntastic'
+Bundle 'scrooloose/syntastic'
 " vim-pencil - Better editing support for writing
 " Bundle 'reedes/vim-pencil'
 " Jedi VIM - Autocompletion tool python
