@@ -16,7 +16,7 @@ elif [ "$host" = "osx" ]; then
 
 # Arch Linux
 elif [ "$host" = "archlinux" ]; then
-    zshconfs="$zshconfs archlinux anamnesis doing lxc pinboard task"
+    zshconfs="$zshconfs archlinux anamnesis doing fasd lxc pinboard task"
 
 # Guest Arch Linux Machine
 elif [ "$host" = "archguest" ]; then
