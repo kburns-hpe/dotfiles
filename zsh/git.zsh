@@ -27,3 +27,7 @@ alias gs="git status -s"
 function gacmp () {
     git commit -a -m "$*" && git push -u origin master
 }
+
+function gcmp () {
+    git commit -m "$*" && git push -u origin master
+}
