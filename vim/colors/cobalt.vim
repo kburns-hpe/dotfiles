@@ -36,6 +36,8 @@ endif
 
 let g:colors_name="cobalt"
 
+hi ColorColumn ctermbg=8
+hi SignColumn     term=standout ctermbg=23 ctermfg=7
 hi Normal         guifg=#FFFFFF           guibg=#002F52  
 hi NonText        guifg=#FFFFFF           guibg=#002F52
 hi CursorLine     guifg=NONE              guibg=#002943
