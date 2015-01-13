@@ -29,7 +29,8 @@ alias pacas="pacaur -Ss"
 export SSH_ASKPASS="/usr/bin/qt4-ssh-askpass"
 
 # Highlight a specific search and pipe it through less
-alias hl='ack --passthru --color --pager="less -R"'
+alias hl='ack --color --pager="less -R"'
+alias hla='ack --passthru --color --pager="less -R"'
 
 # Linux LS aliases
 alias ls="ls --color=auto -CFh"
