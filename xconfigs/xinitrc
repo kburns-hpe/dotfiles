@@ -59,7 +59,7 @@ export INFINALITY_FT_CHROMEOS_STYLE_SHARPENING_STRENGTH="20"
 
 # Start loop for checking email if file exists
 if [[ -h ~/bin/loopmbsync.sh ]]; then
-    ~/bin/loopmbsync.sh
+    ~/bin/loopmbsync.sh &
 fi
 
 # Start awesome
