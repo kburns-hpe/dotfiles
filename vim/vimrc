@@ -80,6 +80,8 @@ Bundle 'godlygeek/tabular'
 Bundle 'nathanaelkane/vim-indent-guides'
 " vim-repeat - Fixes . for some plugins
 Bundle 'tpope/vim-repeat'
+" vim-rsi - adds some readline shortcuts
+Bundle 'tpope/vim-rsi'
 " syntastic - syntax checker for various languages
 Bundle 'scrooloose/syntastic'
 " vim-pencil - Better editing support for writing
