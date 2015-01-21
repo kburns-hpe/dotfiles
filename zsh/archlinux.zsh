@@ -44,3 +44,6 @@ alias tmux="tmux -2"
 
 # BTRFS DF alias
 alias bdf="btrfs filesystem df"
+
+# Useful when copying files on a COW-enabled file system
+alias cp="cp -i --reflink=auto"
