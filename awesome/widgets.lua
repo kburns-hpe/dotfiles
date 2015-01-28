@@ -198,10 +198,22 @@ end
 
 function watt()
   if (batstate() == 'Discharging') then
-    local file = io.open("/sys/class/power_supply/" .. widget.battery .. "/power_now", "r")
-    local avg = file:read("*n")
-    file:close()
-    wattavg = (avg / 1000000)
+    if widget.battype == "power_now" then
+        local file = io.open("/sys/class/power_supply/" .. widget.battery .. "/power_now", "r")
+        local power = file:read("*n")
+        file:close()
+        wattavg = (power / 1000000)
+    else
+        local file = io.open("/sys/class/power_supply/" .. widget.battery .. "/current_now", "r")
+        local current = file:read("*n")
+        file:close()
+        local file = io.open("/sys/class/power_supply/" .. widget.battery .. "/voltage_now", "r")
+        local voltage = file:read("*n")
+        file:close()
+        wattcur = (current / 1000000)
+        wattvolt = (voltage / 1000000)
+        wattavg = wattcur * wattvolt
+    end
     return round(wattavg, 2) .. " W"
   else
     return "n/a"

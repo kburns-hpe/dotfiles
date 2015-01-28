@@ -32,6 +32,8 @@ widget.network = "wlp3s0"
 widget.wifi = widget.network
 -- Battery used to determine battery life
 widget.battery = "BAT0"
+-- Use power_now or current_now + voltage_now to determine power usage
+battype = "current_now"
 -- Set to your distro to display number of packages that need updating
 widget.distro = "Arch"
 
