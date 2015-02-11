@@ -89,7 +89,7 @@ Bundle 'scrooloose/syntastic'
 " Jedi VIM - Autocompletion tool python
 "Bundle 'davidhalter/jedi-vim'
 " YouCompleteMe - Autocompletion tool
-"Bundle 'Valloric/YouCompleteMe'
+Bundle 'Valloric/YouCompleteMe'
 " Python Mode - Turn vim into a python IDE
 "Bundle 'klen/python-mode'
 " vim-seek - makes s act like a 2 char f
@@ -144,6 +144,13 @@ set expandtab
 set backup
 set backupdir=~/.vim/backup
 set directory=~/.vim/tmp
+
+" Set a directory to allow undos to be kept after quitting vim
+set undodir=~/.vim/undo
+set undofile
+set undolevels=1000
+set undoreload=10000
+
 
 " Bind F2 to enable/disable paste mode
 set pastetoggle=<F2>
@@ -306,7 +313,7 @@ let g:EasyMotion_startofline = 0 " keep cursor colum when JK motion
 let g:EasyMotion_smartcase = 1
 
 " YouCompleteMe options
-let g:ycm_register_as_syntastic_checker = 1 "default 1
+let g:ycm_register_as_syntastic_checker = 0 "default 1
 let g:Show_diagnostics_ui = 1 "default 1
 
 "will put icons in Vim's gutter on lines that have a diagnostic set.
@@ -329,8 +336,8 @@ let g:ycm_confirm_extra_conf = 1
 
 let g:ycm_goto_buffer_command = 'same-buffer' "[ 'same-buffer', 'horizontal-split', 'vertical-split', 'new-tab' ]
 let g:ycm_filetype_whitelist = { '*': 1 }
-let g:ycm_key_invoke_completion = '<C-a>'
-let g:ycm_min_num_of_chars_for_completion = 99
+let g:ycm_key_invoke_completion = '<C-l>'
+let g:ycm_min_num_of_chars_for_completion = 5
 
 nnoremap <F10> :call ToggleYCM()<cr>
 function! ToggleYCM()
@@ -342,8 +349,8 @@ function! ToggleYCM()
 endfunction
 
 " Disable Tab use with YCM
-let g:ycm_key_list_select_completion=[]
-let g:ycm_key_list_previous_completion=[]
+let g:ycm_key_list_select_completion=['<C-j>', '<Down>']
+let g:ycm_key_list_previous_completion=['<C-k>', '<Up>']
 
 nnoremap <F11> :YcmForceCompileAndDiagnostics <CR>
 
