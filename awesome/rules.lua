@@ -44,11 +44,12 @@ awful.rules.rules = {
 
 
   -- 3: social
-  { rule = { class = "URxvt", instance = "social"},
+  { rule = { class = "Pidgin"},
     callback = function(c)
       c.screen = mouse.screen
       c:tags({tags[c.screen][3]})
-  end },
+  end,
+    properties = {floating = true , maximized_vertical = false, maximized_horizontal = false} },
 
   -- 4: notes
   { rule = { class = "URxvt", instance = "nvim"},
