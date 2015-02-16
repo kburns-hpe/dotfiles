@@ -7,6 +7,9 @@ export EDITOR=vim
 # Set Path
 export PATH="$HOME/.gem/ruby/2.2.0/bin:$HOME/bin:$PATH"
 
+# Use qt4-ssh-askpass for ssh ask dialog
+export SSH_ASKPASS="/usr/bin/qt4-ssh-askpass"
+
 # Arch PKG Management
 alias pacsyu="sudo snp pacman -Syu"
 alias pacsy="sudo pacman -Sy"
@@ -24,9 +27,6 @@ alias pacas="pacaur -Ss"
 #alias yao="yaourt -S"
 #alias yaosyu="yaourt -Su"
 #alias yaor="yaourt -R"
-
-# Use qt4-ssh-askpass for ssh ask dialog
-export SSH_ASKPASS="/usr/bin/qt4-ssh-askpass"
 
 # Highlight a specific search and pipe it through less
 alias hl='ack --color --pager="most"'
