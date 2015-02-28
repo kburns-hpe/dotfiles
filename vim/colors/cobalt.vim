@@ -64,6 +64,7 @@ hi ModeMsg        guifg=#CF7D34           guibg=#E9C062
 hi MoreMsg        guifg=#CF7D34           guibg=#E9C062
 hi Question       guifg=#7587A6           guibg=#0E2231
 hi Search         guifg=#420E09           guibg=#CF6A4C cterm=bold term=bold ctermbg=23 ctermfg=255
+hi MatchParen         guifg=#420E09           guibg=#CF6A4C cterm=bold term=bold ctermbg=23 ctermfg=255
 hi SpecialKey     guifg=#CF7D34           guibg=#141414
 "hi StatusLine     guifg=#0E2231           guibg=#8693A5
 "hi StatusLineNC   guifg=#7587A6           guibg=#F8F8F8
