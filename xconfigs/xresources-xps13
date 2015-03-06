@@ -1,9 +1,7 @@
-! urxvt
 URxvt*buffered: true
 URxvt*cursorBlink: true
 URxvt*underlineColor: yellow
 URxvt*font:  xft:DejaVu Sans Mono:style=Book:size=8:antialias=true
-!URxvt*font:  xft:Inconsolata:style=Medium:size=9:antialias=true
 URxvt*depth: 32
 URxvt*borderless: 1
 URxvt*scrollBar: false
@@ -11,7 +9,7 @@ URxvt*scrollTtyOutput: false
 URxvt*scrollWithBuffer: true
 URxvt*scrollTtyKeypress: true
 URxvt*loginShell: true
-Urxvt*secondaryScroll: true    # Enable Shift-PageUp/Down in screen
+URxvt*secondaryScroll: true    # Enable Shift-PageUp/Down in screen
 URxvt*saveLines: 5000
 URxvt*termName: xterm-256color
 URxvt.perl-ext-common: default,matcher,font-size
@@ -26,6 +24,7 @@ URxvt.url-select.launcher: /usr/bin/chromium
 URxvt.url-select.underline: true
 URxvt.matcher.button: 1
 URxvt.fading: false
+URxvt.intensityStyles: false
 URxvt*urgentOnBell: true
 
 Xft.dpi:    160
@@ -38,8 +37,6 @@ Xft.rgba:       rgb
 
 URxvt*background:              #193549
 URxvt*foreground:              #FFFFFF
-!URxvt*fading:                  40
-!URxvt*fadeColor:               #132738
 URxvt*cursorColor:             #F0CC09
 URxvt*pointerColorBackground:  #18354F
 URxvt*pointerColorForeground:  #B5B5B5
@@ -76,5 +73,3 @@ URxvt*color13:   #FF55FF
 URxvt*color14:   #6AE3FA
 ! Bright White
 URxvt*color15:   #FFFFFF
-
-URxvt.intensityStyles: false
