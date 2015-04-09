@@ -86,6 +86,8 @@ Bundle 'tpope/vim-rsi'
 Bundle 'scrooloose/syntastic'
 " vim - puppelabs vim syntax
 Bundle 'rodjek/vim-puppet'
+" vim-markdown - Better markdown syntax highlighting
+Bundle 'tpope/vim-markdown'
 " vim-pencil - Better editing support for writing
 " Bundle 'reedes/vim-pencil'
 " Jedi VIM - Autocompletion tool python

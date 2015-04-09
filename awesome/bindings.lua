@@ -43,7 +43,7 @@ globalkeys = awful.util.table.join(
   awful.key({ hyper, }, "F7", function () awful.util.spawn(home .. "/bin/dock.sh")  end),
 
   -- Fix Copy/paste for windows
-  awful.key({ hyper, }, "c", function () awful.util.spawn("xsel -p | xsel -i -p")  end),
+  awful.key({ hyper, }, "c", function () awful.util.spawn("xsel -p | dos2unix | xsel -i -p")  end),
 
   -- Program Launches
   awful.key({ hyper, }, "l", function () awful.util.spawn("xscreensaver-command -lock")  end),
@@ -54,7 +54,7 @@ globalkeys = awful.util.table.join(
   awful.key({ hyper, }, "s", function () awful.util.spawn("urxvt -name social -e social")  end),
   awful.key({ hyper, }, "v", function () awful.util.spawn("vmware")  end),
   awful.key({ hyper, }, "F12", function () awful.util.spawn("systemctl poweroff")  end),
-  awful.key({ }, "Print", function () awful.util.spawn("scrot -e 'mv $f ~/pictures/screenshots/ 2>/dev/null'") end),
+  awful.key({ }, "Print", function () awful.util.spawn("scrot -s -e 'mv $f ~/pictures/screenshots/ 2>/dev/null'") end),
 
   -- Standard program
   awful.key({ modkey,           }, "Return", function () awful.util.spawn(terminal) end),
