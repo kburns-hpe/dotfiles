@@ -26,3 +26,7 @@ vim -c "BundleInstall" -c ":qa"
 
 # Create link for nvim script
 ln -s ~/.vim/bundle/nvim/nvim ~/bin/nvim
+
+# Create link for ftdetect puppet
+mkdir ~/.vim/ftdetect
+ln -s ~/.vim/bundle/vim-puppet/ftdetect/puppet.vim ~/.vim/ftdetect/puppet.vim
