@@ -157,7 +157,7 @@ set undoreload=10000
 
 
 " Bind F2 to enable/disable paste mode
-set pastetoggle=<F2>
+set pastetoggle=<F12>
 " disable arrow keys
 map <up> <nop>
 map <down> <nop>
@@ -360,3 +360,13 @@ nnoremap <F11> :YcmForceCompileAndDiagnostics <CR>
 
 " rename window to current file
 autocmd BufReadPost,FileReadPost,BufNewFile * call system("tmux rename-window " . expand("%")) 
+
+" syntastic options
+set statusline+=%#warningmsg#
+set statusline+=%{SyntasticStatuslineFlag()}
+set statusline+=%*
+
+let g:syntastic_always_populate_loc_list = 1
+let g:syntastic_auto_loc_list = 1
+let g:syntastic_check_on_open = 1
+let g:syntastic_check_on_wq = 0
