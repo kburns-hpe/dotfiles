@@ -15,7 +15,6 @@ set wrap " Autowrap lines that hit the end of the screen
 set linebreak " Only wrap at a breakat option
 set backspace=indent,eol,start " allows backspace over everything
 set autochdir " Auto change windows CWD to the file's directory
-
 " Change ZZ to quit all buffers instead of just the current one
 map   ZZ :wqa<CR>
 
@@ -170,6 +169,9 @@ imap <right> <nop>
 
 " Treat .md files as markdown
 au BufRead,BufNewFile *.md set filetype=markdown textwidth=80
+
+" shortcut to delete trailing white space
+nnoremap <Leader>rtw :%s/\s\+$//e<CR>
 " Plugin Configurations
 "
 " Toggle NerdTree View
