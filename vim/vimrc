@@ -156,7 +156,7 @@ set undoreload=10000
 
 
 " Bind F2 to enable/disable paste mode
-set pastetoggle=<F12>
+set pastetoggle=<F2>
 " disable arrow keys
 map <up> <nop>
 map <down> <nop>
