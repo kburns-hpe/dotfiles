@@ -11,7 +11,6 @@ URxvt*scrollTtyKeypress: true
 URxvt*loginShell: true
 URxvt*secondaryScroll: true    # Enable Shift-PageUp/Down in screen
 URxvt*saveLines: 5000
-URxvt*termName: xterm-256color
 URxvt.perl-ext-common: default,matcher,font-size
 URxvt.keysym.C-Up:     perl:font-size:increase
 URxvt.keysym.C-Down:   perl:font-size:decrease
