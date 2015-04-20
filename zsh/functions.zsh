@@ -27,10 +27,10 @@ function ssh() {
     session_variable_name="window_${window_index}_ssh_args"
 
     # save in tmux session variable
-    tmux setenv $session_variable_name "$*"
+    tmux setenv $session_variable_name "${@[-1]}"
 
     # set window title
-    tmux rename-window $*
+    tmux rename-window ${@[-1]}
 
     # run ssh
     /usr/bin/ssh $*
@@ -57,10 +57,10 @@ function sshnh() {
     session_variable_name="window_${window_index}_ssh_args"
 
     # save in tmux session variable
-    tmux setenv $session_variable_name "$*"
+    tmux setenv $session_variable_name "${@[-1]}"
 
     # set window title
-    tmux rename-window $*
+    tmux rename-window ${@[-1]}
 
     # run ssh
     /usr/bin/ssh -o "StrictHostKeyChecking no" -o "UserKnownHostsFile /dev/null" $*
