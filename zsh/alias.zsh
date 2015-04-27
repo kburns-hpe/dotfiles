@@ -22,3 +22,5 @@ alias -g .....="../../../.."
 
 # ttytter alias for options
 alias ttytter="ttytter -ansi -verify"
+
+alias pbin="curl -F 'sprunge=<-' http://sprunge.us | xsel -i -p;xsel -p"
