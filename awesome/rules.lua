@@ -84,6 +84,12 @@ awful.rules.rules = {
 
 
   -- 5: code
+  { rule = { class = "Atom" }, 
+    callback = function(c)
+      c.screen = mouse.screen
+      c:tags({tags[c.screen][5]})
+  end },
+
   { rule = { class = "Subl3" }, 
     callback = function(c)
       c.screen = mouse.screen
