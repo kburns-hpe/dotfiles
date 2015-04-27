@@ -47,6 +47,10 @@ function ts {
         task $1 start
 }
 
+function tdep {
+        task $1 modify depends:"$2"
+}
+
 # Autocomplete
 
 zstyle ':completion:*:*:task:*' verbose yes
