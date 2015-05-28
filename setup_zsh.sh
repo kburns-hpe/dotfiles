@@ -4,7 +4,7 @@ host="$1"
 confdir="$PWD/zsh"
 
 # Common configurations to all installs
-zshconfs="alias autocomplete bd bindkeys functions git git-prompt history misc prompt zsh-history-substring-search"
+zshconfs="01-zsh-syntax-highlighting.zsh alias autocomplete bd bindkeys functions git git-prompt history misc prompt zsh-history-substring-search"
 
 # Cygwin
 if [ "$host" = "cygwin" ]; then
