@@ -36,6 +36,20 @@ map <leader>pp :r!xsel -p<CR>
 map <leader>ps :r!xsel -s<CR>
 map <leader>pb :r!xsel -b<CR>
 
+" Open a New File using ctrlP
+nnoremap <Leader>o :CtrlP<CR>
+
+" Quickly save file
+nnoremap <Leader>w :w<CR>
+
+" Copy and paste shortcuts
+vmap <Leader>y "+y
+vmap <Leader>d "+d
+nmap <Leader>p "+p
+nmap <Leader>P "+P
+vmap <Leader>p "+p
+vmap <Leader>P "+P
+
 " Load vundle plugin manager
 set rtp+=~/.vim/bundle/Vundle.vim
 call vundle#begin()
