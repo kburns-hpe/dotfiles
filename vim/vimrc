@@ -137,7 +137,7 @@ Bundle 'skalnik/vim-vroom'
 call vundle#end()
 
 " This lets escape clear the search highlights
-map <leader><leader> :noh<CR>
+map <F4> :noh<CR>:<backspace>
 
 " Toggle showing invisible characters
 noremap <F8> :set list!<CR>
@@ -197,7 +197,7 @@ imap <right> <nop>
 au BufRead,BufNewFile *.md set filetype=markdown textwidth=80
 
 " shortcut to delete trailing white space
-nnoremap <F4> :%s/\s\+$//e<CR>
+nnoremap <Leader>rtw :%s/\s\+$//e<CR>
 " Plugin Configurations
 "
 " Toggle NerdTree View
