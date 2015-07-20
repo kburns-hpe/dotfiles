@@ -6,6 +6,7 @@ export EDITOR=vim
 
 # Set Path
 export PATH="$HOME/.gem/ruby/2.2.0/bin:$HOME/bin:$PATH"
+export PATH="/home/kburns/.chefdk/gem/ruby/2.1.0/bin:$PATH"
 
 # Use qt4-ssh-askpass for ssh ask dialog
 export SSH_ASKPASS="/usr/bin/qt4-ssh-askpass"
