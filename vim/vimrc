@@ -51,6 +51,11 @@ nmap <Leader>P "+P
 vmap <Leader>p "+p
 vmap <Leader>P "+P
 
+" Automatically jump to the end of a yank or paste.
+vnoremap <silent> y y`]
+vnoremap <silent> p p`]
+nnoremap <silent> p p`]
+
 " Load vundle plugin manager
 set rtp+=~/.vim/bundle/Vundle.vim
 call vundle#begin()
@@ -110,6 +115,8 @@ Bundle 'vadv/vim-chef'
 "Bundle 'davidhalter/jedi-vim'
 " YouCompleteMe - Autocompletion tool
 Bundle 'Valloric/YouCompleteMe'
+" vim-vroom - Run Ruby unit tests from within vim
+Bundle 'skalnik/vim-vroom'
 " vim-expand-region - smart expanding for visual mode selection
 "Bundle 'terryma/vim-expand-region'
 " Python Mode - Turn vim into a python IDE
@@ -130,7 +137,7 @@ Bundle 'Valloric/YouCompleteMe'
 call vundle#end()
 
 " This lets escape clear the search highlights
-map <F4> :noh<CR>:<backspace>
+map <leader><leader> :noh<CR>
 
 " Toggle showing invisible characters
 noremap <F8> :set list!<CR>
@@ -190,7 +197,7 @@ imap <right> <nop>
 au BufRead,BufNewFile *.md set filetype=markdown textwidth=80
 
 " shortcut to delete trailing white space
-nnoremap <Leader>rtw :%s/\s\+$//e<CR>
+nnoremap <F4> :%s/\s\+$//e<CR>
 " Plugin Configurations
 "
 " Toggle NerdTree View
