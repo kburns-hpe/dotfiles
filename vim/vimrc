@@ -109,6 +109,8 @@ Bundle 'vadv/vim-chef'
 "Bundle 'davidhalter/jedi-vim'
 " YouCompleteMe - Autocompletion tool
 Bundle 'Valloric/YouCompleteMe'
+" vim-expand-region - smart expanding for visual mode selection
+Bundle 'terryma/vim-expand-region'
 " Python Mode - Turn vim into a python IDE
 "Bundle 'klen/python-mode'
 " vim-seek - makes s act like a 2 char f
