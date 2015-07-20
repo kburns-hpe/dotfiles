@@ -1,5 +1,6 @@
 set nocompatible " Disable vi compatibility mode
 set showmatch " highlight matching brackets
+
 set vb t_vb= " Disable bell
 set incsearch " show highlights while typing in a search
 set hlsearch " highlights every instance of the search
@@ -49,6 +50,11 @@ nmap <Leader>p "+p
 nmap <Leader>P "+P
 vmap <Leader>p "+p
 vmap <Leader>P "+P
+
+" Make a simple "search" text object.
+vnoremap <silent> s //e<C-r>=&selection=='exclusive'?'+1':''<CR><CR>
+  \:<C-u>call histdel('search',-1)<Bar>let @/=histget('search',-1)<CR>gv
+omap s :normal vs<CR>
 
 " Load vundle plugin manager
 set rtp+=~/.vim/bundle/Vundle.vim
@@ -110,7 +116,7 @@ Bundle 'vadv/vim-chef'
 " YouCompleteMe - Autocompletion tool
 Bundle 'Valloric/YouCompleteMe'
 " vim-expand-region - smart expanding for visual mode selection
-Bundle 'terryma/vim-expand-region'
+"Bundle 'terryma/vim-expand-region'
 " Python Mode - Turn vim into a python IDE
 "Bundle 'klen/python-mode'
 " vim-seek - makes s act like a 2 char f
