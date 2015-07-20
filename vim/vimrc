@@ -16,8 +16,9 @@ set wrap " Autowrap lines that hit the end of the screen
 set linebreak " Only wrap at a breakat option
 set backspace=indent,eol,start " allows backspace over everything
 set autochdir " Auto change windows CWD to the file's directory
+
 " Change ZZ to quit all buffers instead of just the current one
-map   ZZ :wqa<CR>
+map ZZ :wqa<CR>
 
 " Change leader from \ to Space
 nnoremap <SPACE> <Nop>
@@ -111,30 +112,12 @@ Bundle 'tpope/vim-markdown'
 Bundle 'vadv/vim-chef'
 " splitjoin - an easy way to split/join lines
 Bundle 'AndrewRadev/splitjoin.vim'
-" vim-pencil - Better editing support for writing
-" Bundle 'reedes/vim-pencil'
-" Jedi VIM - Autocompletion tool python
-"Bundle 'davidhalter/jedi-vim'
 " YouCompleteMe - Autocompletion tool
 Bundle 'Valloric/YouCompleteMe'
 " vim-vroom - Run Ruby unit tests from within vim
 Bundle 'skalnik/vim-vroom'
-" vim-expand-region - smart expanding for visual mode selection
-"Bundle 'terryma/vim-expand-region'
-" Python Mode - Turn vim into a python IDE
-"Bundle 'klen/python-mode'
-" vim-seek - makes s act like a 2 char f
-" Bundle 'goldfeld/vim-seek'
-" vim-signature - Display marks to the left of text
-" Bundle 'kshenoy/vim-signature'
 " nerdcommenter - provides shortcuts for dealing with comments
 " Bundle 'scrooloose/nerdcommenter'
-" snipmate.vim - implements snippets in vim
-" Bundle 'msanders/snipmate.vim'
-" Solarized color scheme for lightline
-"Bundle 'pearofducks/vim-quack-lightline'
-" vim-snippets - Snippet repository
-"Bundle 'honza/vim-snippets'
 " End vundle plugin list
 call vundle#end()
 
