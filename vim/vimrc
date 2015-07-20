@@ -87,6 +87,8 @@ Bundle 'scrooloose/syntastic'
 Bundle 'rodjek/vim-puppet'
 " vim-markdown - Better markdown syntax highlighting
 Bundle 'tpope/vim-markdown'
+" vim-chef - chef syntax highlighting and autocomplete snipmate
+Bundle 'vadv/vim-chef'
 " vim-pencil - Better editing support for writing
 " Bundle 'reedes/vim-pencil'
 " Jedi VIM - Autocompletion tool python
@@ -367,6 +369,8 @@ autocmd BufReadPost,FileReadPost,BufNewFile * call system("tmux rename-window " 
 set statusline+=%#warningmsg#
 set statusline+=%{SyntasticStatuslineFlag()}
 set statusline+=%*
+
+map <leader>st :SyntasticToggleMode <CR>
 
 let g:syntastic_always_populate_loc_list = 1
 let g:syntastic_auto_loc_list = 1
