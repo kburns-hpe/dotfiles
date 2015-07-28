@@ -4,6 +4,16 @@ hs.window.animationDuration = 0
 -- Setup Key Shortcuts
 local hyper = {"shift", "cmd", "alt", "ctrl"}
 
+-- TODO: Test this on dual displays
+-- Send Window to Next Display
+--hs.hotkey.bind(hyper, "p", function()
+--  if hs.window.focusedWindow() then
+--    hs.window:moveToScreen(hs.screen:next())
+--  else
+--    hs.alert.show("No Active Window")
+--  end
+--end)
+
 -- Full Screen
 hs.hotkey.bind(hyper, "o", function()
   if hs.window.focusedWindow() then
