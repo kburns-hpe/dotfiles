@@ -186,3 +186,36 @@ hs.hints.showTitleThresh = 0
 hs.hotkey.bind(hyper, 'w', function()
   hs.hints.windowHints()
 end)
+
+-- Switch Window Focus
+hs.hotkey.bind(hyper, '[', function()
+  if hs.window.focusedWindow() then
+    hs.window.focusedWindow():focusWindowWest()
+  else
+    hs.alert.show("No Active Window")
+  end
+end)
+
+hs.hotkey.bind(hyper, ']', function()
+  if hs.window.focusedWindow() then
+    hs.window.focusedWindow():focusWindowEast()
+  else
+    hs.alert.show("No Active Window")
+  end
+end)
+
+hs.hotkey.bind(hyper, '-', function()
+  if hs.window.focusedWindow() then
+    hs.window.focusedWindow():focusWindowNorth()
+  else
+    hs.alert.show("No Active Window")
+  end
+end)
+
+hs.hotkey.bind(hyper, '=', function()
+  if hs.window.focusedWindow() then
+    hs.window.focusedWindow():focusWindowSouth()
+  else
+    hs.alert.show("No Active Window")
+  end
+end)
