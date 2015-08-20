@@ -6,7 +6,7 @@ export EDITOR=vim
 
 # Set Path
 export PATH="$HOME/bin::/usr/local/bin:/usr/bin:/sbin:/bin:/usr/sbin"
-export PATH="$PATH:~/.chefdk/gem/ruby/2.1.0/bin"
+export PATH="$PATH:~/.chefdk/gem/ruby/2.1.0/bin:~/.gem/ruby/2.0.0/bin"
 
 # Set fpath for zsh-completion (homebrew package)
 fpath=(/usr/local/share/zsh-completions $fpath)
