@@ -103,7 +103,7 @@ Bundle 'tpope/vim-repeat'
 " vim-rsi - adds some readline shortcuts
 Bundle 'tpope/vim-rsi'
 " syntastic - syntax checker for various languages
-Bundle 'scrooloose/syntastic'
+"Bundle 'scrooloose/syntastic'
 " vim - puppelabs vim syntax
 "Bundle 'rodjek/vim-puppet'
 " vim-markdown - Better markdown syntax highlighting
