@@ -42,6 +42,11 @@ awful.rules.rules = {
       c:tags({tags[c.screen][2]})
   end },
 
+  { rule = { class = "Firefox" }, 
+    callback = function(c)
+      c.screen = mouse.screen
+      c:tags({tags[c.screen][6]})
+  end },
 
   -- 3: social
   { rule = { class = "Pidgin"},
@@ -116,12 +121,6 @@ awful.rules.rules = {
 
 
   -- 6: burp
-  { rule = { class = "Firefox" }, 
-    callback = function(c)
-      c.screen = mouse.screen
-      c:tags({tags[c.screen][6]})
-  end },
-
   { rule = { class = "burp-StartBurp" }, 
     callback = function(c)
       c.screen = mouse.screen
