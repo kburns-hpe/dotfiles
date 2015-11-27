@@ -1,0 +1,131 @@
+# Set the prefix to Ctrl-Space
+unbind C-b
+set -g prefix C-Space
+bind Space send-prefix
+
+# screen ^C c 
+unbind ^C
+bind ^C new-window
+
+# detach ^D d
+unbind ^D
+bind ^D detach
+
+# use hjkl to move between panes
+bind -r h select-pane -L
+bind -r j select-pane -D
+bind -r k select-pane -U
+bind -r l select-pane -R
+
+# Use ctrl-h/l to move between windows
+bind -r C-h select-window -t :-
+bind -r C-l select-window -t :+
+
+# Bind j/l to create split windows
+bind C-j split-window -v
+bind C-k split-window -h
+
+# use HJKL to resize panes
+bind -r H resize-pane -L 5
+bind -r J resize-pane -D 5
+bind -r K resize-pane -U 5
+bind -r L resize-pane -R 5
+
+# Kill window
+bind q confirm kill-window
+bind Q confirm kill-server
+
+# Remap copy/paste to act more like vi
+bind Space copy-mode
+bind C-Space copy-mode
+unbind p
+bind p paste-buffer
+bind -t vi-copy 'v' begin-selection
+
+# Bind Up to maximize a pane
+unbind Up
+bind Up new-window -d -n tmp \; swap-pane -s tmp.1 \; select-window -t tmp
+
+# Bind Down to restore the pane
+unbind Down
+bind Down last-window \; swap-pane -s tmp.1 \; kill-window -t tmp
+
+# Enable vi mode for buffer
+setw -g mode-keys vi
+
+# automatically rename windows based on what's running in them
+setw -g automatic-rename on
+
+# Set terminal to be 256 colors
+set -g default-terminal "screen-256color" 
+
+# Up history limit
+set -g history-limit 50000
+
+# Fix pgup/pgdown
+set -g terminal-overrides 'xterm*:smcup@:rmcup@'
+
+# remove delay when pressing <esc>
+set -s escape-time 1
+
+# Fix Titles when SSHing into other placs
+set -g set-titles on
+set -g set-titles-string "#T"
+
+# Set window notifications
+#setw -g monitor-activity on
+set -g visual-activity on
+
+# Start at 1 instead of 0
+set -g base-index 1
+
+# set status lines
+set -g status-left ""
+set -g status-right "%H:%M"
+
+# default statusbar colors                                         
+set -g status-bg default                                             
+set -g status-fg default                                            
+set -g status-attr default                                         
+                                                                   
+# default window title colors                                      
+setw -g window-status-fg default                                
+setw -g window-status-bg default                                   
+                                                                   
+# active window title colors                                       
+setw -g window-status-current-fg default                            
+setw -g window-status-current-bg default                           
+setw -g window-status-current-attr dim                             
+
+# Set window status bar
+setw -g window-status-format "#[fg=colour15]#[bg=colour4] #I #[bg=colour8]#[fg=colour15] #W "
+setw -g window-status-current-format "#[bg=colour8]#[fg=colour15] #I #[fg=colour15]#[bg=colour4] #W "
+                                                                   
+# pane border                                                      
+set -g pane-border-fg default
+set -g pane-border-bg default                                      
+set -g pane-active-border-fg default
+set -g pane-active-border-bg default                               
+                                                                   
+# command line/message text                                        
+set -g message-bg default                                            
+set -g message-fg default                                           
+                                                                   
+# pane number display                                              
+set -g display-panes-active-colour default                          
+set -g display-panes-colour default                             
+                                                                   
+# clock                                                            
+setw -g clock-mode-colour colour3                                   
+# --- end colors
+
+# List of plugins
+set -g @plugin 'tmux-plugins/tpm'
+set -g @plugin 'tmux-plugins/tmux-copycat'
+set -g @plugin 'tmux-plugins/tmux-yank'
+set -g @plugin 'tmux-plugins/tmux-open'
+set -g @plugin 'tmux-plugins/tmux-urlview'
+set -g @plugin 'tmux-plugins/tmux-logging'
+
+# Initialize TMUX plugin manager (keep this line at the very bottom of tmux.conf)
+run '~/.tmux/plugins/tpm/tpm'
