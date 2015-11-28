@@ -163,9 +163,9 @@ vpnwidget:set_text("")
 vpnwidgettimer = timer({ timeout = 7 })
 vpnwidgettimer:connect_signal("timeout",
  function()
-    fh = assert(io.popen("/usr/bin/ifconfig tun0", "r"))
+    fh = assert(io.popen("/usr/bin/ifconfig", "r"))
     vpn = fh:read("*all")
-      if string.find(vpn, "UP") then
+      if string.find(vpn, "tun0") then
         vpnwidget:set_markup('<span color="red">[VPN]</span>')
       else
         vpnwidget:set_text("")
