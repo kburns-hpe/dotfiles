@@ -30,7 +30,7 @@ awful.rules.rules = {
       c:tags({tags[c.screen][2]})
   end },
 
-  { rule = { class = "Chromium" }, 
+  { rule = { class = "chromium" }, 
     callback = function(c)
       c.screen = mouse.screen
       c:tags({tags[c.screen][2]})
