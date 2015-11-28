@@ -28,6 +28,7 @@ dropbox &
 unclutter &
 nm-applet &
 blueman-applet &
+autokey-gtk &
 
 # enable ctrl-alt-backspace
 setxkbmap -option terminate:ctrl_alt_bksp
