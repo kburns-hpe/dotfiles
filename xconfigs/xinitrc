@@ -53,10 +53,6 @@ export GPG_AGENT_INFO=$HOME/.gnupg/S.gpg-agent
 /usr/lib/polkit-1/polkitd --no-debug
 
 # Infinality Setup
-#export INFINALITY_FT_FILTER_PARAMS="07 24 35 24 07"
-#export INFINALITY_FT_FRINGE_FILTER_STRENGTH="60"
-#export INFINALITY_FT_USE_VARIOUS_TWEAKS="true"
-#export INFINALITY_FT_CHROMEOS_STYLE_SHARPENING_STRENGTH="20"
 export INFINALITY_FT="ultimate4"
 
 # Start loop for checking email if file exists
