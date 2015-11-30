@@ -56,8 +56,14 @@ awful.rules.rules = {
   end,
     properties = {floating = true , maximized_vertical = false, maximized_horizontal = false} },
 
+  { rule = { name = "HipChat" }, 
+    callback = function(c)
+      c.screen = mouse.screen
+      c:tags({tags[c.screen][3]})
+  end },
+
   -- 4: notes
-  { rule = { class = "URxvt", instance = "nvim"},
+  { rule = { name = "Zeal" }, 
     callback = function(c)
       c.screen = mouse.screen
       c:tags({tags[c.screen][4]})
