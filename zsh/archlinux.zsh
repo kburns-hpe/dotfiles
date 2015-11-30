@@ -2,7 +2,7 @@
 
 # Set Variables
 export BROWSER=chromium
-export EDITOR=vim
+export EDITOR=nvim
 
 # Set Path
 export PATH="$HOME/.gem/ruby/2.2.0/bin:$HOME/bin:$PATH"
@@ -48,3 +48,7 @@ alias bdf="btrfs filesystem df"
 
 # Useful when copying files on a COW-enabled file system
 alias cp="cp -i --reflink=auto"
+
+# Use nvim instead of vim
+alias vim="nvim"
+alias vi="nvim"
