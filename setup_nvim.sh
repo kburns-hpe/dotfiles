@@ -23,7 +23,7 @@ done
 popd
 
 # Install plugins
-vim -c "PlugInstall" -c ":qa"
+nvim -c "PlugInstall" -c ":qa"
 
 # Create link for ftdetect puppet
 mkdir ~/.config/nvim/ftdetect
