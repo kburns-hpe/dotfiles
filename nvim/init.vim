@@ -163,6 +163,8 @@ Plug 'janko-m/vim-test'
 Plug 'Valloric/YouCompleteMe', { 'do': 'python2 ./install.py' }
 " zeavim - embed zeal search
 Plug 'KabbAmine/zeavim.vim'
+" vim-pad - note organizing plugin
+Plug 'fmoralesc/vim-pad'
 " vim-markdown - Better markdown syntax highlighting
 "Plug 'tpope/vim-markdown'
 " vim-chef - chef syntax highlighting and autocomplete snipmate
@@ -334,4 +336,3 @@ endfunction
 " Disable Tab use with YCM
 let g:ycm_key_list_select_completion=['<C-j>', '<Down>']
 let g:ycm_key_list_previous_completion=['<C-k>', '<Up>']
-
