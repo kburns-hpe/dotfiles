@@ -337,3 +337,6 @@ endfunction
 " Disable Tab use with YCM
 let g:ycm_key_list_select_completion=['<C-j>', '<Down>']
 let g:ycm_key_list_previous_completion=['<C-k>', '<Up>']
+
+" vim-pad
+let g:pad#dir = "~/Dropbox/nvdata"
