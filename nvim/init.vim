@@ -44,13 +44,13 @@ map <leader>h <C-W>l<C-W>\|
 map <leader>s <C-W>h25<C-W>>
 
 " Copy to X CLIPBOARD
-map <leader>cc :w !xsel -i -b<CR>
-map <leader>cp :w !xsel -i -p<CR>
+map <leader>cc "+y
+map <leader>cp "*y
 map <leader>cs :w !xsel -i -s<CR>
 " Paste from X CLIPBOARD
-map <leader>pp :r!xsel -p<CR>
+map <leader>pp "*p
 map <leader>ps :r!xsel -s<CR>
-map <leader>pb :r!xsel -b<CR>
+map <leader>pb "+p
 
 " Shortcut to delete trailing white space
 nnoremap <Leader>rtw :%s/\s\+$//e<CR>
