@@ -125,6 +125,8 @@ nmap <silent> <leader>e :call ToggleList("Quickfix List", 'c')<CR>
 
 " Install Plugins
 call plug#begin('~/.config/nvim/plugged')
+" ctrlp - fuzzy file searching
+Plug 'ctrlpvim/ctrlp.vim'
 " fugitive - git plugin
 Plug 'tpope/vim-fugitive'
 " Lightline - configurable statusline/tabline
@@ -185,10 +187,9 @@ nmap <silent> <leader>v :TestVisit<CR>
 
 let test#strategy = "neovim"
 
-" fzf
-set rtp+=~/git/thirdparty/fzf
-map <leader>fzz :FZF<CR>
-map <leader>fzh :FZF ~<CR>
+" ctrlp
+let g:ctrlp_user_command = ['.git/', 'cd %s && git ls-files -oc --exclude-standard']
+let g:ctrlp_working_path_mode = 'ra'
 
 " lightline
 let g:lightline = {
