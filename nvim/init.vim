@@ -271,6 +271,7 @@ nmap <leader>gc :Gcommit -S<cr>
 nmap <leader>gd :Gdiff<cr>
 nmap <leader>ge :Gedit<cr>
 nmap <leader>gl :Glog<cr>
+nmap <leader>gp :Gpush<cr>
 nmap <leader>gs :Gstatus<cr>
 
 " easymotion
