@@ -48,8 +48,8 @@ map <leader>cc "+y
 map <leader>cp "*y
 map <leader>cs :w !xsel -i -s<CR>
 " Delete to X CLIPBOARD
-map <leader>dc "+d
-map <leader>dp "*d
+vmap <leader>dc "+d
+vmap <leader>dp "*d
 " Paste from X CLIPBOARD
 map <leader>pp "*p
 map <leader>ps :r!xsel -s<CR>
