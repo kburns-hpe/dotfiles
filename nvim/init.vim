@@ -47,10 +47,15 @@ map <leader>s <C-W>h25<C-W>>
 map <leader>cc "+y
 map <leader>cp "*y
 map <leader>cs :w !xsel -i -s<CR>
+" Delete to X CLIPBOARD
+map <leader>dc "+d
+map <leader>dp "*d
 " Paste from X CLIPBOARD
 map <leader>pp "*p
 map <leader>ps :r!xsel -s<CR>
 map <leader>pb "+p
+map <leader>Pp "*P
+map <leader>Pb "+P
 
 " Shortcut to delete trailing white space
 nnoremap <Leader>rtw :%s/\s\+$//e<CR>
@@ -74,13 +79,6 @@ set spellsuggest=5
 " Quickly save file
 nnoremap <Leader>w :w<CR>
 
-" Copy and paste shortcuts
-vmap <Leader>y "+y
-vmap <Leader>d "+d
-nmap <Leader>p "+p
-nmap <Leader>P "+P
-vmap <Leader>p "+p
-vmap <Leader>P "+P
 
 " Automatically jump to the end of a yank or paste.
 vnoremap <silent> y y`]
