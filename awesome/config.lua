@@ -36,6 +36,8 @@ widget.battery = "BAT0"
 battype = "current_now"
 -- Set to your distro to display number of packages that need updating
 widget.distro = "Arch"
+-- Set this to an array of mailbox directories
+widget.mailbox = { '/home/user/email1/Inbox', '/home/user/email2/Inbox' }
 
 -- Modifier keys
 modkey 		= "Mod4"

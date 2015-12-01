@@ -62,6 +62,12 @@ end
 
 doingwidgettimer:start()
 
+-- mailbox widget
+mymailicon = wibox.widget.imagebox()
+mymailicon:set_image(images .. "mail.png")
+
+local mailwidget = wibox.widget.textbox()
+vicious.register(mailwidget, vicious.widgets.mdir, "$1", 300, widget.mailbox)
 
 -- File System Widget
 myfsicon = wibox.widget.imagebox()
@@ -302,6 +308,8 @@ for s = 1, screen.count() do
   end
   right_layout:add(doingicon)
   right_layout:add(doingwidget)
+  right_layout:add(mymailicon)
+  right_layout:add(mailwidget)
 --  right_layout:add(updateicon)
 --  right_layout:add(updatewidget)
   right_layout:add(mycpuloadicon)
