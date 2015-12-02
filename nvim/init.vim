@@ -12,6 +12,7 @@ set wrap " Autowrap lines that hit end of screen
 set tabstop=4 " Set a tab to be 4 spaces in width
 set shiftwidth=4 " Sets how many spaces to move line when using <<, >>
 set expandtab " Use spaces instead of a tab
+set mouse= " Disable mouse support
 syntax on " enable syntax highlighting
 filetype plugin indent on " Enable indent based on filetype
 
@@ -60,6 +61,7 @@ set pastetoggle=<F2>
 
 " This lets escape clear the search highlights
 map <F4> :noh<CR>:<backspace>
+imap <F4> <esc>:noh<CR>:<backspace>a
 
 " Toggle showing invisible characters
 noremap <F8> :set list!<CR>
@@ -69,7 +71,8 @@ cnoremap <F8> <C-c>:set list!<CR>
 " setup spell checking
 set spelllang=en
 set spellsuggest=5
-:map <F7> :setlocal spell!<CR
+map <F7> :setlocal spell!<CR>
+imap <F7> <esc>:setlocal spell!<CR>a
 
 " Quickly save file
 nnoremap <Leader>w :w<CR>
@@ -179,6 +182,7 @@ call plug#end()
 " Neomake
 autocmd! BufWritePost * Neomake
 nnoremap <F11> :Neomake <CR>
+inoremap <F11> <esc>:Neomake <CR>a
 
 " vim-test
 nmap <silent> <leader>t :TestNearest<CR>
@@ -260,7 +264,7 @@ nnoremap <F6> :GundoToggle<CR>
 
 " UltiSnips
 let g:UltiSnipsEditSplit="horizontal"
-let g:UltiSnipsExpandTrigger="<tab>"
+let g:UltiSnipsExpandTrigger="<c-j>"
 let g:UltiSnipsJumpForwardTrigger="<c-b>"
 let g:UltiSnipsJumpBackwardTrigger="<c-z>"
 
@@ -325,18 +329,15 @@ let g:ycm_filetype_whitelist = { '*': 1 }
 let g:ycm_key_invoke_completion = '<C-l>'
 let g:ycm_min_num_of_chars_for_completion = 5
 
-nnoremap <F10> :call ToggleYCM()<cr>
 function! ToggleYCM()
-    if &g:ycm_min_num_of_chars_for_completion > 50
-        let g:ycm_min_num_of_chars_for_completion = 5
+    if g:ycm_auto_trigger == 1
+        let g:ycm_auto_trigger = 0
     else
-        let g:ycm_min_num_of_chars_for_completion = 99
+        let g:ycm_auto_trigger = 1
     endif
 endfunction
-
-" Disable Tab use with YCM
-let g:ycm_key_list_select_completion=['<C-j>', '<Down>']
-let g:ycm_key_list_previous_completion=['<C-k>', '<Up>']
+nnoremap <F10> :call ToggleYCM()<cr>
+inoremap <F10> <esc>:call ToggleYCM()<cr>a
 
 " vim-pad
 let g:pad#dir = "~/Dropbox/nvdata"
