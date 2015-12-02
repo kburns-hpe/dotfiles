@@ -66,7 +66,7 @@ set pastetoggle=<F2>
 
 " This lets escape clear the search highlights
 map <F4> :noh<CR>:<backspace>
-imap <F4> <esc>:noh<CR>:<backspace>a
+imap <F4> <C-o>:noh<CR><C-o>:<backspace>
 
 " Toggle showing invisible characters
 noremap <F8> :set list!<CR>
@@ -77,7 +77,7 @@ cnoremap <F8> <C-c>:set list!<CR>
 set spelllang=en
 set spellsuggest=5
 map <F7> :setlocal spell!<CR>
-imap <F7> <esc>:setlocal spell!<CR>a
+imap <F7> <C-o>:setlocal spell!<CR>
 
 " Quickly save file
 nnoremap <Leader>w :w<CR>
@@ -180,7 +180,7 @@ call plug#end()
 " Neomake
 autocmd! BufWritePost * Neomake
 nnoremap <F11> :Neomake <CR>
-inoremap <F11> <esc>:Neomake <CR>a
+inoremap <F11> <C-o>:Neomake <CR>
 
 " vim-test
 nmap <silent> <leader>t :TestNearest<CR>
@@ -335,7 +335,7 @@ function! ToggleYCM()
     endif
 endfunction
 nnoremap <F10> :call ToggleYCM()<cr>
-inoremap <F10> <esc>:call ToggleYCM()<cr>a
+inoremap <F10> <C-o>:call ToggleYCM()<cr>
 
 " vim-pad
 let g:pad#dir = "~/Dropbox/nvdata"
