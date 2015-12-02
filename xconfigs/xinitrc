@@ -17,7 +17,7 @@ export PATH="$HOME/bin:$PATH"
 #fi
 
 # Start recoll
-#/usr/share/recoll/examples/rclmon.sh start
+/usr/share/recoll/examples/rclmon.sh start
 
 # Start Programs
 anamnesis --start &
