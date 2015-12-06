@@ -50,15 +50,15 @@ globalkeys = awful.util.table.join(
   awful.key({ hyper, }, "a", function () awful.util.spawn("pavucontrol")  end),
   awful.key({ modkey, }, "a", function () awful.util.spawn("anamnesis -b")  end),
   awful.key({ hyper, }, "b", function () awful.util.spawn(browser)  end),
-  awful.key({ hyper, }, "n", function () awful.util.spawn("urxvt -name nvim -e nvim")  end),
-  awful.key({ hyper, }, "s", function () awful.util.spawn("urxvt -name social -e social")  end),
+  awful.key({ hyper, }, "n", function () awful.util.spawn("termite -name nvim -e nvim")  end),
+  awful.key({ hyper, }, "s", function () awful.util.spawn("termite -name social -e social")  end),
   awful.key({ hyper, }, "v", function () awful.util.spawn("vmware")  end),
   awful.key({ hyper, }, "F12", function () awful.util.spawn("systemctl poweroff")  end),
   awful.key({ }, "Print", function () awful.util.spawn("scrot -s -e 'mv $f ~/pictures/screenshots/ 2>/dev/null'") end),
 
   -- Standard program
   awful.key({ modkey,           }, "Return", function () awful.util.spawn(terminal) end),
-  awful.key({ hyper,            }, "Return", function () awful.util.spawn("urxvt") end),
+  awful.key({ hyper,            }, "Return", function () awful.util.spawn("termite") end),
   awful.key({ modkey, "Control" }, "r", awesome.restart),
   awful.key({ modkey, "Shift"   }, "q", awesome.quit),
 

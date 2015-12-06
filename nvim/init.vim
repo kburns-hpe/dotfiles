@@ -20,12 +20,6 @@ filetype plugin indent on " Enable indent based on filetype
 " Disable autocomplete of comments on new lines
 autocmd FileType * setlocal formatoptions-=r formatoptions-=o
 
-
-" Color theme
-set t_Co=256 " sets supported colors
-set background=dark
-colorscheme cobalt
-
 " Setup backups
 set backup
 set backupdir=~/.config/nvim/backup
@@ -144,6 +138,8 @@ nmap <silent> <leader>e :call ToggleList("Quickfix List", 'c')<CR>
 
 " Install Plugins
 call plug#begin('~/.config/nvim/plugged')
+" cobalt2 - color theme
+Plug 'herrbischoff/cobalt2.vim'
 " ctrlp - fuzzy file searching
 Plug 'ctrlpvim/ctrlp.vim'
 " fugitive - git plugin
@@ -199,6 +195,9 @@ Plug 'fmoralesc/vim-pad'
 call plug#end()
 
 " Plugin Specific Configurations
+
+" cobalt2
+colorscheme cobalt2
 
 
 " Neomake
