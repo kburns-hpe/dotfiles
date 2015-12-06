@@ -52,3 +52,6 @@ alias cp="cp -i --reflink=auto"
 # Use nvim instead of vim
 alias vim="nvim"
 alias vi="nvim"
+
+# Enable true color support for neovim
+export NVIM_TUI_ENABLE_TRUE_COLOR=1
