@@ -38,21 +38,37 @@ background = #193549
 highlight = #0050a4
 
 # colors from color0 to color254 can be set
+# Black
 color0 = #000000
-color1 = #ff0900
-color2 = #38de21
-color3 = #ffdd00
-color4 = #0088ff
-color5 = #ff628c
-color6 = #80ffc2
+# Red
+color1 = #ff9d00
+# Green
+color2 = #3bd01d
+# Yellow
+color3 = #edc809
+# Blue
+color4 = #5555ff
+# Magenta
+color5 = #ff55ff
+# Cyan
+color6 = #6ae3fa
+# White
 color7 = #ffffff
+# Bright Black (Gray)
 color8 = #555555
-color9 = #ff9d00
-color10 = #3bd01d
-color11 = #edc809
-color12 = #5555ff
-color13 = #ff55ff
-color14 = #6ae3fa
+# Bright Red (Orange)
+color9 = #ff0900
+# Bright Green
+color10 = #38de21
+# Bright Yellow
+color11 = #ffdd00
+# Bright Blue
+color12 = #0088ff
+# Bright Magenta
+color13 = #ff628c
+# Bright Cyan
+color14 = #80ffc2
+# Bright White
 color15 = #ffffff
 
 [hints]
