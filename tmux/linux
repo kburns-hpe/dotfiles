@@ -98,8 +98,8 @@ setw -g window-status-current-bg default
 setw -g window-status-current-attr default
 
 # Set window status bar
-setw -g window-status-format "#[fg=colour15]#[bg=colour4] #I #[bg=colour8]#[fg=colour15] #W "
-setw -g window-status-current-format "#[bg=colour8]#[fg=colour15] #I #[fg=colour15]#[bg=colour4] #W "
+setw -g window-status-format "#[fg=colour15]#[bg=colour12] #I #[bg=colour8]#[fg=colour15] #W "
+setw -g window-status-current-format "#[bg=colour8]#[fg=colour15] #I #[fg=colour15]#[bg=colour12] #W "
                                                                    
 # pane border                                                      
 set -g pane-border-fg default
