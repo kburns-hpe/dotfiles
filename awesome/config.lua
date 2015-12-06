@@ -7,7 +7,7 @@ themes = home .. "/.config/awesome/themes/"
 theme = (themes .. "cobalt.lua")
 
 -- Standard Programs
-terminal	= "urxvt -e tmux -2"
+terminal	= "termite -e tmux"
 browser		= "chromium"
 editor		= "vim"
 guieditor	= "subl3"
