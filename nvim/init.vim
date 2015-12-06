@@ -3,7 +3,7 @@ set colorcolumn=80 " Shows where 80 characters is
 set ignorecase smartcase " enable case insensitive searching
 set iskeyword+=_,$,@,%,# " set additioanl keywords for navigation purposes
 set linebreak " only wrap lines at a breakat
-set number " Enables numbered columns
+set relativenumber " Enables relative numbers for column
 set numberwidth=4 " Sets numbered column width
 set ruler " show rule in bottom right (ROW, COL)
 set showmatch " highlight matching brackets
@@ -94,6 +94,21 @@ command SORTIP %!sort -n -t . -k 1,1 -k 2,2 -k 3,3 -k 4,4 | uniq
 " rename window to current file
 autocmd BufReadPost,FileReadPost,BufNewFile * call system("tmux rename-window " . expand("%"))
 
+" Toggle relative line numbers
+function! NumberToggle()
+  if(&relativenumber == 1)
+    set norelativenumber
+    set number
+  else
+    set relativenumber
+    set nonumber
+  endif
+endfunc
+
+nnoremap <F5> :call NumberToggle()<cr>
+inoremap <F5> <C-o>:call NumberToggle()<cr>
+
+" Toggle List windows
 function! GetBufferList()
   redir =>buflist
   silent! ls!
