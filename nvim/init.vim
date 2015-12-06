@@ -185,6 +185,8 @@ Plug 'Valloric/YouCompleteMe', { 'do': 'python2 ./install.py' }
 Plug 'KabbAmine/zeavim.vim'
 " vim-pad - note organizing plugin
 Plug 'fmoralesc/vim-pad'
+" TaskList - searches code for FIXME, TODO, and XXX
+Plug 'vim-scripts/TaskList.vim'
 " vim-markdown - Better markdown syntax highlighting
 "Plug 'tpope/vim-markdown'
 " vim-chef - chef syntax highlighting and autocomplete snipmate
