@@ -186,7 +186,11 @@ Plug 'KabbAmine/zeavim.vim'
 " vim-pad - note organizing plugin
 Plug 'fmoralesc/vim-pad'
 " TaskList - searches code for FIXME, TODO, and XXX
-Plug 'vim-scripts/TaskList.vim'
+"Plug 'vim-scripts/TaskList.vim'
+" ropevim - python refactoring and code assist
+"Plug 'python-rope/ropevim'
+" pydoc - Pydoc searching plugin
+"Plug 'fs111/pydoc.vim'
 " vim-markdown - Better markdown syntax highlighting
 "Plug 'tpope/vim-markdown'
 " vim-chef - chef syntax highlighting and autocomplete snipmate
