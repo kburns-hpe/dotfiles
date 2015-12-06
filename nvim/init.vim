@@ -3,6 +3,7 @@ set colorcolumn=80 " Shows where 80 characters is
 set ignorecase smartcase " enable case insensitive searching
 set iskeyword+=_,$,@,%,# " set additioanl keywords for navigation purposes
 set linebreak " only wrap lines at a breakat
+set number " Enable line number in gutter
 set relativenumber " Enables relative numbers for column
 set numberwidth=4 " Sets numbered column width
 set ruler " show rule in bottom right (ROW, COL)
@@ -102,10 +103,8 @@ autocmd BufReadPost,FileReadPost,BufNewFile * call system("tmux rename-window " 
 function! NumberToggle()
   if(&relativenumber == 1)
     set norelativenumber
-    set number
   else
     set relativenumber
-    set nonumber
   endif
 endfunc
 
