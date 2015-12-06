@@ -16,6 +16,10 @@ set mouse= " Disable mouse support
 syntax on " enable syntax highlighting
 filetype plugin indent on " Enable indent based on filetype
 
+" Disable autocomplete of comments on new lines
+autocmd FileType * setlocal formatoptions-=r formatoptions-=o
+
+
 " Color theme
 set t_Co=256 " sets supported colors
 set background=dark
