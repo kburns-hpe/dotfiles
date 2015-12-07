@@ -21,7 +21,6 @@ nitrogen --restore &
 
 # Start Programs
 anamnesis --start &
-xscreensaver -no-splash &
 start-pulseaudio-x11 & 
 udiskie &
 dropbox &
@@ -29,6 +28,9 @@ unclutter &
 nm-applet &
 blueman-applet &
 autokey-gtk &
+
+# Start Screensaver
+xautolock -time 7 -locker "i3lock -i ~/pictures/wallpaper/misc/lock.png" &
 
 # enable ctrl-alt-backspace
 setxkbmap -option terminate:ctrl_alt_bksp
