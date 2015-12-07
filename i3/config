@@ -61,7 +61,7 @@ bindsym $hyper+a exec pavucontrol
 bindsym $mod+a exec anamnesis -b
 bindsym $hyper+n exec termite --name=nvim -e "notes nv"
 bindsym $hyper+s exec termite --name=social -e social
-bindsym $hyper+F12 exec i3exit shutdown
+bindsym $hyper+F12 exec systemctl poweroff
 bindsym Print exec --no-startup-id scrot -e 'mv $f ~/pictures/screenshots/ 2>/dev/null'
 
 # Use Mouse+$mod to drag floating windows to their wanted position
