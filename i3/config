@@ -21,6 +21,12 @@ set $hyper Mod3
 # chose a FreeType font, such as:
 font pango:DejaVu Sans Mono 8
 
+# Setup gaps
+gaps inner 10
+gaps outer 10
+smart_gaps on
+smart_borders on
+
 #make notifications behave
 for_window [class="Xfce4-notifyd"] floating enable
 for_window [class="Xfce4-notifyd"] border none
