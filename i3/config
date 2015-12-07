@@ -175,6 +175,35 @@ mode "resize" {
     bindsym Return mode "default"
 }
 
+# Assign clients to specific workspaces
+assign [class="Firefox"] 2
+assign [class="chromium"] 2
+assign [class="google-chrome"] 2
+
+assign [class="HipChat"] 3
+assign [class="Pidgin"] 3
+assign [class="social"] 3
+
+assign [class="Zathura"] 4
+assign [class="Zeal"] 4
+assign [class="nvim"] 4
+
+assign [class="010editor"] 5
+assign [class="Hopper"] 5
+assign [class="Ida"] 5
+
+assign [class="Geeqie"] 6
+assign [class="Gimp"] 6
+assign [class="Mplayer"] 6
+assign [class="Steam"] 6
+assign [class="Vlc"] 6
+
+assign [class="Remmina"] 7
+assign [class="Virt-manager"] 7
+assign [class="VirtualBox"] 7
+assign [class="Vmware"] 7
+assign [class="rdesktop"] 7
+assign [class="Wine"] 7
 
 
 # Start i3bar to display a workspace bar (plus the system information i3status
