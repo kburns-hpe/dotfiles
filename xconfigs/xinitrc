@@ -60,5 +60,5 @@ if [[ -h ~/bin/loopmbsync.sh ]]; then
     ~/bin/loopmbsync.sh &
 fi
 
-# Start awesome
-exec awesome
+# Start i3
+exec i3
