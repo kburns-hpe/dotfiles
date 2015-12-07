@@ -16,8 +16,6 @@ export PATH="$HOME/bin:$PATH"
     xrdb -merge ~/.Xresources
 #fi
 
-# Start recoll
-/usr/share/recoll/examples/rclmon.sh start
 
 # Start Programs
 anamnesis --start &
