@@ -182,11 +182,11 @@ assign [class="google-chrome"] 2
 
 assign [class="HipChat"] 3
 assign [class="Pidgin"] 3
-assign [class="social"] 3
+assign [instance="social" class="Termite"] 3
 
 assign [class="Zathura"] 4
 assign [class="Zeal"] 4
-assign [class="nvim"] 4
+assign [instance="nvim" class="Termite"] 4
 
 assign [class="010editor"] 5
 assign [class="Hopper"] 5
