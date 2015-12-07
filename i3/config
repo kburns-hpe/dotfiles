@@ -39,10 +39,10 @@ for_window [title="___"] floating enable
 
 # config colors
 # class                 border  backgr. text    indicator
-client.focused          #193549 #214561 #ffffff #0088ff
-client.focused_inactive #214561 #193549 #a6a6a6 #0088ff
-client.unfocused        #214561 #193549 #a6a6a6 #0088ff
-client.urgent           #193549 #ff0900 #ffffff #0088ff
+client.focused          #214561 #0088ff #ffffff #ff9d00
+client.focused_inactive #214561 #214561 #a6a6a6 #ff9d00
+client.unfocused        #214561 #214561 #a6a6a6 #ff9d00
+client.urgent           #193549 #ff0900 #ffffff #ff9d00
 
 # media keys
 bindsym XF86AudioRaiseVolume exec $HOME/.i3/pacvol.sh up
