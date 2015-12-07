@@ -40,35 +40,35 @@ highlight = #0050a4
 # colors from color0 to color254 can be set
 # Black
 color0 = #000000
-# Red
+# Dark Red
 color1 = #ff9d00
-# Green
+# Dark Green
 color2 = #3bd01d
-# Yellow
+# Dark Yellow
 color3 = #edc809
-# Blue
+# Dark Blue
 color4 = #5555ff
-# Magenta
+# Dark Magenta
 color5 = #ff55ff
-# Cyan
+# Dark Cyan
 color6 = #6ae3fa
-# White
-color7 = #ffffff
-# Bright Black (Gray)
+# Light Grey
+color7 = #cccccc
+# Grey
 color8 = #555555
-# Bright Red (Orange)
+# Red
 color9 = #ff0900
-# Bright Green
+# Green
 color10 = #38de21
-# Bright Yellow
+# Yellow
 color11 = #ffdd00
-# Bright Blue
+# Blue
 color12 = #0088ff
-# Bright Magenta
+# Magenta
 color13 = #ff628c
-# Bright Cyan
+# Cyan
 color14 = #80ffc2
-# Bright White
+# White
 color15 = #ffffff
 
 [hints]
