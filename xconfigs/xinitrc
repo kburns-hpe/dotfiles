@@ -16,6 +16,8 @@ export PATH="$HOME/bin:$PATH"
     xrdb -merge ~/.Xresources
 #fi
 
+# Setup Wallpaper
+nitrogen --restore &
 
 # Start Programs
 anamnesis --start &
