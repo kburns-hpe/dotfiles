@@ -19,7 +19,7 @@ set $hyper Mod3
 # clear in small sizes. However, if you need a lot of unicode glyphs or
 # right-to-left text rendering, you should instead use pango for rendering and
 # chose a FreeType font, such as:
-font pango:DejaVu Sans Mono 8
+font pango:DejaVu Sans Mono, FontAwesome 8
 
 # Setup gaps
 gaps inner 8
@@ -119,29 +119,41 @@ bindsym $mod+space focus mode_toggle
 # Set border size
 for_window [class="^.*"] border pixel 3
 
+# Workspace Names
+set $ws1 "&#xf120;"
+set $ws2 "&#xf268;"
+set $ws3 "&#xf075;"
+set $ws4 "&#xf02d;"
+set $ws5 "&#xf15c;"
+set $ws6 "&#xf03d;"
+set $ws7 "&#xf0c2;"
+set $ws8 "&#xf0e0;"
+set $ws9 "&#xf001;"
+set $ws10 "&#xf17a;"
+
 # switch to workspace
-bindsym $mod+1 workspace 1
-bindsym $mod+2 workspace 2
-bindsym $mod+3 workspace 3
-bindsym $mod+4 workspace 4
-bindsym $mod+5 workspace 5
-bindsym $mod+6 workspace 6
-bindsym $mod+7 workspace 7
-bindsym $mod+8 workspace 8
-bindsym $mod+9 workspace 9
-bindsym $mod+0 workspace 10
+bindsym $mod+1 workspace $ws1
+bindsym $mod+2 workspace $ws2
+bindsym $mod+3 workspace $ws3
+bindsym $mod+4 workspace $ws4
+bindsym $mod+5 workspace $ws5
+bindsym $mod+6 workspace $ws6
+bindsym $mod+7 workspace $ws7
+bindsym $mod+8 workspace $ws8
+bindsym $mod+9 workspace $ws9
+bindsym $mod+0 workspace $ws10
 
 # move focused container to workspace
-bindsym $mod+Shift+1 move container to workspace 1
-bindsym $mod+Shift+2 move container to workspace 2
-bindsym $mod+Shift+3 move container to workspace 3
-bindsym $mod+Shift+4 move container to workspace 4
-bindsym $mod+Shift+5 move container to workspace 5
-bindsym $mod+Shift+6 move container to workspace 6
-bindsym $mod+Shift+7 move container to workspace 7
-bindsym $mod+Shift+8 move container to workspace 8
-bindsym $mod+Shift+9 move container to workspace 9
-bindsym $mod+Shift+0 move container to workspace 10
+bindsym $mod+Shift+1 move container to workspace $ws1
+bindsym $mod+Shift+2 move container to workspace $ws2
+bindsym $mod+Shift+3 move container to workspace $ws3
+bindsym $mod+Shift+4 move container to workspace $ws4
+bindsym $mod+Shift+5 move container to workspace $ws5
+bindsym $mod+Shift+6 move container to workspace $ws6
+bindsym $mod+Shift+7 move container to workspace $ws7
+bindsym $mod+Shift+8 move container to workspace $ws8
+bindsym $mod+Shift+9 move container to workspace $ws9
+bindsym $mod+Shift+0 move container to workspace $ws10
 
 # bind resize
 bindsym $mod+r mode "resize"
@@ -176,34 +188,34 @@ mode "resize" {
 }
 
 # Assign clients to specific workspaces
-assign [class="Firefox"] 2
-assign [class="chromium"] 2
-assign [class="google-chrome"] 2
+assign [class="Firefox"] $ws2
+assign [class="chromium"] $ws2
+assign [class="google-chrome"] $ws2
 
-assign [class="HipChat"] 3
-assign [class="Pidgin"] 3
-assign [instance="social" class="Termite"] 3
+assign [class="HipChat"] $ws3
+assign [class="Pidgin"] $ws3
+assign [instance="social" class="Termite"] $ws3
 
-assign [class="Zathura"] 4
-assign [class="Zeal"] 4
-assign [instance="nvim" class="Termite"] 4
+assign [class="Zathura"] $ws4
+assign [class="Zeal"] $ws4
+assign [instance="nvim" class="Termite"] $ws4
 
-assign [class="010editor"] 5
-assign [class="Hopper"] 5
-assign [class="Ida"] 5
+assign [class="010editor"] $ws5
+assign [class="Hopper"] $ws5
+assign [class="Ida"] $ws5
 
-assign [class="Geeqie"] 6
-assign [class="Gimp"] 6
-assign [class="Mplayer"] 6
-assign [class="Steam"] 6
-assign [class="Vlc"] 6
+assign [class="Geeqie"] $ws6
+assign [class="Gimp"] $ws6
+assign [class="Mplayer"] $ws6
+assign [class="Steam"] $ws6
+assign [class="Vlc"] $ws6
 
-assign [class="Remmina"] 7
-assign [class="Virt-manager"] 7
-assign [class="VirtualBox"] 7
-assign [class="Vmware"] 7
-assign [class="rdesktop"] 7
-assign [class="Wine"] 7
+assign [class="Remmina"] $ws7
+assign [class="Virt-manager"] $ws7
+assign [class="VirtualBox"] $ws7
+assign [class="Vmware"] $ws7
+assign [class="rdesktop"] $ws7
+assign [class="Wine"] $ws7
 
 
 # Start i3bar to display a workspace bar (plus the system information i3status
@@ -215,10 +227,10 @@ bar {
       background #193549
       statusline #FFFFFF
 
-      focused_workspace  #193549 #0088FF #FFFFFF
-      active_workspace   #193549 #FF9D00 #FFFFFF
-      inactive_workspace #193549 #555555 #FFFFFF
-      urgent_workspace   #193549 #ff0900 #FFFFFF
+      focused_workspace  #193549 #193549 #ff9d00
+      active_workspace   #193549 #193549 #0088ff
+      inactive_workspace #193549 #193549 #ffffff
+      urgent_workspace   #193549 #193549 #ff0900
     }
 
 }
