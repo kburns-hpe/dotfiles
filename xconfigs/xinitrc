@@ -30,7 +30,7 @@ blueman-applet &
 autokey-gtk &
 
 # Start Screensaver
-xautolock -time 7 -locker "i3lock -i ~/pictures/wallpaper/misc/lock.png" &
+xautolock -time 7 -locker "i3lock -i ~/pictures/wallpaper/misc/lock.png --textcolor=00000000 --ringcolor=193549ff --insidecolor=005f5fbf --insidewrongcolor=ff0900bf --ringwrongcolor=ff0900ff --insidevercolor=0088ffbf --ringvercolor=0088ffff --keyhlcolor=38de21ff --bshlcolor=ff9d00ff" &
 
 # enable ctrl-alt-backspace
 setxkbmap -option terminate:ctrl_alt_bksp
