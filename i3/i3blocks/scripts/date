@@ -1,4 +1,4 @@
 #!/bin/sh
 
 date="$(date +%l:%M)"
-echo "<span foreground='#0088FF'> </span><span foreground='#ffffff'>$date</span>"
+echo "<span foreground='#0088FF'> </span><span foreground='#bbbbbb'>$date</span>"

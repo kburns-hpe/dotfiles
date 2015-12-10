@@ -56,10 +56,12 @@ END {
 		label = ""
 
 
-	colorstart = "<span foreground='\'#0088FF\''>"
+	blue = "<span foreground='\'#0088ff\''>"
+	gray = "<span foreground='\'#bbbbbb\''>"
     colorend = "</span>"
+
     # full text & "$@" > /dev/null;
-    print colorstart label colorend " " percentage
+    print blue label colorend " " gray percentage colorend
 
 	# short text
 	#print colorstart label colorend " " percentage
