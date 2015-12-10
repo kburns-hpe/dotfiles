@@ -1,0 +1,7 @@
+#!/bin/bash
+
+cpuusage="$(mpstat | tail -n1 | awk '{printf "%.1f%%", $4}')"
+zone="thermal_zone10"
+temp="$(awk '{printf "%2dC", $1/1000}' /sys/class/thermal/$zone/temp)"
+
+echo "<span foreground='#0088ff'>  </span><span foreground='#bbbbbb'>$cpuusage ($temp)</span>"
