@@ -1,0 +1,7 @@
+#!/bin/bash
+
+doinglast=$(doing last | head -n1)
+
+if echo "$doinglast" | grep -qv '@done'; then
+    echo "<span foreground='#0088ff'> </span><span foreground='#bbbbbb'>$doinglast</span>"
+fi
