@@ -61,10 +61,7 @@ END {
     colorend = "</span>"
 
     # full text & "$@" > /dev/null;
-    print blue label colorend " " gray percentage colorend
-
-	# short text
-	#print colorstart label colorend " " percentage
+    print blue label colorend " " gray remaining_time " (" percentage ")" colorend
 
 	# color
 	gsub(/%$/,"",percentage)
@@ -72,12 +69,3 @@ END {
 		print "#ff0900"
 }
 '
-#------------------------------------------------------------------------
-
-case $BLOCK_BUTTON in
-  3) dpmstoggle ;; # left click, control DPMS 
-  2) togglered ;;  # right click, redshift on/off
-  1) getacpi "$@" &>/dev/null ;; # yad dialog with battery info
-  5) xbacklight -inc 10 ;; # scroll up, increase brightness
-  4) xbacklight -dec 10 ;; # scroll down, decrease brightness
-esac
