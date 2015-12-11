@@ -63,7 +63,7 @@ fi
 tx_kib=$(( $tx_rate >> 10 ))
 if [[ "$tx_rate" -gt 1048576 ]]; then
     tx_mbs=$(printf '%s' "`echo "scale=1; $tx_kib / 1024" | bc`")
-  echo -n "<span font='10' foreground='#38de21'> </span><span foreground='#bbbbbb'>${tx_mbs}</span><span font='8' foreground='#8c9aa4'>M</span><span foreground='#0088ff' >]</span>"
+  echo -n "<span font='10' foreground='#38de21'> </span><span foreground='#bbbbbb'>${tx_mbs}</span><span font='8' foreground='#8c9aa4'>M</span><span foreground='#8c9aa4' >]</span>"
 else
-  echo -n "<span font='10' foreground='#38de21'> </span><span foreground='#bbbbbb'>${tx_kib}</span><span font='8' foreground='#8c9aa4'>K</span><span foreground='#0088ff' >]</span>"
+  echo -n "<span font='10' foreground='#38de21'> </span><span foreground='#bbbbbb'>${tx_kib}</span><span font='8' foreground='#8c9aa4'>K</span><span foreground='#8c9aa4' >]</span>"
 fi
