@@ -29,6 +29,7 @@ for_window [title="___"] floating enable
 # Set specific windows as floating
 for_window [title="CSSH"] floating enable
 for_window [class="Pavucontrol"] floating enable
+for_window [class="Autokey-gtk"] floating enable
 
 # config colors
 # class                 border  backgr. text    indicator
