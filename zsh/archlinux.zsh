@@ -12,22 +12,15 @@ export PATH="/home/kburns/.chefdk/gem/ruby/2.1.0/bin:$PATH"
 export SSH_ASKPASS="/usr/bin/qt4-ssh-askpass"
 
 # Arch PKG Management
-alias pacsyu="sudo snp pacman -Syu"
-alias pacsy="sudo pacman -Sy"
-alias pacr="sudo pacman -Rs"
 alias pac="sudo pacman -S"
-alias pacs="pacman -Ss"
-alias pacq="pacman -Q"
-alias pacu="sudo pacman -U"
-
 alias paca="pacaur -S"
 alias pacas="pacaur -Ss"
-#alias pacau="pacaur -Su"
-
-#alias yaos="yaourt -Ss"
-#alias yao="yaourt -S"
-#alias yaosyu="yaourt -Su"
-#alias yaor="yaourt -R"
+alias pacq="pacman -Q"
+alias pacr="sudo pacman -Rs"
+alias pacs="pacman -Ss"
+alias pacsy="sudo pacman -Sy"
+alias pacsyu="sudo snp pacman -Syu"
+alias pacu="sudo pacman -U"
 
 # Highlight a specific search and pipe it through less
 alias hl='ack --color --pager="most"'
