@@ -1,0 +1,9 @@
+#!/bin/bash
+
+mboxpath=~/.mail
+
+count="$(for i in ${mboxpath}/*/Inbox/new; do ls "$i"; done | wc -l)"
+
+if [[ "$count" ]]; then
+    echo "<span foreground='#0088ff'> </span><span foreground='#bbbbbb'>$count</span>"
+fi
