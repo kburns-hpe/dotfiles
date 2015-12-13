@@ -45,9 +45,9 @@ client.unfocused        #214561 #214561 #a6a6a6 #ff9d00
 client.urgent           #193549 #ff0900 #ffffff #ff9d00
 
 # media keys
-bindsym XF86AudioRaiseVolume exec $HOME/.i3/pacvol.sh up
-bindsym XF86AudioLowerVolume exec $HOME/.i3/pacvol.sh down
-bindsym XF86AudioMute exec $HOME/i3/pacvol.sh toggle
+bindsym XF86AudioRaiseVolume exec ~/.config/i3/pacvol.sh up
+bindsym XF86AudioLowerVolume exec ~/.config/i3/pacvol.sh down
+bindsym XF86AudioMute exec ~/.config/i3/pacvol.sh toggle
 bindsym XF86MonBrightnessUp exec xbacklight -inc 10
 bindsym XF86MonBrightnessDown exec xbacklight -dec 10
 
