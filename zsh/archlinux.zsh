@@ -46,5 +46,8 @@ alias cp="cp -i --reflink=auto"
 alias vim="nvim"
 alias vi="nvim"
 
+# Other aliases
+alias open="xdg-open"
+
 # Enable true color support for neovim
 export NVIM_TUI_ENABLE_TRUE_COLOR=1
