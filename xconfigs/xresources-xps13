@@ -7,7 +7,9 @@ Xft.lcdfilter:  lcddefault
 Xft.rgba:       rgb
 
 rofi.color-enabled: true
-rofi.color-window: #000000, #0088ff, #454545
+rofi.fg: #ffffff
+rofi.bg: #193549
+rofi.color-window: #193549, #0088ff, #454545
 rofi.color-normal: #193549, #ffffff, #193549, #214561, #fffff0
 rofi.color-active: #193549, #0088ff, #193549, #214561, #0088ff
 rofi.color-urgent: #193549, #ff0900, #193549, #268bd2, #ff0900
