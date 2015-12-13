@@ -37,6 +37,9 @@ for_window [window_role="plugin_ui"] floating enable
 for_window [title="Menu Update"] floating enable
 for_window [title="___"] floating enable
 
+# Set specific windows as floating
+for_window [title="CSSH"] floating enable
+
 # config colors
 # class                 border  backgr. text    indicator
 client.focused          #214561 #0088ff #ffffff #ff9d00
