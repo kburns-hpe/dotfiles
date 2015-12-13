@@ -1,0 +1,6 @@
+#!/bin/bash
+
+# This script checks to see if tun0 interface exists and is up
+if /usr/bin/ifconfig | grep -q "tun0"; then
+    echo "<span foreground='#ff0900'>[VPN]</span>"
+fi
