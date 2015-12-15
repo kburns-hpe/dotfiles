@@ -349,6 +349,7 @@ let g:ycm_goto_buffer_command = 'same-buffer' "[ 'same-buffer', 'horizontal-spli
 let g:ycm_filetype_whitelist = { '*': 1 }
 let g:ycm_key_invoke_completion = '<C-l>'
 let g:ycm_min_num_of_chars_for_completion = 5
+let g:ycm_autoclose_preview_window_after_completion = 1
 
 function! ToggleYCM()
     if g:ycm_auto_trigger == 1
