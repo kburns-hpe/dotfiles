@@ -44,7 +44,7 @@ map <leader>h <C-W>l<C-W>\|
 map <leader>s <C-W>h25<C-W>>
 
 " Copy to X CLIPBOARD
-map <leader>cc "+y
+map <leader>cb "+y
 map <leader>cp "*y
 map <leader>cs :w !xsel -i -s<CR>
 " Delete to X CLIPBOARD
