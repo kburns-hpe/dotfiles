@@ -51,6 +51,7 @@ alias open="xdg-open"
 alias xqf="xdg-mime query filetype"
 alias xqd="xdg-mime query default"
 alias xd="xdg-mime default"
+alias k="kitchen"
 
 # Enable true color support for neovim
 export NVIM_TUI_ENABLE_TRUE_COLOR=1
