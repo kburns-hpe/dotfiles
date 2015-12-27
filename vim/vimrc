@@ -178,6 +178,9 @@ imap <down> <nop>
 imap <left> <nop>
 imap <right> <nop>
 
+" This is used to delete - in an auto continued list
+imap <S-Tab> <C-o><Del>
+
 " Treat .md files as markdown
 au BufRead,BufNewFile *.md set filetype=markdown textwidth=80
 
