@@ -37,7 +37,7 @@ xautolock -time 7 -locker "i3lock -i ~/pictures/wallpaper/misc/lock.png --textco
 setxkbmap -option terminate:ctrl_alt_bksp
 # Setup keyboard
 xmodmap ~/.Xmodmap
-xcape -e 'Control_R=Escape'
+xcape -e 'Control_R=Escape;Super_R=Tab'
 
 # Setup ssh-agent for all connections
 eval $(ssh-agent)
