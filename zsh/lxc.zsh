@@ -1,7 +1,7 @@
 #!/usr/bin/zsh
 
 # Fix keyboard after lxc starts
-alias fixkb="setxkbmap -option terminate:ctrl_alt_bksp; xmodmap ~/.Xmodmap; xcape -e 'Control_R=Escape'"
+alias fixkb="setxkbmap -option terminate:ctrl_alt_bksp; xmodmap ~/.Xmodmap; xcape -e 'Control_R=Escape;Super_R=Tab'"
 
 funciton lxcs () {
     sudo lxc-start -n $1 -d
