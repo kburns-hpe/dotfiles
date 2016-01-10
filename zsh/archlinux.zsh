@@ -5,8 +5,7 @@ export BROWSER=chromium
 export EDITOR=nvim
 
 # Set Path
-export PATH="$HOME/.gem/ruby/2.2.0/bin:$HOME/bin:$PATH"
-export PATH="/home/kburns/.chefdk/gem/ruby/2.1.0/bin:$PATH"
+export PATH="$HOME/.gem/ruby/2.3.0/bin:$HOME/bin:$PATH"
 
 # Use qt4-ssh-askpass for ssh ask dialog
 export SSH_ASKPASS="/usr/bin/qt4-ssh-askpass"
