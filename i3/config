@@ -212,6 +212,7 @@ assign [class="Remmina"] $ws7
 assign [class="Virt-manager"] $ws7
 assign [class="VirtualBox"] $ws7
 assign [class="Vmware"] $ws7
+assign [class="Vmplayer"] $ws7
 assign [class="rdesktop"] $ws7
 assign [class="Wine"] $ws7
 
