@@ -4,7 +4,7 @@ host="$1"
 confdir="$PWD/zsh"
 
 # Common configurations to all installs
-zshconfs="01-zsh-syntax-highlighting.zsh alias autocomplete bd bindkeys functions git git-prompt history misc prompt zsh-history-substring-search"
+zshconfs="01-zsh-syntax-highlighting alias autocomplete bd bindkeys functions git git-prompt history misc prompt zsh-history-substring-search"
 
 # Cygwin
 if [ "$host" = "cygwin" ]; then
@@ -16,7 +16,7 @@ elif [ "$host" = "osx" ]; then
 
 # Arch Linux
 elif [ "$host" = "archlinux" ]; then
-    zshconfs="$zshconfs archlinux anamnesis doing fasd lxc pinboard task"
+    zshconfs="$zshconfs archlinux anamnesis doing fasd lxc pinboard task recoll"
 
 # Guest Arch Linux Machine
 elif [ "$host" = "archguest" ]; then
