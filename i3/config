@@ -30,6 +30,7 @@ for_window [title="___"] floating enable
 for_window [title="CSSH"] floating enable
 for_window [class="Pavucontrol"] floating enable
 for_window [class="Blueman-manager"] floating enable
+for_window [class="Anamnesis"] floating enable
 
 # config colors
 # class                 border  backgr. text    indicator
