@@ -16,3 +16,6 @@ setopt extended_glob
 # Enable auto correct for commands
 setopt correct
 set -o noclobber
+
+# Source dircolors
+eval "$(dircolors ~/.dircolors)"
