@@ -14,7 +14,7 @@
 # You should have received a copy of the GNU General Public License
 # along with this program.  If not, see <http://www.gnu.org/licenses/>.
 
-INSTANCE="${1:-BAT0}"
+INSTANCE="${BLOCK_INSTANCE:-BAT0}"
 ALERT_LOW="${2:-11}" # color will turn red under this value (default: 10%)
 UPOWER="/usr/bin/upower"
 
