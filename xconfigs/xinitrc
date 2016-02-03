@@ -16,6 +16,9 @@ export PATH="$HOME/bin:$PATH"
     xrdb -merge ~/.Xresources
 #fi
 
+# blank screen after 10 minutes
+xset s 600 600
+
 # Setup Wallpaper
 nitrogen --restore &
 
