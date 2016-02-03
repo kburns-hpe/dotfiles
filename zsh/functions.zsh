@@ -33,12 +33,12 @@ function ssh() {
     tmux rename-window ${@[-1]}
 
     # run ssh
-    /usr/bin/ssh $*
+    TERM=xterm-256color /usr/bin/ssh $*
 
     # unset variable so new panes don't continue ssh-ing to this server
     tmux setenv -u $session_variable_name
   else
-    /usr/bin/ssh $*
+    TERM=xterm-256color /usr/bin/ssh $*
   fi
 
   # rename title back
@@ -63,12 +63,13 @@ function sshnh() {
     tmux rename-window ${@[-1]}
 
     # run ssh
-    /usr/bin/ssh -o "StrictHostKeyChecking no" -o "UserKnownHostsFile /dev/null" $*
+    TERM=xterm-256color /usr/bin/ssh -o "StrictHostKeyChecking no" -o "UserKnownHostsFile /dev/null" $*
 
     # unset variable so new panes don't continue ssh-ing to this server
+ln -s "$confdir/config/irc.conf" ~/.weechat/irc.conf
     tmux setenv -u $session_variable_name
   else
-    /usr/bin/ssh -o "StrictHostKeyChecking no" -o "UserKnownHostsFile /dev/null" $*
+    TERM=xterm-256color /usr/bin/ssh -o "StrictHostKeyChecking no" -o "UserKnownHostsFile /dev/null" $*
   fi
 
   # rename title back
