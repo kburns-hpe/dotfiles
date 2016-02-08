@@ -1,12 +1,9 @@
 #!/bin/zsh
 function precmd {
 
+    # Truncate the path if it's too long.
     local TERMWIDTH
     (( TERMWIDTH = ${COLUMNS} - 1 ))
-
-
-    ###
-    # Truncate the path if it's too long.
 
     PR_FILLBAR=""
     PR_PWDLEN=""
@@ -21,26 +18,20 @@ function precmd {
     fi
 }
 
-
 setopt extended_glob
 preexec () {
-    if [[ "$TERM" == "screen-256color" ]]; then
+    if [[ "$TERM" == "screen-256color" ]] || [[ "$TERM" == "tmux-256color" ]]; then
 	local CMD=${1[(wr)^(*=*|sudo|-*)]}
 	echo -n "\ek$CMD\e\\"
     fi
 }
 
-
 setprompt () {
-    ###
-    # Need this so the prompt will work.
 
+    # Need this so the prompt will work.
     setopt prompt_subst
 
-
-    ###
     # See if we can use colors.
-
     autoload colors zsh/terminfo
     if [[ "$terminfo[colors]" -ge 8 ]]; then
 	colors
@@ -52,10 +43,7 @@ setprompt () {
     done
     PR_NO_COLOUR="%{$terminfo[sgr0]%}"
 
-
-    ###
     # See if we can use extended characters to look nicer.
-
     typeset -A altchar
     set -A altchar ${(s..)terminfo[acsc]}
     PR_SET_CHARSET="%{$terminfo[enacs]%}"
@@ -67,38 +55,30 @@ setprompt () {
     PR_LRCORNER=${altchar[j]:--}
     PR_URCORNER=${altchar[k]:--}
 
-
-    ###
     # Decide if we need to set titlebar text.
-
     case $TERM in
 	xterm*)
-	    #PR_TITLEBAR=$'%{\e]0;%(!.-=*[ROOT]*=- | .)%n@%m:%~ | ${COLUMNS}x${LINES} | %y\a%}'
-        PR_TITLEBAR=$'%{\e]0;%y (${COLUMNS}x${LINES}\a%}'
+            PR_TITLEBAR=$'%{\e]0;%y (${COLUMNS}x${LINES}\a%}'
 	    ;;
 	screen-256color)
-	     #PR_TITLEBAR=$'%{\e_screen \005 (\005t) | %(!.-=[ROOT]=- | .)%n@%m:%~ | ${COLUMNS}x${LINES} | %y\e\\%}'
-	     #PR_TITLEBAR=$'%{\e_ | %(!.-=[ROOT]=- | .)%n@%m:%~ | ${COLUMNS}x${LINES} | %y\e\\%}'
-         PR_TITLEBAR=$'%{\e_ %y (${COLUMNS}x${LINES})\e\\%}'
-
+            PR_TITLEBAR=$'%{\e_ %y (${COLUMNS}x${LINES})\e\\%}'
+	    ;;
+	tmux-256color)
+            PR_TITLEBAR=$'%{\e_ %y (${COLUMNS}x${LINES})\e\\%}'
 	    ;;
 	*)
 	    PR_TITLEBAR=''
 	    ;;
     esac
 
-
-    ###
     # Decide whether to set a screen title
-    if [[ "$TERM" == "screen-256color" ]]; then
+    if [[ "$TERM" == "screen-256color" ]] || [[ "$TERM" == "tmux-256color" ]]; then
 	PR_STITLE=$'%{\ekzsh\e\\%}'
     else
 	PR_STITLE=''
     fi
 
-    ###
     # Finally, the prompt.
-
     PROMPT='$PR_SET_CHARSET$PR_STITLE${(e)PR_TITLEBAR}\
 $PR_CYAN$PR_SHIFT_IN$PR_ULCORNER$PR_BLUE$PR_HBAR$PR_SHIFT_OUT(\
 $PR_GREEN%(!.%SROOT%s.%n)$PR_GREEN@%m:%l\
