@@ -57,13 +57,14 @@ setw -g mode-keys vi
 setw -g automatic-rename on
 
 # Set terminal to be 256 colors
-set -g default-terminal "tmux-256color" 
+set -g default-terminal "xterm-termite" 
 
 # Up history limit
 set -g history-limit 50000
 
 # Fix pgup/pgdown
 set -g terminal-overrides 'xterm*:smcup@:rmcup@'
+set -ga terminal-overrides ",xterm-termite:Tc"
 
 # remove delay when pressing <esc>
 set -s escape-time 1
