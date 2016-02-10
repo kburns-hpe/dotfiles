@@ -20,7 +20,7 @@ function precmd {
 
 setopt extended_glob
 preexec () {
-    if [[ "$TERM" == "screen-256color" ]] || [[ "$TERM" == "tmux-256color" ]]; then
+    if [[ "$TERM" == "screen-256color" ]] || [[ "$TERM" == "xterm-termite" ]]; then
 	local CMD=${1[(wr)^(*=*|sudo|-*)]}
 	echo -n "\ek$CMD\e\\"
     fi
@@ -63,7 +63,7 @@ setprompt () {
 	screen-256color)
             PR_TITLEBAR=$'%{\e_ %y (${COLUMNS}x${LINES})\e\\%}'
 	    ;;
-	tmux-256color)
+	xterm-termite)
             PR_TITLEBAR=$'%{\e_ %y (${COLUMNS}x${LINES})\e\\%}'
 	    ;;
 	*)
@@ -72,7 +72,7 @@ setprompt () {
     esac
 
     # Decide whether to set a screen title
-    if [[ "$TERM" == "screen-256color" ]] || [[ "$TERM" == "tmux-256color" ]]; then
+    if [[ "$TERM" == "screen-256color" ]] || [[ "$TERM" == "xterm-termite" ]]; then
 	PR_STITLE=$'%{\ekzsh\e\\%}'
     else
 	PR_STITLE=''
