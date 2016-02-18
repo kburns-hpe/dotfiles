@@ -66,7 +66,6 @@ function sshnh() {
     TERM=xterm-256color /usr/bin/ssh -o "StrictHostKeyChecking no" -o "UserKnownHostsFile /dev/null" $*
 
     # unset variable so new panes don't continue ssh-ing to this server
-ln -s "$confdir/config/irc.conf" ~/.weechat/irc.conf
     tmux setenv -u $session_variable_name
   else
     TERM=xterm-256color /usr/bin/ssh -o "StrictHostKeyChecking no" -o "UserKnownHostsFile /dev/null" $*
