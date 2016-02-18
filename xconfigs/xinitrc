@@ -43,6 +43,10 @@ setxkbmap -option terminate:ctrl_alt_bksp
 xmodmap ~/.Xmodmap
 xcape -e 'Control_R=Escape;Super_R=Tab'
 
+# Disable touchpad on Thinkpad
+touchpad=$(xinput | grep "SynPS/2 Synaptics TouchPad" | sed 's/.*id=\([0-9]*\).*/\1/')
+xinput --disable "$touchpad"
+
 # Setup ssh-agent for all connections
 eval $(ssh-agent)
 
