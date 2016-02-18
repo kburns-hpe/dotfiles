@@ -31,6 +31,8 @@ for_window [title="CSSH"] floating enable
 for_window [class="Pavucontrol"] floating enable
 for_window [class="Blueman-manager"] floating enable
 for_window [class="Anamnesis"] floating enable
+for_window [class="Openxenmanager"] floating enable
+for_window [class="Autokey-gtk"] floating enable
 
 # config colors
 # class                 border  backgr. text    indicator
