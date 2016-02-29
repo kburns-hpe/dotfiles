@@ -180,6 +180,8 @@ Plug 'Valloric/YouCompleteMe', { 'do': 'python2 ./install.py' }
 Plug 'KabbAmine/zeavim.vim'
 " vim-pad - note organizing plugin
 Plug 'fmoralesc/vim-pad'
+" ag.vim - Adds ag support to vim
+Plug 'rking/ag.vim'
 " TaskList - searches code for FIXME, TODO, and XXX
 "Plug 'vim-scripts/TaskList.vim'
 " ropevim - python refactoring and code assist
