@@ -304,7 +304,7 @@ nmap <leader>gs :Gstatus<cr>
 " easymotion
 
 " map s to be single character easymotion search
-nmap s <Plug>(easymotion-s)
+nmap s <Plug>(easymotion-s2)
 
 " Setup easy motion line changes
 "map <Leader>l <Plug>(easymotion-lineforward)
