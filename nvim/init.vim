@@ -130,8 +130,8 @@ function! ToggleList(bufname, pfx)
   endif
 endfunction
 
-nmap <silent> <leader>l :call ToggleList("Location List", 'l')<CR>
-nmap <silent> <leader>e :call ToggleList("Quickfix List", 'c')<CR>
+nmap <silent> <leader>wl :call ToggleList("Location List", 'l')<CR>
+nmap <silent> <leader>we :call ToggleList("Quickfix List", 'c')<CR>
 
 " Install Plugins
 call plug#begin('~/.config/nvim/plugged')
