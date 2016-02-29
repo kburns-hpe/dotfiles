@@ -304,8 +304,8 @@ nmap <leader>gs :Gstatus<cr>
 nmap s <Plug>(easymotion-s2)
 
 " Setup easy motion line changes
-"map <Leader>l <Plug>(easymotion-lineforward)
-"map <Leader>h <Plug>(easymotion-linebackward)
+map <Leader>l <Plug>(easymotion-lineforward)
+map <Leader>h <Plug>(easymotion-linebackward)
 map <Leader>j <Plug>(easymotion-j)
 map <Leader>k <Plug>(easymotion-k)
 
