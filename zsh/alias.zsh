@@ -11,6 +11,11 @@ alias vi=vim
 alias viol='vim -c "source ~/.vim/outline.vimrc" $*'
 alias svi="sudoedit" 
 
+# idea aliases
+alias ic='idea create'
+alias is='idea solve'
+alias il='idea list'
+
 # load rarely used zsh functions
 alias loadzftp="autoload -U zfinit && zfinit"
 alias loadtcpopen="autoload -U tcp_open && tcp_open"
