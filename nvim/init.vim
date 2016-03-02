@@ -364,3 +364,7 @@ inoremap <F10> <C-o>:call ToggleYCM()<cr>
 
 " vim-pad
 let g:pad#dir = "~/Dropbox/nvdata"
+
+" vim-jekyll
+
+let g:jekyll_post_extension = '.md'
