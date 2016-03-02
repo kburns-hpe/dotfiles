@@ -179,6 +179,8 @@ Plug 'KabbAmine/zeavim.vim'
 Plug 'fmoralesc/vim-pad'
 " ag.vim - Adds ag support to vim
 Plug 'rking/ag.vim'
+" vim-jekyll - Jekyll management plugin
+Plug 'parkr/vim-jekyll'
 " TaskList - searches code for FIXME, TODO, and XXX
 "Plug 'vim-scripts/TaskList.vim'
 " ropevim - python refactoring and code assist
