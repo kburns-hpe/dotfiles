@@ -18,10 +18,10 @@ alias glf='git log --pretty=format:"%C(yellow)%h%Cred%d\\ %Creset%s%Cblue\\ [%cn
 alias glp="git log -p --decorate"
 alias gm="git merge"
 alias gmv="git mv"
-alias gp='git push -u origin master'
-alias gpb='git push -u origin'
+alias gp='git push'
+alias gpb='git push origin'
 alias gpu='git pull'
-alias gpub='git pull -u origin'
+alias gpub='git pull origin'
 alias gr="git rm"
 alias grb="git rebase"
 alias grh="git reset HEAD"
