@@ -5,7 +5,7 @@ set :warning_color, 'red,bold' # warning color for tmux is red/bold
 set :break_color, 'blue'       # break color is blue
 set :interval, 1               # refresh timer every 1 second
 set :tmux, true                # turn on tmux integration
-set :tmux_theme, "#[fg=mycolor,bg=mycolor]#[fg=%s]%s#[fg=mycolor,bg=mycolor]"
+set :tmux_theme, "#[fg=colour15#[fg=%s]%s"
 
 # adds `-t --today` option, which opens a text file in vim
 option :t, :today, 'open today sheet' do
