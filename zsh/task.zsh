@@ -15,17 +15,21 @@ alias tod="task overdue"
 
 function td {
         task $1 done
+        task sync
 }
 
 function tlater {
         task $1 modify +later
+        task sync
 }
 function tdel {
         task $1 delete
+        task sync
 }
 
 function tap {
         task add project:$*
+        task sync
 }
 
 function tlp {
@@ -36,6 +40,7 @@ function tm {
         tasknum=$1
         shift
         task $tasknum modify $*
+        task sync
 }
 
 function ts {
