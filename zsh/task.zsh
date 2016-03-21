@@ -33,7 +33,7 @@ function tap {
 }
 
 function tlp {
-        task list project:$*
+        task ls project:$*
 }
 
 function tm {
