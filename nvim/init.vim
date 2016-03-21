@@ -181,6 +181,10 @@ Plug 'fmoralesc/vim-pad'
 Plug 'rking/ag.vim'
 " vim-jekyll - Jekyll management plugin
 Plug 'parkr/vim-jekyll'
+" vim-multiple-cursors - multiple cursors
+Plug 'terryma/vim-multiple-cursors/'
+" vim-bufferline - lists buffers
+Plug 'bling/vim-bufferline'
 " TaskList - searches code for FIXME, TODO, and XXX
 "Plug 'vim-scripts/TaskList.vim'
 " ropevim - python refactoring and code assist
