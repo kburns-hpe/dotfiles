@@ -228,14 +228,14 @@ let g:lightline = {
       \ 'colorscheme': 'jellybeans',
       \ 'active': {
       \   'left': [ [ 'mode', 'paste' ],
-      \             [ 'fugitive'],[ 'filename' ] ]
+      \             [ 'fugitive'],[ 'bufferline' ] ]
       \ },
       \ 'component_function': {
       \   'fugitive': 'LLFugitive',
       \   'readonly': 'LLReadonly',
       \   'modified': 'LLModified',
-      \   'filename': 'LLFilename',
-      \   'mode': 'LLMode'
+      \   'mode': 'LLMode',
+      \   'bufferline': 'MyBufferLine'
       \ }
       \ }
 
@@ -277,11 +277,11 @@ function! LLFugitive()
   return exists('*fugitive#head') ? fugitive#head() : ''
 endfunction
 
-function! LLFilename()
-  return ('' != LLReadonly() ? LLReadonly() . ' ' : '') .
-       \ ('' != expand('%:t') ? expand('%:t') : '[No Name]') .
-       \ ('' != LLModified() ? ' ' . LLModified() : '')
+function! MyBufferLine()
+  let st=g:bufferline#refresh_status()
+  return g:bufferline_status_info.before . g:bufferline_status_info.current . g:bufferline_status_info.after
 endfunction
+
 set laststatus=2
 set noshowmode
 
