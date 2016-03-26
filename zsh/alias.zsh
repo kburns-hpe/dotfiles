@@ -28,4 +28,8 @@ alias -g .....="../../../.."
 # ttytter alias for options
 alias ttytter="ttytter -ansi -verify"
 
+# Add output to sprunge
 alias pbin="curl -F 'sprunge=<-' http://sprunge.us | xsel -i -p;xsel -p"
+
+# mplayer - fix pitch when speeding up videos
+alias mp="mplayer -af scaletempo"
