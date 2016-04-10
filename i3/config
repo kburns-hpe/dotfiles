@@ -198,6 +198,7 @@ assign [instance="nvim" class="Termite"] $ws4
 assign [class="010editor"] $ws5
 assign [class="Hopper"] $ws5
 assign [class="Ida"] $ws5
+assign [class="Binary Ninja"] $ws5
 
 assign [class="Geeqie"] $ws6
 assign [class="Gimp"] $ws6
