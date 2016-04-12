@@ -20,7 +20,7 @@ alias glf='git log --pretty=format:"%C(yellow)%h%Cred%d\\ %Creset%s%Cblue\\ [%cn
 alias glp="git log -p --decorate"
 alias gm="git merge"
 alias gmv="git mv"
-alias gp='git push'
+alias gp='git push origin HEAD'
 alias gpb='git push origin'
 alias gpu='git pull'
 alias gpub='git pull origin'
@@ -31,9 +31,9 @@ alias gs="git status -s"
 
 # git functions
 function gacmp () {
-    git commit -S -a -m "$*" && git push -u origin master
+    git commit -S -a -m "$*" && git push origin HEAD
 }
 
 function gcmp () {
-    git commit -S -m "$*" && git push -u origin master
+    git commit -S -m "$*" && git push origin HEAD
 }
