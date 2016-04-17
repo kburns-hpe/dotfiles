@@ -25,5 +25,5 @@ end
 
 # execute hook after each pomodoro
 after do |seconds_left|
-  `notify-send ""Thyme" Break Thyme!` if seconds_left == 0
+  `notify-send "Thyme" Break Thyme!` if seconds_left == 0
 end
