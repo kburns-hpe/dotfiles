@@ -1,0 +1,7 @@
+#!/bin/bash
+
+drivepath="${BLOCK_INSTANCE:-$HOME}"
+freespace=$(df -h $drivepath | tail -n1 | awk '{print $4}')
+echo "<span foreground=\"#0088ff\"> </span><span foreground=\"#bbbbbb\">${freespace}</span>"
+
+
