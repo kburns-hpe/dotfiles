@@ -18,7 +18,7 @@ alias pacq="pacman -Q"
 alias pacr="sudo pacman -Rs"
 alias pacs="pacman -Ss"
 alias pacsy="sudo pacman -Sy"
-alias pacsyu="sudo snp pacman -Syu"
+alias pacsyu="sudo pacman -Syu"
 alias pacu="sudo pacman -U"
 
 # Highlight a specific search and pipe it through less
