@@ -4,6 +4,7 @@ host="$1"
 confdir="$PWD/awesome"
 
 mkdir -p ~/.config/awesome/images 2>/dev/null
+mkdir -p ~/.config/awesome/scripts 2>/dev/null
 mkdir -p ~/.config/awesome/themes 2>/dev/null
 mkdir -p ~/.fonts 2>/dev/null
 
@@ -29,7 +30,11 @@ done
 popd
 
 # Link scripts
-ln -s "$confdir/df.sh" ~/.config/awesome/df.sh
+pushd "$confdir/scripts"
+for file in *.lua; do
+    ln -s "$confdir/themes/$file" ~/.config/awesome/themes/"$file"
+done
+popd
 
 # Link images
 for image in $(cd "$confdir/images"; ls); do
