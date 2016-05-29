@@ -31,6 +31,7 @@ widget.network = "wlp3s0"
 -- Network device used to display wifi 
 widget.wifi = widget.network
 -- Battery used to determine battery life
+-- Set this to dual if BAT0 and BAT1 are both used
 widget.battery = "BAT0"
 -- Use power_now or current_now + voltage_now to determine power usage
 battype = "current_now"
