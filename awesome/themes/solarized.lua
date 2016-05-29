@@ -10,10 +10,11 @@ theme.wallpaper = images .. "wallpaper.png"
 
 
 -- Fonts
-theme.font              = "Meslo LG M 8"
-theme.tooltip_font      = "Meslo LG S 10"
-theme.tasklist_font     = "Meslo LG S 8"
-theme.taglist_font      = "CGF Locust Resistance 8"
+fontsize = 8 + (sizemultiplier * 2)
+theme.font              = "Meslo LG M " .. fontsize
+theme.tooltip_font      = "Meslo LG S " .. (fontsize + 2)
+theme.tasklist_font     = "Meslo LG S " .. fontsize
+theme.taglist_font      = "FontAwesome " .. fontsize
 
 -- Color Definitions
 theme.colors = {}

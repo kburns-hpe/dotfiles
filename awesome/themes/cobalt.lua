@@ -8,12 +8,13 @@ home            = os.getenv("HOME")
 images          = home .. "/.config/awesome/images/"
 theme.wallpaper = images .. "wallpaper.png"
 
+fontsize = 8 + (sizemultiplier * 2)
 
 -- Fonts
-theme.font              = "Meslo LG M 12"
-theme.tooltip_font      = "Meslo LG S 14"
-theme.tasklist_font     = "Meslo LG S 12"
-theme.taglist_font      = "FontAwesome 12"
+theme.font              = "Meslo LG M " .. fontsize
+theme.tooltip_font      = "Meslo LG S " .. (fontsize + 2)
+theme.tasklist_font     = "Meslo LG S " .. fontsize
+theme.taglist_font      = "FontAwesome " .. fontsize
 
 -- Color Definitions
 theme.colors = {}

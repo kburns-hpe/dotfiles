@@ -13,10 +13,17 @@ awful.rules = require("awful.rules")
 gears = require("gears")
 require("eminent")
 
+-- Generate a multipler based on dpi > 96
+-- Every 25% increase in dpi adds 1 to the multipler
+f = assert (io.popen("xrdb -query"))
+xrdb = f:read("*all")
+xftdpi = string.match(xrdb, "Xft.dpi:%s+%d+")
+dpi = string.match(xftdpi, "%d+")
+sizemultiplier = (dpi - 96)/24
+
 -- theme
 beautiful = require("beautiful")
 beautiful.init(theme)
-barheight = 24
 
 -- set wallpaper
 for s = 1, screen.count() do
