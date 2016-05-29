@@ -186,10 +186,23 @@ vpnwidgettimer:start()
 
 -- Battery Widget
 mybaticon = wibox.widget.imagebox()
-mybaticon:set_image(images .. "bat_full_01.png")
-
 local batwidget = wibox.widget.textbox()
-vicious.register(batwidget, vicious.widgets.bat, "$3 ($2%)", 60, widget.battery)
+if (widget.battery == "dual") then
+    fh = assert(io.popen(home .. "/.config/awesome/scripts/dualbattery"))
+    dualbattery = fh:read("*all")
+    batwidget:set_markup(dualbattery)
+    fh:close()
+    batwidgettimer = timer({ timeout = 59 })
+    batwidgettimer:connect_signal("timeout",
+    function()
+        fh = assert(io.popen(home .. "/.config/awesome/scripts/dualbattery"))
+        dualbattery = fh:read("*all")
+        batwidget:set_markup(dualbattery)
+        fh:close()
+    end)
+else
+    mybaticon:set_image(images .. "bat_full_01.png")
+    vicious.register(batwidget, vicious.widgets.bat, "$3 ($2%)", 60, widget.battery)
 
 function shdown()
   sexec("systemctl suspend")
@@ -280,6 +293,7 @@ naughty.notify({
       return "<span font_desc='" .. fontwidget .."'>" .. args[2] .. "%" .. "</span>"
     end
   end, 61, widget.battery)
+end
 
 -- Create bar
 for s = 1, screen.count() do

@@ -1,0 +1,62 @@
+#!/bin/sh
+BAT0="/sys/class/power_supply/BAT0"
+BAT1="/sys/class/power_supply/BAT1"
+
+status0="$(cat ${BAT0}/status)"
+status1="$(cat ${BAT1}/status)"
+
+capacity0=$(cat "${BAT0}/capacity")
+capacity1=$(cat "${BAT1}/capacity")
+capacity=$(((capacity0 + capacity1)/2))
+
+energynow0=$(cat "${BAT0}/energy_now")
+energynow1=$(cat "${BAT1}/energy_now")
+energy=$((energynow0 + energynow1))
+
+powernow0=$(cat "${BAT0}/power_now")
+powernow1=$(cat "${BAT1}/power_now")
+power=$((powernow0 + powernow1))
+
+watts=$(echo "scale=2;$power / 1000000" | bc)
+
+BLUE="<span color='#0088ff'>"
+GRAY="<span color='#bbbbbb'>"
+COLOREND="</span>"
+
+
+if [ "$status0" = "Charging" ] || [ "$status1" = "Charging" ]; then
+    label=""
+
+    fullnow0=$(cat "${BAT0}/energy_full")
+    fullnow1=$(cat "${BAT1}/energy_full")
+    full=$((fullnow0 + fullnow1))
+
+    untilfull=$((full - energy))
+
+    remaining_usage=$(echo "scale=2;${untilfull} / ${power}" | bc)
+
+elif [ "$status0" = "Discharging" ] || [ "$status1" = "Discharging" ]; then
+
+    remaining_usage=$(echo "scale=2;${energy} / ${power}" | bc)
+
+    if [ "$capacity" -ge 90 ]; then
+        label=""
+    elif [ "$capacity" -ge 75 ]; then
+        label=""
+    elif [ "$capacity" -ge 50 ]; then
+        label=""
+    elif [ "$capacity" -ge 25 ]; then
+        label=""
+    elif [ "$capacity" -ge 10 ]; then
+        label=""
+    fi
+else
+    label=""
+    echo "${BLUE}${label}${COLOREND}"
+    exit
+fi
+
+hours=$(echo "${remaining_usage}" | awk '{printf "%d", $1}')
+minutes=$(echo "${remaining_usage}" | awk '{printf "%0.2d", ($1 % 1) * 60}')
+
+echo "${BLUE}${label}${COLOREND} ${GRAY} ${hours}:${minutes} (${capacity}%) [${watts}w]${COLOREND}"
