@@ -18,6 +18,11 @@ mywib = {}
 mypromptbox = {}
 mylayoutbox = {}
 
+-- span shortcuts
+spanblue = "<span foreground='#0088ff'>"
+spangray = "<span foreground='#bbbbbb'>"
+stopspan = "</span>"
+
 -- prompt
 myprompt	= "Run:"
 
@@ -36,8 +41,8 @@ spacer = wibox.widget.textbox()
 spacer:set_text(" ")
 
 -- Doing Widget (http://brettterpstra.com/projects/doing/)
-doingicon = wibox.widget.imagebox()
-doingicon:set_image()
+doingicon = wibox.widget.textbox()
+doingicon:set_text("")
 doingicon_t = awful.tooltip({ objects = { doingicon },})
 doingicon:connect_signal("mouse::enter", function()
   doinginfo = awful.util.pread(home .. "/bin/doing view done | head")
@@ -53,10 +58,10 @@ doingwidgettimer:connect_signal("timeout",
     fh = assert(io.popen(home .. "/bin/doing last", "r"))
     doing = fh:read("*all")
     if string.find(doing, "@done") then
-      doingicon:set_image()
+      doingicon:set_text("")
       doingwidget:set_text("")
     else
-      doingicon:set_image(images .. "info_01.png")
+      doingicon:set_markup(spanblue .. "" .. stopspan)
       doingwidget:set_text(doing)
     end
   fh:close()
@@ -66,15 +71,15 @@ end
 doingwidgettimer:start()
 
 -- mailbox widget
-mymailicon = wibox.widget.imagebox()
-mymailicon:set_image(images .. "mail.png")
+mymailicon = wibox.widget.textbox()
+mymailicon:set_markup(spanblue .. "" .. stopspan)
 
 local mailwidget = wibox.widget.textbox()
 vicious.register(mailwidget, vicious.widgets.mdir, "$1", 300, widget.mailbox)
 
 -- File System Widget
-myfsicon = wibox.widget.imagebox()
-myfsicon:set_image(images .. "diskette.png")
+myfsicon = wibox.widget.textbox()
+myfsicon:set_markup(spanblue .. "" .. stopspan)
 
 myfs_ssd_t = awful.tooltip({ objects = { myfsicon },})
 myfsicon:connect_signal("mouse::enter", function()
@@ -87,15 +92,15 @@ local hdwidget = wibox.widget.textbox()
 vicious.register(hdwidget, vicious.widgets.fs, "${" .. widget.drive .. " avail_gb}", 60)
 
 -- CPU Widget
-mycpuloadicon = wibox.widget.imagebox()
-mycpuloadicon:set_image(images .. "cpu.png")	
+mycpuloadicon = wibox.widget.textbox()
+mycpuloadicon:set_markup(spanblue .. "" .. stopspan)
 
 local cpuwidget = wibox.widget.textbox()
 vicious.register(cpuwidget, vicious.widgets.cpu, "$1%")
 
 -- RAM Widget
-myramloadicon = wibox.widget.imagebox()
-myramloadicon:set_image(images .. "ram.png") 
+myramloadicon = wibox.widget.textbox()
+myramloadicon:set_markup(spanblue .. "" .. stopspan)
 
 local memwidget = wibox.widget.textbox()
 vicious.register(memwidget, vicious.widgets.mem, "$1%", 13)        
@@ -105,14 +110,14 @@ local thermalwidget = wibox.widget.textbox()
 vicious.register(thermalwidget, vicious.widgets.thermal, " ($1C)", 11, widget.thermalzone)
 
 -- Clock Widget
-mycalicon = wibox.widget.imagebox()
-mycalicon:set_image(images .. "clock.png")
+mycalicon = wibox.widget.textbox()
+mycalicon:set_markup(spanblue .. "" .. stopspan)
 mytextclock = awful.widget.textclock(widget.clock)
 mytextclock.width = space
 
 -- Volume Widget
-myvolicon = wibox.widget.imagebox()
-myvolicon:set_image(images .. "spkr_01.png")
+myvolicon = wibox.widget.textbox()
+myvolicon:set_markup(spanblue .. "" .. stopspan)
 myvolicon:buttons(awful.util.table.join(
 awful.button({ }, 1, function () sexec("pavucontrol", false) end)))
 
@@ -121,10 +126,10 @@ myvol.width = space
 vicious.register(myvol, vicious.widgets.volume,
 function (widget, args)
 	if ((args[1] < 1) or (args[2] == "♩")) then
-		myvolicon:set_image(images .. "spkr_02.png")
+        myvolicon:set_markup(spanblue .. "" .. stopspan)
 		return "mute"
 	else
-		myvolicon:set_image(images .. "spkr_01.png")
+        myvolicon:set_markup(spanblue .. "" .. stopspan)
 		return args[1] .. "%" 
 	end
 end, 2, widget.volume)
@@ -142,8 +147,8 @@ local netdownwidget = wibox.widget.textbox()
 vicious.register(netdownwidget, vicious.widgets.net, "${" .. widget.network .. " down_kb} ", 5)
 
 -- Wifi Widget
-mywifiicon = wibox.widget.imagebox()
-mywifiicon:set_image(images .. "wifi_03.png")
+mywifiicon = wibox.widget.textbox()
+mywifiicon:set_markup(spanblue .. "" .. stopspan)
 
 local wifiwidget = wibox.widget.textbox()
 vicious.register(wifiwidget, vicious.widgets.wifi, " ${ssid} (${linp}%)", 5, widget.wifi)
