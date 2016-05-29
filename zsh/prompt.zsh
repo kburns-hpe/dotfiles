@@ -58,7 +58,7 @@ setprompt () {
     # Decide if we need to set titlebar text.
     case $TERM in
 	xterm*)
-            PR_TITLEBAR=$'%{\e]0;%y (${COLUMNS}x${LINES}\a%}'
+        PR_TITLEBAR=$'%{\e]0;%y (${COLUMNS}x${LINES})\a%}'
 	    ;;
 	screen-256color)
             PR_TITLEBAR=$'%{\e_ %y (${COLUMNS}x${LINES})\e\\%}'
