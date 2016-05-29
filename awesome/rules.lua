@@ -16,6 +16,10 @@ awful.rules.rules = {
     properties = {floating = true , maximized_vertical = false, maximized_horizontal = false} },
   { rule = { class = "Anamnesis" }, 
     properties = {floating = true , maximized_vertical = false, maximized_horizontal = false} },
+  { rule = { class = "Blueman-manager" }, 
+    properties = {floating = true , maximized_vertical = false, maximized_horizontal = false} },
+  { rule = { class = "Pavucontrol" }, 
+    properties = {floating = true , maximized_vertical = false, maximized_horizontal = false} },
   { rule = { class = "Autokey-gtk" }, 
     properties = {floating = true , maximized_vertical = false, maximized_horizontal = false} },
   { rule = { class = "VMwareUnityWindow" },  
@@ -62,6 +66,12 @@ awful.rules.rules = {
       c:tags({tags[c.screen][3]})
   end },
 
+  { rule = { instance = "social", class = "Termite" }, 
+    callback = function(c)
+      c.screen = mouse.screen
+      c:tags({tags[c.screen][3]})
+  end },
+
   -- 4: notes
   { rule = { name = "Zeal" }, 
     callback = function(c)
@@ -93,6 +103,12 @@ awful.rules.rules = {
       c:tags({tags[c.screen][4]})
   end },
 
+  { rule = { class = "Zathura" }, 
+    callback = function(c)
+      c.screen = mouse.screen
+      c:tags({tags[c.screen][4]})
+  end },
+
 
   -- 5: code
   { rule = { class = "Atom" }, 
@@ -107,7 +123,7 @@ awful.rules.rules = {
       c:tags({tags[c.screen][5]})
   end },
 
-  { rule = { class = "Ida" }, 
+  { rule = { class = "IDA" }, 
     callback = function(c)
       c.screen = mouse.screen
       c:tags({tags[c.screen][5]})
@@ -125,9 +141,44 @@ awful.rules.rules = {
       c:tags({tags[c.screen][5]})
   end },
 
+  { rule = { class ="Binary Ninja" }, 
+    callback = function(c)
+      c.screen = mouse.screen
+      c:tags({tags[c.screen][5]})
+  end },
 
-  -- 6: burp
+
+  -- 6: media
   { rule = { class = "burp-StartBurp" }, 
+    callback = function(c)
+      c.screen = mouse.screen
+      c:tags({tags[c.screen][6]})
+  end },
+
+  { rule = { class = "Mplayer" },
+    callback = function(c)
+      c.screen = mouse.screen
+      c:tags({tags[c.screen][6]})
+  end },
+
+  { rule = { class = "Geeqie" }, 
+    callback = function(c)
+      c.screen = mouse.screen
+      c:tags({tags[c.screen][6]})
+  end },
+  { rule = { class = "Vlc" },
+    callback = function(c)
+      c.screen = mouse.screen
+      c:tags({tags[c.screen][6]})
+  end },
+
+  { rule = { class = "Gimp" },
+    callback = function(c)
+      c.screen = mouse.screen
+      c:tags({tags[c.screen][6]})
+  end },
+
+  { rule = { class = "Gimp", role = "toolbox" },
     callback = function(c)
       c.screen = mouse.screen
       c:tags({tags[c.screen][6]})
@@ -150,42 +201,6 @@ awful.rules.rules = {
   end },
 
   { rule = { class = "Gnuradio-companion" },
-    callback = function(c)
-      c.screen = mouse.screen
-      c:tags({tags[c.screen][8]})
-  end },
-
-  { rule = { class = "Pavucontrol" },
-    callback = function(c)
-      c.screen = mouse.screen
-      c:tags({tags[c.screen][8]})
-  end },
-
-  { rule = { class = "Mplayer" },
-    callback = function(c)
-      c.screen = mouse.screen
-      c:tags({tags[c.screen][8]})
-  end },
-
-  { rule = { class = "Vlc" },
-    callback = function(c)
-      c.screen = mouse.screen
-      c:tags({tags[c.screen][8]})
-  end },
-
-  { rule = { class = "Gimp" },
-    callback = function(c)
-      c.screen = mouse.screen
-      c:tags({tags[c.screen][8]})
-  end },
-
-  { rule = { class = "Gimp", role = "toolbox" },
-    callback = function(c)
-      c.screen = mouse.screen
-      c:tags({tags[c.screen][8]})
-  end },
-
-  { rule = { class = "Geeqie" },
     callback = function(c)
       c.screen = mouse.screen
       c:tags({tags[c.screen][8]})
@@ -218,6 +233,12 @@ awful.rules.rules = {
         
   -- 9: virt
   { rule = { class = "rdesktop" },
+    callback = function(c)
+      c.screen = mouse.screen
+      c:tags({tags[c.screen][9]})
+  end },
+
+  { rule = { class = "Remmina" },
     callback = function(c)
       c.screen = mouse.screen
       c:tags({tags[c.screen][9]})
