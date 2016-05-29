@@ -16,7 +16,7 @@ require("eminent")
 -- theme
 beautiful = require("beautiful")
 beautiful.init(theme)
-barheight = 16
+barheight = 24
 
 -- set wallpaper
 for s = 1, screen.count() do

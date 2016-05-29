@@ -10,10 +10,10 @@ theme.wallpaper = images .. "wallpaper.png"
 
 
 -- Fonts
-theme.font              = "Meslo LG M 10"
-theme.tooltip_font      = "Meslo LG S 12"
-theme.tasklist_font     = "Meslo LG S 10"
-theme.taglist_font      = "FontAwesome 10"
+theme.font              = "Meslo LG M 12"
+theme.tooltip_font      = "Meslo LG S 14"
+theme.tasklist_font     = "Meslo LG S 12"
+theme.taglist_font      = "FontAwesome 12"
 
 -- Color Definitions
 theme.colors = {}
