@@ -81,13 +81,6 @@ vicious.register(mailwidget, vicious.widgets.mdir, "$1", 300, widget.mailbox)
 myfsicon = wibox.widget.textbox()
 myfsicon:set_markup(spanblue .. "" .. stopspan)
 
-myfs_ssd_t = awful.tooltip({ objects = { myfsicon },})
-myfsicon:connect_signal("mouse::enter", function()
-  dfinfo =  awful.util.pread(widget.dfscript)
-  dfinfo = dfinfo:match( "(.-)%s*$")
-  myfs_ssd_t:set_text(dfinfo)
-end)
-
 local hdwidget = wibox.widget.textbox()
 vicious.register(hdwidget, vicious.widgets.fs, "${" .. widget.drive .. " avail_gb}", 60)
 

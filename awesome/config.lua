@@ -16,8 +16,6 @@ guieditor	= "subl3"
 fontwidget = "Bitsumishi 8"
 
 widget = {}
--- File System widget DF script
-widget.dfscript = (home .. "/.config/awesome/df.sh")
 -- Thermal Zone for CPU temperature
 widget.thermalzone = "thermal_zone0"
 -- Default drive to show free space
