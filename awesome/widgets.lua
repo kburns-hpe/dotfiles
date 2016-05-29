@@ -303,11 +303,11 @@ for s = 1, screen.count() do
   left_layout:add(mytaglist[s])
   left_layout:add(mypromptbox[s])
   local right_layout = wibox.layout.fixed.horizontal()
+  right_layout:add(doingicon)
+  right_layout:add(doingwidget)
   if (s == 1) then
     right_layout:add(mysystray)
   end
-  right_layout:add(doingicon)
-  right_layout:add(doingwidget)
   right_layout:add(mymailicon)
   right_layout:add(mailwidget)
 --  right_layout:add(updateicon)
