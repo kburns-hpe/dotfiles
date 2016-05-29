@@ -46,6 +46,9 @@ globalkeys = awful.util.table.join(
   awful.key({ hyper, }, "c", function () awful.util.spawn("xsel -p | dos2unix | xsel -i -p")  end),
 
   -- Program Launches
+  awful.key({ modkey, }, "r", function () awful.util.spawn("rofi -show run")  end),
+  awful.key({ modkey, }, "d", function () awful.util.spawn(home .. "/bin/rofi-doing.sh")  end),
+  awful.key({ modkey, }, "x", function () awful.util.spawn(home .. "/bin/rofi-task.sh")  end),
   awful.key({ hyper, }, "l", function () awful.util.spawn("xscreensaver-command -lock")  end),
   awful.key({ hyper, }, "a", function () awful.util.spawn("pavucontrol")  end),
   awful.key({ modkey, }, "a", function () awful.util.spawn("anamnesis -b")  end),
@@ -72,33 +75,10 @@ globalkeys = awful.util.table.join(
   awful.key({ modkey,           }, "space", function () awful.layout.inc(layouts,  1) end),
   awful.key({ modkey, "Shift"   }, "space", function () awful.layout.inc(layouts, -1) end),
 
-  -- Prompt: Run Program
-  awful.key({ modkey },            "r",     function () mypromptbox[mouse.screen]:run() end),
-
-  -- Prompt: Add to doing
-  awful.key({ modkey }, "d",
-    function ()
-      awful.prompt.run({ prompt = "Doing: ", text="@" },
-      mypromptbox[mouse.screen].widget,
-      function(input)
-        awful.util.spawn(home .. "/bin/doingnext " .. input)
-      end)
-    end),
-
   -- Mark doing project as done
   awful.key({ hyper }, "d",
     function ()
       awful.util.spawn(home .. "/bin/doing done")
-    end),
-    
-  -- Prompt: Add task to TaskWarrior
-  awful.key({ modkey }, "x",
-    function ()
-      awful.prompt.run({ prompt = "Todo: ", text="project:" },
-      mypromptbox[mouse.screen].widget,
-      function(input)
-        awful.util.spawn("task add " .. input)
-      end)
     end),
     
   -- Add to bugs me list
