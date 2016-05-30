@@ -52,21 +52,38 @@ awful.rules.rules = {
       c:tags({tags[c.screen][6]})
   end },
 
-  -- 3: social
-  { rule = { class = "Pidgin"},
-    callback = function(c)
-      c.screen = mouse.screen
-      c:tags({tags[c.screen][3]})
-  end,
-    properties = {floating = true , maximized_vertical = false, maximized_horizontal = false} },
-
-  { rule = { name = "HipChat" }, 
+  -- 3: code
+  { rule = { class = "Atom" }, 
     callback = function(c)
       c.screen = mouse.screen
       c:tags({tags[c.screen][3]})
   end },
 
-  { rule = { instance = "social", class = "Termite" }, 
+  { rule = { class = "Subl3" }, 
+    callback = function(c)
+      c.screen = mouse.screen
+      c:tags({tags[c.screen][3]})
+  end },
+
+  { rule = { class = "IDA" }, 
+    callback = function(c)
+      c.screen = mouse.screen
+      c:tags({tags[c.screen][3]})
+  end },
+
+  { rule = { class = "Hopper" }, 
+    callback = function(c)
+      c.screen = mouse.screen
+      c:tags({tags[c.screen][3]})
+  end },
+
+  { rule = { class ="010editor" }, 
+    callback = function(c)
+      c.screen = mouse.screen
+      c:tags({tags[c.screen][3]})
+  end },
+
+  { rule = { class ="Binary Ninja" }, 
     callback = function(c)
       c.screen = mouse.screen
       c:tags({tags[c.screen][3]})
@@ -109,45 +126,25 @@ awful.rules.rules = {
       c:tags({tags[c.screen][4]})
   end },
 
+  -- 5: social
+  { rule = { class = "Pidgin"},
+    callback = function(c)
+      c.screen = mouse.screen
+      c:tags({tags[c.screen][5]})
+  end,
+    properties = {floating = true , maximized_vertical = false, maximized_horizontal = false} },
 
-  -- 5: code
-  { rule = { class = "Atom" }, 
+  { rule = { name = "HipChat" }, 
     callback = function(c)
       c.screen = mouse.screen
       c:tags({tags[c.screen][5]})
   end },
 
-  { rule = { class = "Subl3" }, 
+  { rule = { instance = "social", class = "Termite" }, 
     callback = function(c)
       c.screen = mouse.screen
       c:tags({tags[c.screen][5]})
   end },
-
-  { rule = { class = "IDA" }, 
-    callback = function(c)
-      c.screen = mouse.screen
-      c:tags({tags[c.screen][5]})
-  end },
-
-  { rule = { class = "Hopper" }, 
-    callback = function(c)
-      c.screen = mouse.screen
-      c:tags({tags[c.screen][5]})
-  end },
-
-  { rule = { class ="010editor" }, 
-    callback = function(c)
-      c.screen = mouse.screen
-      c:tags({tags[c.screen][5]})
-  end },
-
-  { rule = { class ="Binary Ninja" }, 
-    callback = function(c)
-      c.screen = mouse.screen
-      c:tags({tags[c.screen][5]})
-  end },
-
-
   -- 6: media
   { rule = { class = "burp-StartBurp" }, 
     callback = function(c)
