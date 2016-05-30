@@ -323,10 +323,10 @@ for s = 1, screen.count() do
   if (s == 1) then
     right_layout:add(mysystray)
   end
-  right_layout:add(spacer)
-  right_layout:add(mymailicon)
-  right_layout:add(spacer)
-  right_layout:add(mailwidget)
+--  right_layout:add(spacer)
+--  right_layout:add(mymailicon)
+--  right_layout:add(spacer)
+--  right_layout:add(mailwidget)
 --  right_layout:add(updateicon)
 --  right_layout:add(updatewidget)
   right_layout:add(spacer)
