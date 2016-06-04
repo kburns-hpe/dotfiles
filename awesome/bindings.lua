@@ -57,7 +57,7 @@ globalkeys = awful.util.table.join(
   awful.key({ hyper, }, "s", function () awful.util.spawn("termite -name social -e social")  end),
   awful.key({ hyper, }, "v", function () awful.util.spawn("vmplayer")  end),
   awful.key({ hyper, }, "F12", function () awful.util.spawn("systemctl poweroff")  end),
-  awful.key({ }, "Print", function () awful.util.spawn("scrot -s -e 'mv $f ~/pictures/screenshots/ 2>/dev/null'") end),
+awful.key({ }, "Print", function () awful.util.spawn_with_shell("maim -s " .. home .. "/screenshots/$(date +%F-%T).png") end),
 
   -- Standard program
   awful.key({ modkey,           }, "Return", function () awful.util.spawn(terminal) end),
