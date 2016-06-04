@@ -198,6 +198,8 @@ if (widget.battery == "dual") then
         batwidget:set_markup(dualbattery)
         fh:close()
     end)
+
+    batwidgettimer:start()
 else
     mybaticon:set_image(images .. "bat_full_01.png")
     vicious.register(batwidget, vicious.widgets.bat, "$3 ($2%)", 60, widget.battery)
