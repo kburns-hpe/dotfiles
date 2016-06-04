@@ -1,6 +1,7 @@
 -- Load required modules
 naughty = require("naughty")
 vicious = require("vicious")
+vicious.contrib = require("vicious.contrib")
 wibox = require("wibox")
 
 -- bar size
@@ -116,7 +117,7 @@ awful.button({ }, 1, function () sexec("pavucontrol", false) end)))
 
 myvol = wibox.widget.textbox()
 myvol.width = space
-vicious.register(myvol, vicious.widgets.volume,
+vicious.register(myvol, vicious.contrib.pulse,
 function (widget, args)
 	if ((args[1] < 1) or (args[2] == "♩")) then
         myvolicon:set_markup(spanblue .. "" .. stopspan)
@@ -125,7 +126,7 @@ function (widget, args)
         myvolicon:set_markup(spanblue .. "" .. stopspan)
 		return args[1] .. "%" 
 	end
-end, 2, widget.volume)
+end, 3, widget.volume)
 
 -- Network Widget
 mynetupicon = wibox.widget.imagebox()
