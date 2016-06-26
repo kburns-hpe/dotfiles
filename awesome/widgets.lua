@@ -5,7 +5,7 @@ vicious.contrib = require("vicious.contrib")
 wibox = require("wibox")
 
 -- bar size
-barheight = 16 + (4 * sizemultiplier)
+barheight = 18 + (4 * sizemultiplier)
 
 -- alias
 sexec		= awful.util.spawn_with_shell
