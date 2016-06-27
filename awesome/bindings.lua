@@ -37,7 +37,7 @@ globalkeys = awful.util.table.join(
   awful.key({}, "XF86AudioLowerVolume", function () awful.util.spawn_with_shell("amixer set Master 2%-") end),
   awful.key({}, "XF86MonBrightnessUp", function () awful.util.spawn_with_shell("xbacklight -inc 10") end),
   awful.key({}, "XF86MonBrightnessDown", function () awful.util.spawn_with_shell("xbacklight -dec 10") end),
-  awful.key({}, "XF86ScreenSaver", function () awful.util.spawn_with_shell(home .. "/bin/lock.sh") end),
+  awful.key({}, "XF86ScreenSaver", function () awful.util.spawn_with_shell("xautolock -locknow") end),
 
   -- Change Monitors
   awful.key({ hyper, }, "F7", function () awful.util.spawn(home .. "/bin/dock.sh")  end),
@@ -49,7 +49,7 @@ globalkeys = awful.util.table.join(
   awful.key({ modkey, }, "r", function () awful.util.spawn("rofi -show run")  end),
   awful.key({ modkey, }, "d", function () awful.util.spawn(home .. "/bin/rofi-doing.sh")  end),
   awful.key({ modkey, }, "x", function () awful.util.spawn(home .. "/bin/rofi-task.sh")  end),
-  awful.key({ hyper, }, "l", function () awful.util.spawn(home .. "/bin/lock.sh") end),
+  awful.key({ hyper, }, "l", function () awful.util.spawn("xautolock -locknow") end),
   awful.key({ hyper, }, "a", function () awful.util.spawn("pavucontrol")  end),
   awful.key({ modkey, }, "a", function () awful.util.spawn("anamnesis -b")  end),
   awful.key({ hyper, }, "b", function () awful.util.spawn(browser)  end),
