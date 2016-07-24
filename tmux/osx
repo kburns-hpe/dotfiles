@@ -52,12 +52,6 @@ bind Up new-window -d -n tmp \; swap-pane -s tmp.1 \; select-window -t tmp
 unbind Down
 bind Down last-window \; swap-pane -s tmp.1 \; kill-window -t tmp
 
-# Disable mouse modes
-setw -g mode-mouse off
-set -g mouse-select-pane off
-set -g mouse-resize-pane off
-set -g mouse-select-window off
-
 # Enable vi mode for buffer
 setw -g mode-keys vi
 
@@ -128,12 +122,12 @@ setw -g clock-mode-colour colour3
 # --- end colors
 
 # List of plugins
-set -g @plugin 'tmux-plugins/tpm'
-set -g @plugin 'tmux-plugins/tmux-copycat'
-set -g @plugin 'tmux-plugins/tmux-yank'
-set -g @plugin 'tmux-plugins/tmux-open'
-set -g @plugin 'tmux-plugins/tmux-urlview'
-set -g @plugin 'tmux-plugins/tmux-logging'
+set -g @plugin 'tmux-plugins/tpm \
+  tmux-plugins/tmux-copycat      \
+  tmux-plugins/tmux-yank         \
+  tmux-plugins/tmux-open         \
+  tmux-plugins/tmux-urlview      \
+  tmux-plugins/tmux-logging'
 
 # Initialize TMUX plugin manager (keep this line at the very bottom of tmux.conf)
-run '~/.tmux/plugins/tpm/tpm'
+run-shell '~/.tmux/plugins/tpm/tpm'
