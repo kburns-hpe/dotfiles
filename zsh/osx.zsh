@@ -2,7 +2,7 @@
 
 # Set Variables
 export BROWSER=safari
-export EDITOR=vim
+export EDITOR=nvim
 
 # Set Path
 export PATH="$HOME/bin::/usr/local/bin:/usr/bin:/sbin:/bin:/usr/sbin"
@@ -14,3 +14,7 @@ fpath=(/usr/local/share/zsh-completions $fpath)
 # Over-ride ls alias
 alias ls="ls -CGFh"
 #export JAVA_HOME=$(/usr/libexec/java_home)
+
+# Use neovim instead of vim
+alias vim="nvim"
+alias vi="nvim"
