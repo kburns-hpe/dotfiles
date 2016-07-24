@@ -2,7 +2,7 @@
 
 # Set Variables
 export BROWSER=safari
-export EDITOR=nvim
+export EDITOR="NVIM_TUI_ENABLE_TRUE_COLOR=1 nvim"
 
 # Set Path
 export PATH="$HOME/bin::/usr/local/bin:/usr/bin:/sbin:/bin:/usr/sbin"
@@ -16,5 +16,5 @@ alias ls="ls -CGFh"
 #export JAVA_HOME=$(/usr/libexec/java_home)
 
 # Use neovim instead of vim
-alias vim="nvim"
-alias vi="nvim"
+alias vim="NVIM_TUI_ENABLE_TRUE_COLOR=1 nvim"
+alias vi="NVIM_TUI_ENABLE_TRUE_COLOR=1 nvim"
