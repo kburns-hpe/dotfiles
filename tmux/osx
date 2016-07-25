@@ -41,8 +41,6 @@ bind C-Space copy-mode
 unbind p
 bind p paste-buffer
 bind -t vi-copy 'v' begin-selection
-# Need to run "brew install reattach-to-user-namespace" to use this
-#bind-key -t vi-copy y copy-pipe "reattach-to-user-namespace pbcopy"
 
 # Bind Up to maximize a pane
 unbind Up
@@ -122,12 +120,13 @@ setw -g clock-mode-colour colour3
 # --- end colors
 
 # List of plugins
-set -g @plugin 'tmux-plugins/tpm \
-  tmux-plugins/tmux-copycat      \
-  tmux-plugins/tmux-yank         \
-  tmux-plugins/tmux-open         \
-  tmux-plugins/tmux-urlview      \
-  tmux-plugins/tmux-logging'
+set -g @plugin 'tmux-plugins/tpm'
+set -g @plugin 'tmux-plugins/tmux-copycat'
+set -g @plugin 'tmux-plugins/tmux-yank'
+set -g @plugin 'tmux-plugins/tmux-open'
+set -g @plugin 'tmux-plugins/tmux-urlview'
+set -g @plugin 'tmux-plugins/tmux-logging'
+set -g @plugin 'Morantron/tmux-fingers'
 
 # Initialize TMUX plugin manager (keep this line at the very bottom of tmux.conf)
-run-shell '~/.tmux/plugins/tpm/tpm'
+run '~/.tmux/plugins/tpm/tpm'
