@@ -1,5 +1,6 @@
 #!/bin/zsh
 
+bindkey -v
 # Setup substring search
 ## Set Bind Keys if tmux/screen is running
 if [ "$TERM" = "screen-256color" -o "$TERM" = "screen" -o "$TERM" = "xterm-termite" ]; then
