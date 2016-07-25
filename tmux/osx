@@ -64,6 +64,8 @@ set -g history-limit 50000
 
 # Fix pgup/pgdown
 set -g terminal-overrides 'xterm*:smcup@:rmcup@'
+# Enable 24-bit color support
+set -ga terminal-overrides ",xterm-256color:Tc"
 
 # remove delay when pressing <esc>
 set -s escape-time 1
