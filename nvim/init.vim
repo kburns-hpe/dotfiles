@@ -16,6 +16,7 @@ set expandtab " Use spaces instead of a tab
 set mouse= " Disable mouse support
 syntax on " enable syntax highlighting
 filetype plugin indent on " Enable indent based on filetype
+set termguicolors " enable true color
 
 " Disable autocomplete of comments on new lines
 autocmd FileType * setlocal formatoptions-=r formatoptions-=o
