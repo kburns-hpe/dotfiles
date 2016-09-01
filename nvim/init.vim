@@ -200,6 +200,8 @@ Plug 'parkr/vim-jekyll'
 Plug 'terryma/vim-multiple-cursors/'
 " vim-bufferline - lists buffers
 Plug 'bling/vim-bufferline'
+" gtm-vim-plugin - enables git time tracking via gtm
+Plug 'git-time-metric/gtm-vim-plugin'
 " TaskList - searches code for FIXME, TODO, and XXX
 "Plug 'vim-scripts/TaskList.vim'
 " ropevim - python refactoring and code assist
@@ -385,5 +387,7 @@ inoremap <F10> <C-o>:call ToggleYCM()<cr>
 let g:pad#dir = "~/Dropbox/nvdata"
 
 " vim-jekyll
-
 let g:jekyll_post_extension = '.md'
+
+" gtm-vim-plugin
+let g:gtm_plugin_status_enabled = 1
