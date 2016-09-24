@@ -2,8 +2,7 @@
 hs.window.animationDuration = 0
 
 -- Setup Key Shortcuts
-local hyper = {"shift", "cmd", "alt", "ctrl"}
-
+local hyper = { "cmd", "alt" }
 -- TODO: Test this on dual displays
 -- Send Window to Next Display
 --hs.hotkey.bind(hyper, "p", function()
@@ -183,7 +182,7 @@ hs.hints.hintChars = {"A","S","D","F","J","K","L"}
 hs.hints.showTitleThresh = 0
 
 -- Hint Shortcut
-hs.hotkey.bind(hyper, 'w', function()
+hs.hotkey.bind('alt', 'space', function()
   hs.hints.windowHints()
 end)
 
