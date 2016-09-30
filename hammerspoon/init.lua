@@ -226,7 +226,7 @@ hs.hints.hintChars = {"A","S","D","F","J","K","L"}
 hs.hints.showTitleThresh = 0
 
 -- Hint Shortcut
-hs.hotkey.bind('option', 'space ', nil, function()
+hs.hotkey.bind('option', 'space', nil, function()
   hs.hints.windowHints()
 end)
 
