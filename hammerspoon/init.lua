@@ -39,15 +39,6 @@ pressedA = function() a:enter() end
 releasedA = function() end
 k:bind({}, 'a', nil, pressedA, releasedA)
 
--- Shortcut to reload config
-
-ofun = function()
-  hs.reload()
-  hs.alert.show("Config loaded")
-  k.triggered = true
-end
-k:bind({}, 'o', nil, ofun)
-
 -- Enter Hyper Mode when F18 (Hyper/Capslock) is pressed
 pressedF18 = function()
   k.triggered = false
