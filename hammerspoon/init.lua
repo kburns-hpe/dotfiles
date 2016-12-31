@@ -7,6 +7,7 @@ k = hs.hotkey.modal.new({}, "F17")
 -- Trigger existing hyper key shortcuts
 
 k:bind({}, '\\', nil, function() hs.eventtap.keyStroke({"cmd","alt","shift","ctrl"}, '\\') end)
+k:bind({}, 'e', nil, function() hs.eventtap.keyStroke({"cmd","alt","shift","ctrl"}, 'e') end)
 
 -- OR build your own
 
@@ -17,7 +18,7 @@ end
 
 -- Single keybinding for app launch
 singleapps = {
-  {'t', 'iTerm 2'},
+  {'t', 'iTerm'},
   {'b', 'Safari'},
 }
 
