@@ -1,65 +1,21 @@
 -- Disable Animation
 hs.window.animationDuration = 0
 
--- A global variable for the Hyper Mode
-k = hs.hotkey.modal.new({}, "F17")
+-- Setup Key Shortcuts
+local hyper = {"shift", "cmd", "alt", "ctrl"}
 
--- Trigger existing hyper key shortcuts
-
-k:bind({}, '\\', nil, function() hs.eventtap.keyStroke({"cmd","alt","shift","ctrl"}, '\\') end)
-k:bind({}, 'e', nil, function() hs.eventtap.keyStroke({"cmd","alt","shift","ctrl"}, 'e') end)
-
--- OR build your own
-
-launch = function(appname)
-  hs.application.launchOrFocus(appname)
-  k.triggered = true
-end
-
--- Single keybinding for app launch
-singleapps = {
-  {'t', 'iTerm'},
-  {'b', 'Safari'},
-}
-
-for i, app in ipairs(singleapps) do
-  k:bind({}, app[1], function() launch(app[2]); k:exit(); end)
-end
-
--- Sequential keybindings, e.g. Hyper-a,f for Finder
-a = hs.hotkey.modal.new({}, "F16")
-apps = {
-  {'d', 'Twitter'},
-  {'f', 'Finder'},
-}
-for i, app in ipairs(apps) do
-  a:bind({}, app[1], function() launch(app[2]); a:exit(); end)
-end
-
-pressedA = function() a:enter() end
-releasedA = function() end
-k:bind({}, 'a', nil, pressedA, releasedA)
-
--- Enter Hyper Mode when F18 (Hyper/Capslock) is pressed
-pressedF18 = function()
-  k.triggered = false
-  k:enter()
-end
-
--- Leave Hyper Mode when F18 (Hyper/Capslock) is pressed,
---   send ESCAPE if no other keys are pressed.
-releasedF18 = function()
-  k:exit()
-  if not k.triggered then
-    hs.eventtap.keyStroke({}, 'TAB')
-  end
-end
-
--- Bind the Hyper key
-f18 = hs.hotkey.bind({}, 'F18', pressedF18, releasedF18)
+-- TODO: Test this on dual displays
+-- Send Window to Next Display
+--hs.hotkey.bind(hyper, "p", function()
+--  if hs.window.focusedWindow() then
+--    hs.window:moveToScreen(hs.screen:next())
+--  else
+--    hs.alert.show("No Active Window")
+--  end
+--end)
 
 -- Full Screen
-k:bind({}, "o", nil, function()
+hs.hotkey.bind(hyper, "o", function()
   if hs.window.focusedWindow() then
     local win = hs.window.focusedWindow()
     local f = win:frame()
@@ -77,7 +33,7 @@ k:bind({}, "o", nil, function()
 end)
 
 -- Top Half
-k:bind({}, "k", nil, function()
+hs.hotkey.bind(hyper, "k", function()
   if hs.window.focusedWindow() then
     local win = hs.window.focusedWindow()
     local f = win:frame()
@@ -95,7 +51,7 @@ k:bind({}, "k", nil, function()
 end)
 
 -- Bottom Half
-k:bind({}, "l", nil, function()
+hs.hotkey.bind(hyper, "l", function()
   if hs.window.focusedWindow() then
     local win = hs.window.focusedWindow()
     local f = win:frame()
@@ -113,7 +69,7 @@ k:bind({}, "l", nil, function()
 end)
 
 -- Left Half
-k:bind({}, "j", nil, function()
+hs.hotkey.bind(hyper, "j", function()
   if hs.window.focusedWindow() then
     local win = hs.window.focusedWindow()
     local f = win:frame()
@@ -131,7 +87,7 @@ k:bind({}, "j", nil, function()
 end)
 
 -- Right Half
-k:bind({}, ";", nil, function()
+hs.hotkey.bind(hyper, ";", function()
   if hs.window.focusedWindow() then
     local win = hs.window.focusedWindow()
     local f = win:frame()
@@ -149,7 +105,7 @@ k:bind({}, ";", nil, function()
 end)
 
 -- Top Left
-k:bind({}, "u", nil, function()
+hs.hotkey.bind(hyper, "u", function()
   if hs.window.focusedWindow() then
     local win = hs.window.focusedWindow()
     local f = win:frame()
@@ -167,7 +123,7 @@ k:bind({}, "u", nil, function()
 end)
 
 -- Top Right
-k:bind({}, "i", nil, function()
+hs.hotkey.bind(hyper, "i", function()
   if hs.window.focusedWindow() then
     local win = hs.window.focusedWindow()
     local f = win:frame()
@@ -185,7 +141,7 @@ k:bind({}, "i", nil, function()
 end)
 
 -- Bottom Right
-k:bind({}, "m", nil, function()
+hs.hotkey.bind(hyper, "m", function()
   if hs.window.focusedWindow() then
     local win = hs.window.focusedWindow()
     local f = win:frame()
@@ -203,7 +159,7 @@ k:bind({}, "m", nil, function()
 end)
 
 -- Bottom Left
-k:bind({}, "n", nil, function()
+hs.hotkey.bind(hyper, "n", function()
   if hs.window.focusedWindow() then
     local win = hs.window.focusedWindow()
     local f = win:frame()
@@ -227,12 +183,12 @@ hs.hints.hintChars = {"A","S","D","F","J","K","L"}
 hs.hints.showTitleThresh = 0
 
 -- Hint Shortcut
-hs.hotkey.bind('option', 'space', nil, function()
+hs.hotkey.bind(hyper, 'w', function()
   hs.hints.windowHints()
 end)
 
 -- Switch Window Focus
-k:bind({}, '[', nil, function()
+hs.hotkey.bind(hyper, '[', function()
   if hs.window.focusedWindow() then
     hs.window.focusedWindow():focusWindowWest()
   else
@@ -240,7 +196,7 @@ k:bind({}, '[', nil, function()
   end
 end)
 
-k:bind({}, ']', nil, function()
+hs.hotkey.bind(hyper, ']', function()
   if hs.window.focusedWindow() then
     hs.window.focusedWindow():focusWindowEast()
   else
@@ -248,7 +204,7 @@ k:bind({}, ']', nil, function()
   end
 end)
 
-k:bind({}, '-', nil, function()
+hs.hotkey.bind(hyper, '-', function()
   if hs.window.focusedWindow() then
     hs.window.focusedWindow():focusWindowNorth()
   else
@@ -256,7 +212,7 @@ k:bind({}, '-', nil, function()
   end
 end)
 
-k:bind({}, '=', nil, function()
+hs.hotkey.bind(hyper, '=', function()
   if hs.window.focusedWindow() then
     hs.window.focusedWindow():focusWindowSouth()
   else

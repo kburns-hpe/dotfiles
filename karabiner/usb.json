@@ -19,12 +19,18 @@
             "name": "Default profile",
             "selected": true,
             "simple_modifications": {
-                "caps_lock": "escape",
+                "caps_lock": "left_control",
                 "escape": "fn",
                 "fn": "left_control",
                 "left_command": "left_option",
-                "left_option": "left_command",
-                "tab": "f18"
+                "left_option": "left_command"
+            },
+            "standalone_keys": {
+                "caps_lock": "escape",
+                "tab": "tab"
+            },
+            "one_to_many_mappings": {
+                "tab": ["left_control", "left_shift", "left_option", "left_command"]
             },
             "virtual_hid_keyboard": {
                 "keyboard_type": "ansi"
