@@ -58,6 +58,7 @@ map <leader>pb "+p
 map <leader>Pp "*P
 map <leader>Pb "+P
 
+
 " Buffer shortcuts
 nnoremap <leader>bn :bnext<CR>
 nnoremap <leader>bp :bprevious<CR>
@@ -93,6 +94,12 @@ set spellsuggest=5
 map <F7> :setlocal spell!<CR>
 imap <F7> <C-o>:setlocal spell!<CR>
 
+" nerdtree
+map <F3> :NERDTreeToggle<CR>
+
+autocmd StdinReadPre * let s:std_in=1
+autocmd VimEnter * if argc() == 0 && !exists("s:std_in") | NERDTree | endif
+let NERDTreeQuitOnOpen=1
 
 " Automatically jump to the end of a yank or paste.
 vnoremap <silent> y y`]
@@ -190,8 +197,6 @@ Plug 'janko-m/vim-test'
 Plug 'Valloric/YouCompleteMe', { 'do': 'python2 ./install.py' }
 " zeavim - embed zeal search
 Plug 'KabbAmine/zeavim.vim'
-" vim-pad - note organizing plugin
-Plug 'fmoralesc/vim-pad'
 " ag.vim - Adds ag support to vim
 Plug 'rking/ag.vim'
 " vim-jekyll - Jekyll management plugin
@@ -200,6 +205,8 @@ Plug 'parkr/vim-jekyll'
 Plug 'terryma/vim-multiple-cursors/'
 " vim-bufferline - lists buffers
 Plug 'bling/vim-bufferline'
+" nerdtree - provides a file tree for selecting files
+Plug 'scrooloose/nerdtree'
 " TaskList - searches code for FIXME, TODO, and XXX
 "Plug 'vim-scripts/TaskList.vim'
 " ropevim - python refactoring and code assist
