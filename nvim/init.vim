@@ -91,7 +91,7 @@ map <F7> :setlocal spell!<CR>
 imap <F7> <C-o>:setlocal spell!<CR>
 
 " nerdtree
-map <F3> :NERDTreeToggle<CR>
+map <leader>n :NERDTreeToggle<CR>
 
 autocmd StdinReadPre * let s:std_in=1
 autocmd VimEnter * if argc() == 0 && !exists("s:std_in") | NERDTree | endif
@@ -157,6 +157,8 @@ call plug#begin('~/.config/nvim/plugged')
 Plug 'herrbischoff/cobalt2.vim'
 " fzf - fuzzy searching
 Plug '/usr/local/opt/fzf' | Plug 'junegunn/fzf.vim'
+" limelight - hyperfocus-writing in vim
+Plug 'junegunn/limelight.vim'
 " fugitive - git plugin
 Plug 'tpope/vim-fugitive'
 " Lightline - configurable statusline/tabline
@@ -404,3 +406,6 @@ function! FzfOmniFiles()
         :GFiles --exclude-standard
     endif
 endfunction
+
+" limelight
+map <F3> :Limelight!!<cr>
