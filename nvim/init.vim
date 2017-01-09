@@ -62,6 +62,7 @@ map <leader>Pb "+P
 " Buffer shortcuts
 nnoremap <leader>bn :bnext<CR>
 nnoremap <leader>bp :bprevious<CR>
+nnoremap <leader>bd :bd<br>
 nnoremap <Leader>1 :1b<CR>
 nnoremap <Leader>2 :2b<CR>
 nnoremap <Leader>3 :3b<CR>
