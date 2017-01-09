@@ -39,11 +39,6 @@ map ZZ :wqa<CR>
 nnoremap <SPACE> <Nop>
 let mapleader = "\<Space>"
 
-" <leader>h hides left split. <leader>s adds 25 chars to left split
-set winminwidth=0
-map <leader>h <C-W>l<C-W>\|
-map <leader>s <C-W>h25<C-W>>
-
 " Copy to X CLIPBOARD
 map <leader>cb "+y
 map <leader>cp "*y
