@@ -203,6 +203,8 @@ Plug 'terryma/vim-multiple-cursors/'
 Plug 'bling/vim-bufferline'
 " nerdtree - provides a file tree for selecting files
 Plug 'scrooloose/nerdtree'
+" dash.vim - Call Dash from within vim
+Plug 'rizzatti/dash.vim'
 " TaskList - searches code for FIXME, TODO, and XXX
 "Plug 'vim-scripts/TaskList.vim'
 " ropevim - python refactoring and code assist
