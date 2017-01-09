@@ -130,6 +130,9 @@ set -g @plugin 'tmux-plugins/tmux-urlview'
 set -g @plugin 'tmux-plugins/tmux-logging'
 set -g @plugin 'Morantron/tmux-fingers'
 
+# Enable xterm keys
+set -g xterm-keys on
+
 # Initialize TMUX plugin manager (keep this line at the very bottom of tmux.conf)
 run '~/.tmux/plugins/tpm/tpm'
 
