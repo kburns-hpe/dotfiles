@@ -191,8 +191,10 @@ Plug 'AndrewRadev/splitjoin.vim'
 Plug 'benekastah/neomake'
 " vim-test - used to run various test suites
 Plug 'janko-m/vim-test'
-" youcompleteme - autocompletion
-Plug 'Valloric/YouCompleteMe', { 'do': 'python2 ./install.py' }
+" deoplete - autocompletion
+Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
+" deoplete-jedi - python auto complete using jedi
+Plug 'zchee/deoplete-jedi'
 " zeavim - embed zeal search
 Plug 'KabbAmine/zeavim.vim'
 " vim-jekyll - Jekyll management plugin
@@ -353,39 +355,6 @@ let g:EasyMotion_use_smartsign_us = 1
 let g:EasyMotion_startofline = 0 " keep cursor colum when JK motion
 let g:EasyMotion_smartcase = 1
 
-" YouCompleteMe
-let g:ycm_register_as_syntastic_checker = 0
-let g:Show_diagnostics_ui = 0
-
-"will put icons in Vim's gutter on lines that have a diagnostic set.
-"Turning this off will also turn off the YcmErrorLine and YcmWarningLine
-"highlighting
-let g:ycm_enable_diagnostic_signs = 0
-let g:ycm_enable_diagnostic_highlighting = 0
-let g:ycm_always_populate_location_list = 1
-let g:ycm_open_loclist_on_ycm_diags = 1
-let g:ycm_complete_in_strings = 1
-let g:ycm_collect_identifiers_from_tags_files = 0
-let g:ycm_path_to_python_interpreter = ''
-let g:ycm_server_use_vim_stdout = 0
-let g:ycm_server_log_level = 'info'
-let g:ycm_confirm_extra_conf = 1
-let g:ycm_goto_buffer_command = 'same-buffer' "[ 'same-buffer', 'horizontal-split', 'vertical-split', 'new-tab' ]
-let g:ycm_filetype_whitelist = { '*': 1 }
-let g:ycm_key_invoke_completion = '<C-l>'
-let g:ycm_min_num_of_chars_for_completion = 5
-let g:ycm_autoclose_preview_window_after_completion = 1
-
-function! ToggleYCM()
-    if g:ycm_auto_trigger == 1
-        let g:ycm_auto_trigger = 0
-    else
-        let g:ycm_auto_trigger = 1
-    endif
-endfunction
-nnoremap <F10> :call ToggleYCM()<cr>
-inoremap <F10> <C-o>:call ToggleYCM()<cr>
-
 " vim-pad
 let g:pad#dir = "~/Dropbox/nvdata"
 
@@ -411,3 +380,6 @@ endfunction
 
 " limelight
 map <F3> :Limelight!!<cr>
+
+" deoplete
+let g:deoplete#enable_at_startup = 1
