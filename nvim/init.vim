@@ -241,10 +241,6 @@ nmap <silent> <leader>v :TestVisit<CR>
 
 let test#strategy = "neovim"
 
-" ctrlp
-let g:ctrlp_user_command = ['.git/', 'cd %s && git ls-files -oc --exclude-standard']
-let g:ctrlp_working_path_mode = 'ra'
-
 " lightline
 let g:lightline = {
       \ 'colorscheme': 'jellybeans',
@@ -264,7 +260,9 @@ let g:lightline = {
 function! LLMode()
   let fname = expand('%:t')
   return fname == '__Tagbar__' ? 'Tagbar' :
-        \ fname == 'ControlP' ? 'CtrlP' :
+        \ fname == '__Gundo__' ? 'Gundo' :
+        \ fname == '__Gundo_Preview__' ? 'Gundo Preview' :
+        \ fname =~ 'NERD_tree' ? 'NERDTree' :
         \ lightline#mode() == 'NORMAL' ? 'N' :
         \ lightline#mode() == 'INSERT' ? 'I' :
         \ lightline#mode() == 'VISUAL' ? 'V' :
