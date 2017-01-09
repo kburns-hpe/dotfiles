@@ -159,8 +159,8 @@ nmap <silent> <leader>we :call ToggleList("Quickfix List", 'c')<CR>
 call plug#begin('~/.config/nvim/plugged')
 " cobalt2 - color theme
 Plug 'herrbischoff/cobalt2.vim'
-" ctrlp - fuzzy file searching
-Plug 'ctrlpvim/ctrlp.vim'
+" fzf - fuzzy searching
+Plug '/usr/local/opt/fzf' | Plug 'junegunn/fzf.vim'
 " fugitive - git plugin
 Plug 'tpope/vim-fugitive'
 " Lightline - configurable statusline/tabline
@@ -197,8 +197,6 @@ Plug 'janko-m/vim-test'
 Plug 'Valloric/YouCompleteMe', { 'do': 'python2 ./install.py' }
 " zeavim - embed zeal search
 Plug 'KabbAmine/zeavim.vim'
-" ag.vim - Adds ag support to vim
-Plug 'rking/ag.vim'
 " vim-jekyll - Jekyll management plugin
 Plug 'parkr/vim-jekyll'
 " vim-multiple-cursors - multiple cursors
@@ -394,3 +392,19 @@ let g:pad#dir = "~/Dropbox/nvdata"
 " vim-jekyll
 
 let g:jekyll_post_extension = '.md'
+
+" fzf
+let $FZF_DEFAULT_COMMAND = 'ag -l -g ""'
+map <leader>fa :Ag<cr>
+map <leader>fb :BLines<cr>
+map <leader>fl :Lines<cr>
+map <leader>ff :call FzfOmniFiles()<cr>
+
+function! FzfOmniFiles()
+    let is_git = system('git status')
+    if v:shell_error
+        :Files
+    else
+        :GFiles --exclude-standard
+    endif
+endfunction
