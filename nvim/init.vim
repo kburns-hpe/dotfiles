@@ -246,7 +246,10 @@ let g:lightline = {
       \ 'colorscheme': 'jellybeans',
       \ 'active': {
       \   'left': [ [ 'mode', 'paste' ],
-      \             [ 'fugitive'],[ 'bufferline' ] ]
+      \             [ 'fugitive'],[ 'bufferline' ] ],
+      \ 'right': [ [ 'lineinfo' ],
+      \            [ 'percent' ],
+      \            [ 'filetype' ] ]
       \ },
       \ 'component_function': {
       \   'fugitive': 'LLFugitive',
