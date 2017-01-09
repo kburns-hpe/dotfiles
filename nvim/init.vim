@@ -1,4 +1,4 @@
-set autochdir "Auto change windows CWD to the file's directory
+set autochdir " Auto change windows CWD to the file's directory
 set colorcolumn=80 " Shows where 80 characters is
 set ignorecase smartcase " enable case insensitive searching
 set iskeyword+=_,$,@,%,# " set additioanl keywords for navigation purposes
@@ -13,6 +13,7 @@ set wrap " Autowrap lines that hit end of screen
 set tabstop=4 " Set a tab to be 4 spaces in width
 set shiftwidth=4 " Sets how many spaces to move line when using <<, >>
 set expandtab " Use spaces instead of a tab
+set hidden " Allow switching buffers without saving first
 set mouse= " Disable mouse support
 syntax on " enable syntax highlighting
 filetype plugin indent on " Enable indent based on filetype
@@ -53,8 +54,9 @@ map <leader>pb "+p
 map <leader>Pp "*P
 map <leader>Pb "+P
 
-
 " Buffer shortcuts
+nnoremap <C-Left> :bprevious<CR>
+nnoremap <C-Right> :bnext<CR>
 nnoremap <leader>bn :bnext<CR>
 nnoremap <leader>bp :bprevious<CR>
 nnoremap <leader>bd :bd<br>
