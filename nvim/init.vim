@@ -230,9 +230,24 @@ colorscheme cobalt2
 
 
 " Neomake
-autocmd! BufWritePost * Neomake
+autocmd! BufWritePost,BufReadPost * Neomake
 nnoremap <F11> :Neomake <CR>
 inoremap <F11> <C-o>:Neomake <CR>
+
+let g:neomake_open_list = 2
+let g:neomake_list_height = 5
+
+" Override puppet lint to ignore things I don't care about
+let g:neomake_puppet_puppetlint_maker = {
+    \ 'exe': 'puppet-lint',
+    \ 'args': ['--log-format', 
+    \          '"%{path}:%{line}:%{column}:%{kind}:[%{check}] %{message}"',
+    \          '--no-quoted_booleans-check',
+    \          '--no-class_inherits_from_params_class-check',
+    \          '--no-puppet_url_without_modules-check' ],
+    \ 'errorformat': '"%f:%l:%c:%t%*[a-zA-Z]:%m"',
+    \ }
+
 
 " vim-test
 nmap <silent> <leader>t :TestNearest<CR>
@@ -242,6 +257,7 @@ nmap <silent> <leader>L :TestLast<CR>
 nmap <silent> <leader>v :TestVisit<CR>
 
 let test#strategy = "neovim"
+
 
 " lightline
 let g:lightline = {
