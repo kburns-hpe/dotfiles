@@ -21,9 +21,9 @@ bind l select-pane -R
 bind -r C-h select-window -t :-
 bind -r C-l select-window -t :+
 
-# Bind j/l to create split windows
-bind C-j split-window -v
-bind C-k split-window -h
+# Bind ;/' to create split windows
+bind \; split-window -v
+bind "'" split-window -h
 
 # use HJKL to resize panes
 bind -r H resize-pane -L 5
