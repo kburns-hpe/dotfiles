@@ -251,14 +251,19 @@ let g:lightline = {
       \             [ 'fugitive'],[ 'bufferline' ] ],
       \ 'right': [ [ 'lineinfo' ],
       \            [ 'percent' ],
-      \            [ 'filetype' ] ]
+      \            [ 'filetype' ],
+      \            [ 'neomake' ] ]
       \ },
       \ 'component_function': {
       \   'fugitive': 'LLFugitive',
       \   'readonly': 'LLReadonly',
       \   'modified': 'LLModified',
       \   'mode': 'LLMode',
-      \   'bufferline': 'MyBufferLine'
+      \   'bufferline': 'MyBufferLine',
+      \   'neomake': 'neomake#statusline#LoclistStatus'
+      \ },
+      \ 'component_type': {
+      \   'neomake': 'error',
       \ }
       \ }
 
