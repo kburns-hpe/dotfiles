@@ -6,5 +6,3 @@
 for script in ~/.zsh/*.zsh; do
   source "$script"
 done
-
-[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
