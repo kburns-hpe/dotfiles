@@ -54,9 +54,6 @@ let mapleader = "\<Space>"
 map <leader>cb "+y
 map <leader>cp "*y
 map <leader>cs :w !xsel -i -s<CR>
-" Delete to X CLIPBOARD
-vmap <leader>dc "+d
-vmap <leader>dp "*d
 " Paste from X CLIPBOARD
 map <leader>pp "*p
 map <leader>ps :r!xsel -s<CR>
@@ -69,7 +66,7 @@ nnoremap <C-Left> :bprevious<CR>
 nnoremap <C-Right> :bnext<CR>
 nnoremap <leader>bn :bnext<CR>
 nnoremap <leader>bp :bprevious<CR>
-nnoremap <leader>bd :bd<CR>
+nnoremap <leader>d :bd<CR>
 nnoremap <Leader>1 :1b<CR>
 nnoremap <Leader>2 :2b<CR>
 nnoremap <Leader>3 :3b<CR>
