@@ -22,6 +22,16 @@ set termguicolors " enable true color
 " Disable autocomplete of comments on new lines
 autocmd FileType * setlocal formatoptions-=r formatoptions-=o
 
+" Set the terminal title bar to the full path of the open file
+autocmd BufEnter * let &titlestring = 'nvim - ' . expand("%:p")
+set title
+
+" Rename tmux window title to current file
+if exists('$TMUX')
+    autocmd BufEnter * call system("tmux rename-window '" . expand("%:t") . "'")
+    autocmd VimLeave * call system("tmux setw automatic-rename")
+endif
+
 " Setup backups
 set backup
 set backupdir=~/.config/nvim/backup
