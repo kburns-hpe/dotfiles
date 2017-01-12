@@ -61,6 +61,10 @@ map <leader>pb "+p
 map <leader>Pp "*P
 map <leader>Pb "+P
 
+" Reformat paragrahs
+vmap Q gq
+nmap Q gqap
+
 " Buffer shortcuts
 nnoremap <C-Left> :bprevious<CR>
 nnoremap <C-Right> :bnext<CR>
