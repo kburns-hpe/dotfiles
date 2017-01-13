@@ -2,13 +2,13 @@
 
 # git aliases
 alias ga="git add"
-alias gac="git commit -a -S"
-alias gacm="git commit -a -S -m"
+alias gac="git commit -a "
+alias gacm="git commit -a -m"
 alias gam="git commit -amend"
 alias gb="git branch"
 alias gbl="git for-each-ref --count=30 --sort=-committerdate refs/heads/ --format='%(refname:short)'"
-alias gc="git commit -S"
-alias gcm="git commit -S -m"
+alias gc="git commit "
+alias gcm="git commit -m"
 alias gd="git diff"
 alias gdm="git diff origin/master"
 alias gds="git diff --staged"
@@ -31,9 +31,9 @@ alias gs="git status -s"
 
 # git functions
 function gacmp () {
-    git commit -S -a -m "$*" && git push origin HEAD
+    git commit -a -m "$*" && git push origin HEAD
 }
 
 function gcmp () {
-    git commit -S -m "$*" && git push origin HEAD
+    git commit -m "$*" && git push origin HEAD
 }
