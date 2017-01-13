@@ -232,6 +232,8 @@ Plug 'bling/vim-bufferline'
 Plug 'scrooloose/nerdtree'
 " dash.vim - Call Dash from within vim
 Plug 'rizzatti/dash.vim'
+" supertab - Manage tab for completion
+Plug 'ervandew/supertab'
 " TaskList - searches code for FIXME, TODO, and XXX
 "Plug 'vim-scripts/TaskList.vim'
 " ropevim - python refactoring and code assist
