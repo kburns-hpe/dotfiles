@@ -432,3 +432,4 @@ endif
 " let g:deoplete#disable_auto_complete = 1
 " autocmd InsertLeave,CompleteDone * if pumvisible() == 0 | pclose | endif
 let g:deoplete#sources#jedi#show_docstring = 1
+map <F9> :call deoplete#toggle()<cr>"
