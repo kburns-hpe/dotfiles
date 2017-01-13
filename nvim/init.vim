@@ -43,8 +43,9 @@ set undofile
 set undolevels=1000
 set undoreload=10000
 
-" Change ZZ to quit all buffers instead of just the current one
+" Change ZZ and ZQ to quit all buffers instead of just the current one
 map ZZ :wqa<CR>
+map ZQ :qa<CR>
 
 " Change leader from \ to Space
 nnoremap <SPACE> <Nop>
