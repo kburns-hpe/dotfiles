@@ -448,3 +448,7 @@ let g:pymode_rope_completion = 0
 let g:pymode_run = 1
 let g:pymode_options_max_line_length = 99
 let g:pymode_options_colorcolumn = 1
+
+" gitgutter
+nmap ]h <Plug>GitGutterNextHunk
+nmap [h <Plug>GitGutterPrevHunk
