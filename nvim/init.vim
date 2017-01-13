@@ -63,8 +63,8 @@ nmap Q gqap
 " Buffer shortcuts
 nnoremap <C-Left> :bprevious<CR>
 nnoremap <C-Right> :bnext<CR>
-nnoremap <leader>bn :bnext<CR>
-nnoremap <leader>bp :bprevious<CR>
+nnoremap <Tab> :bnext<CR>
+nnoremap <bs> :bprevious<CR>
 nnoremap <leader>d :bd<CR>
 nnoremap <Leader>1 :1b<CR>
 nnoremap <Leader>2 :2b<CR>
@@ -82,15 +82,10 @@ nnoremap <C-J> <C-W><C-J>
 nnoremap <C-K> <C-W><C-K>
 nnoremap <C-L> <C-W><C-L>
 nnoremap <C-H> <C-W><C-H>
-nnoremap <Tab> <c-w>w
-nnoremap <bs> <c-w>W
 
 " Open new splits to the right and bottom
 set splitbelow
 set splitright
-
-" Shortcut to delete trailing white space
-nnoremap <Leader>rtw :%s/\s\+$//e<CR>
 
 " Bind F2 to enable/disable paste mode
 set pastetoggle=<F2>
