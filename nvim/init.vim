@@ -229,6 +229,8 @@ Plug 'scrooloose/nerdtree'
 Plug 'rizzatti/dash.vim'
 " supertab - Manage tab for completion
 Plug 'ervandew/supertab'
+" vim-unimpaired - adds shortcuts for managing pair mappings
+Plug 'tpope/vim-unimpaired'
 " TaskList - searches code for FIXME, TODO, and XXX
 "Plug 'vim-scripts/TaskList.vim'
 " ropevim - python refactoring and code assist
