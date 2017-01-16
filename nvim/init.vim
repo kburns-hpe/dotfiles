@@ -354,10 +354,11 @@ set noshowmode
 nnoremap <F6> :GundoToggle<CR>
 
 " UltiSnips
+let g:UltiSnipsSnippetsDir="~/.config/nvim/UltiSnips"
 let g:UltiSnipsEditSplit="horizontal"
-let g:UltiSnipsExpandTrigger="<c-j>"
-let g:UltiSnipsJumpForwardTrigger="<c-b>"
-let g:UltiSnipsJumpBackwardTrigger="<c-z>"
+let g:UltiSnipsExpandTrigger="<tab>"
+let g:UltiSnipsJumpForwardTrigger="<tab>"
+let g:UltiSnipsJumpBackwardTrigger="<s-tab>"
 
 " Fugitive
 nmap <leader>ga :Gwrite<cr>
