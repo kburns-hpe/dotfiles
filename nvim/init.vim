@@ -52,7 +52,7 @@ nnoremap <SPACE> <Nop>
 let mapleader = "\<Space>"
 
 " copy to/from clipboard
-map <leader>c "+p
+map <leader>c "+y
 map <leader>p "+p
 map <leader>P "+P
 
