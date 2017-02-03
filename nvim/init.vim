@@ -76,6 +76,7 @@ nnoremap <Leader>7 :7b<CR>
 nnoremap <Leader>8 :8b<CR>
 nnoremap <Leader>9 :9b<CR>
 nnoremap <Leader>0 :10b<CR>
+nnoremap <Leader>wd :pclose<CR>
 
 " Make splits easier to switch to
 nnoremap <C-J> <C-W><C-J>
