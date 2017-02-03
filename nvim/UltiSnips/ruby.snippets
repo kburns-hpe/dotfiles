@@ -1,0 +1,39 @@
+snippet itshould "it should"
+it { should $0 }
+endsnippet
+
+snippet cclass "contains a class"
+contain_class(${1:class})$0
+endsnippet
+
+snippet ccat "contains a concat"
+contain_concat(${1:file})$0
+endsnippet
+
+snippet cexec "contains exec"
+contain_exec(${1:exec})$0
+endsnippet
+
+snippet cfile "contains a file"
+contain_file(${1:file})$0
+endsnippet
+
+snippet cpackage "contains a package"
+contain_package(${1:package})$0
+endsnippet
+
+snippet cservice "contains a service"
+contain_service(${1:service})$0
+endsnippet
+
+snippet wcontent "with content" w
+with_content(/${1:content}/)$0
+endsnippet
+
+snippet tcbefore "Comes before a resource" w
+that_comes_before(${1:resource})
+endsnippet
+
+snippet tsubscribes "Scribes to a resource" w
+that_subscribes_to:resource})
+endsnippet
