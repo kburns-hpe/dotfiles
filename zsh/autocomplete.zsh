@@ -33,4 +33,4 @@ zstyle ':completion:*:*:ssh*' users
 zstyle ':completion:*:*:scp*' users
 
 # Only complete hosts that are in the ~/.ssh/config file
-zstyle -e ':completion:*:hosts' hosts 'reply=( ${=${${${${(@M)${(f)"$(cat ~/.ssh/config 2>/dev/null)"}:#Host *}#Host }:#*\**}:#*\?*}})'
+zstyle -e ':completion::*:*:*:hosts' hosts 'reply=(${=${${(f)"$(cat {/etc/ssh_,~/.ssh/known_}hosts(|2)(N) /dev/null)"}%%[# ]*}//,/ })'
