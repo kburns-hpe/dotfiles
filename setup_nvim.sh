@@ -4,7 +4,7 @@ confdir="$PWD/nvim"
 
 
 # Setup nvim directory
-mkdir -p ~/.config/nvim/{bundle,tmp,backup,colors,ftplugin,UltiSnips} 2>/dev/null
+mkdir -p ~/.config/nvim/{bundle,tmp,backup,colors,ftplugin} 2>/dev/null
 ln -s "$confdir"/colors/cobalt.vim ~/.config/nvim/colors/cobalt.vim
 
 # Setup init.vim
