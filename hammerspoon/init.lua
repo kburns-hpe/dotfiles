@@ -177,7 +177,7 @@ hs.hotkey.bind(hyper, "n", function()
 end)
 
 -- Hint Keys
-hs.hints.hintChars = {"A","S","D","F","J","K","L"}
+hs.hints.hintChars = {"A", "S", "D", "F", "Q", "W", "E", "R"}
 
 -- Disable Showing Titles
 hs.hints.showTitleThresh = 0
