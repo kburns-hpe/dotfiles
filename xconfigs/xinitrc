@@ -70,4 +70,4 @@ export INFINALITY_FT_USE_VARIOUS_TWEAKS="true"
 export INFINALITY_FT_CHROMEOS_STYLE_SHARPENING_STRENGTH="20"
 
 # Start awesome
-exec awesome
+exec i3
