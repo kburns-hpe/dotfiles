@@ -246,8 +246,8 @@ call plug#end()
 " Plugin Specific Configurations
 
 " cobalt2
-colorscheme cobalt2
-
+colorscheme solarized
+set background=dark
 
 " Neomake
 autocmd! BufWritePost,BufReadPost * Neomake
