@@ -281,7 +281,7 @@ let test#strategy = "neovim"
 
 " lightline
 let g:lightline = {
-      \ 'colorscheme': 'jellybeans',
+      \ 'colorscheme': 'solarized',
       \ 'active': {
       \   'left': [ [ 'mode', 'paste' ],
       \             [ 'fugitive'],[ 'bufferline' ] ],
