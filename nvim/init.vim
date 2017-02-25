@@ -246,8 +246,7 @@ call plug#end()
 " Plugin Specific Configurations
 
 " cobalt2
-colorscheme solarized
-set background=dark
+colorscheme cobalt2
 
 " Neomake
 autocmd! BufWritePost,BufReadPost * Neomake
@@ -281,7 +280,7 @@ let test#strategy = "neovim"
 
 " lightline
 let g:lightline = {
-      \ 'colorscheme': 'solarized',
+      \ 'colorscheme': 'jellybeans',
       \ 'active': {
       \   'left': [ [ 'mode', 'paste' ],
       \             [ 'fugitive'],[ 'bufferline' ] ],
