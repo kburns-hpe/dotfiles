@@ -184,7 +184,7 @@ mode "resize" {
 
 # Assign clients to specific workspaces
 assign [class="Firefox"] $ws2
-assign [class="chromium"] $ws2
+assign [class="Chromium"] $ws2
 assign [class="google-chrome"] $ws2
 
 assign [class="HipChat"] $ws3
