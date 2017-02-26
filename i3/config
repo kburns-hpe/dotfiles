@@ -8,7 +8,7 @@ set $hyper Mod3
 font pango:DejaVu Sans Mono, FontAwesome 10
 
 # Set border size
-for_window [class="^.*"] border pixel 3
+for_window [class="^.*"] border pixel 2
 
 #make notifications behave
 for_window [class="Xfce4-notifyd"] floating enable
