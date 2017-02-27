@@ -239,6 +239,8 @@ Plug 'python-mode/python-mode'
 Plug 'https://github.com/Alok/notational-fzf-vim'
 " vim-diff-enhanced - improve vimdiff
 Plug 'chrisbra/vim-diff-enhanced'
+" vim-commentary - comment stuff out
+Plug 'tpope/vim-commentary'
 " TaskList - searches code for FIXME, TODO, and XXX
 "Plug 'vim-scripts/TaskList.vim'
 " ropevim - python refactoring and code assist
