@@ -284,6 +284,17 @@ let g:neomake_puppet_puppetlint_maker = {
     \ 'errorformat': '"%f:%l:%c:%t%*[a-zA-Z]:%m"',
     \ }
 
+" Override shellcheck to force it to use -x
+let g:neomake_sh_shellcheck_maker = {
+    \ 'exe': 'shellcheck',
+    \ 'args': ['-fgcc', '-x' ],
+    \ 'errorformat':
+        \ '%f:%l:%c: %trror: %m,' .
+        \ '%f:%l:%c: %tarning: %m,' .
+        \ '%f:%l:%c: %tote: %m'
+    \ }
+
+
 
 " vim-test
 nmap <silent> <leader>t :TestNearest<CR>
