@@ -5,10 +5,10 @@ set $mod Mod4
 set $hyper Mod3
 
 # Font for window titles. Will also be used by the bar unless a different font
-font pango:DejaVu Sans Mono, FontAwesome 8
+font pango:DejaVu Sans Mono, FontAwesome 10
 
 # Set border size
-for_window [class="^.*"] border pixel 3
+for_window [class="^.*"] border pixel 2
 
 #make notifications behave
 for_window [class="Xfce4-notifyd"] floating enable
@@ -184,7 +184,7 @@ mode "resize" {
 
 # Assign clients to specific workspaces
 assign [class="Firefox"] $ws2
-assign [class="chromium"] $ws2
+assign [class="Chromium"] $ws2
 assign [class="google-chrome"] $ws2
 
 assign [class="HipChat"] $ws3

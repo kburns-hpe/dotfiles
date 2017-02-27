@@ -6,7 +6,7 @@ Xft.hintstyle:  hintfull
 Xft.lcdfilter:  lcddefault
 Xft.rgba:       rgb
 
-rofi.font: DejaVu Sans Mono 10
+rofi.font: DejaVu Sans Mono 12
 rofi.dpi: 144
 rofi.color-enabled: true
 rofi.fg: #ffffff
