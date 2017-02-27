@@ -241,6 +241,8 @@ Plug 'https://github.com/Alok/notational-fzf-vim'
 Plug 'chrisbra/vim-diff-enhanced'
 " vim-commentary - comment stuff out
 Plug 'tpope/vim-commentary'
+" vim-better-whitespace - whitespace highlighe:
+Plug 'ntpeters/vim-better-whitespace'
 " TaskList - searches code for FIXME, TODO, and XXX
 "Plug 'vim-scripts/TaskList.vim'
 " ropevim - python refactoring and code assist
@@ -271,7 +273,7 @@ let g:neomake_list_height = 5
 " Override puppet lint to ignore things I don't care about
 let g:neomake_puppet_puppetlint_maker = {
     \ 'exe': 'puppet-lint',
-    \ 'args': ['--log-format', 
+    \ 'args': ['--log-format',
     \          '"%{path}:%{line}:%{column}:%{kind}:[%{check}] %{message}"',
     \          '--no-quoted_booleans-check',
     \          '--no-class_inherits_from_params_class-check',
@@ -410,6 +412,7 @@ let g:EasyMotion_use_smartsign_us = 1
 
 let g:EasyMotion_startofline = 0 " keep cursor colum when JK motion
 let g:EasyMotion_smartcase = 1
+let g:EasyMotion_enter_jump_first = 1
 
 " notational-fzf-vim
 let g:nv_directories = ['~/Dropbox/notes']
@@ -473,3 +476,7 @@ nmap [h <Plug>GitGutterPrevHunk
 if &diff
     let &diffexpr='EnhancedDiff#Diff("git diff", "--diff-algorithm=patience")'
 endif
+
+" vim-better-whitespace
+autocmd BufEnter * EnableStripWhitespaceOnSave
+
