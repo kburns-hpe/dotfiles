@@ -243,6 +243,8 @@ Plug 'chrisbra/vim-diff-enhanced'
 Plug 'tpope/vim-commentary'
 " vim-better-whitespace - whitespace highlighe:
 Plug 'ntpeters/vim-better-whitespace'
+" neoformat - code formatter
+Plug 'sbdchd/neoformat'
 " TaskList - searches code for FIXME, TODO, and XXX
 "Plug 'vim-scripts/TaskList.vim'
 " ropevim - python refactoring and code assist
@@ -480,3 +482,6 @@ endif
 " vim-better-whitespace
 autocmd BufEnter * EnableStripWhitespaceOnSave
 
+
+" neoformat"
+map <leader>nf :Neoformat<cr>
