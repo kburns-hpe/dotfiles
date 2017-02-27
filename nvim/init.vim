@@ -18,6 +18,7 @@ set mouse= " Disable mouse support
 syntax on " enable syntax highlighting
 filetype plugin indent on " Enable indent based on filetype
 set termguicolors " enable true color
+set grepprg=rg\ --vimgrep " Use ripgrep for grep
 
 " Disable autocomplete of comments on new lines
 autocmd FileType * setlocal formatoptions-=r formatoptions-=o
@@ -427,7 +428,7 @@ map <leader>nv :NV<cr>
 let g:jekyll_post_extension = '.md'
 
 " fzf
-let $FZF_DEFAULT_COMMAND = 'ag -l -g ""'
+let $FZF_DEFAULT_COMMAND = 'rg --files --no-ignore --hidden --follow --glob "!.git/*'
 map <leader>fa :Ag<cr>
 map <leader>fb :BLines<cr>
 map <leader>fl :Lines<cr>
