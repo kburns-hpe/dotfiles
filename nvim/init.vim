@@ -237,6 +237,8 @@ Plug 'tpope/vim-unimpaired'
 Plug 'python-mode/python-mode'
 " notational-fzf-vim - Easier way to search notes
 Plug 'https://github.com/Alok/notational-fzf-vim'
+" vim-diff-enhanced - improve vimdiff
+Plug 'chrisbra/vim-diff-enhanced'
 " TaskList - searches code for FIXME, TODO, and XXX
 "Plug 'vim-scripts/TaskList.vim'
 " ropevim - python refactoring and code assist
@@ -464,3 +466,8 @@ let g:pymode_options_colorcolumn = 1
 " gitgutter
 nmap ]h <Plug>GitGutterNextHunk
 nmap [h <Plug>GitGutterPrevHunk
+
+" vim-diff-enhanced
+if &diff
+    let &diffexpr='EnhancedDiff#Diff("git diff", "--diff-algorithm=patience")'
+endif
