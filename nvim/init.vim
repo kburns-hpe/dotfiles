@@ -113,7 +113,7 @@ map <F7> :setlocal spell!<CR>
 imap <F7> <C-o>:setlocal spell!<CR>
 
 " nerdtree
-map <leader>n :NERDTreeToggle<CR>
+map <leader>nt :NERDTreeToggle<CR>
 
 autocmd StdinReadPre * let s:std_in=1
 autocmd VimEnter * if argc() == 0 && !exists("s:std_in") | NERDTree | endif
@@ -235,6 +235,8 @@ Plug 'ervandew/supertab'
 Plug 'tpope/vim-unimpaired'
 " python-mode provides utilities to help code python
 Plug 'python-mode/python-mode'
+" notational-fzf-vim - Easier way to search notes
+Plug 'https://github.com/Alok/notational-fzf-vim'
 " TaskList - searches code for FIXME, TODO, and XXX
 "Plug 'vim-scripts/TaskList.vim'
 " ropevim - python refactoring and code assist
@@ -405,11 +407,14 @@ let g:EasyMotion_use_smartsign_us = 1
 let g:EasyMotion_startofline = 0 " keep cursor colum when JK motion
 let g:EasyMotion_smartcase = 1
 
-" vim-pad
-let g:pad#dir = "~/Dropbox/nvdata"
+" notational-fzf-vim
+let g:nv_directories = ['~/Dropbox/notes']
+let g:nv_default_extension = '.md'
+let g:nv_use_short_pathnames = 1
+let g:nv_show_preview = 0
+map <leader>nv :NV<cr>
 
 " vim-jekyll
-
 let g:jekyll_post_extension = '.md'
 
 " fzf
