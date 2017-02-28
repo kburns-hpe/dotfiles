@@ -24,7 +24,7 @@ nitrogen --restore &
 
 # Start Programs
 anamnesis --start &
-start-pulseaudio-x11 & 
+start-pulseaudio-x11 &
 udiskie &
 dropbox &
 unclutter &
