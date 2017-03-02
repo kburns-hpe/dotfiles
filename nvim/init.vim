@@ -398,6 +398,10 @@ nmap <leader>gl :Glog<cr>
 nmap <leader>gp :Gpush<cr>
 nmap <leader>gs :Gstatus<cr>
 
+
+" Show DiffGitCached when running git commit
+autocmd FileType gitcommit if ! &previewwindow && expand('%:t') !~# 'index' | :DiffGitCached | wincmd j | :res +10 | wincmd k | endif
+
 " easymotion
 
 " map s to be single character easymotion search
