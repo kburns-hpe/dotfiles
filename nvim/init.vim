@@ -183,8 +183,6 @@ Plug 'SirVer/ultisnips'
 Plug 'wellle/targets.vim'
 " Git gutter - shows git information on the side
 Plug 'airblade/vim-gitgutter'
-" vim-easymotion - Simpler way to move around vim
-Plug 'Lokaltog/vim-easymotion'
 " tabular - text aligning
 Plug 'godlygeek/tabular'
 " vim-indent-guides - Show indents
@@ -385,36 +383,6 @@ nmap <leader>gs :Gstatus<cr>
 
 " Show DiffGitCached when running git commit
 autocmd FileType gitcommit if ! &previewwindow && expand('%:t') !~# 'index' | :DiffGitCached | wincmd j | :res +10 | wincmd k | endif
-
-" easymotion
-
-" map s to be single character easymotion search
-nmap s <Plug>(easymotion-s2)
-
-" Setup easy motion line changes
-map <Leader>l <Plug>(easymotion-lineforward)
-map <Leader>h <Plug>(easymotion-linebackward)
-map <Leader>j <Plug>(easymotion-j)
-map <Leader>k <Plug>(easymotion-k)
-
-" Setup easymotion to be used for the / find
-map  / <Plug>(easymotion-sn)
-omap / <Plug>(easymotion-tn)
-map  n <Plug>(easymotion-next)
-map  N <Plug>(easymotion-prev)
-
-" Bidirectional & within line 't' motion
-omap t <Plug>(easymotion-bd-tl)
-" Use uppercase target labels and type as a lower case
-let g:EasyMotion_use_upper = 1
- " type `l` and match `l`&`L`
-let g:EasyMotion_smartcase = 1
-" Smartsign (type `3` and match `3`&`#`)
-let g:EasyMotion_use_smartsign_us = 1
-
-let g:EasyMotion_startofline = 0 " keep cursor colum when JK motion
-let g:EasyMotion_smartcase = 1
-let g:EasyMotion_enter_jump_first = 1
 
 " notational-fzf-vim
 let g:nv_directories = ['~/Dropbox/notes']
