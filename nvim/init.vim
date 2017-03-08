@@ -230,6 +230,8 @@ Plug 'ntpeters/vim-better-whitespace'
 Plug 'sbdchd/neoformat'
 " vim-eunuch - Add some unix commands to vim
 Plug 'tpope/vim-eunuch'
+" vim-disapprove-deep-indentation - flags code when its too indented
+Plug 'dodie/vim-disapprove-deep-indentation'
 call plug#end()
 
 " Plugin Specific Configurations
@@ -369,7 +371,6 @@ nmap <leader>gl :Glog<cr>
 nmap <leader>gp :Gpush<cr>
 nmap <leader>gs :Gstatus<cr>
 
-
 " Show DiffGitCached when running git commit
 autocmd FileType gitcommit if ! &previewwindow && expand('%:t') !~# 'index' | :DiffGitCached | wincmd j | :res +10 | wincmd k | endif
 
@@ -434,3 +435,7 @@ autocmd BufEnter * EnableStripWhitespaceOnSave
 
 " neoformat"
 map <leader>nf :Neoformat<cr>
+
+" vim-disapprove-deep-indentation
+let g:LookOfDisapprovalTabTreshold=4
+let g:LookOfDisapprovalSpaceTreshold=(&tabstop*4)
