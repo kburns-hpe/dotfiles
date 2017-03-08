@@ -232,6 +232,8 @@ Plug 'tpope/vim-commentary'
 Plug 'ntpeters/vim-better-whitespace'
 " neoformat - code formatter
 Plug 'sbdchd/neoformat'
+" vim-eunuch - Add some unix commands to vim
+Plug 'tpope/vim-eunuch'
 call plug#end()
 
 " Plugin Specific Configurations
