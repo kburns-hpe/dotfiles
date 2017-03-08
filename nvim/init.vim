@@ -362,7 +362,7 @@ let g:UltiSnipsJumpBackwardTrigger="<s-tab>"
 " Fugitive
 nmap <leader>ga :Gwrite<cr>
 nmap <leader>gb :Gblame<cr>
-nmap <leader>gc :Gcommit<cr>
+nmap <leader>gc :Gcommit -v<cr>
 nmap <leader>gd :Gdiff<cr>
 nmap <leader>ge :Gedit<cr>
 nmap <leader>gl :Glog<cr>
