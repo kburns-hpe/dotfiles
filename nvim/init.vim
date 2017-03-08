@@ -383,20 +383,12 @@ map <leader>nv :NV<cr>
 let g:jekyll_post_extension = '.md'
 
 " fzf
-let $FZF_DEFAULT_COMMAND = 'rg --files --no-ignore --hidden --follow --glob "!.git/*'
+let $FZF_DEFAULT_COMMAND = 'rg --files --hidden --follow --glob "!.git/*" --glob "!.gitkeep"'
 map <leader>fa :Ag<cr>
 map <leader>fb :BLines<cr>
 map <leader>fl :Lines<cr>
-map <leader>ff :call FzfOmniFiles()<cr>
-
-function! FzfOmniFiles()
-    let is_git = system('git status')
-    if v:shell_error
-        :Files
-    else
-        :GFiles --exclude-standard
-    endif
-endfunction
+map <leader>ff :Files<cr>
+map <leader>fg :GFiles<cr>
 
 " limelight
 map <F3> :Limelight!!<cr>
