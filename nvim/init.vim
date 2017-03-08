@@ -107,13 +107,6 @@ set spellsuggest=5
 map <F7> :setlocal spell!<CR>
 imap <F7> <C-o>:setlocal spell!<CR>
 
-" nerdtree
-map <leader>nt :NERDTreeToggle<CR>
-
-autocmd StdinReadPre * let s:std_in=1
-autocmd VimEnter * if argc() == 0 && !exists("s:std_in") | NERDTree | endif
-let NERDTreeQuitOnOpen=1
-
 " Automatically jump to the end of a yank or paste.
 vnoremap <silent> y y`]
 vnoremap <silent> p p`]
@@ -220,8 +213,6 @@ Plug 'parkr/vim-jekyll'
 Plug 'terryma/vim-multiple-cursors/'
 " vim-bufferline - lists buffers
 Plug 'bling/vim-bufferline'
-" nerdtree - provides a file tree for selecting files
-Plug 'scrooloose/nerdtree'
 " dash.vim - Call Dash from within vim
 Plug 'rizzatti/dash.vim'
 " supertab - Manage tab for completion
@@ -329,7 +320,6 @@ function! LLMode()
   return fname == '__Tagbar__' ? 'Tagbar' :
         \ fname == '__Gundo__' ? 'Gundo' :
         \ fname == '__Gundo_Preview__' ? 'Gundo Preview' :
-        \ fname =~ 'NERD_tree' ? 'NERDTree' :
         \ lightline#mode() == 'NORMAL' ? 'N' :
         \ lightline#mode() == 'INSERT' ? 'I' :
         \ lightline#mode() == 'VISUAL' ? 'V' :
