@@ -1,6 +1,5 @@
 #!/bin/bash
 
-host="$1"
 confdir="$PWD/tmux"
 
 # Setup tmux
