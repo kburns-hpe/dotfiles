@@ -1,4 +1,3 @@
-set autochdir " Auto change windows CWD to the file's directory
 set colorcolumn=80 " Shows where 80 characters is
 set ignorecase smartcase " enable case insensitive searching
 set iskeyword+=_,$,@,%,# " set additioanl keywords for navigation purposes
