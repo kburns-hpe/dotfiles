@@ -115,9 +115,6 @@ vnoremap <silent> y y`]
 vnoremap <silent> p p`]
 nnoremap <silent> p p`]
 
-" This command will sort ip addresses correctly.
-command SORTIP %!sort -n -t . -k 1,1 -k 2,2 -k 3,3 -k 4,4 | uniq
-
 " rename window to current file
 autocmd BufReadPost,FileReadPost,BufNewFile * call system("tmux rename-window " . expand("%"))
 
