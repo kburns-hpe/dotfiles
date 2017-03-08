@@ -107,6 +107,9 @@ set spellsuggest=5
 map <F7> :setlocal spell!<CR>
 imap <F7> <C-o>:setlocal spell!<CR>
 
+" reload nvim init.vim
+nnoremap <Leader>r :source $MYVIMRC<CR>
+
 " Automatically jump to the end of a yank or paste.
 vnoremap <silent> y y`]
 vnoremap <silent> p p`]
