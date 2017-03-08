@@ -1,7 +1,7 @@
 #!/bin/zsh
 
 # Setup directory for custom auto completion files
-fpath=(~/.zsh/completion $fpath) 
+fpath=(~/.zsh/completion $fpath)
 
 # Enable smart autocompletion
 autoload -U compinit && compinit
@@ -34,3 +34,6 @@ zstyle ':completion:*:*:scp*' users
 
 # Only complete hosts that are in the ~/.ssh/config file
 zstyle -e ':completion::*:*:*:hosts' hosts 'reply=(${=${${(f)"$(cat {/etc/ssh_,~/.ssh/known_}hosts(|2)(N) /dev/null)"}%%[# ]*}//,/ })'
+
+# puppet development environment (pde) script autocompletion
+compdef "_files -W $HOME/git/puppet/modules" pde
