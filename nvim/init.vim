@@ -52,16 +52,10 @@ map ZQ :qa<CR>
 nnoremap <SPACE> <Nop>
 let mapleader = "\<Space>"
 
-" Copy to X CLIPBOARD
-map <leader>cb "+y
-map <leader>cp "*y
-map <leader>cs :w !xsel -i -s<CR>
-" Paste from X CLIPBOARD
-map <leader>pp "*p
-map <leader>ps :r!xsel -s<CR>
-map <leader>pb "+p
-map <leader>Pp "*P
-map <leader>Pb "+P
+" Copy/Paste
+map <leader>c "+y
+map <leader>p "+p
+map <leader>P "+P
 
 " Reformat paragrahs
 vmap Q gq
