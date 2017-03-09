@@ -361,6 +361,11 @@ nmap <leader>gl :Glog<cr>
 nmap <leader>gp :Gpush<cr>
 nmap <leader>gs :Gstatus<cr><c-w>K
 
+" diff merge shortcuts
+nmap <leader>1 :diffput 1<cr>
+nmap <leader>2 :diffget 2<cr>
+nmap <leader>3 :diffget 3<cr>
+
 " Show DiffGitCached when running git commit
 autocmd FileType gitcommit if ! &previewwindow && expand('%:t') !~# 'index' | :DiffGitCached | wincmd j | :res +10 | wincmd k | endif
 
