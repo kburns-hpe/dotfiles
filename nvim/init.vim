@@ -46,6 +46,7 @@ set undoreload=10000
 " Change ZZ and ZQ to quit all buffers instead of just the current one
 map ZZ :wqa<CR>
 map ZQ :qa<CR>
+map <C-s> :w<CR>
 
 " Change leader from \ to Space
 nnoremap <SPACE> <Nop>
