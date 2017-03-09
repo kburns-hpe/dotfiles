@@ -9,8 +9,8 @@ set ruler " show rule in bottom right (ROW, COL)
 set showmatch " highlight matching brackets
 set vb t_vb= "Disable visual bell
 set wrap " Autowrap lines that hit end of screen
-set tabstop=4 " Set a tab to be 4 spaces in width
-set shiftwidth=4 " Sets how many spaces to move line when using <<, >>
+set tabstop=2 " Set a tab to be X spaces in width
+set shiftwidth=2 " Sets how many spaces to move line when using <<, >>
 set expandtab " Use spaces instead of a tab
 set hidden " Allow switching buffers without saving first
 set mouse= " Disable mouse support
