@@ -359,7 +359,7 @@ nmap <leader>gd :Gdiff<cr>
 nmap <leader>ge :Gedit<cr>
 nmap <leader>gl :Glog<cr>
 nmap <leader>gp :Gpush<cr>
-nmap <leader>gs :Gstatus<cr>
+nmap <leader>gs :Gstatus<cr><c-w>K
 
 " Show DiffGitCached when running git commit
 autocmd FileType gitcommit if ! &previewwindow && expand('%:t') !~# 'index' | :DiffGitCached | wincmd j | :res +10 | wincmd k | endif
