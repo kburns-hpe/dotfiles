@@ -355,7 +355,7 @@ nmap <leader>gc :Gcommit -v<cr>
 nmap <leader>gd :Gdiff<cr>
 nmap <leader>ge :Gedit<cr>
 nmap <leader>gl :Glog<cr>
-nmap <leader>gp :Gpush<cr>
+nmap <leader>gp :Gpush origin HEAD<cr>
 nmap <leader>gs :Gstatus<cr><c-w>K
 
 " diff merge shortcuts
