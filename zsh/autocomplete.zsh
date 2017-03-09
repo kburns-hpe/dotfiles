@@ -37,3 +37,11 @@ zstyle -e ':completion::*:*:*:hosts' hosts 'reply=(${=${${(f)"$(cat {/etc/ssh_,~
 
 # puppet development environment (pde) script autocompletion
 compdef "_files -W $HOME/git/puppet/modules" pde
+
+
+# Pass urls as literals if glob fails
+autoload -U url-quote-magic
+zle -N self-insert url-quote-magic
+url_commands=(curl scp rsync wget)
+zstyle -e :urlglobber url-other-schema \
+  '[[ $url_commands[(i)$words[1]] -le ${#url_commands} ]] && reply=("*") || reply=(http https ftp)'
