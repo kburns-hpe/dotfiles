@@ -28,8 +28,8 @@ set title
 
 " Rename tmux window title to current file
 if exists('$TMUX')
-    autocmd BufEnter * call system("tmux rename-window '" . expand("%:t") . "'")
-    autocmd VimLeave * call system("tmux setw automatic-rename")
+  autocmd BufEnter * call system("tmux rename-window '" . expand("%:t") . "'")
+  autocmd VimLeave * call system("tmux setw automatic-rename")
 endif
 
 " Setup backups
@@ -239,26 +239,24 @@ let g:neomake_list_height = 5
 
 " Override puppet lint to ignore things I don't care about
 let g:neomake_puppet_puppetlint_maker = {
-    \ 'exe': 'puppet-lint',
-    \ 'args': ['--log-format',
-    \          '"%{path}:%{line}:%{column}:%{kind}:[%{check}] %{message}"',
-    \          '--no-quoted_booleans-check',
-    \          '--no-class_inherits_from_params_class-check',
-    \          '--no-puppet_url_without_modules-check' ],
-    \ 'errorformat': '"%f:%l:%c:%t%*[a-zA-Z]:%m"',
-    \ }
+  \ 'exe': 'puppet-lint',
+  \ 'args': ['--log-format',
+  \          '"%{path}:%{line}:%{column}:%{kind}:[%{check}] %{message}"',
+  \          '--no-quoted_booleans-check',
+  \          '--no-class_inherits_from_params_class-check',
+  \          '--no-puppet_url_without_modules-check' ],
+  \ 'errorformat': '"%f:%l:%c:%t%*[a-zA-Z]:%m"',
+  \ }
 
 " Override shellcheck to force it to use -x
 let g:neomake_sh_shellcheck_maker = {
-    \ 'exe': 'shellcheck',
-    \ 'args': ['-fgcc', '-x' ],
-    \ 'errorformat':
-        \ '%f:%l:%c: %trror: %m,' .
-        \ '%f:%l:%c: %tarning: %m,' .
-        \ '%f:%l:%c: %tote: %m'
-    \ }
-
-
+  \ 'exe': 'shellcheck',
+  \ 'args': ['-fgcc', '-x' ],
+  \ 'errorformat':
+    \ '%f:%l:%c: %trror: %m,' .
+    \ '%f:%l:%c: %tarning: %m,' .
+    \ '%f:%l:%c: %tote: %m'
+  \ }
 
 " vim-test
 nmap <silent> <leader>t :TestNearest<CR>
@@ -266,45 +264,43 @@ nmap <silent> <leader>T :TestFile<CR>
 nmap <silent> <leader>a :TestSuite<CR>
 nmap <silent> <leader>L :TestLast<CR>
 nmap <silent> <leader>v :TestVisit<CR>
-
 let test#strategy = "neovim"
-
 
 " lightline
 let g:lightline = {
-      \ 'colorscheme': 'jellybeans',
-      \ 'active': {
-      \   'left': [ [ 'mode', 'paste' ],
-      \             [ 'fugitive'],[ 'bufferline' ] ],
-      \ 'right': [ [ 'lineinfo' ],
-      \            [ 'percent' ],
-      \            [ 'filetype' ],
-      \            [ 'neomake' ] ]
-      \ },
-      \ 'component_function': {
-      \   'fugitive': 'LLFugitive',
-      \   'readonly': 'LLReadonly',
-      \   'modified': 'LLModified',
-      \   'mode': 'LLMode',
-      \   'bufferline': 'MyBufferLine',
-      \   'neomake': 'neomake#statusline#LoclistStatus'
-      \ },
-      \ 'component_type': {
-      \   'neomake': 'error',
-      \ }
-      \ }
+  \ 'colorscheme': 'jellybeans',
+  \ 'active': {
+    \   'left': [ [ 'mode', 'paste' ],
+    \             [ 'fugitive'],[ 'bufferline' ] ],
+    \ 'right': [ [ 'lineinfo' ],
+    \            [ 'percent' ],
+    \            [ 'filetype' ],
+    \            [ 'neomake' ] ]
+  \ },
+  \ 'component_function': {
+    \   'fugitive': 'LLFugitive',
+    \   'readonly': 'LLReadonly',
+    \   'modified': 'LLModified',
+    \   'mode': 'LLMode',
+    \   'bufferline': 'MyBufferLine',
+    \   'neomake': 'neomake#statusline#LoclistStatus'
+  \ },
+  \ 'component_type': {
+    \   'neomake': 'error',
+  \ }
+\ }
 
 function! LLMode()
   let fname = expand('%:t')
   return fname == '__Tagbar__' ? 'Tagbar' :
-        \ fname == '__Gundo__' ? 'Gundo' :
-        \ fname == '__Gundo_Preview__' ? 'Gundo Preview' :
-        \ lightline#mode() == 'NORMAL' ? 'N' :
-        \ lightline#mode() == 'INSERT' ? 'I' :
-        \ lightline#mode() == 'VISUAL' ? 'V' :
-        \ lightline#mode() == 'V-LINE' ? 'V' :
-        \ lightline#mode() == 'V-BLOCK' ? 'V' :
-        \ lightline#mode() == 'REPLACE' ? 'R' : lightline#mode()
+  \ fname == '__Gundo__' ? 'Gundo' :
+  \ fname == '__Gundo_Preview__' ? 'Gundo Preview' :
+  \ lightline#mode() == 'NORMAL' ? 'N' :
+  \ lightline#mode() == 'INSERT' ? 'I' :
+  \ lightline#mode() == 'VISUAL' ? 'V' :
+  \ lightline#mode() == 'V-LINE' ? 'V' :
+  \ lightline#mode() == 'V-BLOCK' ? 'V' :
+  \ lightline#mode() == 'REPLACE' ? 'R' : lightline#mode()
 endfunction
 
 function! LLModified()
@@ -421,12 +417,11 @@ nmap [h <Plug>GitGutterPrevHunk
 
 " vim-diff-enhanced
 if &diff
-    let &diffexpr='EnhancedDiff#Diff("git diff", "--diff-algorithm=patience")'
+  let &diffexpr='EnhancedDiff#Diff("git diff", "--diff-algorithm=patience")'
 endif
 
 " vim-better-whitespace
 autocmd BufEnter * EnableStripWhitespaceOnSave
-
 
 " neoformat"
 map <leader>nf :Neoformat<cr>
