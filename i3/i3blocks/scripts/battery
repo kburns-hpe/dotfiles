@@ -23,8 +23,11 @@ if [ ! -x "$UPOWER" ]; then
 	exit 1
 fi
 
-$UPOWER -i /org/freedesktop/UPower/devices/battery_$INSTANCE |
-	awk -v alert_low=$ALERT_LOW '
+power=$(cat "/sys/class/power_supply/${INSTANCE}/power_now")
+watts=$(echo "scale=2;$power / 1000000" | bc)
+
+"$UPOWER" -i "/org/freedesktop/UPower/devices/battery_$INSTANCE" |
+	awk -v alert_low="$ALERT_LOW" '
 /state:/ {
 	state = $2
 }
@@ -50,9 +53,9 @@ END {
 		label = ""
 	else if (percentage > 25)
 		label = ""
-    else if (percentage > 10) 
+    else if (percentage > 10)
 		label = ""
-    else if (percentage > 5)  
+    else if (percentage > 5)
 		label = ""
 
 
@@ -61,7 +64,7 @@ END {
     colorend = "</span>"
 
     # full text & "$@" > /dev/null;
-    print blue label colorend " " gray remaining_time " (" percentage ")" colorend
+    print blue label colorend " " gray remaining_time " (" percentage ") ['"$watts"'w]" colorend
 
 	# color
 	gsub(/%$/,"",percentage)
