@@ -221,8 +221,6 @@ Plug 'ntpeters/vim-better-whitespace'
 Plug 'sbdchd/neoformat'
 " vim-eunuch - Add some unix commands to vim
 Plug 'tpope/vim-eunuch'
-" vim-disapprove-deep-indentation - flags code when its too indented
-Plug 'dodie/vim-disapprove-deep-indentation'
 call plug#end()
 
 " Plugin Specific Configurations
@@ -426,10 +424,6 @@ autocmd BufEnter * EnableStripWhitespaceOnSave
 
 " neoformat"
 map <leader>nf :Neoformat<cr>
-
-" vim-disapprove-deep-indentation
-let g:LookOfDisapprovalTabTreshold=4
-let g:LookOfDisapprovalSpaceTreshold=(&tabstop*4)
 
 " vim-indent-guides
 let g:indent_guides_start_level = 2
