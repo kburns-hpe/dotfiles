@@ -1,6 +1,7 @@
 set colorcolumn=80 " Shows where 80 characters is
 set ignorecase smartcase " enable case insensitive searching
 set iskeyword+=_,$,@,%,# " set additioanl keywords for navigation purposes
+set lazyredraw " Only redraw the screen when required
 set linebreak " only wrap lines at a breakat
 set number " Enable line number in gutter
 set relativenumber " Enables relative numbers for column
