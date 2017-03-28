@@ -43,6 +43,16 @@ set undofile
 set undolevels=1000
 set undoreload=10000
 
+" Use regular number in normal and relative in other modes
+autocmd InsertEnter * :set norelativenumber
+autocmd InsertLeave * :set relativenumber
+
+" Map %% as %:h for ease of use
+cnoremap <expr> %%  getcmdtype() == ':' ? expand('%:h').'/' : '%%'
+
+" Set w!! to write to file as root
+cmap w!! w !sudo tee > /dev/null %
+
 " Change ZZ and ZQ to quit all buffers instead of just the current one
 map ZZ :wqa<CR>
 map ZQ :qa<CR>
