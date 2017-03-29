@@ -7,7 +7,7 @@ allow_bold = true
 dynamic_title = true
 urgent_on_bell = true
 clickable_url = false
-font = DejaVu Sans Mono 14
+font = DejaVu Sans Mono 12
 scrollback_lines = 5000
 search_wrap = true
 fullscreen = false
@@ -41,36 +41,36 @@ highlight = #0050a4
 # colors from color0 to color254 can be set
 # Black
 color0 = #000000
-# Dark Red
-color1 = #ff9d00
-# Dark Green
-color2 = #3bd01d
-# Dark Yellow
-color3 = #edc809
-# Dark Blue
-color4 = #5555ff
-# Dark Magenta
-color5 = #ff55ff
-# Dark Cyan
-color6 = #6ae3fa
-# Light Grey
-color7 = #cccccc
-# Grey
-color8 = #555555
 # Red
-color9 = #ff0900
+color1 = #FF0900
 # Green
-color10 = #38de21
+color2 = #38DE21
 # Yellow
-color11 = #ffdd00
+color3 = #FFDD00
 # Blue
-color12 = #0088ff
+color4 = #0088FF
 # Magenta
-color13 = #ff628c
+color5 = #FF628C
 # Cyan
-color14 = #80ffc2
+color6 = #80FFC2
 # White
-color15 = #ffffff
+color7 = #FFFFFF
+# Bright Black
+color8 = #555555
+# Bright Red (Orange)
+color9 = #FF9D00
+# Bright Green
+color10 = #3BD01D
+# Bright Yellow
+color11 = #EDC809
+# Bright Bluej
+color12 = #5555FF
+# Bright Magenta
+color13 = #FF55FF
+# Bright Cyan
+color14 = #6AE3FA
+# Bright White
+color15 = #FFFFFF
 
 [hints]
 font = DejaVu Sans Mono 10
