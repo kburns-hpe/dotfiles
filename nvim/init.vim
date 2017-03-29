@@ -1,6 +1,7 @@
 set colorcolumn=80 " Shows where 80 characters is
 set ignorecase smartcase " enable case insensitive searching
 set iskeyword+=_,$,@,%,# " set additioanl keywords for navigation purposes
+set lazyredraw " Only redraw the screen when required
 set linebreak " only wrap lines at a breakat
 set number " Enable line number in gutter
 set relativenumber " Enables relative numbers for column
@@ -42,6 +43,16 @@ set undodir=~/.config/nvim/undo
 set undofile
 set undolevels=1000
 set undoreload=10000
+
+" Use regular number in normal and relative in other modes
+autocmd InsertEnter * :set norelativenumber
+autocmd InsertLeave * :set relativenumber
+
+" Map %% as %:h for ease of use
+cnoremap <expr> %%  getcmdtype() == ':' ? expand('%:h').'/' : '%%'
+
+" Set w!! to write to file as root
+cmap w!! w !sudo tee > /dev/null %
 
 " Change ZZ and ZQ to quit all buffers instead of just the current one
 map ZZ :wqa<CR>
@@ -221,8 +232,6 @@ Plug 'ntpeters/vim-better-whitespace'
 Plug 'sbdchd/neoformat'
 " vim-eunuch - Add some unix commands to vim
 Plug 'tpope/vim-eunuch'
-" vim-disapprove-deep-indentation - flags code when its too indented
-Plug 'dodie/vim-disapprove-deep-indentation'
 call plug#end()
 
 " Plugin Specific Configurations
@@ -426,10 +435,6 @@ autocmd BufEnter * EnableStripWhitespaceOnSave
 
 " neoformat"
 map <leader>nf :Neoformat<cr>
-
-" vim-disapprove-deep-indentation
-let g:LookOfDisapprovalTabTreshold=4
-let g:LookOfDisapprovalSpaceTreshold=(&tabstop*4)
 
 " vim-indent-guides
 let g:indent_guides_start_level = 2
