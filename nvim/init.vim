@@ -167,7 +167,8 @@ call plug#begin('~/.config/nvim/plugged')
 " cobalt2 - color theme
 Plug 'herrbischoff/cobalt2.vim'
 " fzf - fuzzy searching
-Plug '/usr/local/opt/fzf' | Plug 'junegunn/fzf.vim'
+Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
+Plug 'junegunn/fzf.vim'
 " limelight - hyperfocus-writing in vim
 Plug 'junegunn/limelight.vim'
 " fugitive - git plugin
