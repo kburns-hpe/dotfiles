@@ -51,7 +51,6 @@ bindsym $hyper+l exec i3lock -i ~/pictures/wallpaper/misc/lock.png --textcolor=0
 bindsym $hyper+b exec chromium
 bindsym $hyper+F7 exec ~/bin/dock.sh
 bindsym $hyper+a exec pavucontrol
-bindsym $mod+a exec anamnesis -b
 bindsym $hyper+n exec termite --name=nvim -e "notes nv"
 bindsym $hyper+s exec termite --name=social -e social
 bindsym $hyper+F12 exec systemctl poweroff
