@@ -53,6 +53,7 @@ bindsym $hyper+F7 exec ~/bin/dock.sh
 bindsym $hyper+a exec pavucontrol
 bindsym $hyper+n exec termite --name=nvim -e "notes nv"
 bindsym $hyper+s exec termite --name=social -e social
+bindsym $hyper+v exec --no-startup-id vpn
 bindsym $hyper+F12 exec systemctl poweroff
 bindsym Print exec --no-startup-id scrot -e 'mv $f ~/pictures/screenshots/ 2>/dev/null'
 bindsym $hyper+d exec --no-startup-id doing done
