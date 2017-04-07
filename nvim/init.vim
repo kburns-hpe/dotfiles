@@ -162,6 +162,12 @@ endfunction
 nmap <silent> <leader>wl :call ToggleList("Location List", 'l')<CR>
 nmap <silent> <leader>we :call ToggleList("Quickfix List", 'c')<CR>
 
+" Set filetype specific settings
+augroup puppet
+    au!
+    autocmd FileType puppet set colorcolumn=140
+augroup END
+
 " Install Plugins
 call plug#begin('~/.config/nvim/plugged')
 " cobalt2 - color theme
