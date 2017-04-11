@@ -49,6 +49,9 @@ volume() {
 
 #------------------------------------------------------------------------
 
+# Update i3blocks
+pkill -RTMIN+1 i3blocks
+
 case "$1" in
   toggle) amixer -q -D "$MIXER" sset "$SCONTROL" "$(capability)" toggle ;;  # right click, mute/unmute
   up) amixer -q -D "$MIXER" sset "$SCONTROL" "$(capability)" "${STEP}+" unmute ;; # scroll up, increase

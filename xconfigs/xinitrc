@@ -23,7 +23,7 @@ xset s 600 600
 nitrogen --restore &
 
 # Start Programs
-anamnesis --start &
+clipster -d &
 start-pulseaudio-x11 &
 udiskie &
 dropbox &
@@ -31,6 +31,7 @@ unclutter &
 nm-applet &
 blueman-applet &
 autokey-gtk &
+dunst &
 redshift-gtk &
 
 # Start Screensaver
@@ -40,7 +41,7 @@ xautolock -time 7 -locker "i3lock -i ~/pictures/wallpaper/misc/lock.png --textco
 setxkbmap -option terminate:ctrl_alt_bksp
 # Setup keyboard
 xmodmap ~/.Xmodmap
-xcape -e 'Control_R=Escape;Super_R=Tab'
+xcape -e 'Control_R=Escape'
 
 # Disable touchpad on Thinkpad
 touchpad=$(xinput | grep "SynPS/2 Synaptics TouchPad" | sed 's/.*id=\([0-9]*\).*/\1/')
