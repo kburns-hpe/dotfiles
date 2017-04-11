@@ -239,6 +239,8 @@ Plug 'ntpeters/vim-better-whitespace'
 Plug 'sbdchd/neoformat'
 " vim-eunuch - Add some unix commands to vim
 Plug 'tpope/vim-eunuch'
+" vim-coffe-script - adds support for coffee script
+Plug 'kchmck/vim-coffee-script'
 call plug#end()
 
 " Plugin Specific Configurations
