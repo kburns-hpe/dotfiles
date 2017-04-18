@@ -241,6 +241,8 @@ Plug 'sbdchd/neoformat'
 Plug 'tpope/vim-eunuch'
 " vim-coffe-script - adds support for coffee script
 Plug 'kchmck/vim-coffee-script'
+" vimux - Interact with tmux from within vim
+Plug 'benmills/vimux'
 call plug#end()
 
 " Plugin Specific Configurations
@@ -283,7 +285,7 @@ nmap <silent> <leader>T :TestFile<CR>
 nmap <silent> <leader>a :TestSuite<CR>
 nmap <silent> <leader>L :TestLast<CR>
 nmap <silent> <leader>v :TestVisit<CR>
-let test#strategy = "neovim"
+let test#strategy = "vimux"
 
 " lightline
 let g:lightline = {
