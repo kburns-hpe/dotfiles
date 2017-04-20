@@ -85,6 +85,7 @@ nnoremap <C-J> <C-W><C-J>
 nnoremap <C-K> <C-W><C-K>
 nnoremap <C-L> <C-W><C-L>
 nnoremap <C-H> <C-W><C-H>
+nnoremap <silent> vv <C-w>v
 
 " Open new splits to the right and bottom
 set splitbelow
@@ -243,6 +244,10 @@ Plug 'tpope/vim-eunuch'
 Plug 'kchmck/vim-coffee-script'
 " vimux - Interact with tmux from within vim
 Plug 'benmills/vimux'
+" vim-tmux-navigator allows seamless switching between tmux and vim panes
+Plug 'christoomey/vim-tmux-navigator'
+" vim-obsession - Manages vim sessions
+Plug 'tpope/vim-obsession'
 call plug#end()
 
 " Plugin Specific Configurations
@@ -280,12 +285,18 @@ let g:neomake_sh_shellcheck_maker = {
   \ }
 
 " vim-test
-nmap <silent> <leader>t :TestNearest<CR>
-nmap <silent> <leader>T :TestFile<CR>
-nmap <silent> <leader>a :TestSuite<CR>
-nmap <silent> <leader>L :TestLast<CR>
-nmap <silent> <leader>v :TestVisit<CR>
+nmap <silent> <leader>tn :TestNearest<CR>
+nmap <silent> <leader>tf :TestFile<CR>
+nmap <silent> <leader>ts :TestSuite<CR>
+nmap <silent> <leader>tl :TestLast<CR>
+nmap <silent> <leader>tv :TestVisit<CR>
 let test#strategy = "vimux"
+
+" vimux
+nmap <Leader>vp :VimuxPromptCommand<CR>
+nmap <Leader>vl :VimuxRunLastCommand<CR>
+nmap <Leader>vi :VimuxInspectRunner<CR>
+nmap <Leader>vz :VimuxZoomRunner<CR>
 
 " lightline
 let g:lightline = {
