@@ -202,8 +202,6 @@ Plug 'nathanaelkane/vim-indent-guides'
 Plug 'tpope/vim-repeat'
 " vim-rsi - adds some readline shortcuts
 Plug 'tpope/vim-rsi'
-" vim - puppelabs vim syntax
-Plug 'rodjek/vim-puppet'
 " splitjoin - an easy way to split/join lines
 Plug 'AndrewRadev/splitjoin.vim'
 " neomake - linter
@@ -240,8 +238,6 @@ Plug 'ntpeters/vim-better-whitespace'
 Plug 'sbdchd/neoformat'
 " vim-eunuch - Add some unix commands to vim
 Plug 'tpope/vim-eunuch'
-" vim-coffe-script - adds support for coffee script
-Plug 'kchmck/vim-coffee-script'
 " vimux - Interact with tmux from within vim
 Plug 'benmills/vimux'
 " vim-tmux-navigator allows seamless switching between tmux and vim panes
@@ -252,6 +248,8 @@ Plug 'tpope/vim-obsession'
 Plug 'tpope/vim-bundler'
 " vim-rails - Helps with ruby on rails development
 Plug 'tpope/vim-rails'
+" vim-polyglot - Provides support for multiple languages
+Plug 'sheerun/vim-polyglot'
 call plug#end()
 
 " Plugin Specific Configurations
