@@ -69,8 +69,9 @@ map <leader>p "+p
 map <leader>P "+P
 
 " Reformat paragrahs
-vmap Q gq
-nmap Q gqap
+nnoremap <silent> Q gqap
+xnoremap <silent> Q gq
+nnoremap <silent> <leader>Q vapJgqap
 
 " Buffer shortcuts
 nnoremap <C-Left> :bprevious<CR>
@@ -250,6 +251,9 @@ Plug 'tpope/vim-bundler'
 Plug 'tpope/vim-rails'
 " vim-polyglot - Provides support for multiple languages
 Plug 'sheerun/vim-polyglot'
+" vim-pencil - Helps non-code writing
+Plug 'reedes/vim-pencil'
+
 call plug#end()
 
 " Plugin Specific Configurations
@@ -464,3 +468,13 @@ map <leader>nf :Neoformat<cr>
 let g:indent_guides_start_level = 2
 let g:indent_guides_guide_size = 1
 let g:indent_guides_enable_on_vim_startup=1
+
+" vim-pencil
+augroup pencil
+  autocmd!
+  autocmd FileType markdown,mkd call pencil#init()
+  autocmd FileType text         call pencil#init()
+augroup END
+noremap <silent> <F11> :<C-u>PFormatToggle<cr>
+inoremap <silent> <F11> <C-o>:PFormatToggle<cr>
+
