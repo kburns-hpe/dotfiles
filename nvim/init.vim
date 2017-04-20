@@ -248,6 +248,10 @@ Plug 'benmills/vimux'
 Plug 'christoomey/vim-tmux-navigator'
 " vim-obsession - Manages vim sessions
 Plug 'tpope/vim-obsession'
+" vim-bundler - Adds some stuff for dealing with bundler
+Plug 'tpope/vim-bundler'
+" vim-rails - Helps with ruby on rails development
+Plug 'tpope/vim-rails'
 call plug#end()
 
 " Plugin Specific Configurations
