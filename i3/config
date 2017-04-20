@@ -45,7 +45,7 @@ bindsym XF86MonBrightnessUp exec xbacklight -inc 5
 bindsym XF86MonBrightnessDown exec xbacklight -dec 5
 
 # Application shortcuts
-bindsym $mod+Return exec termite -e tmux
+bindsym $mod+Return exec termite -e 'runtmux'
 bindsym $hyper+Return exec termite
 bindsym $hyper+l exec i3lock -i ~/pictures/wallpaper/misc/lock.png --textcolor=00000000 --ringcolor=193549ff --insidecolor=005f5fbf --insidewrongcolor=ff0900bf --ringwrongcolor=ff0900ff --insidevercolor=0088ffbf --ringvercolor=0088ffff --keyhlcolor=38de21ff --bshlcolor=ff9d00ff
 bindsym $hyper+b exec chromium
