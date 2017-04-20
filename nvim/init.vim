@@ -75,8 +75,8 @@ nmap Q gqap
 " Buffer shortcuts
 nnoremap <C-Left> :bprevious<CR>
 nnoremap <C-Right> :bnext<CR>
-nnoremap <Tab> :bnext<CR>
-nnoremap <bs> :bprevious<CR>
+nnoremap <C-n> :bnext<CR>
+nnoremap <C-p> :bprevious<CR>
 nnoremap <leader>d :bd<CR>
 nnoremap <Leader>wd :pclose<CR>
 
@@ -216,8 +216,6 @@ Plug 'zchee/deoplete-jedi'
 Plug 'KabbAmine/zeavim.vim'
 " vim-jekyll - Jekyll management plugin
 Plug 'parkr/vim-jekyll'
-" vim-multiple-cursors - multiple cursors
-Plug 'terryma/vim-multiple-cursors/'
 " vim-bufferline - lists buffers
 Plug 'bling/vim-bufferline'
 " dash.vim - Call Dash from within vim
