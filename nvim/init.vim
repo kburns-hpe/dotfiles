@@ -86,8 +86,8 @@ nnoremap <C-J> <C-W><C-J>
 nnoremap <C-K> <C-W><C-K>
 nnoremap <C-L> <C-W><C-L>
 nnoremap <C-H> <C-W><C-H>
-nnoremap <leader>' <C-w>v
-nnoremap <leader>; <C-w>s
+nnoremap <leader>; <C-w>v
+nnoremap <leader>' <C-w>s
 nnoremap <leader>q <C-w>q
 
 " Open new splits to the right and bottom
