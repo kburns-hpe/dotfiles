@@ -17,10 +17,10 @@ function lxcc ()
 {
     machine=$1
     clone=$2
-    
+
     if [ -d "/var/lib/lxc/$machine" ]; then
         if [ "$clone" ]; then
-            sudo lxc-clone -s -o "$machine" -n "$clone"
+            sudo lxc-copy -n "$machine" -N "$clone" -s btrfs
             sudo sed -i -e 's|\(^lxc.mount.entry.*/var/lib/lxc/\)'$machine'|\1'$clone\| "/var/lib/lxc/$clone/config"
         else
             echo "Error: Clone machine name not specified"
