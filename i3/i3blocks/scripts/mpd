@@ -29,6 +29,7 @@ icon() {
   elif echo "$mpdstatus" | grep -q "\[paused\]"; then
     icon=""
   else
+    echo
     exit
   fi
 }
