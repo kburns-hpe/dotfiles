@@ -1,0 +1,45 @@
+#!/bin/bash
+
+case $BLOCK_BUTTON in
+  1)
+    mpdstatus="$(mpc next)"
+    title="$(echo "$mpdstatus" | head -n 1)"
+    icon
+    title
+    ;;
+  2)
+    mpdstatus="$(mpc toggle)"
+    title="$(echo "$mpdstatus" | head -n 1)"
+    icon
+    title
+    ;;
+  3)
+    mpdstatus="$(mpc prev)"
+    title="$(echo "$mpdstatus" | head -n 1)"
+    icon
+    title
+    ;;
+esac
+
+#      
+# Validate mpd is running
+icon() {
+  if echo "$mpdstatus" | grep -q "\[playing\]"; then
+    icon=""
+  elif echo "$mpdstatus" | grep -q "\[paused\]"; then
+    icon=""
+  else
+    exit
+  fi
+}
+
+# Update
+mpdstatus="$(mpc status)"
+title="$(mpc current -f '[%artist% - ]%title%')"
+
+output() {
+  echo "<span foreground='#0088ff'>$icon </span><span foreground='#bbbbbb'>$title</span>"
+}
+
+icon
+output
