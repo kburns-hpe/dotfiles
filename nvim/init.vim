@@ -254,6 +254,8 @@ Plug 'tpope/vim-bundler'
 Plug 'tpope/vim-rails'
 " vim-polyglot - Provides support for multiple languages
 Plug 'sheerun/vim-polyglot'
+" vim-go - Adds support for go
+Plug 'fatih/vim-go'
 call plug#end()
 
 " Plugin Specific Configurations
