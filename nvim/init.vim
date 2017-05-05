@@ -184,8 +184,6 @@ Plug 'herrbischoff/cobalt2.vim'
 " fzf - fuzzy searching
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
 Plug 'junegunn/fzf.vim'
-" limelight - hyperfocus-writing in vim
-Plug 'junegunn/limelight.vim'
 " fugitive - git plugin
 Plug 'tpope/vim-fugitive'
 " Lightline - configurable statusline/tabline
@@ -422,9 +420,6 @@ map <leader>fb :BLines<cr>
 map <leader>fl :Lines<cr>
 map <leader>ff :Files<cr>
 map <leader>fg :GFiles<cr>
-
-" limelight
-map <F3> :Limelight!!<cr>
 
 " deoplete
 let g:deoplete#auto_complete_start_length = 4
