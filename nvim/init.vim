@@ -57,7 +57,12 @@ cmap w!! w !sudo tee > /dev/null %
 " Change ZZ and ZQ to quit all buffers instead of just the current one
 map ZZ :wqa<CR>
 map ZQ :qa<CR>
+
+" Map ctrl-s in insert mode to move to normal mode and save the document
 map <C-s> :w<CR>
+imap <C-s> <Esc>:w<CR>
+
+
 
 " Change leader from \ to Space
 nnoremap <SPACE> <Nop>
