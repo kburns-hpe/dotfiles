@@ -256,6 +256,8 @@ Plug 'tpope/vim-rails'
 Plug 'sheerun/vim-polyglot'
 " vim-go - Adds support for go
 Plug 'fatih/vim-go'
+" vim-gutentags - Helps manage ctags
+Plug 'ludovicchabant/vim-gutentags'
 call plug#end()
 
 " Plugin Specific Configurations
