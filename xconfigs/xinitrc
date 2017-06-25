@@ -47,9 +47,6 @@ xcape -e 'Control_R=Escape'
 touchpad=$(xinput | grep "SynPS/2 Synaptics TouchPad" | sed 's/.*id=\([0-9]*\).*/\1/')
 xinput --disable "$touchpad"
 
-# Setup ssh-agent for all connections
-eval $(ssh-agent)
-
 # Setup gpg agent for all connections
 envfile="$HOME/.gnupg/gpg-agent.env"
 if [[ -e "$envfile" ]] && kill -0 $(grep GPG_AGENT_INFO "$envfile" | cut -d: -f 2) 2>/dev/null; then
@@ -58,7 +55,8 @@ else
     eval "$(gpg-agent --daemon --write-env-file "$envfile")"
 fi
 # This is needed for mutt
-export GPG_AGENT_INFO=$HOME/.gnupg/S.gpg-agent
+export GPG_AGENT_INFO="${XDG_RUNTIME_DIR}/gnupg/S.gpg-agent"
+echo "UPDATESTARTUPTTY" | gpg-connect-agent > /dev/null 2&>1
 
 # Start policy kit
 /usr/lib/polkit-1/polkitd --no-debug
