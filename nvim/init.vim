@@ -62,8 +62,6 @@ map ZQ :qa<CR>
 map <C-s> :w<CR>
 imap <C-s> <Esc>:w<CR>
 
-
-
 " Change leader from \ to Space
 nnoremap <SPACE> <Nop>
 let mapleader = "\<Space>"
@@ -170,6 +168,9 @@ endfunction
 
 nmap <silent> <leader>wl :call ToggleList("Location List", 'l')<CR>
 nmap <silent> <leader>we :call ToggleList("Quickfix List", 'c')<CR>
+
+" Open ctag in new vertical split
+map <A-]> :vsp<CR>:exec("tag ".expand("<cword>"))<CR>q
 
 " Install Plugins
 call plug#begin('~/.config/nvim/plugged')
