@@ -171,12 +171,6 @@ endfunction
 nmap <silent> <leader>wl :call ToggleList("Location List", 'l')<CR>
 nmap <silent> <leader>we :call ToggleList("Quickfix List", 'c')<CR>
 
-" Set filetype specific settings
-augroup puppet
-    au!
-    autocmd FileType puppet set colorcolumn=140
-augroup END
-
 " Install Plugins
 call plug#begin('~/.config/nvim/plugged')
 " cobalt2 - color theme
@@ -441,12 +435,11 @@ let g:pymode_indent = 1
 let g:pymode_lint = 0
 let g:pymode_lint_on_write = 0
 let g:pymode_motion = 1
-let g:pymode_rope = 0
+let g:pymode_rope = 1
 let g:pymode_rope_complete_on_dot = 0
 let g:pymode_rope_completion = 0
 let g:pymode_run = 1
-let g:pymode_options_max_line_length = 99
-let g:pymode_options_colorcolumn = 1
+let g:pymode_options_max_line_length = 80
 
 " gitgutter
 nmap ]h <Plug>GitGutterNextHunk
