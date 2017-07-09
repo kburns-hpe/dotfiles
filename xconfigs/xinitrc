@@ -56,7 +56,7 @@ else
 fi
 # This is needed for mutt
 export GPG_AGENT_INFO="${XDG_RUNTIME_DIR}/gnupg/S.gpg-agent"
-echo "UPDATESTARTUPTTY" | gpg-connect-agent > /dev/null 2&>1
+echo "UPDATESTARTUPTTY" | gpg-connect-agent
 
 # Start policy kit
 /usr/lib/polkit-1/polkitd --no-debug
