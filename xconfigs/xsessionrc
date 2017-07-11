@@ -1,0 +1,54 @@
+#!/bin/zsh
+
+# This needs to be set in order for autocomplete to work on run shortcut
+export PATH="$HOME/bin:$PATH"
+
+# Internal Monitor
+xrandr --dpi 144 --output LVDS1 --auto
+dispwin ~/.config/colors/laptop.icc
+xrdb -merge ~/.Xresources
+
+# blank screen after 10 minutes
+xset s 600 600
+
+# Setup Wallpaper
+nitrogen --restore &
+
+# Start Programs
+clipster -d &
+start-pulseaudio-x11 &
+udiskie &
+dropbox start &
+unclutter &
+nm-applet &
+blueman-applet &
+dunst &
+redshift-gtk &
+
+# Start Screensaver
+xautolock -time 7 -locker "i3lock -i ~/pictures/wallpaper/misc/lock.png" -corners --00  -cornerdelay 4 -cornerredelay 4 &
+
+# enable ctrl-alt-backspace
+setxkbmap -option terminate:ctrl_alt_bksp
+# Setup keyboard
+xmodmap ~/.Xmodmap
+xcape -e 'Control_R=Escape'
+
+# Disable touchpad on Thinkpad
+touchpad=$(xinput | grep "SynPS/2 Synaptics TouchPad" | sed 's/.*id=\([0-9]*\).*/\1/')
+xinput --disable "$touchpad"
+
+# Setup gpg agent for all connections
+envfile="$HOME/.gnupg/gpg-agent.env"
+if [[ -e "$envfile" ]] && kill -0 $(grep GPG_AGENT_INFO "$envfile" | cut -d: -f 2) 2>/dev/null; then
+    eval "$(cat "$envfile")"
+else
+    eval "$(gpg-agent --daemon --write-env-file "$envfile")"
+fi
+
+# This is needed for mutt
+export GPG_AGENT_INFO="${XDG_RUNTIME_DIR}/gnupg/S.gpg-agent"
+echo "UPDATESTARTUPTTY" | gpg-connect-agent
+
+# Start policy kit
+/usr/lib/polkit-1/polkitd --no-debug
