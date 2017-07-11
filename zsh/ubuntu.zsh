@@ -15,18 +15,12 @@ alias lx="ls -X"
 alias lv="ls -v"
 
 # Ubuntu PKG Management
-alias apt="sudo apt-get install"
-alias aptc="sudo apt-get autoclean"
-alias aptd="sudo apt-get update && sudo apt-get dist-upgrade"
-alias apti="apt-cache show"
-alias aptg="sudo apt-get update && sudo apt-get upgrade"
-alias apts="apt-cache search"
-alias aptu="sudo apt-get update"
-
-# Use keychain for global ssh-agent.  This will ask for passphrase on first use.
-export SSH_ASKPASS="/usr/bin/ssh-askpass"
-alias ssh='eval $(/usr/bin/keychain --eval --agents ssh -Q --quiet ~/.ssh/id_rsa) && ssh'
-alias scp='eval $(/usr/bin/keychain --eval --agents ssh -Q --quiet ~/.ssh/id_rsa) && scp'
+alias apti="sudo apt install"
+alias aptc="sudo apt autoclean"
+alias aptd="sudo apt update && sudo apt dist-upgrade"
+alias aptg="sudo apt update && sudo apt upgrade"
+alias apts="apt search"
+alias aptu="sudo apt update"
 
 # Highlight a specific search and pipe it through less
 alias hla='ack-grep -i --passthru --color --pager="less -R"'
