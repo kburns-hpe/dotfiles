@@ -35,17 +35,12 @@ function chpwd_update_git_vars() {
     update_current_git_vars
 }
 
-if which python2 >/dev/null; then
-  PYTHONBIN="python2"
-else
-  PYTHONBIN="python"
-fi
 
 function update_current_git_vars() {
     unset __CURRENT_GIT_STATUS
 
     local gitstatus="$__GIT_PROMPT_DIR/gitstatus.py"
-    _GIT_STATUS=$(${PYTHONBIN} ${gitstatus})
+    _GIT_STATUS=$(python ${gitstatus})
     __CURRENT_GIT_STATUS=("${(@f)_GIT_STATUS}")
 	GIT_BRANCH=$__CURRENT_GIT_STATUS[1]
 	GIT_REMOTE=$__CURRENT_GIT_STATUS[2]
