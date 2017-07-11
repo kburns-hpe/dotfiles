@@ -40,3 +40,23 @@ function shl() {
 
     find . -type f -exec egrep -i "$searchfor" {} /dev/null \; | ack-grep -i --passthru --color --pager="less -R" "$highlight"
 }
+
+# Use qt4-ssh-askpass for ssh ask dialog
+export SSH_ASKPASS="/usr/bin/qt4-ssh-askpass"
+
+# BTRFS DF alias
+alias bdf="btrfs filesystem df"
+
+# Useful when copying files on a COW-enabled file system
+alias cp="cp -i --reflink=auto"
+
+# Other aliases
+alias open="xdg-open"
+alias xqf="xdg-mime query filetype"
+alias xqd="xdg-mime query default"
+alias xd="xdg-mime default"
+alias k="kitchen"
+alias scpnh='scp -o "StrictHostKeyChecking no" -o "UserKnownHostsFile /dev/null"'
+
+# Update dircolors
+eval $(dircolors ~/.dircolors)
