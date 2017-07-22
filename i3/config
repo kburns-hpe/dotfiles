@@ -190,6 +190,7 @@ assign [class="google-chrome"] $ws2
 assign [class="HipChat"] $ws3
 assign [class="Pidgin"] $ws3
 assign [instance="social" class="Termite"] $ws3
+assign [Class="Slack"] $ws3
 
 assign [class="Zathura"] $ws4
 assign [class="Zeal"] $ws4
