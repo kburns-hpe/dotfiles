@@ -15,10 +15,11 @@ alias lx="ls -X"
 alias lv="ls -v"
 
 # Ubuntu PKG Management
-alias apti="sudo apt install"
 alias aptc="sudo apt autoclean"
 alias aptd="sudo apt update && sudo apt dist-upgrade"
 alias aptg="sudo apt update && sudo apt upgrade"
+alias apti="sudo apt install"
+alias aptr="sudo apt remove"
 alias apts="apt search"
 alias aptu="sudo apt update"
 
