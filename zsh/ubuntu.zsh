@@ -5,7 +5,7 @@ export BROWSER=chromium-browser
 export EDITOR=nvim
 
 # Set Path
-export PATH="$HOME/.gem/ruby/2.3.0/bin:$HOME/bin:$PATH"
+export PATH="$HOME/.local/bin:$HOME/.gem/ruby/2.3.0/bin:$HOME/bin:$PATH"
 
 # Linux LS aliases
 alias ls="ls --color=auto -CFh"
