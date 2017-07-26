@@ -32,7 +32,7 @@ xautolock -time 7 -locker "i3lock -i ~/Pictures/wallpaper/misc/lock.png" -corner
 setxkbmap -option terminate:ctrl_alt_bksp
 # Setup keyboard
 xmodmap ~/.Xmodmap
-xcape -e 'Control_R=Escape'
+xcape -e 'Control_R=Escape;Super_R=Tab'
 
 # Disable touchpad on Thinkpad
 touchpad=$(xinput | grep "SynPS/2 Synaptics TouchPad" | sed 's/.*id=\([0-9]*\).*/\1/')
