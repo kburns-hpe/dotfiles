@@ -26,7 +26,7 @@ dunst &
 redshift-gtk &
 
 # Start Screensaver
-xautolock -time 7 -locker "i3lock -i ~/pictures/wallpaper/misc/lock.png" -corners --00  -cornerdelay 4 -cornerredelay 4 &
+xautolock -time 7 -locker "i3lock -i ~/Pictures/wallpaper/misc/lock.png" -corners --00  -cornerdelay 4 -cornerredelay 4 &
 
 # enable ctrl-alt-backspace
 setxkbmap -option terminate:ctrl_alt_bksp
