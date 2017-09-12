@@ -211,14 +211,8 @@ Plug 'janko-m/vim-test'
 Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
 " deoplete-jedi - python auto complete using jedi
 Plug 'zchee/deoplete-jedi'
-" zeavim - embed zeal search
-Plug 'KabbAmine/zeavim.vim'
-" vim-jekyll - Jekyll management plugin
-Plug 'parkr/vim-jekyll'
 " vim-bufferline - lists buffers
 Plug 'bling/vim-bufferline'
-" dash.vim - Call Dash from within vim
-Plug 'rizzatti/dash.vim'
 " supertab - Manage tab for completion
 Plug 'ervandew/supertab'
 " vim-unimpaired - adds shortcuts for managing pair mappings
@@ -251,6 +245,8 @@ Plug 'tpope/vim-rails'
 Plug 'sheerun/vim-polyglot'
 " vim-go - Adds support for go
 Plug 'fatih/vim-go'
+" vim-jekyll - Jekyll management plugin
+"Plug 'parkr/vim-jekyll'
 call plug#end()
 
 " Plugin Specific Configurations
@@ -265,17 +261,6 @@ inoremap <F11> <C-o>:Neomake <CR>
 
 let g:neomake_open_list = 2
 let g:neomake_list_height = 5
-
-" Override puppet lint to ignore things I don't care about
-let g:neomake_puppet_puppetlint_maker = {
-  \ 'exe': 'puppet-lint',
-  \ 'args': ['--log-format',
-  \          '"%{path}:%{line}:%{column}:%{kind}:[%{check}] %{message}"',
-  \          '--no-quoted_booleans-check',
-  \          '--no-class_inherits_from_params_class-check',
-  \          '--no-puppet_url_without_modules-check' ],
-  \ 'errorformat': '"%f:%l:%c:%t%*[a-zA-Z]:%m"',
-  \ }
 
 " Override shellcheck to force it to use -x
 let g:neomake_sh_shellcheck_maker = {
