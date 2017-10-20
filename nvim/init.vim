@@ -203,8 +203,8 @@ Plug 'tpope/vim-repeat'
 Plug 'tpope/vim-rsi'
 " splitjoin - an easy way to split/join lines
 Plug 'AndrewRadev/splitjoin.vim'
-" neomake - linter
-Plug 'benekastah/neomake'
+" ale - Asynchronous Lint Engine
+Plug 'w0rp/ale'
 " vim-test - used to run various test suites
 Plug 'janko-m/vim-test'
 " deoplete - autocompletion
@@ -254,23 +254,15 @@ call plug#end()
 " cobalt2
 colorscheme cobalt2
 
-" Neomake
-autocmd! BufWritePost,BufReadPost * Neomake
-nnoremap <F11> :Neomake <CR>
-inoremap <F11> <C-o>:Neomake <CR>
+" ale
+nmap <silent> <leader>j <Plug>(ale_previous_wrap)
+nmap <silent> <leader>k <Plug>(ale_next_wrap)
 
-let g:neomake_open_list = 2
-let g:neomake_list_height = 5
-
-" Override shellcheck to force it to use -x
-let g:neomake_sh_shellcheck_maker = {
-  \ 'exe': 'shellcheck',
-  \ 'args': ['-fgcc', '-x' ],
-  \ 'errorformat':
-    \ '%f:%l:%c: %trror: %m,' .
-    \ '%f:%l:%c: %tarning: %m,' .
-    \ '%f:%l:%c: %tote: %m'
-  \ }
+" Enable yaml linter to run on ansible files
+augroup FiletypeGroup
+    autocmd!
+    au BufNewFile,BufRead *.yml set filetype=ansible.yaml
+augroup END
 
 " vim-test
 nmap <silent> <leader>tn :TestNearest<CR>
@@ -294,8 +286,8 @@ let g:lightline = {
     \             [ 'fugitive'],[ 'bufferline' ] ],
     \ 'right': [ [ 'lineinfo' ],
     \            [ 'percent' ],
-    \            [ 'filetype' ],
-    \            [ 'neomake' ] ]
+    \            [ 'linter_warnings', 'linter_errors', 'linter_ok' ],
+    \            [ 'filetype' ] ]
   \ },
   \ 'component_function': {
     \   'fugitive': 'LLFugitive',
@@ -303,12 +295,42 @@ let g:lightline = {
     \   'modified': 'LLModified',
     \   'mode': 'LLMode',
     \   'bufferline': 'MyBufferLine',
-    \   'neomake': 'neomake#statusline#LoclistStatus'
+  \ },
+  \ 'component_expand': {
+  \   'linter_warnings': 'LightlineLinterWarnings',
+  \   'linter_errors': 'LightlineLinterErrors',
+  \   'linter_ok': 'LightlineLinterOK'
   \ },
   \ 'component_type': {
-    \   'neomake': 'error',
+  \   'linter_warnings': 'warning',
+  \   'linter_errors': 'error',
+  \   'linter_ok': 'ok'
   \ }
 \ }
+
+" ale + lightline
+autocmd User ALELint call lightline#update()
+
+function! LightlineLinterWarnings() abort
+  let l:counts = ale#statusline#Count(bufnr(''))
+  let l:all_errors = l:counts.error + l:counts.style_error
+  let l:all_non_errors = l:counts.total - l:all_errors
+  return l:counts.total == 0 ? '' : printf('%d --', all_non_errors)
+endfunction
+
+function! LightlineLinterErrors() abort
+  let l:counts = ale#statusline#Count(bufnr(''))
+  let l:all_errors = l:counts.error + l:counts.style_error
+  let l:all_non_errors = l:counts.total - l:all_errors
+  return l:counts.total == 0 ? '' : printf('%d >>', all_errors)
+endfunction
+
+function! LightlineLinterOK() abort
+  let l:counts = ale#statusline#Count(bufnr(''))
+  let l:all_errors = l:counts.error + l:counts.style_error
+  let l:all_non_errors = l:counts.total - l:all_errors
+  return l:counts.total == 0 ? '✓' : ''
+endfunction
 
 function! LLMode()
   let fname = expand('%:t')
@@ -445,3 +467,10 @@ map <leader>nf :Neoformat<cr>
 let g:indent_guides_start_level = 2
 let g:indent_guides_guide_size = 1
 let g:indent_guides_enable_on_vim_startup=1
+
+" Load all plugins now.
+" Plugins need to be added to runtimepath before helptags can be generated.
+packloadall
+" Load all of the helptags now, after plugins have been loaded.
+" All messages and errors will be ignored.
+silent! helptags ALL
