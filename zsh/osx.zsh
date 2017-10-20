@@ -2,7 +2,7 @@
 
 # Set Variables
 export BROWSER=safari
-export EDITOR="NVIM_TUI_ENABLE_TRUE_COLOR=1 nvim"
+export EDITOR="nvim"
 
 # Set Path
 export PATH="$HOME/bin::/usr/local/bin:/usr/bin:/sbin:/bin:/usr/sbin"
