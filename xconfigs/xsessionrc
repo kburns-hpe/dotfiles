@@ -15,7 +15,7 @@ xset s 600 600
 nitrogen --restore &
 
 # Start Programs
-clipster -d &
+python3 clipster -d &
 start-pulseaudio-x11 &
 udiskie &
 dropbox start &
