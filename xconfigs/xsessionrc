@@ -37,7 +37,6 @@ xcape -e 'Control_R=Escape;Super_R=Tab'
 # Disable touchpad on Thinkpad
 touchpad=$(xinput | grep "SynPS/2 Synaptics TouchPad" | sed 's/.*id=\([0-9]*\).*/\1/')
 xinput --disable "$touchpad"
-xinput set-prop 12 "libinput Accel Speed" 0.45
 
 # Setup gpg agent for all connections
 envfile="$HOME/.gnupg/gpg-agent.env"
