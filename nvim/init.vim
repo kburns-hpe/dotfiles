@@ -439,16 +439,19 @@ map <leader>fl :Lines<cr>
 map <leader>ff :Files<cr>
 map <leader>fg :GFiles<cr>
 
-" deoplete
-let g:deoplete#auto_complete_start_length = 4
-let g:deoplete#enable_at_startup = 1
-if !exists('g:deoplete#omni#input_patterns')
-  let g:deoplete#omni#input_patterns = {}
-endif
-" let g:deoplete#disable_auto_complete = 1
-" autocmd InsertLeave,CompleteDone * if pumvisible() == 0 | pclose | endif
-let g:deoplete#sources#jedi#show_docstring = 1
-map <F9> :call deoplete#toggle()<cr>"
+" nvim-completion-manager
+map <F9> :call ToggleCompletion()<cr>"
+
+let s:cmEnabled = 1
+function! ToggleCompletion()
+    if s:cmEnabled
+      call cm#disable_for_buffer()
+      let s:cmEnabled = 0
+    else
+      call cm#enable_for_buffer()
+      let s:cmEnabled = 1
+    endif
+endfunction
 
 " python-mode
 let g:pymode_breakpoint = 1
