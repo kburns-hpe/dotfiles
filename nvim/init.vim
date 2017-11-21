@@ -20,6 +20,11 @@ filetype plugin indent on " Enable indent based on filetype
 set termguicolors " enable true color
 set grepprg=rg\ --vimgrep " Use ripgrep for grep
 
+" Test speed up stuff
+set nocursorline
+let g:matchparen_timeout = 20
+let g:matchparen_insert_timeout = 20
+
 " Disable autocomplete of comments on new lines
 autocmd FileType * setlocal formatoptions-=r formatoptions-=o
 
@@ -176,6 +181,12 @@ map <A-]> :vsp<CR>:exec("tag ".expand("<cword>"))<CR>q
 call plug#begin('~/.config/nvim/plugged')
 " cobalt2 - color theme
 Plug 'herrbischoff/cobalt2.vim'
+" tagbar
+Plug 'majutsushi/tagbar'
+" LanguageClient-neovim - Adds Language Server Protocol support
+Plug 'autozimu/LanguageClient-neovim', { 'do': ':UpdateRemotePlugins' }
+" echodoc - Displays function signatures from completions in the command line.
+Plug 'Shougo/echodoc.vim'
 " fzf - fuzzy searching
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
 Plug 'junegunn/fzf.vim'
@@ -207,6 +218,8 @@ Plug 'AndrewRadev/splitjoin.vim'
 Plug 'w0rp/ale'
 " vim-test - used to run various test suites
 Plug 'janko-m/vim-test'
+" nvim-completion-manager - autocompletion
+"Plug 'roxma/nvim-completion-manager'
 " deoplete - autocompletion
 Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
 " deoplete-jedi - python auto complete using jedi
@@ -468,9 +481,23 @@ let g:indent_guides_start_level = 2
 let g:indent_guides_guide_size = 1
 let g:indent_guides_enable_on_vim_startup=1
 
+" Lanaguage Servers
+let g:LanguageClient_autoStart = 1
+
+" LSP - Python
+let g:LanguageClient_serverCommands = {
+    \ 'python': ['pyls'],
+    \ }
+autocmd FileType python nnoremap <buffer>
+  \ <leader>lr :call LanguageClient_textDocument_rename()<cr>
+
+" tagbar
+nmap <F3> :TagbarToggle<CR>
+
 " Load all plugins now.
 " Plugins need to be added to runtimepath before helptags can be generated.
 packloadall
 " Load all of the helptags now, after plugins have been loaded.
 " All messages and errors will be ignored.
 silent! helptags ALL
+
