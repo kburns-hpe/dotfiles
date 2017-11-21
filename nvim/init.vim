@@ -221,7 +221,7 @@ Plug 'janko-m/vim-test'
 " nvim-completion-manager - autocompletion
 Plug 'roxma/nvim-completion-manager'
 " vim-gutentags - Manage ctags
-Plug 'ludovicchabant/vim-gutentags'
+"Plug 'ludovicchabant/vim-gutentags'
 " deoplete - autocompletion
 "Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
 " deoplete-jedi - python auto complete using jedi
