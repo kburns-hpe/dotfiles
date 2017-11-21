@@ -219,11 +219,13 @@ Plug 'w0rp/ale'
 " vim-test - used to run various test suites
 Plug 'janko-m/vim-test'
 " nvim-completion-manager - autocompletion
-"Plug 'roxma/nvim-completion-manager'
+Plug 'roxma/nvim-completion-manager'
+" vim-gutentags - Manage ctags
+Plug 'ludovicchabant/vim-gutentags'
 " deoplete - autocompletion
-Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
+"Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
 " deoplete-jedi - python auto complete using jedi
-Plug 'zchee/deoplete-jedi'
+"Plug 'zchee/deoplete-jedi'
 " vim-bufferline - lists buffers
 Plug 'bling/vim-bufferline'
 " supertab - Manage tab for completion
