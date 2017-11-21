@@ -17,8 +17,8 @@ alias ls="ls -CGFh"
 #export JAVA_HOME=$(/usr/libexec/java_home)
 
 # Use neovim instead of vim
-alias vim="NVIM_TUI_ENABLE_TRUE_COLOR=1 nvim"
-alias vi="NVIM_TUI_ENABLE_TRUE_COLOR=1 nvim"
+alias vim="nvim"
+alias vi="nvim"
 
 # Setup SSH keys via gpg
 export "GPG_TTY=$(tty)"
