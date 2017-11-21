@@ -22,3 +22,7 @@ alias vi="NVIM_TUI_ENABLE_TRUE_COLOR=1 nvim"
 # Setup SSH keys via gpg
 export "GPG_TTY=$(tty)"
 export "SSH_AUTH_SOCK=${HOME}/.gnupg/S.gpg-agent.ssh"
+
+# Disable homebrew git token request
+export HOMEBREW_NO_GITHUB_API=TRUE
+
