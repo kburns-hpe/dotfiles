@@ -3,6 +3,9 @@
 umask 022
 setopt autolist automenu nobeep
 
+# Show how long something took if it takes longer than X seconds
+REPORTTIME=10
+
 # useful for path editing — backward-delete-word, but with / as additional delimiter
 backward-delete-to-slash () {
   local WORDCHARS=${WORDCHARS//\//}
