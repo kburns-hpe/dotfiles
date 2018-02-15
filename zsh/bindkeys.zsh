@@ -3,7 +3,7 @@
 bindkey -v
 # Setup substring search
 ## Set Bind Keys if tmux/screen is running
-if [ "$TERM" = "screen-256color" -o "$TERM" = "screen" -o "$TERM" = "xterm-termite" ]; then
+if [ "$TERM" = "screen-256color" -o "$TERM" = "screen" -o "$TERM" = "tmux-256color" ]; then
   bindkey '^[[A' history-substring-search-up
   bindkey '^[[B' history-substring-search-down
 else
