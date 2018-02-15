@@ -7,9 +7,9 @@ alias grepc="grep --color=always -i"
 alias sz="source ~/.zshrc"
 
 # VIM aliases
-alias vi=vim
+alias vi=nvim
 alias viol='vim -c "source ~/.vim/outline.vimrc" $*'
-alias svi="sudoedit" 
+alias svi="sudoedit"
 
 # idea aliases
 alias ic='idea create'
