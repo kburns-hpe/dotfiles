@@ -40,7 +40,11 @@ function update_current_git_vars() {
     unset __CURRENT_GIT_STATUS
 
     local gitstatus="$__GIT_PROMPT_DIR/gitstatus.py"
-    _GIT_STATUS=$(python ${gitstatus})
+    if which python2 > /dev/null; then
+      _GIT_STATUS=$(python2 ${gitstatus})
+    else
+      _GIT_STATUS=$(python ${gitstatus})
+    fi
     __CURRENT_GIT_STATUS=("${(@f)_GIT_STATUS}")
 	GIT_BRANCH=$__CURRENT_GIT_STATUS[1]
 	GIT_REMOTE=$__CURRENT_GIT_STATUS[2]
