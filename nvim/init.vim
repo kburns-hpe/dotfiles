@@ -220,12 +220,6 @@ Plug 'w0rp/ale'
 Plug 'janko-m/vim-test'
 " nvim-completion-manager - autocompletion
 Plug 'roxma/nvim-completion-manager'
-" vim-gutentags - Manage ctags
-"Plug 'ludovicchabant/vim-gutentags'
-" deoplete - autocompletion
-"Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
-" deoplete-jedi - python auto complete using jedi
-"Plug 'zchee/deoplete-jedi'
 " vim-bufferline - lists buffers
 Plug 'bling/vim-bufferline'
 " supertab - Manage tab for completion
@@ -234,8 +228,6 @@ Plug 'ervandew/supertab'
 Plug 'tpope/vim-unimpaired'
 " python-mode provides utilities to help code python
 Plug 'python-mode/python-mode'
-" notational-fzf-vim - Easier way to search notes
-Plug 'https://github.com/Alok/notational-fzf-vim'
 " vim-diff-enhanced - improve vimdiff
 Plug 'chrisbra/vim-diff-enhanced'
 " vim-commentary - comment stuff out
@@ -421,12 +413,6 @@ nmap <leader>3 :diffget 3<cr>:diffupdate<cr>
 
 " Show DiffGitCached when running git commit
 autocmd FileType gitcommit if ! &previewwindow && expand('%:t') !~# 'index' | :DiffGitCached | wincmd j | :res +10 | wincmd k | endif
-
-" notational-fzf-vim
-let g:nv_directories = ['~/Dropbox/notes']
-let g:nv_default_extension = '.md'
-let g:nv_use_short_pathnames = 1
-map <leader>nv :NV<cr>
 
 " vim-jekyll
 let g:jekyll_post_extension = '.md'
