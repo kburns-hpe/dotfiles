@@ -9,6 +9,9 @@ file
 fzf
 golang
 grep
+jq
+mosh
+ncurses-utils
 neovim
 nodejs
 python
@@ -16,9 +19,13 @@ python-dev
 python2
 python2-dev
 proot
+radare2
 ruby
+silversearcher-ag
+strace
 tar
 tmux
+weechat
 wget
 zsh
 "
