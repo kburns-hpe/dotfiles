@@ -5,7 +5,7 @@ export BROWSER=chromium-browser
 export EDITOR=nvim
 
 # Set Path
-export PATH="$HOME/.local/bin:$HOME/.gem/ruby/2.3.0/bin:$HOME/bin:$PATH"
+export PATH="$HOME/.local/bin:$HOME/.gem/ruby/2.3.0/bin:$HOME/bin:$PATH:$HOME/go/bin"
 
 # Linux LS aliases
 alias ls="ls --color=auto -CFh"
@@ -59,7 +59,3 @@ alias xd="xdg-mime default"
 alias k="kitchen"
 alias scpnh='scp -o "StrictHostKeyChecking no" -o "UserKnownHostsFile /dev/null"'
 alias irc='TERM=tmux-256color weechat-curses'
-
-# Update dircolors
-eval $(dircolors ~/.dircolors)
-
