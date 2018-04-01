@@ -33,3 +33,7 @@ alias pbin="curl -F 'sprunge=<-' http://sprunge.us | xsel -i -p;xsel -p"
 
 # mplayer - fix pitch when speeding up videos
 alias mp="mplayer -af scaletempo"
+
+# Exercism aliases
+alias ef="exercism f"
+alias es="exercism s"
