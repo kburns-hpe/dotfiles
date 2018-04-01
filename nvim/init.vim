@@ -254,6 +254,8 @@ Plug 'sheerun/vim-polyglot'
 Plug 'fatih/vim-go'
 " vim-jekyll - Jekyll management plugin
 "Plug 'parkr/vim-jekyll'
+" vim-easyescape - easily map jk to escape
+Plug 'zhou13/vim-easyescape'
 call plug#end()
 
 " Plugin Specific Configurations
@@ -492,3 +494,9 @@ packloadall
 " All messages and errors will be ignored.
 silent! helptags ALL
 
+
+" vim-easyescape
+let g:easyescape_chars = { "j": 1, "k": 1 }
+let g:easyescape_timeout = 100
+cnoremap jk <ESC>
+cnoremap kj <ESC>
