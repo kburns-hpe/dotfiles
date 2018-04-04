@@ -31,8 +31,6 @@ alias gr="git rm"
 alias grb="git rebase"
 alias grh="git reset HEAD"
 alias gs="git status -s"
-alias gu="git checkout --"
-
 
 # git functions
 function gacmp () {
@@ -53,4 +51,8 @@ function grm() {
   git pull
   git checkout $CURRENT
   git rebase master
+}
+
+function gu() {
+  git fetch $1 --prune; git merge --ff-only $1/$2 || git rebase --preserve-merges $1/$2;
 }
