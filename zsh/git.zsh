@@ -21,7 +21,6 @@ alias gld="git log --all --graph --decorate --oneline --simplify-by-decoration"
 alias glg="git log --graph --pretty=format:'%C(auto)%h -%d %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit"
 alias glf='git log --pretty=format:"%C(yellow)%h%Cred%d\\ %Creset%s%Cblue\\ [%cn]" --decorate --numstat'
 alias glp="git log -p --decorate"
-alias gm="git merge"
 alias gmv="git mv"
 alias gp='git push origin HEAD'
 alias gpo='git push origin'
@@ -40,6 +39,18 @@ function gacmp () {
 function gcmp () {
     git commit -m "$*" && git push origin HEAD
 }
+
+function gm () {
+    if currentBranch=$(git symbolic-ref --short -q HEAD)
+    then
+        git checkout "$1"
+        pull
+        git checkout $currentBranch
+        git rebase "$1"
+    else
+        echo not on any branch
+    fi
+  }
 
 function gss () {
   git stash && git checkout "$1" && git stash pop
