@@ -25,8 +25,8 @@ alias gm="git merge"
 alias gmv="git mv"
 alias gp='git push origin HEAD'
 alias gpo='git push origin'
-alias gpu='git pull'
-alias gpub='git pull origin'
+alias gpu='git pull --rebase=preserve --prune'
+alias gpub='git pull --rebase=preserve --prune origin'
 alias gr="git rm"
 alias grb="git rebase"
 alias grh="git reset HEAD"
