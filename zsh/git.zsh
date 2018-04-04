@@ -31,6 +31,8 @@ alias gr="git rm"
 alias grb="git rebase"
 alias grh="git reset HEAD"
 alias gs="git status -s"
+alias gu="git checkout --"
+
 
 # git functions
 function gacmp () {
@@ -39,4 +41,16 @@ function gacmp () {
 
 function gcmp () {
     git commit -m "$*" && git push origin HEAD
+}
+
+function gss () {
+  git stash && git checkout "$1" && git stash pop
+}
+
+function grm() {
+  CURRENT=`git rev-parse --abbrev-ref HEAD` # figures out the current branch
+  git checkout master
+  git pull
+  git checkout $CURRENT
+  git rebase master
 }
