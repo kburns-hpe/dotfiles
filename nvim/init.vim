@@ -414,7 +414,7 @@ nmap <leader>2 :diffget 2<cr>:diffupdate<cr>
 nmap <leader>3 :diffget 3<cr>:diffupdate<cr>
 
 " Show DiffGitCached when running git commit
-autocmd FileType gitcommit if ! &previewwindow && expand('%:t') !~# 'index' | :DiffGitCached | wincmd j | :res +10 | wincmd k | endif
+autocmd FileType gitcommit if ! &previewwindow && expand('%:t') !~# 'index' | :DiffGitCached | wincmd k | :res -100 | :res +4 | endif
 
 " vim-jekyll
 let g:jekyll_post_extension = '.md'
