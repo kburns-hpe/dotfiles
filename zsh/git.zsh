@@ -23,7 +23,6 @@ alias glf='git log --pretty=format:"%C(yellow)%h%Cred%d\\ %Creset%s%Cblue\\ [%cn
 alias glp="git log -p --decorate"
 alias gmv="git mv"
 alias gp='git push origin HEAD'
-alias gpf='git push origin --force-with-lease HEAD'
 alias gpo='git push origin'
 alias gpu='git pull --rebase=preserve --prune'
 alias gpub='git pull --rebase=preserve --prune origin'
@@ -52,6 +51,18 @@ function gm () {
         echo not on any branch
     fi
   }
+
+function gpf() {
+    if [ -z $1 ]
+        then echo "Need the name of the branch"
+    else
+        if [ "$1" == "master" ]
+            then echo "Cant force push to master"
+        else
+            git push --force-with-lease origin $1
+        fi
+    fi
+}
 
 function gss () {
   git stash && git checkout "$1" && git stash pop
