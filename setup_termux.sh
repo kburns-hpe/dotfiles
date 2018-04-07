@@ -70,3 +70,8 @@ pushd ~/go/src/github.com/exercism/cli
 git checkout master
 popd
 go install github.com/exercism/cli/exercism
+
+# Setup zsh-you-should-use plugin
+cd ~/git
+git clone https://github.com/MichaelAquilina/zsh-you-should-use.git
+ln -s ~/git/zsh-you-should-use/you-should-use.plugin.zsh ~/.zsh/you-should-use.plugin.zsh
