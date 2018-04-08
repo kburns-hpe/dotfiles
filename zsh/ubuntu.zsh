@@ -6,6 +6,7 @@ export EDITOR=nvim
 
 # Set Path
 export PATH="$HOME/.local/bin:$HOME/.gem/ruby/2.3.0/bin:$HOME/bin:$PATH:$HOME/go/bin"
+export GOPATH="$HOME/go"
 
 # Linux LS aliases
 alias ls="ls --color=auto -CFh"
