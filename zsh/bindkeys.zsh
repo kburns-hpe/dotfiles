@@ -3,14 +3,11 @@
 bindkey -v
 # Setup substring search
 ## Set Bind Keys if tmux/screen is running
-if [ "$TERM" = "screen-256color" -o "$TERM" = "screen" -o "$TERM" = "tmux-256color" ]; then
-  bindkey '^[[A' history-substring-search-up
-  bindkey '^[[B' history-substring-search-down
-else
-  zmodload zsh/terminfo
-  bindkey "$terminfo[kcuu1]" history-substring-search-up
-  bindkey "$terminfo[kcud1]" history-substring-search-down
-fi
+bindkey '^[[A' history-substring-search-up
+bindkey '^[[B' history-substring-search-down
+zmodload zsh/terminfo
+bindkey "$terminfo[kcuu1]" history-substring-search-up
+bindkey "$terminfo[kcud1]" history-substring-search-down
 
 #bind keys
 bindkey "\e[1~" beginning-of-line # Home
