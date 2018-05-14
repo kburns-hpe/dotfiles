@@ -1,0 +1,37 @@
+[user]
+	email =
+	name =
+[push]
+  default = simple
+  followTags = true
+[diff]
+	algorithm = patience
+[alias]
+	prune = fetch --prune
+  undo = reset --soft HEAD^
+  stash-all = stash save --include-untracked
+	ctags = !.git/hooks/ctags
+[merge]
+  ff = only
+  conflictstyle = diff3
+[status]
+  showUntrackedFiles = all
+[transfer]
+  fsckobjects = true
+[diff]
+  tool = icdiff
+[difftool]
+  prompt = false
+[difftool "icdiff"]
+  cmd = icdiff --line-numbers $LOCAL $REMOTE
+[color "diff-highlight"]
+	oldHighlight = red bold 52
+	newNormal = green bold
+	newHighlight = green bold 22
+	oldNormal = red bold
+[core]
+	pager = diff-so-fancy | less --tabs=4 -RFX
+[http "https://gopkg.in"]
+	followRedirects = true
+[init]
+	templatedir = ~/.git_template
