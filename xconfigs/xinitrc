@@ -25,13 +25,11 @@ nitrogen --restore &
 # Start Programs
 clipster -d &
 start-pulseaudio-x11 &
+dropbox &
 udiskie &
 unclutter &
 nm-applet &
-#blueman-applet &
-autokey-gtk &
 dunst &
-#redshift-gtk &
 
 # Start Screensaver
 xautolock -time 7 -locker "glitchlock" -corners --00  -cornerdelay 4 -cornerredelay 4 &
