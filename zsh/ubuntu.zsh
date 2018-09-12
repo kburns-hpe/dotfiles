@@ -60,3 +60,5 @@ alias xd="xdg-mime default"
 alias k="kitchen"
 alias scpnh='scp -o "StrictHostKeyChecking no" -o "UserKnownHostsFile /dev/null"'
 alias irc='TERM=tmux-256color weechat-curses'
+
+eval $(dircolors ~/.dircolors)
