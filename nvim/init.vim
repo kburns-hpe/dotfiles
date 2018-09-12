@@ -218,8 +218,8 @@ Plug 'AndrewRadev/splitjoin.vim'
 Plug 'w0rp/ale'
 " vim-test - used to run various test suites
 Plug 'janko-m/vim-test'
-" nvim-completion-manager - autocompletion
-Plug 'roxma/nvim-completion-manager'
+" ncm2 - autocompletion
+Plug 'ncm2/ncm2'
 " vim-bufferline - lists buffers
 Plug 'bling/vim-bufferline'
 " supertab - Manage tab for completion
