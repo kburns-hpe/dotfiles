@@ -184,7 +184,7 @@ Plug 'herrbischoff/cobalt2.vim'
 " tagbar
 Plug 'majutsushi/tagbar'
 " LanguageClient-neovim - Adds Language Server Protocol support
-Plug 'autozimu/LanguageClient-neovim', { 'do': ':UpdateRemotePlugins' }
+"Plug 'autozimu/LanguageClient-neovim', { 'do': ':UpdateRemotePlugins' }
 " echodoc - Displays function signatures from completions in the command line.
 Plug 'Shougo/echodoc.vim'
 " fzf - fuzzy searching
