@@ -11,7 +11,7 @@ export PATH="$HOME/bin:$PATH"
 #    xrdb -merge ~/.Xresources27
 #else
     # Internal Monitor
-    xrandr --dpi 144 --output LVDS1 --auto --output DP3 --off
+    xrandr --dpi 144 --output eDP1 --auto
     dispwin ~/.config/colors/laptop.icc
     xrdb -merge ~/.Xresources
 #fi
@@ -26,16 +26,15 @@ nitrogen --restore &
 clipster -d &
 start-pulseaudio-x11 &
 udiskie &
-dropbox &
 unclutter &
 nm-applet &
-blueman-applet &
+#blueman-applet &
 autokey-gtk &
 dunst &
-redshift-gtk &
+#redshift-gtk &
 
 # Start Screensaver
-xautolock -time 7 -locker "i3lock -i ~/pictures/wallpaper/misc/lock.png --textcolor=00000000 --ringcolor=193549ff --insidecolor=005f5fbf --insidewrongcolor=ff0900bf --ringwrongcolor=ff0900ff --insidevercolor=0088ffbf --ringvercolor=0088ffff --keyhlcolor=38de21ff --bshlcolor=ff9d00ff" -corners --00  -cornerdelay 4 -cornerredelay 4 &
+xautolock -time 7 -locker "glitchlock" -corners --00  -cornerdelay 4 -cornerredelay 4 &
 
 # enable ctrl-alt-backspace
 setxkbmap -option terminate:ctrl_alt_bksp
@@ -44,29 +43,15 @@ xmodmap ~/.Xmodmap
 xcape -e 'Control_R=Escape;Super_R=Tab'
 
 # Disable touchpad on Thinkpad
-touchpad=$(xinput | grep "SynPS/2 Synaptics TouchPad" | sed 's/.*id=\([0-9]*\).*/\1/')
-xinput --disable "$touchpad"
+xinput set-prop 'TPPS/2 Elan TrackPoint' 'libinput Accel Speed' .9
+xinput set-prop 'TPPS/2 Elan TrackPoint' 'libinput Accel Profile Enabled' 0, 1
 
-# Setup gpg agent for all connections
-envfile="$HOME/.gnupg/gpg-agent.env"
-if [[ -e "$envfile" ]] && kill -0 $(grep GPG_AGENT_INFO "$envfile" | cut -d: -f 2) 2>/dev/null; then
-    eval "$(cat "$envfile")"
-else
-    eval "$(gpg-agent --daemon --write-env-file "$envfile")"
-fi
 # This is needed for mutt
 export GPG_AGENT_INFO="${XDG_RUNTIME_DIR}/gnupg/S.gpg-agent"
 echo "UPDATESTARTUPTTY" | gpg-connect-agent
 
 # Start policy kit
 /usr/lib/polkit-1/polkitd --no-debug
-
-# Infinality Setup
-export INFINALITY_FT="ultimate3"
-export INFINALITY_FT_FILTER_PARAMS="07 24 35 24 07"
-export INFINALITY_FT_FRINGE_FILTER_STRENGTH="60"
-export INFINALITY_FT_USE_VARIOUS_TWEAKS="true"
-export INFINALITY_FT_CHROMEOS_STYLE_SHARPENING_STRENGTH="20"
 
 # Start awesome
 exec i3
