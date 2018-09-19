@@ -137,7 +137,7 @@ set $ws10 "10 &#xf17a;"
 # switch to workspace
 bindsym $mod+1 workspace $ws1
 bindsym $mod+2 workspace $ws2
-bindsym $mod+3 workspace $ws3
+bindsym $mod+3 workspace $ws3; layout tabbed
 bindsym $mod+4 workspace $ws4
 bindsym $mod+5 workspace $ws5
 bindsym $mod+6 workspace $ws6
@@ -192,6 +192,7 @@ assign [class="HipChat"] $ws3
 assign [class="Pidgin"] $ws3
 assign [instance="social" class="Termite"] $ws3
 assign [Class="Slack"] $ws3
+assign [Class="discord"] $ws3
 
 assign [class="Zathura"] $ws4
 assign [class="Zeal"] $ws4
