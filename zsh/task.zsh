@@ -7,11 +7,13 @@ alias tn="t next"
 alias tnew="t newest"
 alias told="t oldest"
 alias tl="t ls"
+alias tln="t ls tag:next"
 alias tp="t projects"
 alias tsum="t summary"
 alias th="t history"
 alias tcal="t calendar"
 alias tod="task overdue"
+alias treview="tmux split-window;cd ~/git/thirdparty/gtd; node ./weekly.js;exit"
 
 function td {
         task $1 done
