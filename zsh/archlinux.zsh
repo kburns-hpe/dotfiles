@@ -56,3 +56,6 @@ alias scpnh='scp -o "StrictHostKeyChecking no" -o "UserKnownHostsFile /dev/null"
 
 # Update dircolors
 eval $(dircolors ~/.dircolors)
+
+# Setup less
+export LESS="-RSM~gIsw"
