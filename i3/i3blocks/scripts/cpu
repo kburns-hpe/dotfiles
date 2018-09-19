@@ -1,8 +1,7 @@
 #!/bin/bash
 
 cpuusage="$(mpstat 1 1 | tail -n1 | awk '{printf "%.1f%%", 100 - $12}')"
-zone="thermal_zone1"
-temp="$(awk '{printf "%2dC", $1/1000}' /sys/class/thermal/$zone/temp)"
+temp="$(sensors | grep Package | awk '{print $4}' | tr -d '°+')"
 
 if [[ "$temp" ]]; then
     echo "<span foreground='#0088ff'>  </span><span foreground='#bbbbbb'>$cpuusage ($temp)</span>"
