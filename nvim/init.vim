@@ -57,7 +57,7 @@ autocmd InsertLeave * :set relativenumber
 cnoremap <expr> %%  getcmdtype() == ':' ? expand('%:h').'/' : '%%'
 
 " Set w!! to write to file as root
-cmap w!! w !sudo tee > /dev/null %
+cnoremap w!! execute 'silent! write !sudo tee % >/dev/null' <bar> edit!
 
 " Change ZZ and ZQ to quit all buffers instead of just the current one
 map ZZ :wqa<CR>
@@ -253,9 +253,11 @@ Plug 'sheerun/vim-polyglot'
 " vim-go - Adds support for go
 Plug 'fatih/vim-go'
 " vim-jekyll - Jekyll management plugin
-"Plug 'parkr/vim-jekyll'
+Plug 'parkr/vim-jekyll'
 " vim-easyescape - easily map jk to escape
 Plug 'zhou13/vim-easyescape'
+" notational-fzf-vim - Easier way to search notes
+Plug 'https://github.com/Alok/notational-fzf-vim'
 call plug#end()
 
 " Plugin Specific Configurations
@@ -415,6 +417,12 @@ nmap <leader>3 :diffget 3<cr>:diffupdate<cr>
 
 " Show DiffGitCached when running git commit
 autocmd FileType gitcommit if ! &previewwindow && expand('%:t') !~# 'index' | :DiffGitCached | wincmd k | :res -100 | :res +4 | endif
+
+" notational-fzf-vim
+let g:nv_search_paths = ['~/Dropbox/notes']
+let g:nv_default_extension = '.md'
+let g:nv_use_short_pathnames = 1
+map <leader>nv :NV<cr>
 
 " vim-jekyll
 let g:jekyll_post_extension = '.md'
