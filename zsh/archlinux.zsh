@@ -5,7 +5,7 @@ export BROWSER=qutebrowser
 export EDITOR=nvim
 
 # Set Path
-export PATH="$HOME/.gem/ruby/2.5.0/bin:$HOME/bin:$HOME/.local/bin:$PATH"
+export PATH="$HOME/.gem/ruby/2.5.0/bin:$HOME/bin:$HOME/.local/bin:$HOME/go/bin:$PATH"
 
 # Use qt4-ssh-askpass for ssh ask dialog
 export SSH_ASKPASS="/usr/bin/qt4-ssh-askpass"
