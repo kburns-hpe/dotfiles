@@ -192,6 +192,8 @@ Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
 Plug 'junegunn/fzf.vim'
 " fugitive - git plugin
 Plug 'tpope/vim-fugitive'
+" vim-dasht - dasht doc search
+Plug 'sunaku/vim-dasht'
 " Lightline - configurable statusline/tabline
 Plug 'itchyny/lightline.vim'
 " vim-surround - implements the ability to change surroundings easier
@@ -251,7 +253,7 @@ Plug 'tpope/vim-rails'
 " vim-polyglot - Provides support for multiple languages
 Plug 'sheerun/vim-polyglot'
 " vim-go - Adds support for go
-Plug 'fatih/vim-go'
+Plug 'fatih/vim-go', { 'do': ':GoUpdateBinaries' }
 " vim-jekyll - Jekyll management plugin
 Plug 'parkr/vim-jekyll'
 " vim-easyescape - easily map jk to escape
@@ -510,3 +512,15 @@ cnoremap jk <ESC>
 cnoremap kj <ESC>
 tnoremap jk <C-\><C-n>
 tnoremap kj <C-\><C-n>
+
+" vim-dasht
+nnoremap <Leader>k :Dasht<Space>
+nnoremap <Leader><Leader>k :Dasht!<Space>
+nnoremap <silent> <Leader>K :call Dasht([expand('<cword>'), expand('<cWORD>')])<Return>
+nnoremap <silent> <Leader><Leader>K :call Dasht([expand('<cword>'), expand('<cWORD>')], '!')<Return>
+vnoremap <silent> <Leader>K y:<C-U>call Dasht(getreg(0))<Return>
+vnoremap <silent> <Leader><Leader>K y:<C-U>call Dasht(getreg(0), '!')<Return>
+
+" vim-go
+nmap <silent> <leader>tg :GoTest<CR>
+nmap <silent> <leader><leader>tg :GoTestFunc<CR>
