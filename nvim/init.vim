@@ -1,4 +1,4 @@
-set colorcolumn=80 " Shows where 80 characters is
+"set colorcolumn=80 " Shows where 80 characters is
 set ignorecase smartcase " enable case insensitive searching
 set iskeyword+=_,$,@,%,# " set additioanl keywords for navigation purposes
 set lazyredraw " Only redraw the screen when required
@@ -17,7 +17,6 @@ set hidden " Allow switching buffers without saving first
 set mouse= " Disable mouse support
 syntax on " enable syntax highlighting
 filetype plugin indent on " Enable indent based on filetype
-set termguicolors " enable true color
 set grepprg=rg\ --vimgrep " Use ripgrep for grep
 
 " Test speed up stuff
@@ -180,11 +179,9 @@ map <A-]> :vsp<CR>:exec("tag ".expand("<cword>"))<CR>q
 " Install Plugins
 call plug#begin('~/.config/nvim/plugged')
 " cobalt2 - color theme
-Plug 'herrbischoff/cobalt2.vim'
+Plug 'gertjanreynaert/cobalt2-vim-theme'
 " tagbar
 Plug 'majutsushi/tagbar'
-" LanguageClient-neovim - Adds Language Server Protocol support
-"Plug 'autozimu/LanguageClient-neovim', { 'do': ':UpdateRemotePlugins' }
 " echodoc - Displays function signatures from completions in the command line.
 Plug 'Shougo/echodoc.vim'
 " fzf - fuzzy searching
@@ -208,8 +205,6 @@ Plug 'wellle/targets.vim'
 Plug 'airblade/vim-gitgutter'
 " tabular - text aligning
 Plug 'godlygeek/tabular'
-" vim-indent-guides - Show indents
-Plug 'nathanaelkane/vim-indent-guides'
 " vim-repeat - Fixes . for some plugins
 Plug 'tpope/vim-repeat'
 " vim-rsi - adds some readline shortcuts
@@ -258,14 +253,13 @@ Plug 'fatih/vim-go', { 'do': ':GoUpdateBinaries' }
 Plug 'parkr/vim-jekyll'
 " vim-easyescape - easily map jk to escape
 Plug 'zhou13/vim-easyescape'
-" notational-fzf-vim - Easier way to search notes
-Plug 'https://github.com/Alok/notational-fzf-vim'
 call plug#end()
 
 " Plugin Specific Configurations
 
 " cobalt2
 colorscheme cobalt2
+hi Normal ctermbg=None
 
 " ale
 nmap <silent> <leader>j <Plug>(ale_previous_wrap)
@@ -293,7 +287,7 @@ nmap <Leader>vz :VimuxZoomRunner<CR>
 
 " lightline
 let g:lightline = {
-  \ 'colorscheme': 'jellybeans',
+  \ 'colorscheme': 'cobalt2',
   \ 'active': {
     \   'left': [ [ 'mode', 'paste' ],
     \             [ 'fugitive'],[ 'bufferline' ] ],
@@ -420,11 +414,6 @@ nmap <leader>3 :diffget 3<cr>:diffupdate<cr>
 " Show DiffGitCached when running git commit
 autocmd FileType gitcommit if ! &previewwindow && expand('%:t') !~# 'index' | :DiffGitCached | wincmd k | :res -100 | :res +4 | endif
 
-" notational-fzf-vim
-let g:nv_search_paths = ['~/Dropbox/notes']
-let g:nv_default_extension = '.md'
-let g:nv_use_short_pathnames = 1
-map <leader>nv :NV<cr>
 
 " vim-jekyll
 let g:jekyll_post_extension = '.md'
@@ -483,16 +472,6 @@ map <leader>nf :Neoformat<cr>
 let g:indent_guides_start_level = 2
 let g:indent_guides_guide_size = 1
 let g:indent_guides_enable_on_vim_startup=1
-
-" Lanaguage Servers
-let g:LanguageClient_autoStart = 1
-
-" LSP - Python
-let g:LanguageClient_serverCommands = {
-    \ 'python': ['pyls'],
-    \ }
-autocmd FileType python nnoremap <buffer>
-  \ <leader>lr :call LanguageClient_textDocument_rename()<cr>
 
 " tagbar
 nmap <F3> :TagbarToggle<CR>
