@@ -5,7 +5,8 @@ confdir="$PWD/nvim"
 
 # Setup nvim directory
 mkdir -p ~/.config/nvim/{bundle,tmp,backup,colors,ftplugin} 2>/dev/null
-ln -s "$confdir"/colors/cobalt.vim ~/.config/nvim/colors/cobalt.vim
+mkdir -p ~/.config/nvim/autoload/lightline/colorscheme
+ln -s "$confdir"/autoload/lightline/colorscheme/cobalt2.vim ~/.config/nvim/autoload/lightline/colorscheme
 
 # Setup init.vim
 ln -s "$confdir/init.vim" ~/.config/nvim/init.vim
@@ -16,7 +17,7 @@ curl -fLo ~/.config/nvim/autoload/plug.vim --create-dirs \
 
 # Setup ftplugin directory
 pushd "$confdir"/ftplugin/
-for file in *; do 
+for file in *; do
         ln -s "$confdir"/ftplugin/"$file" ~/.config/nvim/ftplugin/"$file"
 done
 popd
