@@ -178,8 +178,8 @@ map <A-]> :vsp<CR>:exec("tag ".expand("<cword>"))<CR>q
 
 " Install Plugins
 call plug#begin('~/.config/nvim/plugged')
-" cobalt2 - color theme
-Plug 'gertjanreynaert/cobalt2-vim-theme'
+" vim-one - color theme
+Plug 'rakr/vim-one'
 " tagbar
 Plug 'majutsushi/tagbar'
 " echodoc - Displays function signatures from completions in the command line.
@@ -257,8 +257,9 @@ call plug#end()
 
 " Plugin Specific Configurations
 
-" cobalt2
-colorscheme cobalt2
+" one
+colorscheme one
+set background=light
 hi Normal ctermbg=None
 
 " ale
