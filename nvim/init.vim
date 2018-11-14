@@ -287,7 +287,7 @@ nmap <Leader>vz :VimuxZoomRunner<CR>
 
 " lightline
 let g:lightline = {
-  \ 'colorscheme': 'one',
+  \ 'colorscheme': 'cobalt2',
   \ 'active': {
     \   'left': [ [ 'mode', 'paste' ],
     \             [ 'fugitive'],[ 'bufferline' ] ],
