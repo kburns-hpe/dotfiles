@@ -35,13 +35,14 @@ zstyle ':completion:*:*:scp*' users
 # Only complete hosts that are in the ~/.ssh/config file
 zstyle -e ':completion::*:*:*:hosts' hosts 'reply=(${=${${(f)"$(cat {/etc/ssh_,~/.ssh/known_}hosts(|2)(N) /dev/null)"}%%[# ]*}//,/ })'
 
-# puppet development environment (pde) script autocompletion
-compdef "_files -W $HOME/git/puppet/modules" pde
-
-
 # Pass urls as literals if glob fails
 autoload -U url-quote-magic
 zle -N self-insert url-quote-magic
 url_commands=(curl scp rsync wget)
 zstyle -e :urlglobber url-other-schema \
   '[[ $url_commands[(i)$words[1]] -le ${#url_commands} ]] && reply=("*") || reply=(http https ftp)'
+
+# Kubernetes
+if [ $commands[kubectl] ]; then
+  source <(kubectl completion zsh)
+fi
