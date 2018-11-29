@@ -1,10 +1,10 @@
 #!/usr/bin/env bash
 
-output=$(commit-msg file $1 2>/dev/null)
+output=$(commit-msg file $1 2>&1)
 
 if echo "$output" | grep -q "100% success rate and 0% warnings"; then
   exit 0
 else
-  echo $output
+  commit-msg file $1
   exit 1
 fi
