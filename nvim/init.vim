@@ -478,21 +478,6 @@ map <leader>fl :Lines<cr>
 map <leader>ff :Files<cr>
 map <leader>fg :GFiles<cr>
 
-" nvim-completion-manager
-map <F9> :call ToggleCompletion()<cr>
-imap <F9> <C-o>:call ToggleCompletion()<cr>
-
-let s:ncm2Enabled = 1
-function! ToggleCompletion()
-    if s:ncm2Enabled
-      call ncm2#disable_for_buffer()
-      let s:ncm2Enabled = 0
-    else
-      call ncm2#enable_for_buffer()
-      let s:ncm2Enabled = 1
-    endif
-endfunction
-
 " python-mode
 let g:pymode_breakpoint = 1
 let g:pymode_folding = 0
@@ -566,6 +551,19 @@ let g:user_emmet_install_global = 0
 autocmd FileType html,css EmmetInstall
 
 " ncm2
+map <F9> :call ToggleCompletion()<cr>
+imap <F9> <C-o>:call ToggleCompletion()<cr>
+
+let s:ncm2Enabled = 1
+function! ToggleCompletion()
+    if s:ncm2Enabled
+      call ncm2#disable_for_buffer()
+      let s:ncm2Enabled = 0
+    else
+      call ncm2#enable_for_buffer()
+      let s:ncm2Enabled = 1
+    endif
+endfunction
 " suppress the annoying 'match x of y', 'The only match' and 'Pattern not
 " found' messages
 set shortmess+=c
@@ -574,3 +572,8 @@ autocmd BufEnter * call ncm2#enable_for_buffer()
 
 " IMPORTANTE: :help Ncm2PopupOpen for more information
 set completeopt=noinsert,menuone,noselect
+
+" When the <Enter> key is pressed while the popup menu is visible, it only
+" hides the menu. Use this mapping to close the menu and also start a new
+" line.
+inoremap <expr> <CR> (pumvisible() ? "\<c-y>\<cr>" : "\<CR>")
