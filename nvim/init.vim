@@ -191,8 +191,6 @@ Plug 'junegunn/fzf.vim'
 Plug 'tpope/vim-fugitive'
 " vim-dasht - dasht doc search
 Plug 'sunaku/vim-dasht'
-" Lightline - configurable statusline/tabline
-Plug 'itchyny/lightline.vim'
 " vim-surround - implements the ability to change surroundings easier
 Plug 'tpope/vim-surround'
 " gundo - visualize undo tree
@@ -261,6 +259,10 @@ Plug 'fatih/vim-go', { 'do': ':GoUpdateBinaries' }
 Plug 'parkr/vim-jekyll'
 " vim-easyescape - easily map jk to escape
 Plug 'zhou13/vim-easyescape'
+" Lightline - configurable statusline/tabline
+Plug 'itchyny/lightline.vim'
+" lightline-ale provides ale info in lightline
+Plug 'maximbaz/lightline-ale'
 " nerdtree - Provides a sidebar that shows files and directories
 Plug 'scrooloose/nerdtree'
 "  nerdtree-git-plugin - provides git info in nerdtree
@@ -307,7 +309,7 @@ let g:lightline = {
     \             [ 'fugitive'],[ 'bufferline' ] ],
     \ 'right': [ [ 'lineinfo' ],
     \            [ 'percent' ],
-    \            [ 'linter_warnings', 'linter_errors', 'linter_ok' ],
+    \            [ 'linter_checking', 'linter_warnings', 'linter_errors', 'linter_ok' ],
     \            [ 'filetype' ] ]
   \ },
   \ 'component_function': {
@@ -319,14 +321,16 @@ let g:lightline = {
     \   'filetype': 'MyFiletype',
   \ },
   \ 'component_expand': {
-  \   'linter_warnings': 'LightlineLinterWarnings',
-  \   'linter_errors': 'LightlineLinterErrors',
-  \   'linter_ok': 'LightlineLinterOK'
+  \  'linter_checking': 'lightline#ale#checking',
+  \  'linter_warnings': 'lightline#ale#warnings',
+  \  'linter_errors': 'lightline#ale#errors',
+  \  'linter_ok': 'lightline#ale#ok',
   \ },
   \ 'component_type': {
-  \   'linter_warnings': 'warning',
-  \   'linter_errors': 'error',
-  \   'linter_ok': 'ok'
+  \     'linter_checking': 'left',
+  \     'linter_warnings': 'warning',
+  \     'linter_errors': 'error',
+  \     'linter_ok': 'left',
   \ }
 \ }
 
@@ -405,6 +409,12 @@ endfunction
 
 set laststatus=2
 set noshowmode
+
+" lightline-ale icons
+let g:lightline#ale#indicator_checking = "\uf110"
+let g:lightline#ale#indicator_warnings = "\uf071"
+let g:lightline#ale#indicator_errors = "\uf05e"
+let g:lightline#ale#indicator_ok = "\uf00c"
 
 " Gundo
 nnoremap <F6> :GundoToggle<CR>
