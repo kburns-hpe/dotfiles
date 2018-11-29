@@ -4,7 +4,7 @@ host="$1"
 confdir="$PWD/zsh"
 
 # Common configurations to all installs
-zshconfs="01-zsh-syntax-highlighting alias autocomplete bd bindkeys functions git git-prompt history misc prompt zsh-history-substring-search"
+zshconfs="01-zsh-syntax-highlighting alias autocomplete bd bindkeys fzf functions git git-prompt history misc prompt vimode zsh-history-substring-search"
 
 # Cygwin
 if [ "$host" = "cygwin" ]; then
@@ -24,7 +24,7 @@ elif [ "$host" = "archguest" ]; then
 
 # Ubuntu Linux Machine
 elif [ "$host" = "ubuntu" ]; then
-    zshconfs="$zshconfs ubuntu"
+    zshconfs="$zshconfs doing fasd gpg ubuntu"
 fi
 
 # Create symlinks for zsh configs
