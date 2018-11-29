@@ -217,6 +217,14 @@ Plug 'w0rp/ale'
 Plug 'janko-m/vim-test'
 " ncm2 - autocompletion
 Plug 'ncm2/ncm2'
+" ncm2-tern - javascript autocompletion
+Plug 'ncm2/ncm2-tern'
+" ncm2-jedi - python autocompletion
+Plug 'ncm2/ncm2-jedi'
+" ncm2-cssomni - css autocompletion
+Plug 'ncm2/ncm2-cssomni'
+" ncm2-ultisnips - ncm2 ultisnips integration
+Plug 'ncm2/ncm2-ultisnips'
 " vim-bufferline - lists buffers
 Plug 'bling/vim-bufferline'
 " supertab - Manage tab for completion
