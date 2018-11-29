@@ -223,6 +223,11 @@ Plug 'ncm2/ncm2-jedi'
 Plug 'ncm2/ncm2-cssomni'
 " ncm2-ultisnips - ncm2 ultisnips integration
 Plug 'ncm2/ncm2-ultisnips'
+" LanguageClient-neovim - provides Language Client Support
+Plug 'autozimu/LanguageClient-neovim', {
+    \ 'branch': 'next',
+    \ 'do': 'bash install.sh',
+    \ }
 " vim-bufferline - lists buffers
 Plug 'bling/vim-bufferline'
 " supertab - Manage tab for completion
@@ -280,6 +285,19 @@ hi Normal ctermbg=None
 " ale
 nmap <silent> <leader>j <Plug>(ale_previous_wrap)
 nmap <silent> <leader>k <Plug>(ale_next_wrap)
+
+" LanguageClient-neovim
+let g:LanguageClient_autoStart = 1
+
+let g:LanguageClient_serverCommands = {
+    \ 'javascript': ['javascript-typescript-stdio'],
+    \ 'python': ['pyls'],
+    \ }
+nnoremap <leader>lc :call LanguageClient_contextMenu()<CR>
+nnoremap <leader>ld :call LanguageClient_textDocument_definition()<cr>
+nnoremap <leader>lf :call LanguageClient_textDocument_documentSymbol()<cr>
+nnoremap <leader>lh :call LanguageClient_textDocument_hover()<cr>
+nnoremap <leader>lr :call LanguageClient_textDocument_rename()<cr>
 
 " Enable yaml linter to run on ansible files
 augroup FiletypeGroup
