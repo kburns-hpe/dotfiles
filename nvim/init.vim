@@ -223,6 +223,7 @@ Plug 'ncm2/ncm2-tern'
 Plug 'ncm2/ncm2-jedi'
 Plug 'ncm2/ncm2-cssomni'
 Plug 'ncm2/ncm2-ultisnips'
+Plug 'ncm2/ncm2-go'
 " LanguageClient-neovim - provides Language Client Support
 Plug 'autozimu/LanguageClient-neovim', {
     \ 'branch': 'next',
