@@ -248,7 +248,7 @@ Plug 'sbdchd/neoformat'
 Plug 'tpope/vim-eunuch'
 " vimux - Interact with tmux from within vim
 Plug 'benmills/vimux'
-" vim-tmux-navigator allows seamless switching between tmux and vim panes
+" vim-tmux-navigator -  allows seamless switching between tmux and vim panes
 Plug 'christoomey/vim-tmux-navigator'
 " vim-obsession - Manages vim sessions
 Plug 'tpope/vim-obsession'
@@ -264,6 +264,8 @@ Plug 'fatih/vim-go', { 'do': ':GoUpdateBinaries' }
 Plug 'parkr/vim-jekyll'
 " vim-easyescape - easily map jk to escape
 Plug 'zhou13/vim-easyescape'
+" emmet-vim - Provides Emmet Support
+Plug 'mattn/emmet-vim'
 " Lightline - configurable statusline/tabline
 Plug 'itchyny/lightline.vim'
 " lightline-ale provides ale info in lightline
@@ -554,3 +556,7 @@ vnoremap <silent> <Leader><Leader>K y:<C-U>call Dasht(getreg(0), '!')<Return>
 " vim-go
 nmap <silent> <leader>tg :GoTest<CR>
 nmap <silent> <leader><leader>tg :GoTestFunc<CR>
+
+" emmet-vim
+let g:user_emmet_install_global = 0
+autocmd FileType html,css EmmetInstall
