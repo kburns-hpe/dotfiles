@@ -439,6 +439,7 @@ let g:lightline#ale#indicator_ok = "\uf00c"
 
 " Gundo
 nnoremap <F6> :GundoToggle<CR>
+inoremap <F6> <C-o>:GundoToggle<CR>
 
 " UltiSnips
 let g:UltiSnipsSnippetsDir="~/.config/nvim/UltiSnips"
@@ -478,16 +479,17 @@ map <leader>ff :Files<cr>
 map <leader>fg :GFiles<cr>
 
 " nvim-completion-manager
-map <F9> :call ToggleCompletion()<cr>"
+map <F9> :call ToggleCompletion()<cr>
+imap <F9> <C-o>:call ToggleCompletion()<cr>
 
-let s:cmEnabled = 1
+let s:ncm2Enabled = 1
 function! ToggleCompletion()
-    if s:cmEnabled
-      call cm#disable_for_buffer()
-      let s:cmEnabled = 0
+    if s:ncm2Enabled
+      call ncm2#disable_for_buffer()
+      let s:ncm2Enabled = 0
     else
-      call cm#enable_for_buffer()
-      let s:cmEnabled = 1
+      call ncm2#enable_for_buffer()
+      let s:ncm2Enabled = 1
     endif
 endfunction
 
@@ -529,6 +531,7 @@ let g:indent_guides_enable_on_vim_startup=1
 
 " tagbar
 nmap <F3> :TagbarToggle<CR>
+imap <F3> <C-o>:TagbarToggle<CR>
 
 " Load all plugins now.
 " Plugins need to be added to runtimepath before helptags can be generated.
