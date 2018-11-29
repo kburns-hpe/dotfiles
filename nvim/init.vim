@@ -261,6 +261,12 @@ Plug 'fatih/vim-go', { 'do': ':GoUpdateBinaries' }
 Plug 'parkr/vim-jekyll'
 " vim-easyescape - easily map jk to escape
 Plug 'zhou13/vim-easyescape'
+" nerdtree - Provides a sidebar that shows files and directories
+Plug 'scrooloose/nerdtree'
+"  nerdtree-git-plugin - provides git info in nerdtree
+Plug 'Xuyuanp/nerdtree-git-plugin'
+" vim-devions - provides icons for filetypes
+Plug 'ryanoasis/vim-devicons'
 call plug#end()
 
 " Plugin Specific Configurations
@@ -310,6 +316,7 @@ let g:lightline = {
     \   'modified': 'LLModified',
     \   'mode': 'LLMode',
     \   'bufferline': 'MyBufferLine',
+    \   'filetype': 'MyFiletype',
   \ },
   \ 'component_expand': {
   \   'linter_warnings': 'LightlineLinterWarnings',
@@ -322,6 +329,11 @@ let g:lightline = {
   \   'linter_ok': 'ok'
   \ }
 \ }
+
+" vim-devions + lightline
+function! MyFiletype()
+  return winwidth(0) > 70 ? (strlen(&filetype) ? &filetype . ' ' . WebDevIconsGetFileTypeSymbol() : 'no ft') : ''
+endfunction
 
 " ale + lightline
 autocmd User ALELint call lightline#update()
@@ -475,6 +487,9 @@ autocmd BufEnter * EnableStripWhitespaceOnSave
 
 " neoformat"
 map <leader>nf :Neoformat<cr>
+
+" nerdtree
+map <leader>nt :NERDTreeToggle<CR>
 
 " vim-indent-guides
 let g:indent_guides_start_level = 2
