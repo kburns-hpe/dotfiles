@@ -215,13 +215,13 @@ Plug 'w0rp/ale'
 Plug 'janko-m/vim-test'
 " ncm2 - autocompletion
 Plug 'ncm2/ncm2'
-" ncm2-tern - javascript autocompletion
+Plug 'roxma/nvim-yarp'
+Plug 'ncm2/ncm2-bufword'
+Plug 'ncm2/ncm2-tmux'
+Plug 'ncm2/ncm2-path'
 Plug 'ncm2/ncm2-tern'
-" ncm2-jedi - python autocompletion
 Plug 'ncm2/ncm2-jedi'
-" ncm2-cssomni - css autocompletion
 Plug 'ncm2/ncm2-cssomni'
-" ncm2-ultisnips - ncm2 ultisnips integration
 Plug 'ncm2/ncm2-ultisnips'
 " LanguageClient-neovim - provides Language Client Support
 Plug 'autozimu/LanguageClient-neovim', {
@@ -561,3 +561,13 @@ nmap <silent> <leader><leader>tg :GoTestFunc<CR>
 " emmet-vim
 let g:user_emmet_install_global = 0
 autocmd FileType html,css EmmetInstall
+
+" ncm2
+" suppress the annoying 'match x of y', 'The only match' and 'Pattern not
+" found' messages
+set shortmess+=c
+" enable ncm2 for all buffers
+autocmd BufEnter * call ncm2#enable_for_buffer()
+
+" IMPORTANTE: :help Ncm2PopupOpen for more information
+set completeopt=noinsert,menuone,noselect
