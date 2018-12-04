@@ -182,8 +182,6 @@ call plug#begin('~/.config/nvim/plugged')
 Plug 'gertjanreynaert/cobalt2-vim-theme'
 " tagbar
 Plug 'majutsushi/tagbar'
-" echodoc - Displays function signatures from completions in the command line.
-Plug 'Shougo/echodoc.vim'
 " fzf - fuzzy searching
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
 Plug 'junegunn/fzf.vim'
@@ -207,8 +205,6 @@ Plug 'godlygeek/tabular'
 Plug 'tpope/vim-repeat'
 " vim-rsi - adds some readline shortcuts
 Plug 'tpope/vim-rsi'
-" splitjoin - an easy way to split/join lines
-Plug 'AndrewRadev/splitjoin.vim'
 " ale - Asynchronous Lint Engine
 Plug 'w0rp/ale'
 " vim-test - used to run various test suites
@@ -235,8 +231,6 @@ Plug 'bling/vim-bufferline'
 Plug 'ervandew/supertab'
 " vim-unimpaired - adds shortcuts for managing pair mappings
 Plug 'tpope/vim-unimpaired'
-" python-mode provides utilities to help code python
-Plug 'python-mode/python-mode'
 " vim-diff-enhanced - improve vimdiff
 Plug 'chrisbra/vim-diff-enhanced'
 " vim-commentary - comment stuff out
@@ -253,16 +247,10 @@ Plug 'benmills/vimux'
 Plug 'christoomey/vim-tmux-navigator'
 " vim-obsession - Manages vim sessions
 Plug 'tpope/vim-obsession'
-" vim-bundler - Adds some stuff for dealing with bundler
-Plug 'tpope/vim-bundler'
-" vim-rails - Helps with ruby on rails development
-Plug 'tpope/vim-rails'
 " vim-polyglot - Provides support for multiple languages
 Plug 'sheerun/vim-polyglot'
 " vim-go - Adds support for go
 Plug 'fatih/vim-go', { 'do': ':GoUpdateBinaries' }
-" vim-jekyll - Jekyll management plugin
-Plug 'parkr/vim-jekyll'
 " vim-easyescape - easily map jk to escape
 Plug 'zhou13/vim-easyescape'
 " emmet-vim - Provides Emmet Support
@@ -468,9 +456,6 @@ nmap <leader>3 :diffget 3<cr>:diffupdate<cr>
 autocmd FileType gitcommit if ! &previewwindow && expand('%:t') !~# 'index' | :DiffGitCached | wincmd k | :res -100 | :res +4 | endif
 
 
-" vim-jekyll
-let g:jekyll_post_extension = '.md'
-
 " fzf
 let $FZF_DEFAULT_COMMAND = 'rg --files --hidden --follow --glob "!.git/*" --glob "!.gitkeep"'
 map <leader>fa :Ag<cr>
@@ -504,16 +489,11 @@ endif
 " vim-better-whitespace
 autocmd BufEnter * EnableStripWhitespaceOnSave
 
-" neoformat"
+" neoformat
 map <leader>nf :Neoformat<cr>
 
 " nerdtree
 map <leader>nt :NERDTreeToggle<CR>
-
-" vim-indent-guides
-let g:indent_guides_start_level = 2
-let g:indent_guides_guide_size = 1
-let g:indent_guides_enable_on_vim_startup=1
 
 " tagbar
 nmap <F3> :TagbarToggle<CR>
@@ -526,14 +506,6 @@ packloadall
 " All messages and errors will be ignored.
 silent! helptags ALL
 
-
-" vim-easyescape
-let g:easyescape_chars = { "j": 1, "k": 1 }
-let g:easyescape_timeout = 100
-cnoremap jk <ESC>
-cnoremap kj <ESC>
-tnoremap jk <C-\><C-n>
-tnoremap kj <C-\><C-n>
 
 " vim-dasht
 nnoremap <Leader>k :Dasht<Space>
