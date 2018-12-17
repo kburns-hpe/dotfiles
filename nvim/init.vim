@@ -187,8 +187,6 @@ Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
 Plug 'junegunn/fzf.vim'
 " fugitive - git plugin
 Plug 'tpope/vim-fugitive'
-" vim-dasht - dasht doc search
-Plug 'sunaku/vim-dasht'
 " vim-surround - implements the ability to change surroundings easier
 Plug 'tpope/vim-surround'
 " gundo - visualize undo tree
@@ -240,21 +238,10 @@ Plug 'ntpeters/vim-better-whitespace'
 Plug 'sbdchd/neoformat'
 " vim-eunuch - Add some unix commands to vim
 Plug 'tpope/vim-eunuch'
-if exists('$TMUX')
-  Plug 'ncm2/ncm2-tmux'
-  " vimux - Interact with tmux from within vim
-  Plug 'benmills/vimux'
-  " vim-tmux-navigator -  allows seamless switching between tmux and vim panes
-  Plug 'christoomey/vim-tmux-navigator'
-endif
 " vim-obsession - Manages vim sessions
 Plug 'tpope/vim-obsession'
 " vim-polyglot - Provides support for multiple languages
 Plug 'sheerun/vim-polyglot'
-" vim-go - Adds support for go
-Plug 'fatih/vim-go', { 'do': ':GoUpdateBinaries' }
-" vim-easyescape - easily map jk to escape
-Plug 'zhou13/vim-easyescape'
 " emmet-vim - Provides Emmet Support
 Plug 'mattn/emmet-vim'
 " Lightline - configurable statusline/tabline
@@ -267,6 +254,21 @@ Plug 'scrooloose/nerdtree'
 Plug 'Xuyuanp/nerdtree-git-plugin'
 " vim-devions - provides icons for filetypes
 Plug 'ryanoasis/vim-devicons'
+
+if exists('$TMUX')
+  Plug 'ncm2/ncm2-tmux'
+  " vimux - Interact with tmux from within vim
+  Plug 'benmills/vimux'
+  " vim-tmux-navigator -  allows seamless switching between tmux and vim panes
+  Plug 'christoomey/vim-tmux-navigator'
+endif
+
+if has('unix')
+  " vim-dasht - dasht doc search
+  Plug 'sunaku/vim-dasht'
+  " vim-go - Adds support for go
+  Plug 'fatih/vim-go', { 'do': ':GoUpdateBinaries' }
+endif
 call plug#end()
 
 " Plugin Specific Configurations
@@ -509,17 +511,20 @@ packloadall
 silent! helptags ALL
 
 
-" vim-dasht
-nnoremap <Leader>k :Dasht<Space>
-nnoremap <Leader><Leader>k :Dasht!<Space>
-nnoremap <silent> <Leader>K :call Dasht([expand('<cword>'), expand('<cWORD>')])<Return>
-nnoremap <silent> <Leader><Leader>K :call Dasht([expand('<cword>'), expand('<cWORD>')], '!')<Return>
-vnoremap <silent> <Leader>K y:<C-U>call Dasht(getreg(0))<Return>
-vnoremap <silent> <Leader><Leader>K y:<C-U>call Dasht(getreg(0), '!')<Return>
+if has('unix')
+  " vim-dasht
+  nnoremap <Leader>k :Dasht<Space>
+  nnoremap <Leader><Leader>k :Dasht!<Space>
+  nnoremap <silent> <Leader>K :call Dasht([expand('<cword>'), expand('<cWORD>')])<Return>
+  nnoremap <silent> <Leader><Leader>K :call Dasht([expand('<cword>'), expand('<cWORD>')], '!')<Return>
+  vnoremap <silent> <Leader>K y:<C-U>call Dasht(getreg(0))<Return>
+  vnoremap <silent> <Leader><Leader>K y:<C-U>call Dasht(getreg(0), '!')<Return>
 
-" vim-go
-nmap <silent> <leader>tg :GoTest<CR>
-nmap <silent> <leader><leader>tg :GoTestFunc<CR>
+  " vim-go
+  nmap <silent> <leader>tg :GoTest<CR>
+  nmap <silent> <leader><leader>tg :GoTestFunc<CR>
+
+endif
 
 " emmet-vim
 let g:user_emmet_install_global = 0
