@@ -213,7 +213,6 @@ Plug 'janko-m/vim-test'
 Plug 'ncm2/ncm2'
 Plug 'roxma/nvim-yarp'
 Plug 'ncm2/ncm2-bufword'
-Plug 'ncm2/ncm2-tmux'
 Plug 'ncm2/ncm2-path'
 Plug 'ncm2/ncm2-tern'
 Plug 'ncm2/ncm2-jedi'
@@ -241,10 +240,13 @@ Plug 'ntpeters/vim-better-whitespace'
 Plug 'sbdchd/neoformat'
 " vim-eunuch - Add some unix commands to vim
 Plug 'tpope/vim-eunuch'
-" vimux - Interact with tmux from within vim
-Plug 'benmills/vimux'
-" vim-tmux-navigator -  allows seamless switching between tmux and vim panes
-Plug 'christoomey/vim-tmux-navigator'
+if exists('$TMUX')
+  Plug 'ncm2/ncm2-tmux'
+  " vimux - Interact with tmux from within vim
+  Plug 'benmills/vimux'
+  " vim-tmux-navigator -  allows seamless switching between tmux and vim panes
+  Plug 'christoomey/vim-tmux-navigator'
+endif
 " vim-obsession - Manages vim sessions
 Plug 'tpope/vim-obsession'
 " vim-polyglot - Provides support for multiple languages
