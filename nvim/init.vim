@@ -277,6 +277,7 @@ call plug#end()
 colorscheme cobalt2
 hi Normal ctermbg=None
 hi ColorColumn ctermbg=8
+hi CursorLine ctermbg=235 guibg=#1F4461
 
 " ale
 nmap <silent> <leader>j <Plug>(ale_previous_wrap)
