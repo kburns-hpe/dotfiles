@@ -558,3 +558,9 @@ set completeopt=noinsert,menuone,noselect
 " hides the menu. Use this mapping to close the menu and also start a new
 " line.
 inoremap <expr> <CR> (pumvisible() ? "\<c-y>\<cr>" : "\<CR>")
+
+" Chef
+augroup chef
+  autocmd BufRead,BufNewFile *.rb if expand('%:p:h:t') == "recipes" | set filetype=ruby.chef | endif
+augroup END
+
