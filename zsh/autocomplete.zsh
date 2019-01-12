@@ -25,13 +25,6 @@ zstyle ':completion:*:approximate:*' max-errors 1 numeric
 # Don't auto complete parent directory when using cd ../
 zstyle ':completion:*:cd:*' ignore-parents parent pwd
 
-# Disable user auto completion for ssh
-zstyle ':completion:*:*:ssh*' users
-zstyle ':completion:*:*:scp*' users
-
-# Only complete hosts that are in the ~/.ssh/config file
-zstyle -e ':completion::*:*:*:hosts' hosts 'reply=(${=${${(f)"$(cat {/etc/ssh_,~/.ssh/known_}hosts(|2)(N) /dev/null)"}%%[# ]*}//,/ })'
-
 # Pass urls as literals if glob fails
 autoload -U url-quote-magic
 zle -N self-insert url-quote-magic
