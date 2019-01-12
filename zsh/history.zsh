@@ -3,7 +3,7 @@
 # zsh settings for history
 export HISTIGNORE="&:ls:[bf]g:exit:reset:clear:cd:cd ..:cd.."
 export HISTSIZE=25000
-export HISTFILE=~/.zsh/.history
+export HISTFILE=~/.zsh_history
 export SAVEHIST=25000
 setopt APPEND_HISTORY
 setopt INC_APPEND_HISTORY
