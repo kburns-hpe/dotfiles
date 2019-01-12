@@ -1,4 +1,4 @@
-Xft.dpi:    144
+Xft.dpi:    192
 Xft.antialias:  1
 Xft.autohint:   0
 Xft.hinting:    1
@@ -6,6 +6,57 @@ Xft.hintstyle:  hintfull
 Xft.lcdfilter:  lcddefault
 Xft.rgba:       rgb
 
+! urxvt
+URxvt*buffered: true
+URxvt*cursorBlink: true
+URxvt*underlineColor: yellow
+URxvt*font:  xft:DejaVuSansMono Nerd Font:style=Book:size=12:antialias=true
+URxvt*depth: 32
+URxvt*borderless: 1
+URxvt*scrollBar: false
+URxvt*scrollTtyOutput: false
+URxvt*scrollWithBuffer: true
+URxvt*scrollTtyKeypress: true
+URxvt*loginShell: true
+Urxvt*secondaryScroll: true
+URxvt*saveLines: 5000
+URxvt*termName: rxvt-unicode
+URxvt.perl-ext-common: default,matcher,font-size
+URxvt.keysym.C-Up:     perl:font-size:increase
+URxvt.keysym.C-Down:   perl:font-size:decrease
+URxvt.keysym.C-S-Up:   perl:font-size:incglobal
+URxvt.keysym.C-S-Down: perl:font-size:decglobal
+URxvt.url-launcher: /usr/bin/chromium
+URxvt.perl-ext: default,url-select
+URxvt.keysym.M-u: perl:url-select:select_next
+URxvt.url-select.launcher: /usr/bin/chromium
+URxvt.url-select.underline: true
+URxvt.matcher.button: 1
+URxvt.fading: false
+URxvt*urgentOnBell: true
+
+! colors
+*.background:   #193549
+*.cursorColor:  #ffc600
+*.foreground:   #c7c7c7
+*.color0:       #000000
+*.color1:       #ff2600
+*.color2:       #3ad900
+*.color3:       #ffc600
+*.color4:       #1478db
+*.color5:       #ff2c70
+*.color6:       #00c5c7
+*.color7:       #c7c7c7
+*.color8:       #808080
+*.color9:       #ff0000
+*.color10:      #33ff00
+*.color11:      #ffff00
+*.color12:      #1478db
+*.color13:      #cc00ff
+*.color14:      #00ffff
+*.color15:      #ffffff
+
+! rofi
 rofi.font: DejaVu Sans Mono 12
 rofi.dpi: 144
 rofi.color-enabled: true
