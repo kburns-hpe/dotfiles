@@ -7,6 +7,7 @@ fi
 
 # Plugins
 source ~/.zplug/init.zsh
+
 # My zsh dotfiles
 zplug "soleblaze/dotfiles", use:"zsh/*.zsh"
 
@@ -17,9 +18,10 @@ zplug "zdharma/fast-syntax-highlighting", defer:2
 zplug "zsh-users/zsh-history-substring-search"
 
 # Competions
-zplug 'zsh-users/zsh-completions'
+zplug 'g-plane/zsh-yarn-autocompletions'
 zplug 'srijanshetty/zsh-pip-completion'
 zplug 'zpm-zsh/ssh'
+zplug 'zsh-users/zsh-completions'
 
 # Pure prompt fork by intelfx
 zplug mafredri/zsh-async, from:github
