@@ -1,8 +1,5 @@
 #!/bin/zsh
 
-# Setup directory for custom auto completion files
-fpath=(~/.zsh/completion $fpath)
-
 # Enable smart autocompletion
 autoload -U compinit && compinit
 setopt complete_in_word
