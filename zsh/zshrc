@@ -5,13 +5,6 @@ if [ ! -d "$HOME/.zplug" ]; then
   curl -sL --proto-redir -all,https https://raw.githubusercontent.com/zplug/installer/master/installer.zsh | zsh
 fi
 
-
-
-# Source each file ending in .zsh in the .zsh directory
-for script in ~/.zsh/*.zsh; do
-  source "$script"
-done
-
 # Plugins
 source ~/.zplug/init.zsh
 
@@ -20,6 +13,7 @@ zplug mafredri/zsh-async, from:github
 zplug intelfx/pure, use:pure.zsh, from:github, as:theme
 zplug "Tarrasch/zsh-bd"
 zplug "zdharma/fast-syntax-highlighting"
+zplug "soleblaze/dotfiles", use:"zsh/*.zsh"
 
 # Install plugins if there are plugins that have not been installed
 if ! zplug check --verbose; then
