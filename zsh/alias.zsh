@@ -8,31 +8,12 @@ alias sz="source ~/.zshrc"
 
 # VIM aliases
 alias vi=nvim
-alias viol='vim -c "source ~/.vim/outline.vimrc" $*'
 alias svi="sudoedit"
-
-# idea aliases
-alias ic='idea create'
-alias is='idea solve'
-alias il='idea list'
-
-# load rarely used zsh functions
-alias loadzftp="autoload -U zfinit && zfinit"
-alias loadtcpopen="autoload -U tcp_open && tcp_open"
 
 # extra dots
 alias -g ...="../.."
 alias -g ....="../../.."
 alias -g .....="../../../.."
-
-# ttytter alias for options
-alias ttytter="ttytter -ansi -verify"
-
-# Add output to sprunge
-alias pbin="curl -F 'sprunge=<-' http://sprunge.us | xsel -i -p;xsel -p"
-
-# mplayer - fix pitch when speeding up videos
-alias mp="mplayer -af scaletempo"
 
 # Exercism aliases
 alias ef="exercism f"
