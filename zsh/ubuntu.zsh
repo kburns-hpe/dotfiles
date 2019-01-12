@@ -10,7 +10,7 @@ export PATH="$PATH:/snap/bin:$HOME/.yarn/bin"
 export GOPATH="$HOME/go"
 
 # Linux LS aliases
-alias ls="ls --color=auto -CFh"
+alias ls="colorls"
 alias sl="ls"
 alias ll="ls -l"
 alias lx="ls -X"
