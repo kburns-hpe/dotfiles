@@ -25,7 +25,8 @@ zplug 'zsh-users/zsh-completions'
 
 # Pure prompt fork by intelfx
 zplug mafredri/zsh-async, from:github
-zplug intelfx/pure, use:pure.zsh, from:github, as:theme
+#zplug intelfx/pure, use:pure.zsh, from:github, as:theme
+zplug sinetoami/purien, use:purien.zsh, from:github, as:theme
 
 # Install additional apps
 zplug 'BurntSushi/ripgrep', \
