@@ -14,6 +14,9 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
+alias ktn="kubectl top nodes"
+alias ktp="kubectl top pods"
+
 alias k='kubectl'
 alias ksys='kubectl --namespace=kube-system'
 alias ka='kubectl apply --recursive -f'
