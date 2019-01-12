@@ -7,13 +7,37 @@ fi
 
 # Plugins
 source ~/.zplug/init.zsh
+# My zsh dotfiles
+zplug "soleblaze/dotfiles", use:"zsh/*.zsh"
 
+# Other zsh plugins
+zplug "Tarrasch/zsh-bd"
+zplug "paulirish/git-open", as:plugin
+zplug "zdharma/fast-syntax-highlighting", defer:2
 zplug "zsh-users/zsh-history-substring-search"
+
+# Competions
+zplug 'zsh-users/zsh-completions'
+zplug 'srijanshetty/zsh-pip-completion'
+zplug 'zpm-zsh/ssh'
+
+# Pure prompt fork by intelfx
 zplug mafredri/zsh-async, from:github
 zplug intelfx/pure, use:pure.zsh, from:github, as:theme
-zplug "Tarrasch/zsh-bd"
-zplug "zdharma/fast-syntax-highlighting"
-zplug "soleblaze/dotfiles", use:"zsh/*.zsh"
+
+# Install additional apps
+zplug 'BurntSushi/ripgrep', \
+    from:gh-r, \
+    as:command, \
+    rename-to:"rg"
+zplug 'stedolan/jq', \
+    from:gh-r, \
+    as:command
+zplug 'junegunn/fzf-bin', \
+    as:command, \
+    from:gh-r, \
+    rename-to:"fzf"
+zplug "k4rthik/git-cal", as:command
 
 # Install plugins if there are plugins that have not been installed
 if ! zplug check --verbose; then
