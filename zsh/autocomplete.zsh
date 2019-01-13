@@ -7,6 +7,9 @@ setopt complete_in_word
 # Enable menu selection when hitting tab twice
 zstyle ':completion:*' menu select
 
+# group results by category
+zstyle ':completion:*' group-name
+
 # Set pid completion for kill
 zstyle ':completion:*:*:kill:*:processes' command 'ps --forest -e -o pid,user,tty,cmd'
 
