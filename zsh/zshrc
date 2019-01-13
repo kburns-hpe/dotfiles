@@ -6,7 +6,7 @@ if [ ! -d "$HOME/.zplug" ]; then
 fi
 
 # Source local zshrc if it exists
-if [ -f "$HOME/.zshrc_local ]; then
+if [ -f "$HOME/.zshrc_local" ]; then
   source "$HOME/.zshrc_local"
 fi
 
