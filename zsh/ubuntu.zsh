@@ -10,11 +10,14 @@ export PATH="$PATH:/snap/bin:$HOME/.yarn/bin"
 export GOPATH="$HOME/go"
 
 # Linux LS aliases
-alias ls="colorls"
+alias ls="colorls --group-directories-first"
+alias la="ls -A"
 alias sl="ls"
 alias ll="ls -l"
 alias lx="ls -X"
 alias lv="ls -v"
+alias lsf="ls -f"
+alias lsd="ls -d"
 
 # Ubuntu PKG Management
 alias aptc="sudo apt autoclean"
