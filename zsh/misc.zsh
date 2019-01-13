@@ -3,8 +3,21 @@
 umask 022
 setopt autolist automenu nobeep
 
-# Show how long something took if it takes longer than X seconds
-REPORTTIME=10
+# no c-s/c-q output freezing
+setopt noflowcontrol
+# allow expansion in prompts
+setopt prompt_subst
+# Disable 'zsh: no matches found' warning
+setopt nonomatch
+# whenever a command completion is attempted, make sure the entire command path
+# is hashed first.
+setopt hash_list_all
+# not just at the end
+setopt completeinword
+# use zsh style word splitting
+setopt noshwordsplit
+# allow use of comments in interactive code
+setopt interactivecomments
 
 # useful for path editing — backward-delete-word, but with / as additional delimiter
 backward-delete-to-slash () {
