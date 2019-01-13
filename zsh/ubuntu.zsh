@@ -65,3 +65,6 @@ alias scpnh='scp -o "StrictHostKeyChecking no" -o "UserKnownHostsFile /dev/null"
 alias irc='TERM=tmux-256color weechat-curses'
 
 eval $(dircolors ~/.dircolors)
+
+# Enable command not found for zsh
+source /etc/zsh_command_not_found

@@ -12,10 +12,17 @@ source ~/.zplug/init.zsh
 zplug "soleblaze/dotfiles", use:"zsh/*.zsh"
 
 # Other zsh plugins
+zplug "MichaelAquilina/zsh-you-should-use"
 zplug "Tarrasch/zsh-bd"
+zplug "caarlos0/zsh-git-sync"
+zplug "changyuheng/fz", defer:1
+zplug "hlissner/zsh-autopair"
+zplug "oz/safe-paste"
 zplug "paulirish/git-open", as:plugin
+zplug "rupa/z", use:z.sh
 zplug "zdharma/fast-syntax-highlighting", defer:2
 zplug "zsh-users/zsh-history-substring-search"
+zplug 'wfxr/forgit', defer:1
 
 # Competions
 zplug 'g-plane/zsh-yarn-autocompletions'
@@ -25,7 +32,6 @@ zplug 'zsh-users/zsh-completions'
 
 # Pure prompt fork by intelfx
 zplug mafredri/zsh-async, from:github
-#zplug intelfx/pure, use:pure.zsh, from:github, as:theme
 zplug sinetoami/purien, use:purien.zsh, from:github, as:theme
 
 # Install additional apps
@@ -41,6 +47,7 @@ zplug 'junegunn/fzf-bin', \
     from:gh-r, \
     rename-to:"fzf"
 zplug "k4rthik/git-cal", as:command
+zplug "zdharma/zsh-diff-so-fancy", as:command, use:bin/git-dsf
 
 # Install plugins if there are plugins that have not been installed
 if ! zplug check --verbose; then
