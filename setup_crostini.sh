@@ -13,25 +13,25 @@ pushd /tmp/st
 wget https://dl.suckless.org/st/st-${ST_VERSION}.tar.gz
 tar xf st-${ST_VERSION}.tar.gz
 cd st-${ST_VERSION}
-cp "${REPO}/misc/config.h" .
+cp "${REPO}/xconfigs/config.h" .
 sudo make clean install
 
 # Setup zsh
-echo '#!/usr/bin/bash -l\nzsh' > ~/.bashrc
+echo -e '#!/usr/bin/bash -l\nzsh' > ~/.bashrc
 ln -s "${REPO}/zsh/zshrc" ~/.zshrc
 
 # Setup neovim
 sudo apt-key adv --keyserver keyserver.ubuntu.com --recv-keys 55F96FCF8231B6DD
-echo 'deb http://ppa.launchpad.net/neovim-ppa/stable/ubuntu xenial main' > /etc/apt/sources.list.d/neovim.list
+echo 'deb http://ppa.launchpad.net/neovim-ppa/stable/ubuntu xenial main' | sudo tee /etc/apt/sources.list.d/neovim.list
 sudo apt-get update
-sudo apt-get install neovim python2 python3 ruby
+sudo apt-get -y install neovim python python3 ruby
 gem install --user neovim
 pip install --user neovim
 pip3 install --user neovim
 ./setup_nvim.sh
 
 # Setup Simple Terminal App Launcher
-sudo cp "${REPO}/misc/debian-st.desktop /usr/share/applications"
+sudo cp "${REPO}/misc/debian-st.desktop" /usr/share/applications/
 sudo curl -o /usr/share/icons/hicolor/48x48/apps/term-icon.png http://icons.iconarchive.com/icons/kxmylo/simple/512/utilities-terminal-icon.png
 
 # Install extra apps
