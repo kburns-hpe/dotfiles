@@ -10,14 +10,15 @@ export PATH="$PATH:/snap/bin:$HOME/.yarn/bin"
 export GOPATH="$HOME/go"
 
 # Linux LS aliases
-alias ls="colorls --group-directories-first"
+alias ls="ls --color=auto -CFh --group-directories-first"
 alias la="ls -A"
 alias sl="ls"
 alias ll="ls -l"
 alias lx="ls -X"
 alias lv="ls -v"
-alias lsf="ls -f"
-alias lsd="ls -d"
+alias lsf="find . -maxdepth 1 -type f -a ! -iname '\.*' | sed 's|^\./||' | xargs ls --color=auto -CFh"
+alias lsfa="find . -maxdepth 1 -type f | sed 's|^\./||' | xargs ls --color=auto -CFh"
+alias lsd="\ls --color=auto -Ch -d */"
 
 # Ubuntu PKG Management
 alias aptc="sudo apt autoclean"
