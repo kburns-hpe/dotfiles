@@ -1,6 +1,10 @@
 REPO=${PWD}
 ST_VERSION="0.8.1"
 
+# Update to latest packages
+sudo apt-get update
+sudo apt-get -y dist-upgrade
+
 # Install prereqs for st
 sudo apt-get install -y build-essential libxft-dev libx11-dev wget
 
