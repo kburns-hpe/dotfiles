@@ -16,7 +16,7 @@ zplug "MichaelAquilina/zsh-you-should-use"
 zplug "Tarrasch/zsh-bd"
 zplug "caarlos0/zsh-git-sync"
 zplug "changyuheng/fz", defer:1
-zplug "hlissner/zsh-autopair"
+zplug "hlissner/zsh-autopair" defer:2
 zplug "oz/safe-paste"
 zplug "paulirish/git-open", as:plugin
 zplug "rupa/z", use:z.sh
