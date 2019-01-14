@@ -19,13 +19,13 @@ alias lv="ls -v"
 alias lsd="\ls --color=auto -Ch -d */"
 
 function lsf() {
-  find ${1-.} -maxdepth 1 -type f -a ! -iname '\.*' | sed 's|^\./||' | xargs ls --color=auto -CFh
+  find ${1-.} -maxdepth 1 -type f -a ! -iname '\.*' | sed 's|^\./||' | xargs -r ls --color=auto -CFh
 }
 function lsfaa() {
-  find ${1-.} -maxdepth 1 -type f -a -iname '\.*' | sed 's|^\./||' | xargs ls --color=auto -CFh
+  find ${1-.} -maxdepth 1 -type f -a -iname '\.*' | sed 's|^\./||' | xargs -r ls --color=auto -CFh
 }
 function lsfa() {
-  find ${1-.} -maxdepth 1 -type f | sed 's|^\./||' | xargs ls --color=auto -CFh
+  find ${1-.} -maxdepth 1 -type f | sed 's|^\./||' | xargs -r ls --color=auto -CFh
 }
 
 # Ubuntu PKG Management
