@@ -5,11 +5,6 @@ if [ ! -d "$HOME/.zplug" ]; then
   curl -sL --proto-redir -all,https https://raw.githubusercontent.com/zplug/installer/master/installer.zsh | zsh
 fi
 
-# Source local zshrc if it exists
-if [ -f "$HOME/.zshrc_local" ]; then
-  source "$HOME/.zshrc_local"
-fi
-
 # Plugins
 source ~/.zplug/init.zsh
 
@@ -64,3 +59,8 @@ fi
 
 # Then, source plugins and add commands to $PATH
 zplug load
+
+# Source local zshrc if it exists
+if [ -f "$HOME/.zshrc_local" ]; then
+  source "$HOME/.zshrc_local"
+fi
