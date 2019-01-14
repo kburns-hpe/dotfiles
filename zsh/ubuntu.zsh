@@ -16,10 +16,17 @@ alias sl="ls"
 alias ll="ls -l"
 alias lx="ls -X"
 alias lv="ls -v"
-alias lsf="find . -maxdepth 1 -type f -a ! -iname '\.*' | sed 's|^\./||' | xargs ls --color=auto -CFh"
-alias lsfaa="find . -maxdepth 1 -type f -a -iname '\.*' | sed 's|^\./||' | xargs ls --color=auto -CFh"
-alias lsfa="find . -maxdepth 1 -type f | sed 's|^\./||' | xargs ls --color=auto -CFh"
 alias lsd="\ls --color=auto -Ch -d */"
+
+function lsf() {
+  find ${1-.} -maxdepth 1 -type f -a ! -iname '\.*' | sed 's|^\./||' | xargs ls --color=auto -CFh
+}
+function lsfaa() {
+  find ${1-.} -maxdepth 1 -type f -a -iname '\.*' | sed 's|^\./||' | xargs ls --color=auto -CFh
+}
+function lsfa() {
+  find ${1-.} -maxdepth 1 -type f | sed 's|^\./||' | xargs ls --color=auto -CFh
+}
 
 # Ubuntu PKG Management
 alias aptc="sudo apt autoclean"
