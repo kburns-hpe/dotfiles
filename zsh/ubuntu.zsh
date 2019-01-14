@@ -17,6 +17,7 @@ alias ll="ls -l"
 alias lx="ls -X"
 alias lv="ls -v"
 alias lsf="find . -maxdepth 1 -type f -a ! -iname '\.*' | sed 's|^\./||' | xargs ls --color=auto -CFh"
+alias lsfaa="find . -maxdepth 1 -type f -a -iname '\.*' | sed 's|^\./||' | xargs ls --color=auto -CFh"
 alias lsfa="find . -maxdepth 1 -type f | sed 's|^\./||' | xargs ls --color=auto -CFh"
 alias lsd="\ls --color=auto -Ch -d */"
 
