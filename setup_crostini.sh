@@ -2,7 +2,7 @@ REPO=${PWD}
 ST_VERSION="0.8.1"
 
 # Install prereqs for st
-apt-get install -y build-essential libxft-dev libx11-dev
+sudo apt-get install -y build-essential libxft-dev libx11-dev wget
 
 mkdir /tmp/st
 pushd /tmp/st
@@ -31,4 +31,4 @@ sudo cp "${REPO}/misc/debian-st.desktop /usr/share/applications"
 sudo curl -o /usr/share/icons/hicolor/48x48/apps/term-icon.png http://icons.iconarchive.com/icons/kxmylo/simple/512/utilities-terminal-icon.png
 
 # Install extra apps
-apt-get install -y mosh
+sudo apt-get install -y mosh
