@@ -38,4 +38,4 @@ sudo cp "${REPO}/misc/debian-st.desktop" /usr/share/applications/
 sudo curl -o /usr/share/icons/hicolor/48x48/apps/term-icon.png http://icons.iconarchive.com/icons/kxmylo/simple/512/utilities-terminal-icon.png
 
 # Install extra apps
-sudo apt-get install -y mosh
+sudo apt-get install -y mosh zsh
