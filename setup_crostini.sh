@@ -30,6 +30,9 @@ pip install --user neovim
 pip3 install --user neovim
 ./setup_nvim.sh
 
+# Download DejaVu Sans Mono Nerd Font
+mkdir -p ~/.fonts
+wget -P ~/.fonts 'https://github.com/ryanoasis/nerd-fonts/raw/master/patched-fonts/DejaVuSansMono/Regular/complete/DejaVu%20Sans%20Mono%20Nerd%20Font%20Complete%20Mono.ttf'
 # Setup Simple Terminal App Launcher
 sudo cp "${REPO}/misc/debian-st.desktop" /usr/share/applications/
 sudo curl -o /usr/share/icons/hicolor/48x48/apps/term-icon.png http://icons.iconarchive.com/icons/kxmylo/simple/512/utilities-terminal-icon.png
