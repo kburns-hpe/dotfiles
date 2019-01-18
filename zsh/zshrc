@@ -27,7 +27,6 @@ zplug 'wfxr/forgit', defer:1
 # Competions
 zplug 'g-plane/zsh-yarn-autocompletions'
 zplug 'srijanshetty/zsh-pip-completion'
-zplug 'zpm-zsh/ssh'
 zplug 'zsh-users/zsh-completions'
 
 # Pure prompt fork by intelfx
