@@ -23,23 +23,14 @@ wget
 zsh
 "
 
-ripgrep="https://github.com/BurntSushi/ripgrep/releases/download/0.8.0/ripgrep-0.8.0-x86_64-unknown-linux-musl.tar.gz"
-
-
 # Install packages
 echo $packages | xargs sudo apt-get install -y
 
-# Download ripgrep
-mkdir ~/bin ~/tmp
-wget -O ~/tmp/ripgrep.tgz "$ripgrep"
-pushd ~/tmp
-tar xf ripgrep.tgz --strip-components=1
-mv rg ~/bin
-popd
-rm -rf ~/tmp
-
 # Install nodejs packages
 sudo npm install -g diff-so-fancy
+
+# Install gitbatch
+go get -u github.com/isacikgoz/gitbatch
 
 # Install python modules
 pip install neovim
