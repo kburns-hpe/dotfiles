@@ -15,6 +15,7 @@ set shiftwidth=2 " Sets how many spaces to move line when using <<, >>
 set expandtab " Use spaces instead of a tab
 set hidden " Allow switching buffers without saving first
 set mouse= " Disable mouse support
+set termguicolors " Enable truecolor support
 syntax on " enable syntax highlighting
 filetype plugin indent on " Enable indent based on filetype
 set grepprg=rg\ --vimgrep " Use ripgrep for grep
@@ -179,7 +180,8 @@ map <A-]> :vsp<CR>:exec("tag ".expand("<cword>"))<CR>q
 " Install Plugins
 call plug#begin('~/.config/nvim/plugged')
 " cobalt2 - color theme
-Plug 'gertjanreynaert/cobalt2-vim-theme'
+Plug 'herrbischoff/cobalt2.vim'
+"Plug 'gertjanreynaert/cobalt2-vim-theme'
 " tagbar
 Plug 'majutsushi/tagbar'
 " fzf - fuzzy searching
