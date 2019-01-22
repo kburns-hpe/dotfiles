@@ -19,14 +19,14 @@ power=$((powernow0 + powernow1))
 
 watts=$(echo "scale=2;$power / 1000000" | bc)
 
-GRAY="<span foreground='#ffffff' background='#808080'>"
+GRAY="<span font='12' foreground='#ffffff' background='#808080'>"
 BLUE="<span foreground='#ffffff' background='#1478db'>"
 SPACER="<span font='6'> </span>"
 COLOREND="</span>"
 
 
 if [ "$status0" = "Charging" ] || [ "$status1" = "Charging" ]; then
-    label=""
+    label=""
 
     fullnow0=$(cat "${BAT0}/energy_full")
     fullnow1=$(cat "${BAT1}/energy_full")
@@ -52,7 +52,7 @@ elif [ "$status0" = "Discharging" ] || [ "$status1" = "Discharging" ]; then
         label=""
     fi
 else
-    label=""
+    label=""
     echo "${GRAY} ${label} ${COLOREND}"
     exit
 fi
