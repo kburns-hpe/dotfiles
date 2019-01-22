@@ -26,9 +26,6 @@ zsh
 # Install packages
 echo $packages | xargs sudo apt-get install -y
 
-# Install nodejs packages
-sudo npm install -g diff-so-fancy
-
 # Install gitbatch
 go get -u github.com/isacikgoz/gitbatch
 
@@ -44,16 +41,3 @@ pip3 install neovim
 
 # Install vim-go binaries
 nvim -c ":GoInstallBinaries" -c ":qa"
-
-# Install exercism
-cd /tmp
-wget https://github.com/exercism/cli/releases/download/v2.4.1/exercism-linux-64bit.tgz
-pushd /tmp
-tar xf exercism-linux064bit.tgz
-mv exercism ~/bin
-popd
-
-# Setup zsh-you-should-use plugin
-cd ~/git
-git clone https://github.com/MichaelAquilina/zsh-you-should-use.git
-ln -s ~/git/zsh-you-should-use/you-should-use.plugin.zsh ~/.zsh/you-should-use.plugin.zsh
