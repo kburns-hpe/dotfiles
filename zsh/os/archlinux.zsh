@@ -1,7 +1,7 @@
 #!/bin/zsh
 
 # Set Variables
-export BROWSER=qutebrowser
+export BROWSER=chromium
 export EDITOR=nvim
 
 # Set Path
