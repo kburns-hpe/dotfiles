@@ -1,28 +1,4 @@
 dotfiles
 ========
 
-various dotfiles, mostly for Linux.  
-
-## awesome 
-* run setup_awesome.sh to create ~/.config/awesome
-* edit ~/.config/awesome/config.lua to customize setup
-* Key bindings are in ~/.config/awesome/bindings.lua
-* Window rules are in ~/.config/awesome/rules.lua
-* Currently the only way to remove widgets is to comment them out in widgets.lua
-
-## tmux
-* run setup_tmux.sh to create ~/.tmux.conf symlink
-
-## vim
-* run setup_vim.sh to create ~/.vimrc and ~/.vim directory and setup symlinks
-
-## xconfigs
-* Cobalt Theme for urxvt
-* Copy xresources to ~/.Xresources
-* xmodmap remaps right ctl to be a hyper key and right alt to be a super
-
-## zsh
-* run setup_zsh.sh to create zsh links.  
-    * additional options: archlinux archguest cygwin osx ubuntu
-* the rest of the files should be copied/linked under the ~/.zsh/ directory
-* any file ending in .zsh in ~/.zsh/ will be sourced
+various dotfile, mostly for Linux.
