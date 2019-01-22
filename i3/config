@@ -8,7 +8,7 @@ set $hyper Mod3
 font pango:DejaVuSansMono Nerd Font Mono 14
 
 # Set border size
-for_window [class="^.*"] border pixel 2
+for_window [class="^.*"] border pixel 0
 
 #make notifications behave
 for_window [class="Xfce4-notifyd"] floating enable
@@ -218,7 +218,7 @@ assign [class="Wine"] $ws7
 
 # i3bar
 bar {
-    position top
+    position bottom
     status_command i3blocks
     strip_workspace_numbers yes
     colors {
