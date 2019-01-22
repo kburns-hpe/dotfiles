@@ -45,7 +45,8 @@ bindsym XF86MonBrightnessUp exec xbacklight -inc 5
 bindsym XF86MonBrightnessDown exec xbacklight -dec 5
 
 # Application shortcuts
-bindsym $mod+Return exec st
+bindsym $mod+Return exec st -e 'runtmux'
+bindsym $hyper+Return exec st
 bindsym $hyper+l exec glitchlock
 bindsym $hyper+b exec qutebrowser
 bindsym $hyper+F7 exec ~/bin/dock.sh
