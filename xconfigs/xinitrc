@@ -11,7 +11,7 @@ export PATH="$HOME/bin:$PATH"
 #    xrdb -merge ~/.Xresources27
 #else
     # Internal Monitor
-    xrandr --dpi 144 --output eDP1 --auto
+    xrandr --dpi 120 --output eDP1 --auto
     dispwin ~/.config/colors/laptop.icc
     xrdb -merge ~/.Xresources
 #fi
