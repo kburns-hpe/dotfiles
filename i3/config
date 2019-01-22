@@ -122,16 +122,16 @@ bindsym $mod+Shift+r restart
 bindsym $mod+Shift+e exec "i3-nagbar -t warning -m 'You pressed the exit shortcut. Do you really want to exit i3? This will end your X session.' -b 'Yes, exit i3' 'i3-msg exit'"
 
 # Workspace Names
-set $ws1 "1 &#xf120;"
-set $ws2 "2 &#xf268;"
-set $ws3 "3 &#xf075;"
-set $ws4 "4 &#xf02d;"
-set $ws5 "5 &#xf15c;"
-set $ws6 "6 &#xf03d;"
-set $ws7 "7 &#xf0c2;"
-set $ws8 "8 &#xf0e0;"
-set $ws9 "9 &#xf001;"
-set $ws10 "10 &#xf17a;"
+set $ws1 "1&#xf120;"
+set $ws2 "2&#xf268;"
+set $ws3 "3&#xf075;"
+set $ws4 "4&#xf02d;"
+set $ws5 "5&#xf15c;"
+set $ws6 "6&#xf03d;"
+set $ws7 "7&#xf0c2;"
+set $ws8 "8&#xf0e0;"
+set $ws9 "9&#xf001;"
+set $ws10 "10&#xf17a;"
 
 # switch to workspace
 bindsym $mod+1 workspace $ws1
@@ -220,7 +220,7 @@ assign [class="Wine"] $ws7
 bar {
     position top
     status_command i3blocks
-    strip_workspace_numbers no
+    strip_workspace_numbers yes
     colors {
       background #193549
       statusline #FFFFFF
