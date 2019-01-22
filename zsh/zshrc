@@ -9,13 +9,10 @@ fi
 source ~/.zplug/init.zsh
 
 # My zsh dotfiles
-zplug "soleblaze/dotfiles", use:"zsh/*.zsh"
-
-# OS specific dotfiles
-if grep -q "Arch Linux" /etc/*release; do
-  zplug "soleblaze/dotfiles", use:"zsh/os/archlinux.zsh"
-elif grep -q "Ubuntu" /etc/*release; do
-  zplug "soleblaze/dotfiles", use:"zsh/os/ubuntu.zsh"
+if grep -q "Arch Linux" /etc/*release; then
+  zplug "soleblaze/dotfiles", use:"zsh/{*.zsh,os/archlinux.zsh}"
+elif grep -q "Ubuntu" /etc/*release; then
+  zplug "soleblaze/dotfiles", use:"zsh/{*.zsh,os/ubuntu.zsh}"
 fi
 
 # Other zsh plugins
