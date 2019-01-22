@@ -28,10 +28,7 @@ start-pulseaudio-x11 &
 dropbox &
 udiskie &
 unclutter &
-nm-applet &
 dunst &
-blueman-applet &
-rclmon.sh start &
 
 # Start Screensaver
 xautolock -time 7 -locker "glitchlock" -corners --00  -cornerdelay 4 -cornerredelay 4 &
