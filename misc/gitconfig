@@ -10,40 +10,10 @@
 	prune = fetch --prune
   undo = reset --soft HEAD^
   stash-all = stash save --include-untracked
-  ctags = !.git/hooks/ctags
-  a = add
-  ac = commit -a
-  acm = commit -a -m
-  am = commit -amend
-  ap = add -p
-  b = branch
-  bl = for-each-ref --count=30 --sort=-committerdate refs/heads/ --format=%(refname:short)
-  c = commit
-  cb = checkout -b
-  ch = checkout
-  cm = commit -m
-  d = diff
-  dm = diff origin/master
-  ds = diff --staged
-  dt = difftool
-  l = log --graph --decorate
-  ld = log --all --graph --decorate --oneline --simplify-by-decoration
-  lg = log --graph --pretty=format:%C(auto)%h -%d %s %Cgreen(%cr) %C(bold blue)<%an>%Creset --abbrev-commit
-  lf = log --pretty=format:%C(yellow)%h%Cred%d\\ %Creset%s%Cblue\\ [%cn] --decorate --numstat
-  lp = log -p --decorate
-  mv = mv
-  p = push origin HEAD
-  po = push origin
-  pu = pull --rebase=preserve --prune
-  pub = pull --rebase=preserve --prune origin
-  r = rm
-  rb = rebase
-  rh = reset HEAD
-  s = status -s
-
+	ctags = !.git/hooks/ctags
 [merge]
-  ff = only
   conflictstyle = diff3
+	tool = nvim
 [status]
   showUntrackedFiles = all
 [transfer]
@@ -61,7 +31,17 @@
 	oldNormal = red bold
 [core]
 	pager = diff-so-fancy | less --tabs=4 -RFX
+	hooksPath = ~/.git_global_hooks
 [http "https://gopkg.in"]
 	followRedirects = true
-[init]
-	templatedir = ~/.git_template
+[color "diff"]
+	frag = magenta bold
+	commit = yellow bold
+	old = red bold
+	new = green bold
+	whitespace = red reverse
+	meta = yellow
+[mergetool "nvim"]
+	cmd = nvim -f -c \"Gdiff\" \"$MERGED\"
+[mergetool]
+	prompt = false
