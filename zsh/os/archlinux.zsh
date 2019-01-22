@@ -60,3 +60,7 @@ eval $(dircolors ~/.dircolors)
 
 # Setup less
 export LESS="-RSM~gIsw"
+
+# Ecrypt
+alias mpriv='ecryptfs-mount-private; cd ~/Private'
+alias upriv='cd ~; ecryptfs-umount-private'
