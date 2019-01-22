@@ -27,7 +27,3 @@ ln -s "$confdir"/UltiSnips ~/.config/nvim/UltiSnips
 
 # Install plugins
 nvim +PlugInstall +UpdateRemotePlugins +qa
-
-# Create link for ftdetect puppet
-mkdir ~/.config/nvim/ftdetect
-ln -s ~/.config/nvim/plugged/vim-puppet/ftdetect/puppet.vim ~/.config/nvim/ftdetect/puppet.vim
