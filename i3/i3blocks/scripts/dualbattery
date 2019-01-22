@@ -19,7 +19,7 @@ power=$((powernow0 + powernow1))
 
 watts=$(echo "scale=2;$power / 1000000" | bc)
 
-GRAY="<span font='12' foreground='#ffffff' background='#808080'>"
+GRAY="<span font='10' foreground='#ffffff' background='#808080'>"
 BLUE="<span foreground='#ffffff' background='#1478db'>"
 SPACER="<span font='6'> </span>"
 COLOREND="</span>"
