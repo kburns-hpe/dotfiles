@@ -56,7 +56,7 @@ format() {
   volume_level=$(perl -ne "$perl_filter")
 
   if [ "$volume_level" == "MUTE" ]; then
-      echo "<span foreground='#ffffff' background='#808080'>   </span><span foreground='#ffffff' background='#1478db'> $volume_level </span>"
+      echo "<span foreground='#ffffff' background='#808080'>  </span><span foreground='#ffffff' background='#1478db'> $volume_level </span>"
   else
       echo "<span foreground='#ffffff' background='#808080'>  </span><span foreground='#ffffff' background='#1478db'> $volume_level </span>"
   fi
