@@ -5,7 +5,7 @@ set $mod Mod4
 set $hyper Mod3
 
 # Font for window titles. Will also be used by the bar unless a different font
-font pango:DejaVuSansMono Nerd Font Mono
+font pango:DejaVuSansMono Nerd Font Mono 14
 
 # Set border size
 for_window [class="^.*"] border pixel 2
@@ -221,14 +221,14 @@ assign [class="Wine"] $ws7
 bar {
     position top
     status_command i3blocks
-    strip_workspace_numbers yes
+    strip_workspace_numbers no
     colors {
       background #193549
       statusline #FFFFFF
 
-      focused_workspace  #193549 #193549 #ff9d00
-      active_workspace   #193549 #193549 #0088ff
-      inactive_workspace #193549 #193549 #bbbbbb
-      urgent_workspace   #193549 #193549 #ff0900
+      focused_workspace  #193549 #808080 #ffffff
+      active_workspace   #193549 #00c5c7 #ffffff
+      inactive_workspace #193549 #1478db #ffffff
+      urgent_workspace   #193549 #ff2600 #ffffff
     }
 }

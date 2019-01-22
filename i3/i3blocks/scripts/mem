@@ -2,4 +2,4 @@
 
 memorypercentage="$(free -m | grep Mem| awk '{printf "%.1f%%", $3/$2*100}')"
 
-echo "<span foreground='#0088ff'> </span><span foreground='#bbbbbb'>$memorypercentage</span>"
+echo "<span foreground='#ffffff' background='#808080'>  </span><span foreground='#ffffff' background='#1478db'> $memorypercentage </span>"

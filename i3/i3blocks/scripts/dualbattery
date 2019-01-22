@@ -19,8 +19,9 @@ power=$((powernow0 + powernow1))
 
 watts=$(echo "scale=2;$power / 1000000" | bc)
 
-BLUE="<span foreground='#0088ff'>"
-GRAY="<span foreground='#bbbbbb'>"
+GRAY="<span foreground='#ffffff' background='#808080'>"
+BLUE="<span foreground='#ffffff' background='#1478db'>"
+SPACER="<span font='6'> </span>"
 COLOREND="</span>"
 
 
@@ -40,23 +41,23 @@ elif [ "$status0" = "Discharging" ] || [ "$status1" = "Discharging" ]; then
     remaining_usage=$(echo "scale=2;${energy} / ${power}" | bc)
 
     if [ "$capacity" -ge 90 ]; then
-        label=""
+        label=""
     elif [ "$capacity" -ge 75 ]; then
-        label=""
+        label=""
     elif [ "$capacity" -ge 50 ]; then
-        label=""
+        label=""
     elif [ "$capacity" -ge 25 ]; then
-        label=""
+        label=""
     elif [ "$capacity" -ge 10 ]; then
-        label=""
+        label=""
     fi
 else
     label=""
-    echo "${BLUE}${label}${COLOREND}"
+    echo "${GRAY} ${label} ${COLOREND}"
     exit
 fi
 
 hours=$(echo "${remaining_usage}" | awk '{printf "%d", $1}')
 minutes=$(echo "${remaining_usage}" | awk '{printf "%0.2d", ($1 % 1) * 60}')
 
-echo "${BLUE}${label}${COLOREND} ${GRAY} ${hours}:${minutes} (${capacity}%) [${watts}w]${COLOREND}"
+echo "${GRAY} ${label} ${COLOREND}${BLUE} ${hours}:${minutes} ${COLOREND}${SPACER}${GRAY}  ${COLOREND}${BLUE} ${watts} ${COLOREND}"

@@ -14,23 +14,21 @@ QUALITY=$(grep $INTERFACE /proc/net/wireless | awk '{ print int($3 * 100 / 70) }
 
 # if the machine has no battery or wireless connection, the corresponding block should display error.
 [[ ! -d /sys/class/net/${INTERFACE}/wireless ]] ||
-    [[ "$(cat /sys/class/net/$INTERFACE/operstate)" = 'down' ]] && echo "<span foreground='#C5C8C6'></span><span foreground='#A3685A'> X</span>"
+    [[ "$(cat /sys/class/net/$INTERFACE/operstate)" = 'down' ]] && echo "<span foreground='#ffffff' background='#808080'> 睊 </span><span foreground='#ffffff' background='#1478db'> X</span>"
 
 #------------------------------------------------------------------------
 
-  if [[ $QUALITY -ge 80 ]]; then
-      echo "<span foreground='#0088ff'></span><span foreground='#bbbbbb'> $SSID</span>"
-  elif [[ $QUALITY -lt 80 ]]; then
-      echo "<span foreground='#0088ff'></span><span foreground='#bbbbbb'> $SSID</span>" 
-  elif [[ $QUALITY -lt 60 ]]; then
-      echo "<span foreground='#0088ff'></span><span foreground='#bbbbbb'> $SSID</span>" #orange   
-  elif [[ $QUALITY -lt 40 ]]; then
-      echo "<span foreground='#0088ff'></span><span foreground='#bbbbbb'> $SSID</span>" #red
+if [[ $QUALITY -ge 60 ]]; then
+  echo "<span foreground='#ffffff' background='#808080'> 直 </span><span foreground='#ffffff' background='#1478db'> $SSID </span>"
+elif [[ $QUALITY -lt 40 ]]; then
+  echo "<span foreground='#ffffff' background='#808080'> 直 </span><span foreground='#ffffff' background='#ff2600'> $SSID</span>" #red
+elif [[ $QUALITY -lt 60 ]]; then
+  echo "<span foreground='#ffffff' background='#808080'> 直 </span><span foreground='#ffffff' background='#00c5c7'> $SSID</span>" # cyan
 fi
 
 #-----------------------------------------------------------------------
 
-# mouse buttons  
+# mouse buttons
 
 case $BLOCK_BUTTON in
     1) netmenu-xy ;; # switch profiles with netmenu
