@@ -8,7 +8,7 @@ set $hyper Mod3
 font pango:DejaVuSansMono Nerd Font Mono
 
 # Set border size
-for_window [class="^.*"] border pixel 0
+for_window [class="^.*"] border pixel 2
 
 #make notifications behave
 for_window [class="Xfce4-notifyd"] floating enable
@@ -27,6 +27,10 @@ for_window [class="Blueman-manager"] floating enable
 for_window [class="Anamnesis"] floating enable
 for_window [class="Openxenmanager"] floating enable
 for_window [class="Autokey-gtk"] floating enable
+
+# gaps
+gaps inner 10
+gaps outer 5
 
 # config colors
 # class                 border  backgr. text    indicator
@@ -137,7 +141,7 @@ set $ws10 "10&#xf17a;"
 # switch to workspace
 bindsym $mod+1 workspace $ws1
 bindsym $mod+2 workspace $ws2
-bindsym $mod+3 workspace $ws3; layout tabbed
+bindsym $mod+3 workspace $ws3
 bindsym $mod+4 workspace $ws4
 bindsym $mod+5 workspace $ws5
 bindsym $mod+6 workspace $ws6
