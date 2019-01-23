@@ -3,5 +3,5 @@
 doinglast=$(doing last | head -n1)
 
 if echo "$doinglast" | grep -qv '@done'; then
-    echo "<span foreground='#0088ff'> </span><span foreground='#bbbbbb'>$doinglast</span>"
+    echo "<span foreground='#ffffff' background='#808080'>  </span>"
 fi
