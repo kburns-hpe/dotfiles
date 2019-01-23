@@ -5,7 +5,7 @@ export BROWSER=chromium
 export EDITOR=nvim
 
 # Set Path
-export PATH="$HOME/.gem/ruby/2.5.0/bin:$HOME/bin:$HOME/.local/bin:$HOME/go/bin:$PATH"
+export PATH="$HOME/.gem/ruby/2.6.0/bin:$HOME/bin:$HOME/.local/bin:$HOME/go/bin:$PATH"
 export PATH="$HOME/.yarn/bin:$PATH"
 
 # Use qt4-ssh-askpass for ssh ask dialog
