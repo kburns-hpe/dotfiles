@@ -4,17 +4,9 @@
 export PATH="$HOME/bin:$PATH"
 
 # Setup Monitor
-#if [ "$(xrandr | grep 'DP3 connected')" ] ; then
-    # DPI for this monitor is actually 109, but that makes the fonts too small
-#    xrandr --dpi 125 --output DP3 --auto --output LVDS1 --off
-#    dispwin -d1 ~/.config/colors/desktop.icc
-#    xrdb -merge ~/.Xresources27
-#else
-    # Internal Monitor
-    xrandr --dpi 144 --output eDP1 --auto
-    dispwin ~/.config/colors/laptop.icc
-    xrdb -merge ~/.Xresources
-#fi
+xrandr --dpi 144 --output eDP1 --auto
+dispwin ~/.config/colors/laptop.icc
+xrdb -merge ~/.Xresources
 
 # blank screen after 10 minutes
 xset s 600 600
@@ -25,7 +17,6 @@ nitrogen --restore &
 # Start Programs
 clipster -d &
 start-pulseaudio-x11 &
-dropbox &
 udiskie &
 unclutter &
 dunst &
@@ -40,8 +31,7 @@ xmodmap ~/.Xmodmap
 xcape -e 'Control_R=Escape;Super_R=Tab'
 
 # Disable touchpad on Thinkpad
-xinput set-prop 'TPPS/2 Elan TrackPoint' 'libinput Accel Speed' .9
-xinput set-prop 'TPPS/2 Elan TrackPoint' 'libinput Accel Profile Enabled' 0, 1
+xinput set-prop "Synaptics TM3075-002" "Device Enabled" 0
 
 # This is needed for mutt
 export GPG_AGENT_INFO="${XDG_RUNTIME_DIR}/gnupg/S.gpg-agent"
