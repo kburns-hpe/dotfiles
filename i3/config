@@ -49,7 +49,7 @@ bindsym XF86MonBrightnessUp exec xbacklight -inc 5
 bindsym XF86MonBrightnessDown exec xbacklight -dec 5
 
 # Application shortcuts
-bindsym $mod+Return exec st -e 'runtmux'
+bindsym $mod+Return exec st -e tmux new-session -A -t default
 bindsym $hyper+Return exec st
 bindsym $hyper+l exec glitchlock
 bindsym $hyper+b exec chromium
