@@ -21,6 +21,7 @@ udiskie &
 unclutter &
 dunst &
 redshift &
+dropbox &
 
 # Start Screensaver
 xautolock -time 7 -locker "glitchlock" -corners --00  -cornerdelay 4 -cornerredelay 4 &
