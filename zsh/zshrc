@@ -32,7 +32,6 @@ zplug 'wfxr/forgit', defer:1
 zplug 'g-plane/zsh-yarn-autocompletions'
 zplug 'srijanshetty/zsh-pip-completion'
 zplug 'zsh-users/zsh-completions'
-zplug 's7anley/zsh-geeknote'
 
 # Pure prompt fork by intelfx
 zplug mafredri/zsh-async, from:github
