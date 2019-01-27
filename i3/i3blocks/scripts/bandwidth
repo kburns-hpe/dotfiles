@@ -54,7 +54,7 @@ tx_rate=$(( $tx_diff / $time_diff ))
 rx_kib=$(( $rx_rate >> 10 ))
 if [[ "$rx_rate" -gt 1048576 ]]; then
     rx_mbs=$( printf '%s' "`echo "scale=1; $rx_kib / 1024" | bc`")
-  echo -n "<span foreground='#ffffff' background='#808080'>  </span><span foreground='#ffffff' background='#1478db'> ${rx_kib}</span><span font='10' foreground='#ffffff' background='#1478db'>M </span><span font='10'> </span>"
+  echo -n "<span foreground='#ffffff' background='#808080'>  </span><span foreground='#ffffff' background='#1478db'> ${rx_mbs}</span><span font='10' foreground='#ffffff' background='#1478db'>M </span><span font='10'> </span>"
 else
   echo -n "<span foreground='#ffffff' background='#808080'>  </span><span foreground='#ffffff' background='#1478db'> ${rx_kib}</span><span font='10' foreground='#ffffff' background='#1478db'>K </span><span font='6'> </span>"
 fi
@@ -63,7 +63,7 @@ fi
 tx_kib=$(( $tx_rate >> 10 ))
 if [[ "$tx_rate" -gt 1048576 ]]; then
     tx_mbs=$(printf '%s' "`echo "scale=1; $tx_kib / 1024" | bc`")
-  echo -n "<span foreground='#ffffff' background='#808080'> 祝 </span><span foreground='#ffffff' background='#1478db'> ${tx_kib}</span><span font='10' foreground='#ffffff' background='#1478db'>M </span>"
+  echo -n "<span foreground='#ffffff' background='#808080'> 祝 </span><span foreground='#ffffff' background='#1478db'> ${tx_mbs}</span><span font='10' foreground='#ffffff' background='#1478db'>M </span>"
 else
   echo -n "<span foreground='#ffffff' background='#808080'> 祝 </span><span foreground='#ffffff' background='#1478db'> ${tx_kib}</span><span font='10' foreground='#ffffff' background='#1478db'>K </span>"
 fi
