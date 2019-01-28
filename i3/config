@@ -68,7 +68,7 @@ bindsym $mod+backslash exec --no-startup-id roficlip
 floating_modifier $mod
 
 bindsym $mod+Shift+q kill
-bindsym $mod+r exec rofi -show run
+bindsym $mod+r exec rofi -modi drun -show drun -display-drun apps
 
 # change focus
 bindsym $mod+h focus left
