@@ -190,8 +190,6 @@ Plug 'sjl/gundo.vim'
 Plug 'SirVer/ultisnips'
 " targets.vim - Adds additional targets to operate on
 Plug 'wellle/targets.vim'
-" Git gutter - shows git information on the side
-Plug 'airblade/vim-gitgutter'
 " tabular - text aligning
 Plug 'godlygeek/tabular'
 " vim-repeat - Fixes . for some plugins
@@ -473,10 +471,6 @@ let g:pymode_rope_complete_on_dot = 0
 let g:pymode_rope_completion = 0
 let g:pymode_run = 1
 let g:pymode_options_max_line_length = 80
-
-" gitgutter
-nmap ]h <Plug>GitGutterNextHunk
-nmap [h <Plug>GitGutterPrevHunk
 
 " vim-diff-enhanced
 if &diff
