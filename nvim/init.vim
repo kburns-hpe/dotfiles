@@ -1,4 +1,3 @@
-set colorcolumn=80 " Shows where 80 characters is
 set ignorecase smartcase " enable case insensitive searching
 set iskeyword+=_,$,@,%,# " set additioanl keywords for navigation purposes
 set lazyredraw " Only redraw the screen when required
@@ -277,9 +276,6 @@ call plug#end()
 
 " cobalt2
 colorscheme cobalt2
-hi Normal ctermbg=None
-hi ColorColumn ctermbg=8 guibg=#1F4461
-hi CursorLine ctermbg=8 guibg=#1F4461
 
 " ale
 nmap <silent> <leader>j <Plug>(ale_previous_wrap)
