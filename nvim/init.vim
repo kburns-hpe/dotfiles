@@ -2,8 +2,6 @@ set ignorecase smartcase " enable case insensitive searching
 set iskeyword+=_,$,@,%,# " set additioanl keywords for navigation purposes
 set lazyredraw " Only redraw the screen when required
 set linebreak " only wrap lines at a breakat
-set number " Enable line number in gutter
-set relativenumber " Enables relative numbers for column
 set numberwidth=4 " Sets numbered column width
 set ruler " show rule in bottom right (ROW, COL)
 set showmatch " highlight matching brackets
@@ -47,10 +45,6 @@ set undodir=~/.config/nvim/undo
 set undofile
 set undolevels=1000
 set undoreload=10000
-
-" Use regular number in normal and relative in other modes
-autocmd InsertEnter * :set norelativenumber
-autocmd InsertLeave * :set relativenumber
 
 " Map %% as %:h for ease of use
 cnoremap <expr> %%  getcmdtype() == ':' ? expand('%:h').'/' : '%%'
@@ -132,10 +126,10 @@ autocmd BufReadPost,FileReadPost,BufNewFile * call system("tmux rename-window " 
 
 " Toggle relative line numbers
 function! NumberToggle()
-  if(&relativenumber == 1)
-    set norelativenumber
+  if(&number == 1)
+    set nonumber
   else
-    set relativenumber
+    set number
   endif
 endfunc
 
