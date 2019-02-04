@@ -31,7 +31,6 @@
 	oldNormal = red bold
 [core]
 	pager = diff-so-fancy | less --tabs=4 -RFX
-	hooksPath = ~/.git_global_hooks
 [http "https://gopkg.in"]
 	followRedirects = true
 [color "diff"]
@@ -45,3 +44,5 @@
 	cmd = nvim -f -c \"Gdiff\" \"$MERGED\"
 [mergetool]
 	prompt = false
+[init]
+  templatedir = ~/git/dotfiles/git-hooks
