@@ -5,7 +5,7 @@
  *
  * font: see http://freedesktop.org/software/fontconfig/fontconfig-user.html
  */
-static char *font = "DejaVuSansMono Nerd Font Mono:pixelsize=36:antialias=true:autohint=true";
+static char *font = "DejaVuSansMono Nerd Font Mono:pixelsize=24:antialias=true:autohint=true";
 static int borderpx = 2;
 
 /*
@@ -16,7 +16,7 @@ static int borderpx = 2;
  * 4: value of shell in /etc/passwd
  * 5: value of shell in config.h
  */
-static char *shell = "/usr/bin/zsh";
+static char *shell = "/bin/sh";
 char *utmp = NULL;
 char *stty_args = "stty raw pass8 nl -echo -iexten -cstopb 38400";
 
@@ -55,6 +55,14 @@ static unsigned int blinktimeout = 800;
  * thickness of underline and bar cursors
  */
 static unsigned int cursorthickness = 2;
+
+/*
+ * 1: custom-draw (without using the font) most of the lines/blocks characters
+ *    for gapless alignment between cells. This includes all the codepoints at
+ *    U+2500 - U+259F except dashes, diagonals and shades.
+ * 0: disable (render all glyphs normally from the font).
+ */
+const int boxdraw = 1;
 
 /*
  * bell volume. It must be a value between -100 and 100. Use 0 for disabling
