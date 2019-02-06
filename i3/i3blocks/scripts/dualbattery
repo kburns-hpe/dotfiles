@@ -52,8 +52,6 @@ elif [ "$status0" = "Discharging" ] || [ "$status1" = "Discharging" ]; then
         label=""
     fi
 else
-    label=""
-    echo "${GRAY} ${label} ${COLOREND}"
     exit
 fi
 
