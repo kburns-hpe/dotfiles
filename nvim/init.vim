@@ -247,6 +247,8 @@ Plug 'scrooloose/nerdtree'
 Plug 'Xuyuanp/nerdtree-git-plugin'
 " vim-devions - provides icons for filetypes
 Plug 'ryanoasis/vim-devicons'
+" notational-fzf-vim - Easier way to search notes
+Plug 'https://github.com/Alok/notational-fzf-vim'
 
 if exists('$TMUX')
   Plug 'ncm2/ncm2-tmux'
@@ -550,3 +552,8 @@ augroup chef
   autocmd BufRead,BufNewFile *.rb if expand('%:p:h:t') == "recipes" | set filetype=ruby.chef | endif
 augroup END
 
+" notational-fzf-vim
+let g:nv_search_paths = ['~/Dropbox/notes']
+let g:nv_default_extension = '.md'
+let g:nv_use_short_pathnames = 1
+map <leader>nv :NV<cr>
