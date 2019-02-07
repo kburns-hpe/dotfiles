@@ -174,9 +174,10 @@ map <A-]> :vsp<CR>:exec("tag ".expand("<cword>"))<CR>q
 call plug#begin('~/.config/nvim/plugged')
 " cobalt2 - color theme
 Plug 'herrbischoff/cobalt2.vim'
-"Plug 'gertjanreynaert/cobalt2-vim-theme'
 " tagbar
 Plug 'majutsushi/tagbar'
+" vim-easymotion - Simpler way to move around vim
+Plug 'Lokaltog/vim-easymotion'
 " fzf - fuzzy searching
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
 Plug 'junegunn/fzf.vim'
@@ -559,3 +560,34 @@ nmap <leader>nrd :python3 nvimdb.rebuild_database()<CR>
 set winminwidth=0
 map <leader>h <C-W>l<C-W>\|
 map <leader>s <C-W>h25<C-W>>
+
+
+" easymotion
+
+" map s to be single character easymotion search
+nmap s <Plug>(easymotion-s2)
+
+" Setup easy motion line changes
+map <Leader>l <Plug>(easymotion-lineforward)
+map <Leader>h <Plug>(easymotion-linebackward)
+map <Leader>j <Plug>(easymotion-j)
+map <Leader>k <Plug>(easymotion-k)
+
+" Setup easymotion to be used for the / find
+map  / <Plug>(easymotion-sn)
+omap / <Plug>(easymotion-tn)
+map  n <Plug>(easymotion-next)
+map  N <Plug>(easymotion-prev)
+
+" Bidirectional & within line 't' motion
+omap t <Plug>(easymotion-bd-tl)
+" Use uppercase target labels and type as a lower case
+let g:EasyMotion_use_upper = 1
+ " type `l` and match `l`&`L`
+let g:EasyMotion_smartcase = 1
+" Smartsign (type `3` and match `3`&`#`)
+let g:EasyMotion_use_smartsign_us = 1
+
+let g:EasyMotion_startofline = 0 " keep cursor colum when JK motion
+let g:EasyMotion_smartcase = 1
+let g:EasyMotion_enter_jump_first = 1
