@@ -554,3 +554,8 @@ augroup END
 
 " nvim leader mappings
 nmap <leader>nrd :python3 nvimdb.rebuild_database()<CR>
+
+" <leader>h hides left split. <leader>s adds 25 chars to left split
+set winminwidth=0
+map <leader>h <C-W>l<C-W>\|
+map <leader>s <C-W>h25<C-W>>
