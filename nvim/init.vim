@@ -560,7 +560,6 @@ set winminwidth=0
 map <leader>h <C-W>l<C-W>\|
 map <leader>s <C-W>h25<C-W>>
 
-
 " easymotion
 
 " map s to be single character easymotion search
@@ -571,8 +570,6 @@ map <Leader>j <Plug>(easymotion-j)
 map <Leader>k <Plug>(easymotion-k)
 
 " Setup easymotion to be used for the / find
-map  / <Plug>(easymotion-sn)
-omap / <Plug>(easymotion-tn)
 map  n <Plug>(easymotion-next)
 map  N <Plug>(easymotion-prev)
 
