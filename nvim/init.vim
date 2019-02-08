@@ -184,8 +184,6 @@ Plug 'junegunn/fzf.vim'
 Plug 'tpope/vim-fugitive'
 " vim-surround - implements the ability to change surroundings easier
 Plug 'tpope/vim-surround'
-" gundo - visualize undo tree
-Plug 'sjl/gundo.vim'
 " UltiSnips - snippet plugin
 Plug 'SirVer/ultisnips'
 " targets.vim - Adds additional targets to operate on
@@ -203,11 +201,7 @@ Plug 'janko-m/vim-test'
 " ncm2 - autocompletion
 Plug 'ncm2/ncm2'
 Plug 'roxma/nvim-yarp'
-Plug 'ncm2/ncm2-bufword'
 Plug 'ncm2/ncm2-path'
-Plug 'ncm2/ncm2-tern'
-Plug 'ncm2/ncm2-jedi'
-Plug 'ncm2/ncm2-cssomni'
 Plug 'ncm2/ncm2-ultisnips'
 Plug 'ncm2/ncm2-go'
 " vim-bufferline - lists buffers
@@ -230,23 +224,16 @@ Plug 'tpope/vim-eunuch'
 Plug 'tpope/vim-obsession'
 " vim-polyglot - Provides support for multiple languages
 Plug 'sheerun/vim-polyglot'
-" emmet-vim - Provides Emmet Support
-Plug 'mattn/emmet-vim'
 " Lightline - configurable statusline/tabline
 Plug 'itchyny/lightline.vim'
 " lightline-ale provides ale info in lightline
 Plug 'maximbaz/lightline-ale'
-" nerdtree - Provides a sidebar that shows files and directories
-Plug 'scrooloose/nerdtree'
-"  nerdtree-git-plugin - provides git info in nerdtree
-Plug 'Xuyuanp/nerdtree-git-plugin'
 " vim-devions - provides icons for filetypes
 Plug 'ryanoasis/vim-devicons'
-" nvim - notational velocity clone for vim
-Plug 'cwoac/nvvim'
+" notational-fzf-vim - Easier way to search notes
+Plug 'https://github.com/Alok/notational-fzf-vim'
 
 if exists('$TMUX')
-  Plug 'ncm2/ncm2-tmux'
   " vimux - Interact with tmux from within vim
   Plug 'benmills/vimux'
   " vim-tmux-navigator -  allows seamless switching between tmux and vim panes
@@ -405,10 +392,6 @@ let g:lightline#ale#indicator_warnings = "\uf071"
 let g:lightline#ale#indicator_errors = "\uf05e"
 let g:lightline#ale#indicator_ok = "\uf00c"
 
-" Gundo
-nnoremap <F6> :GundoToggle<CR>
-inoremap <F6> <C-o>:GundoToggle<CR>
-
 " UltiSnips
 let g:UltiSnipsSnippetsDir="~/.config/nvim/UltiSnips"
 let g:UltiSnipsEditSplit="horizontal"
@@ -462,25 +445,16 @@ if &diff
 endif
 
 " vim-better-whitespace
-autocmd BufEnter * EnableStripWhitespaceOnSave
+let g:better_whitespace_enabled=1
+let g:strip_whitespace_on_save=1
+let g:strip_whitespace_confirm=0
 
 " neoformat
 map <leader>nf :Neoformat<cr>
 
-" nerdtree
-map <leader>nt :NERDTreeToggle<CR>
-
 " tagbar
 nmap <F3> :TagbarToggle<CR>
 imap <F3> <C-o>:TagbarToggle<CR>
-
-" Load all plugins now.
-" Plugins need to be added to runtimepath before helptags can be generated.
-packloadall
-" Load all of the helptags now, after plugins have been loaded.
-" All messages and errors will be ignored.
-silent! helptags ALL
-
 
 if has('unix')
   " vim-dasht
@@ -494,7 +468,6 @@ if has('unix')
   " vim-go
   nmap <silent> <leader>tg :GoTest<CR>
   nmap <silent> <leader><leader>tg :GoTestFunc<CR>
-
 endif
 
 " emmet-vim
@@ -534,14 +507,6 @@ augroup chef
   autocmd BufRead,BufNewFile *.rb if expand('%:p:h:t') == "recipes" | set filetype=ruby.chef | endif
 augroup END
 
-" nvim leader mappings
-nmap <leader>nrd :python3 nvimdb.rebuild_database()<CR>
-
-" <leader>h hides left split. <leader>s adds 25 chars to left split
-set winminwidth=0
-map <leader>h <C-W>l<C-W>\|
-map <leader>s <C-W>h25<C-W>>
-
 " easymotion
 
 " map s to be single character easymotion search
@@ -550,10 +515,6 @@ nmap s <Plug>(easymotion-s2)
 " Setup easy motion line changes
 map <Leader>j <Plug>(easymotion-j)
 map <Leader>k <Plug>(easymotion-k)
-
-" Setup easymotion to be used for the / find
-map  n <Plug>(easymotion-next)
-map  N <Plug>(easymotion-prev)
 
 " Bidirectional & within line 't' motion
 omap t <Plug>(easymotion-bd-tl)
@@ -567,3 +528,16 @@ let g:EasyMotion_use_smartsign_us = 1
 let g:EasyMotion_startofline = 0 " keep cursor colum when JK motion
 let g:EasyMotion_smartcase = 1
 let g:EasyMotion_enter_jump_first = 1
+
+" notational-fzf-vim
+let g:nv_search_paths = ['~/Dropbox/notes']
+let g:nv_default_extension = '.md'
+let g:nv_use_short_pathnames = 1
+map <leader>nv :NV<cr>
+
+" Load all plugins now.
+" Plugins need to be added to runtimepath before helptags can be generated.
+packloadall
+" Load all of the helptags now, after plugins have been loaded.
+" All messages and errors will be ignored.
+silent! helptags ALL
