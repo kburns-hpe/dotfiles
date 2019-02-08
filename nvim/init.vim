@@ -1,6 +1,5 @@
 set ignorecase smartcase " enable case insensitive searching
 set iskeyword+=_,$,@,%,# " set additioanl keywords for navigation purposes
-set lazyredraw " Only redraw the screen when required
 set linebreak " only wrap lines at a breakat
 set numberwidth=4 " Sets numbered column width
 set ruler " show rule in bottom right (ROW, COL)
