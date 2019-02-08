@@ -248,8 +248,8 @@ Plug 'scrooloose/nerdtree'
 Plug 'Xuyuanp/nerdtree-git-plugin'
 " vim-devions - provides icons for filetypes
 Plug 'ryanoasis/vim-devicons'
-" nvim - notational velocity clone for vim
-Plug 'cwoac/nvvim'
+" notational-fzf-vim - Easier way to search notes
+Plug 'https://github.com/Alok/notational-fzf-vim'
 
 if exists('$TMUX')
   Plug 'ncm2/ncm2-tmux'
@@ -553,15 +553,6 @@ augroup chef
   autocmd BufRead,BufNewFile *.rb if expand('%:p:h:t') == "recipes" | set filetype=ruby.chef | endif
 augroup END
 
-" nvim leader mappings
-nmap <leader>nrd :python3 nvimdb.rebuild_database()<CR>
-
-" <leader>h hides left split. <leader>s adds 25 chars to left split
-set winminwidth=0
-map <leader>h <C-W>l<C-W>\|
-map <leader>s <C-W>h25<C-W>>
-
-
 " easymotion
 
 " map s to be single character easymotion search
@@ -589,3 +580,9 @@ let g:EasyMotion_use_smartsign_us = 1
 let g:EasyMotion_startofline = 0 " keep cursor colum when JK motion
 let g:EasyMotion_smartcase = 1
 let g:EasyMotion_enter_jump_first = 1
+
+" notational-fzf-vim
+let g:nv_search_paths = ['~/Dropbox/notes']
+let g:nv_default_extension = '.md'
+let g:nv_use_short_pathnames = 1
+map <leader>nv :NV<cr>
