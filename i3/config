@@ -28,6 +28,11 @@ for_window [class="Anamnesis"] floating enable
 for_window [class="Openxenmanager"] floating enable
 for_window [class="Autokey-gtk"] floating enable
 
+# Make webcam window float and stick
+for_window [title="video0 - mpv"] floating enable
+for_window [title="video0 - mpv"] sticky enable
+
+
 # gaps
 gaps inner 10
 gaps outer 5
@@ -63,6 +68,9 @@ bindsym $hyper+d exec --no-startup-id doing done
 bindsym $mod+d exec --no-startup-id ~/bin/rofi-doing.sh
 bindsym $mod+x exec --no-startup-id pkill -USR1 redshift
 bindsym $mod+backslash exec --no-startup-id roficlip
+
+# Toggle webcam
+bindsym $mod+c exec --no-startup-id camtoggle
 
 # Use Mouse+$mod to drag floating windows to their wanted position
 floating_modifier $mod
