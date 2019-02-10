@@ -409,6 +409,7 @@ nmap <leader>gd :Gdiff<cr>
 nmap <leader>ge :Gedit<cr>
 nmap <leader>gl :Glog<cr>
 nmap <leader>gp :Gpush origin HEAD<cr>
+nmap <leader>gr :Gread<cr>
 nmap <leader>gs :Gstatus<cr><c-w>K
 
 " diff merge shortcuts
@@ -539,6 +540,8 @@ let g:nv_show_preview = 0
 map <leader>nv :NV<cr>
 
 " gitgutter
+nmap ]h <Plug>GitGutterNextHunk
+nmap [h <Plug>GitGutterPrevHunk
 hi GitGutterAdd guifg=#3ad900 ctermfg=2
 hi GitGutterChange guifg=#ffc600 ctermfg=3
 hi GitGutterDelete guifg=#ff2600 ctermfg=1
