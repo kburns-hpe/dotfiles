@@ -19,7 +19,7 @@ alias gdt="git difftool"
 alias gl="git log --graph --decorate"
 alias gld="git log --all --graph --decorate --oneline --simplify-by-decoration"
 alias glg="git log --graph --pretty=format:'%C(auto)%h -%d %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit"
-alias glf='git log --pretty=format:"%C(yellow)%h%Cred%d\\ %Creset%s%Cblue\\ [%cn]" --decorate --numstat'
+alias glf='git log --pretty=format:"%C(yellow)%h%Cred%d %Creset%s%Cblue [%cn]" --decorate --numstat'
 alias glp="git log -p --decorate"
 alias gmv="git mv"
 alias gp='git push origin HEAD'
