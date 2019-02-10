@@ -182,6 +182,8 @@ Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
 Plug 'junegunn/fzf.vim'
 " fugitive - git plugin
 Plug 'tpope/vim-fugitive'
+" Git gutter - shows git information on the side
+Plug 'airblade/vim-gitgutter'
 " vim-surround - implements the ability to change surroundings easier
 Plug 'tpope/vim-surround'
 " UltiSnips - snippet plugin
@@ -535,6 +537,11 @@ let g:nv_default_extension = '.md'
 let g:nv_use_short_pathnames = 1
 let g:nv_show_preview = 0
 map <leader>nv :NV<cr>
+
+" gitgutter
+hi GitGutterAdd guifg=#3ad900 ctermfg=2
+hi GitGutterChange guifg=#ffc600 ctermfg=3
+hi GitGutterDelete guifg=#ff2600 ctermfg=1
 
 " Load all plugins now.
 " Plugins need to be added to runtimepath before helptags can be generated.
