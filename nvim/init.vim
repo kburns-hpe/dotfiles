@@ -410,7 +410,7 @@ nmap <leader>ge :Gedit<cr>
 nmap <leader>gl :Glog<cr>
 nmap <leader>gp :Gpush origin HEAD<cr>
 nmap <leader>gr :Gread<cr>
-nmap <leader>gs :Gstatus<cr><c-w>K
+nmap <leader>gs :Gstatus<cr><c-w>
 
 " diff merge shortcuts
 nmap <leader>1 :diffput 1<cr>:diffupdate<cr>
