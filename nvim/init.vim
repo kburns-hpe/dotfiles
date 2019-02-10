@@ -255,10 +255,6 @@ call plug#end()
 " cobalt2
 colorscheme cobalt2
 
-" ale
-nmap <silent> <leader>j <Plug>(ale_previous_wrap)
-nmap <silent> <leader>k <Plug>(ale_next_wrap)
-
 " Enable yaml linter to run on ansible files
 augroup FiletypeGroup
     autocmd!
@@ -461,7 +457,6 @@ imap <F3> <C-o>:TagbarToggle<CR>
 
 if has('unix')
   " vim-dasht
-  nnoremap <Leader>k :Dasht<Space>
   nnoremap <Leader><Leader>k :Dasht!<Space>
   nnoremap <silent> <Leader>K :call Dasht([expand('<cword>'), expand('<cWORD>')])<Return>
   nnoremap <silent> <Leader><Leader>K :call Dasht([expand('<cword>'), expand('<cWORD>')], '!')<Return>
