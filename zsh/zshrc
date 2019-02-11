@@ -38,10 +38,6 @@ zplug mafredri/zsh-async, from:github
 zplug sinetoami/purien, use:purien.zsh, from:github, as:theme
 
 # Install additional apps
-zplug 'BurntSushi/ripgrep', \
-    from:gh-r, \
-    as:command, \
-    rename-to:"rg"
 zplug 'stedolan/jq', \
     from:gh-r, \
     as:command
