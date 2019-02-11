@@ -1,7 +1,3 @@
-" Change leader from \ to Space
-nnoremap <SPACE> <Nop>
-let mapleader = "\<Space>"
-
 " Map %% as %:h for ease of use
 cnoremap <expr> %%  getcmdtype() == ':' ? expand('%:h').'/' : '%%'
 

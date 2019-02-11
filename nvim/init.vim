@@ -1,3 +1,7 @@
+" Change leader from \ to Space
+nnoremap <SPACE> <Nop>
+let mapleader = "\<Space>"
+
 call plug#begin('~/.config/nvim/plugged')
 
 Plug 'herrbischoff/cobalt2.vim'
@@ -21,6 +25,7 @@ colorscheme cobalt2
 hi GitGutterAdd guifg=#3ad900 ctermfg=2
 hi GitGutterChange guifg=#ffc600 ctermfg=3
 hi GitGutterDelete guifg=#ff2600 ctermfg=1
+
 
 " Load all plugins now.
 " Plugins need to be added to runtimepath before helptags can be generated.
