@@ -1,4 +1,4 @@
-set diffopt+=algorithm:patience
+Plug 'chrisbra/vim-diff-enhanced'
 
 " diff merge shortcuts
 nmap <leader>1 :diffput 1<cr>:diffupdate<cr>
