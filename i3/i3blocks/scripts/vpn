@@ -1,8 +1,7 @@
 #!/bin/bash
+INSTANCE="${BLOCK_INSTANCE:-eth0}"
 
 # This script checks to see if tun0 interface exists and is up
-if /usr/bin/ifconfig | grep -q "tun0"; then
-    echo "<span foreground='#ff0900'>[VPN]</span>"
-elif grep -q "172.16.0.1" /etc/resolv.conf; then
-    echo "<span foreground='#ff0900'>[VPN]</span>"
+if ip addr | grep -q "${INSTANCE}"; then
+    echo "<span background='#808080' foreground='#ffffff'>  </span>"
 fi
