@@ -1,5 +1,7 @@
 alias t="todo.py"
 alias ta="todo.py add"
+alias td="todo.py done"
 alias tai="todo.py add Inbox"
 alias tl="todo.py list"
+alias tlp="todo.py list project"
 alias tp="todo.py projects"
