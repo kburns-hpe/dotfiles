@@ -3,6 +3,8 @@ alias ta="todo.py add"
 alias td="todo.py done"
 alias tai="todo.py add Inbox"
 alias tl="todo.py list"
+alias tli="todo.py list project Inbox"
+alias tm="todo.py move"
 alias tp="todo.py projects"
 
 function tll() {
