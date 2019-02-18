@@ -3,6 +3,7 @@ Plug 'roxma/nvim-yarp'
 Plug 'ncm2/ncm2-path'
 Plug 'ncm2/ncm2-ultisnips'
 Plug 'ncm2/ncm2-go'
+Plug 'ncm2/ncm2-jedi'
 
 map <F9> :call ToggleCompletion()<cr>
 imap <F9> <C-o>:call ToggleCompletion()<cr>
