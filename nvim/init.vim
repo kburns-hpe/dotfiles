@@ -69,6 +69,7 @@ Plug 'herrbischoff/cobalt2.vim'
 
 " ctags
 Plug 'majutsushi/tagbar'
+Plug 'ludovicchabant/vim-gutentags'
 
 " Documentation
 Plug 'sunaku/vim-dasht'
