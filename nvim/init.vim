@@ -397,7 +397,11 @@ let g:lightline = {
     \ 'right': [ [ 'lineinfo' ],
     \            [ 'percent' ],
     \            [ 'linter_checking', 'linter_warnings', 'linter_errors', 'linter_ok' ],
+    \            [ 'tagbar' ],
     \            [ 'filetype' ] ]
+  \ },
+  \ 'component': {
+    \   'tagbar': '%{tagbar#currenttag("[%s]", "", "f")}',
   \ },
   \ 'component_function': {
     \   'fugitive': 'LLFugitive',
