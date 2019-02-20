@@ -97,6 +97,9 @@ Plug 'ryanoasis/vim-devicons'
 Plug 'tpope/vim-fugitive'
 Plug 'airblade/vim-gitgutter'
 
+" Movement
+Plug 'justinmk/vim-sneak'
+
 " Notes
 Plug 'https://github.com/Alok/notational-fzf-vim'
 
