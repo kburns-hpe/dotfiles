@@ -9,9 +9,6 @@ ln -s "$confdir"/autoload/lightline/colorscheme/cobalt2.vim ~/.config/nvim/autol
 
 # Setup init.vim
 ln -s "$confdir/init.vim" ~/.config/nvim/init.vim
-ln -s "$confdir/unix.vim" ~/.config/nvim/unix.vim
-ln -s "$confdir/tmux.vim" ~/.config/nvim/tmux.vim
-ln -s "$confdir/init" ~/.config/nvim/init
 
 # Setup vim-plug
 curl -fLo ~/.config/nvim/autoload/plug.vim --create-dirs \
