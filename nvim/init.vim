@@ -114,8 +114,8 @@ endif
 " Utility
 Plug 'chrisbra/vim-diff-enhanced'
 Plug 'ervandew/supertab'
-Plug 'godlygeek/tabular'
 Plug 'ntpeters/vim-better-whitespace'
+Plug 'tommcdo/vim-lion'
 Plug 'tpope/vim-commentary'
 Plug 'tpope/vim-repeat'
 Plug 'tpope/vim-rsi'
@@ -425,6 +425,9 @@ let g:lightline#ale#indicator_warnings = "\uf071"
 let g:lightline#ale#indicator_errors = "\uf05e"
 let g:lightline#ale#indicator_ok = "\uf00c"
 
+
+"""" lion
+let b:lion_squeeze_spaces = 1
 
 """" ncm2
 set shortmess+=c
