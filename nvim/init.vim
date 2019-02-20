@@ -383,6 +383,8 @@ colorscheme cobalt2
 
 """ PLUGIN SPECIFIC SETTINGS
 
+"""" ctags
+let g:gutentags_cache_dir = "~/.config/nvim/tags"
 """" fzf
 let $FZF_DEFAULT_COMMAND = 'rg --files --hidden --follow --glob "!.git/*" --glob "!.gitkeep"'
 
