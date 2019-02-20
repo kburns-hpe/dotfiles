@@ -68,7 +68,6 @@ Plug 'roxma/nvim-yarp'
 Plug 'herrbischoff/cobalt2.vim'
 
 " ctags
-Plug 'majutsushi/tagbar'
 Plug 'ludovicchabant/vim-gutentags'
 
 " Documentation
@@ -234,10 +233,7 @@ endfunction
 
 function! LLMode() abort
   let fname = expand('%:t')
-  return fname == '__Tagbar__' ? 'Tagbar' :
-  \ fname == '__Gundo__' ? 'Gundo' :
-  \ fname == '__Gundo_Preview__' ? 'Gundo Preview' :
-  \ lightline#mode() == 'NORMAL' ? 'N' :
+  return lightline#mode() == 'NORMAL' ? 'N' :
   \ lightline#mode() == 'INSERT' ? 'I' :
   \ lightline#mode() == 'VISUAL' ? 'V' :
   \ lightline#mode() == 'V-LINE' ? 'V' :
@@ -334,6 +330,9 @@ nnoremap <leader>fb :BLines<cr>
 nnoremap <leader>ff :Files<cr>
 nnoremap <leader>fg :GFiles<cr>
 nnoremap <leader>fl :Lines<cr>
+nnoremap <leader>fs :Snippets<cr>
+nnoremap <leader>ft :BTags<cr>
+nnoremap <leader>fT :Tags<cr>
 nnoremap <leader>ga :Gwrite<cr>
 nnoremap <leader>gb :Gblame<cr>
 nnoremap <leader>gc :Gcommit -v<cr>
@@ -397,11 +396,7 @@ let g:lightline = {
     \ 'right': [ [ 'lineinfo' ],
     \            [ 'percent' ],
     \            [ 'linter_checking', 'linter_warnings', 'linter_errors', 'linter_ok' ],
-    \            [ 'tagbar' ],
     \            [ 'filetype' ] ]
-  \ },
-  \ 'component': {
-    \   'tagbar': '%{tagbar#currenttag("[%s]", "", "f")}',
   \ },
   \ 'component_function': {
     \   'fugitive': 'LLFugitive',
