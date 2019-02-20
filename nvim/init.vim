@@ -157,14 +157,14 @@ augroup end
 """ FUNCTIONS
 
 " Toggle List windows
-function! GetBufferList()
+function! GetBufferList() abort
   redir =>buflist
   silent! ls!
   redir END
   return buflist
 endfunction
 
-function! ToggleList(bufname, pfx)
+function! ToggleList(bufname, pfx) abort
   let buflist = GetBufferList()
   for bufnum in map(filter(split(buflist, '\n'), 'v:val =~ "'.a:bufname.'"'), 'str2nr(matchstr(v:val, "\\d\\+"))')
     if bufwinnr(bufnum) != -1
@@ -185,7 +185,7 @@ function! ToggleList(bufname, pfx)
 endfunction
 
 " Toggle relative line numbers
-function! NumberToggle()
+function! NumberToggle() abort
   if(&number == 1)
     set nonumber
   else
@@ -195,7 +195,7 @@ endfunc
 
 " Toggle completion
 let s:ncm2Enabled = 1
-function! ToggleCompletion()
+function! ToggleCompletion() abort
     if s:ncm2Enabled
       call ncm2#disable_for_buffer()
       let s:ncm2Enabled = 0
@@ -228,7 +228,7 @@ function! LightlineLinterWarnings() abort
   return l:counts.total == 0 ? '' : printf('%d --', all_non_errors)
 endfunction
 
-function! LLMode()
+function! LLMode() abort
   let fname = expand('%:t')
   return fname == '__Tagbar__' ? 'Tagbar' :
   \ fname == '__Gundo__' ? 'Gundo' :
@@ -241,7 +241,7 @@ function! LLMode()
   \ lightline#mode() == 'REPLACE' ? 'R' : lightline#mode()
 endfunction
 
-function! LLModified()
+function! LLModified() abort
   if &filetype == "help"
     return ""
   elseif &modified
@@ -253,7 +253,7 @@ function! LLModified()
   endif
 endfunction
 
-function! LLReadonly()
+function! LLReadonly() abort
   if &filetype == "help"
     return ""
   elseif &readonly
@@ -263,16 +263,16 @@ function! LLReadonly()
   endif
 endfunction
 
-function! LLFugitive()
+function! LLFugitive() abort
   return exists('*fugitive#head') ? fugitive#head() : ''
 endfunction
 
-function! MyBufferLine()
+function! MyBufferLine() abort
   let st=g:bufferline#refresh_status()
   return g:bufferline_status_info.before . g:bufferline_status_info.current . g:bufferline_status_info.after
 endfunction
 
-function! MyFiletype()
+function! MyFiletype() abort
   return winwidth(0) > 70 ? (strlen(&filetype) ? &filetype . ' ' . WebDevIconsGetFileTypeSymbol() : 'no ft') : ''
 endfunction
 
