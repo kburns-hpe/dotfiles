@@ -123,6 +123,7 @@ Plug 'tpope/vim-unimpaired'
 Plug 'wellle/targets.vim'
 Plug 'michaeljsmith/vim-indent-object'
 Plug 'chaoren/vim-wordmotion'
+Plug 'Yggdroot/indentLine'
 
 call plug#end()
 
@@ -431,6 +432,11 @@ let g:lightline#ale#indicator_ok = "\uf00c"
 
 """" lion
 let b:lion_squeeze_spaces = 1
+
+"""" indentline
+let g:indentLine_faster = 1
+let g:indentLine_char = '│'
+let g:indentLine_color_gui = '#526776'
 
 """" ncm2
 set shortmess+=c
