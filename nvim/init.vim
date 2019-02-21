@@ -18,7 +18,6 @@ set foldmethod=syntax
 
 " Searching
 set ignorecase smartcase
-set iskeyword+=_,$,@,%,#
 set showmatch
 
 " Speed up vim
@@ -122,6 +121,8 @@ Plug 'tpope/vim-rsi'
 Plug 'tpope/vim-surround'
 Plug 'tpope/vim-unimpaired'
 Plug 'wellle/targets.vim'
+Plug 'michaeljsmith/vim-indent-object'
+Plug 'chaoren/vim-wordmotion'
 
 call plug#end()
 
