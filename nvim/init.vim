@@ -123,7 +123,6 @@ Plug 'tpope/vim-unimpaired'
 Plug 'wellle/targets.vim'
 Plug 'michaeljsmith/vim-indent-object'
 Plug 'chaoren/vim-wordmotion'
-Plug 'rstacruz/vim-closer'
 
 call plug#end()
 
