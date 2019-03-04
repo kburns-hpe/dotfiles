@@ -206,9 +206,9 @@ assign [instance="social" class="Termite"] $ws3
 assign [Class="Slack"] $ws3
 assign [Class="discord"] $ws3
 
+assign [class="nixnote2"] $ws4
 assign [class="Zathura"] $ws4
 assign [class="Zeal"] $ws4
-assign [instance="nvim" class="Termite"] $ws4
 
 assign [class="010 Editor"] $ws5
 assign [class="Hopper"] $ws5
