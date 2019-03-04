@@ -39,7 +39,7 @@ mpdstatus="$(mpc status)"
 title="$(mpc current -f '[%artist% - ]%title%')"
 
 output() {
-  echo "<span foreground='#0088ff'>$icon </span><span foreground='#bbbbbb'>$title</span>"
+  echo "<span foreground='#ffffff' background='#808080'> $icon </span><span foreground='#ffffff' background='#1478db'> $title </span>"
 }
 
 icon
