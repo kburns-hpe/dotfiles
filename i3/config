@@ -57,7 +57,7 @@ bindsym $hyper+l exec glitchlock
 bindsym $hyper+b exec chromium
 bindsym $hyper+F7 exec ~/bin/dock.sh
 bindsym $hyper+a exec pavucontrol
-bindsym $hyper+s exec termite --name=social -e social
+bindsym $hyper+s exec BLOCK_BUTTON=1 ~/.config/i3/blocks/doing
 bindsym $hyper+v exec --no-startup-id vpn
 bindsym $hyper+F12 exec systemctl poweroff
 bindsym Print exec --no-startup-id scrot -e 'mv $f ~/pictures/screenshots/ 2>/dev/null'
@@ -229,25 +229,8 @@ assign [class="Wine"] $ws7
 
 # i3bar
 bar {
-    id bar-top
-    position top
-    status_command i3blocks -c ~/.i3blocks-top.conf
-    workspace_buttons no
-    tray_output none
-    colors {
-      background #193549
-      statusline #FFFFFF
-
-      focused_workspace  #193549 #1478db #ffffff
-      active_workspace   #193549 #00c5c7 #ffffff
-      inactive_workspace #193549 #808080 #ffffff
-      urgent_workspace   #193549 #ff2600 #ffffff
-    }
-}
-bar {
-    id bar-bottom
     position bottom
-    status_command i3blocks -c ~/.i3blocks-bottom.conf
+    status_command i3blocks
     strip_workspace_numbers yes
     colors {
       background #193549
