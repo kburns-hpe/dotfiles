@@ -99,9 +99,6 @@ Plug 'airblade/vim-gitgutter'
 " Movement
 Plug 'justinmk/vim-sneak'
 
-" Notes
-Plug 'https://github.com/Alok/notational-fzf-vim'
-
 " Snippets
 Plug 'SirVer/ultisnips'
 
@@ -436,11 +433,6 @@ let b:lion_squeeze_spaces = 1
 set shortmess+=c
 set completeopt=noinsert,menuone,noselect
 
-"""" notational-fzf-vim
-let g:nv_search_paths = ['~/Dropbox/notes']
-let g:nv_default_extension = '.md'
-let g:nv_use_short_pathnames = 1
-let g:nv_show_preview = 0
 
 """" ultisnips
 let g:UltiSnipsSnippetsDir="~/.config/nvim/UltiSnips"
