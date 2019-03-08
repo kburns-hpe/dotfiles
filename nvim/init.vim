@@ -74,6 +74,7 @@ Plug 'sunaku/vim-dasht'
 
 " Formatting
 Plug 'sbdchd/neoformat'
+Plug 'godlygeek/tabular'
 
 " FZF
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
@@ -434,6 +435,9 @@ set shortmess+=c
 set completeopt=noinsert,menuone,noselect
 
 
+"""" polyglot
+" This holds settings for plugins brought in via vim-polygot
+let g:vim_markdown_new_list_item_indent = 0
 """" ultisnips
 let g:UltiSnipsSnippetsDir="~/.config/nvim/UltiSnips"
 let g:UltiSnipsEditSplit="horizontal"
