@@ -7,6 +7,7 @@ export EDITOR=nvim
 # Set Path
 export PATH="$HOME/.gem/ruby/2.6.0/bin:$HOME/bin:$HOME/.local/bin:$HOME/go/bin:$PATH"
 export PATH="$HOME/.yarn/bin:/var/lib/snapd/snap/bin:$PATH"
+export GOPATH="$HOME/go"
 
 # Use qt4-ssh-askpass for ssh ask dialog
 export SSH_ASKPASS="/usr/bin/qt4-ssh-askpass"
