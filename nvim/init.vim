@@ -24,7 +24,6 @@ set showmatch
 let g:matchparen_insert_timeout = 20
 let g:matchparen_timeout = 20
 set nocursorline
-set lazyredraw
 
 " SpellCheck
 set spelllang=en
