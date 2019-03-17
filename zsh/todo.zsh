@@ -1,24 +1,24 @@
-alias t="todo.py"
-alias ta="todo.py add"
-alias td="todo.py done"
-alias tai="todo.py add Inbox"
-alias tl="todo.py list"
-alias tli="todo.py list project Inbox"
-alias tm="todo.py move"
-alias tp="todo.py projects"
+alias t="todo"
+alias ta="todo add"
+alias td="todo done"
+alias tai="todo add Inbox"
+alias tl="todo list"
+alias tli="todo list project Inbox"
+alias tm="todo move"
+alias tp="todo projects"
 
 function tll() {
   if [ "$#" -eq 0 ]; then
-    todo.py labels
+    todo labels
   else
-    todo.py list label "$*"
+    todo list label "$*"
   fi
 }
 
 function tlp() {
   if [ "$#" -eq 0 ]; then
-    todo.py projects
+    todo projects
   else
-    todo.py list project "$*"
+    todo list project "$*"
   fi
 }
