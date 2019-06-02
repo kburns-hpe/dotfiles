@@ -56,8 +56,6 @@ function shl() {
     find . -type f -exec egrep -i "$searchfor" {} /dev/null \; | ack-grep -i --passthru --color --pager="less -R" "$highlight"
 }
 
-# Use qt4-ssh-askpass for ssh ask dialog
-export SSH_ASKPASS="/usr/bin/qt4-ssh-askpass"
 
 # BTRFS DF alias
 alias bdf="btrfs filesystem df"
