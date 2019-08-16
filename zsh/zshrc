@@ -12,7 +12,7 @@ source ~/.zplug/init.zsh
 if grep -q "Arch Linux" /etc/*release; then
   zplug "soleblaze/dotfiles", use:"zsh/{*.zsh,os/archlinux.zsh,other/gpg.zsh}"
 elif grep -q "Ubuntu" /etc/*release; then
-  zplug "soleblaze/dotfiles", use:"zsh/{*.zsh,os/ubuntu.zsh,other/gpg.zsh}"
+  zplug "soleblaze/dotfiles", use:"zsh/{*.zsh,os/ubuntu.zsh}"
 elif grep -q "Debian" /etc/*release; then
   zplug "soleblaze/dotfiles", use:"zsh/{*.zsh,os/ubuntu.zsh}"
 fi
