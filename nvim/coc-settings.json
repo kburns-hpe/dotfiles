@@ -1,0 +1,2 @@
+{ "python.jediEnabled": false,
+  "python.linting.banditEnabled": true }
