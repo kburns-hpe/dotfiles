@@ -4,8 +4,8 @@ set mouse= " Disable mouse support
 set grepprg=rg\ --vimgrep " Use rg for grep
 
 " Backup configuration
-set backup
-set backupdir=~/.config/nvim/backup
+set nobackup
+set nowritebackup
 set directory=~/.config/nvim/tmp
 
 " Indenting
@@ -55,22 +55,14 @@ set termguicolors
 
 call plug#begin('~/.config/nvim/plugged')
 
-" Autocompletion
-Plug 'ncm2/ncm2'
-Plug 'ncm2/ncm2-go'
-Plug 'ncm2/ncm2-jedi'
-Plug 'ncm2/ncm2-path'
-Plug 'ncm2/ncm2-ultisnips'
-Plug 'roxma/nvim-yarp'
+" Language Server Support
+Plug 'neoclide/coc.nvim', {'branch': 'release'}
 
 " Color Scheme
 Plug 'herrbischoff/cobalt2.vim'
 
 " ctags
 Plug 'ludovicchabant/vim-gutentags'
-
-" Documentation
-Plug 'sunaku/vim-dasht'
 
 " Formatting
 Plug 'sbdchd/neoformat'
@@ -81,16 +73,11 @@ Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
 Plug 'junegunn/fzf.vim'
 
 " Language-Specific
-Plug 'fatih/vim-go', { 'do': ':GoUpdateBinaries' }
 Plug 'sheerun/vim-polyglot'
-
-" Linter
-Plug 'w0rp/ale'
 
 " Lightline
 Plug 'bling/vim-bufferline'
 Plug 'itchyny/lightline.vim'
-Plug 'maximbaz/lightline-ale'
 Plug 'ryanoasis/vim-devicons'
 
 " Git
@@ -100,9 +87,6 @@ Plug 'airblade/vim-gitgutter'
 " Movement
 Plug 'justinmk/vim-sneak'
 
-" Snippets
-Plug 'SirVer/ultisnips'
-
 " Tmux-specific plugins
 if exists('$TMUX')
   Plug 'christoomey/vim-tmux-navigator'
@@ -110,7 +94,6 @@ endif
 
 " Utility
 Plug 'chrisbra/vim-diff-enhanced'
-Plug 'ervandew/supertab'
 Plug 'ntpeters/vim-better-whitespace'
 Plug 'tommcdo/vim-lion'
 Plug 'tpope/vim-commentary'
@@ -151,8 +134,6 @@ augroup END
 " Misc autocmd grouping
 augroup Misc
   autocmd!
-  autocmd User ALELint call lightline#update()
-  autocmd BufEnter * call ncm2#enable_for_buffer()
   autocmd FileType * setlocal formatoptions-=r formatoptions-=o
 augroup end
 
@@ -195,40 +176,7 @@ function! NumberToggle() abort
   endif
 endfunc
 
-" Toggle completion
-let s:ncm2Enabled = 1
-function! ToggleCompletion() abort
-    if s:ncm2Enabled
-      call ncm2#disable_for_buffer()
-      let s:ncm2Enabled = 0
-    else
-      call ncm2#enable_for_buffer()
-      let s:ncm2Enabled = 1
-    endif
-endfunction
-
 """" lightline functions
-
-function! LightlineLinterErrors() abort
-  let l:counts = ale#statusline#Count(bufnr(''))
-  let l:all_errors = l:counts.error + l:counts.style_error
-  let l:all_non_errors = l:counts.total - l:all_errors
-  return l:counts.total == 0 ? '' : printf('%d >>', all_errors)
-endfunction
-
-function! LightlineLinterOK() abort
-  let l:counts = ale#statusline#Count(bufnr(''))
-  let l:all_errors = l:counts.error + l:counts.style_error
-  let l:all_non_errors = l:counts.total - l:all_errors
-  return l:counts.total == 0 ? '✓' : ''
-endfunction
-
-function! LightlineLinterWarnings() abort
-  let l:counts = ale#statusline#Count(bufnr(''))
-  let l:all_errors = l:counts.error + l:counts.style_error
-  let l:all_non_errors = l:counts.total - l:all_errors
-  return l:counts.total == 0 ? '' : printf('%d --', all_non_errors)
-endfunction
 
 function! LLMode() abort
   let fname = expand('%:t')
@@ -286,6 +234,19 @@ cnoremap <expr> %%  getcmdtype() == ':' ? expand('%:h').'/' : '%%'
 inoremap <expr> <CR> (pumvisible() ? "\<c-y>\<cr>" : "\<CR>")
 cnoremap w!! execute 'silent! write !sudo tee % >/dev/null' <bar> edit!
 
+" Use tab for trigger completion with characters ahead and navigate.
+" Use command ':verbose imap <tab>' to make sure tab is not mapped by other plugin.
+inoremap <silent><expr> <TAB>
+      \ pumvisible() ? "\<C-n>" :
+      \ <SID>check_back_space() ? "\<TAB>" :
+      \ coc#refresh()
+inoremap <expr><S-TAB> pumvisible() ? "\<C-p>" : "\<C-h>"
+
+" Use <tab> for select selections ranges, needs server support, like: coc-tsserver, coc-python
+nmap <silent> <TAB> <Plug>(coc-range-select)
+xmap <silent> <TAB> <Plug>(coc-range-select)
+xmap <silent> <S-TAB> <Plug>(coc-range-select-backword)
+
 """" Alt Mappings
 nnoremap <A-]> :vsp<CR>:exec("tag ".expand("<cword>"))<CR>q
 
@@ -322,6 +283,8 @@ nnoremap <leader>1 :diffput 1<cr>:diffupdate<cr>
 nnoremap <leader>2 :diffget 2<cr>:diffupdate<cr>
 nnoremap <leader>3 :diffget 3<cr>:diffupdate<cr>
 nnoremap <leader>P "+P
+nmap <leader>a  <Plug>(coc-codeaction-selected)
+nmap <leader>ac  <Plug>(coc-codeaction)
 nnoremap <leader>c "+y
 nnoremap <leader>d :bd<CR>
 nnoremap <leader>fa :Ag<cr>
@@ -329,7 +292,7 @@ nnoremap <leader>fb :BLines<cr>
 nnoremap <leader>ff :Files<cr>
 nnoremap <leader>fg :GFiles<cr>
 nnoremap <leader>fl :Lines<cr>
-nnoremap <leader>fs :Snippets<cr>
+nmap <leader>fs  <Plug>(coc-format-selected)
 nnoremap <leader>ft :BTags<cr>
 nnoremap <leader>fT :Tags<cr>
 nnoremap <leader>ga :Gwrite<cr>
@@ -344,33 +307,45 @@ nnoremap <leader>gs :Gstatus<cr><c-w>
 nnoremap <leader>nf :Neoformat<cr>
 nnoremap <leader>nv :NV<cr>
 nnoremap <leader>p "+p
-nnoremap <leader>q <C-w>q
-nnoremap <leader>r :source $MYVIMRC<CR>
+nmap <leader>qf  <Plug>(coc-fix-current)
+nmap <leader>rn <Plug>(coc-rename)
+nnoremap <leader>rv :source $MYVIMRC<CR>
 nnoremap <leader>wd :pclose<CR>
 nnoremap <silent> <leader>we :call ToggleList("Quickfix List", 'c')<CR>
 nnoremap <silent> <leader>wl :call ToggleList("Location List", 'l')<CR>
-nnoremap <silent> <Leader>K :call Dasht([expand('<cword>'), expand('<cWORD>')])<Return>
-vnoremap <silent> <Leader>K y:<C-U>call Dasht(getreg(0))<Return>
 nnoremap <silent> <leader>Q vapJgqap
+xmap <leader>a  <Plug>(coc-codeaction-selected)
+xmap <leader>f  <Plug>(coc-format-selected)
 
 """" Leader Leader Mappings
-nnoremap <leader><Leader>k :Dasht!<Space>
-nnoremap <silent> <leader><leader>tg :GoTestFunc<CR>
-nnoremap <silent> <Leader><Leader>K :call Dasht([expand('<cword>'), expand('<cWORD>')], '!')<Return>
-vnoremap <silent> <Leader><Leader>K y:<C-U>call Dasht(getreg(0), '!')<Return>
+nnoremap <silent> <leader><leader>a  :<C-u>CocList diagnostics<cr>
+nnoremap <silent> <leader><leader>c  :<C-u>CocList commands<cr>
+nnoremap <silent> <leader><leader>e  :<C-u>CocList extensions<cr>
+nnoremap <silent> <leader><leader>j  :<C-u>CocNext<CR>
+nnoremap <silent> <leader><leader>k  :<C-u>CocPrev<CR>
+nnoremap <silent> <leader><leader>o  :<C-u>CocList outline<cr>
+nnoremap <silent> <leader><leader>p  :<C-u>CocListResume<CR>
+nnoremap <silent> <leader><leader>s  :<C-u>CocList -I symbols<cr>
 
 """" Regular Mappings
+nmap <silent> gd <Plug>(coc-definition)
+nmap <silent> gy <Plug>(coc-type-definition)
+nmap <silent> gi <Plug>(coc-implementation)
+nmap <silent> gr <Plug>(coc-references)
+nnoremap <silent> K :call <SID>show_documentation()<CR>
 nnoremap <silent> Q gqap
 nnoremap <silent> p p`]
+nnoremap ZQ :qa<CR>
+nnoremap ZZ :wqa<CR>
+nmap <silent> [c <Plug>(coc-diagnostic-prev)
+nmap <silent> ]c <Plug>(coc-diagnostic-next)
+nmap [h <Plug>GitGutterPrevHunk
+nmap ]h <Plug>GitGutterNextHunk
 vnoremap <silent> p p`]
 vnoremap <silent> y y`]
 xnoremap <silent> Q gq
-nnoremap ZQ :qa<CR>
-nnoremap ZZ :wqa<CR>
-nnoremap [h <Plug>GitGutterPrevHunk
-nnoremap ]h <Plug>GitGutterNextHunk
 
-""" COLORS
+"""" COLORS
 augroup MyColors
     autocmd!
 autocmd ColorScheme * highlight GitGutterAdd guifg=#3ad900 ctermfg=2
@@ -383,6 +358,43 @@ colorscheme cobalt2
 
 """" ctags
 let g:gutentags_cache_dir = "~/.config/nvim/tags"
+
+
+"""" coc
+
+" Better display for messages
+set cmdheight=2
+
+" You will have bad experience for diagnostic messages when it's default 4000.
+set updatetime=300
+
+" don't give |ins-completion-menu| messages.
+set shortmess+=c
+
+" always show signcolumns
+set signcolumn=yes
+
+function! s:check_back_space() abort
+  let col = col('.') - 1
+  return !col || getline('.')[col - 1]  =~# '\s'
+endfunction
+
+" Use <cr> to confirm completion, `<C-g>u` means break undo chain at current position.
+" Coc only does snippet and additional edit on confirm.
+inoremap <expr> <cr> pumvisible() ? "\<C-y>" : "\<C-g>u\<CR>"
+
+" Show documentation in preview window
+function! s:show_documentation()
+  if (index(['vim','help'], &filetype) >= 0)
+    execute 'h '.expand('<cword>')
+  else
+    call CocAction('doHover')
+  endif
+endfunction
+
+" Highlight symbol under cursor on CursorHold
+autocmd CursorHold * silent call CocActionAsync('highlight')
+
 """" fzf
 let $FZF_DEFAULT_COMMAND = 'rg --files --hidden --follow --glob "!.git/*" --glob "!.gitkeep"'
 
@@ -405,12 +417,6 @@ let g:lightline = {
     \   'bufferline': 'MyBufferLine',
     \   'filetype': 'MyFiletype',
   \ },
-  \ 'component_expand': {
-  \  'linter_checking': 'lightline#ale#checking',
-  \  'linter_warnings': 'lightline#ale#warnings',
-  \  'linter_errors': 'lightline#ale#errors',
-  \  'linter_ok': 'lightline#ale#ok',
-  \ },
   \ 'component_type': {
   \     'linter_checking': 'left',
   \     'linter_warnings': 'warning',
@@ -421,29 +427,13 @@ let g:lightline = {
 
 set laststatus=2
 set noshowmode
-let g:lightline#ale#indicator_checking = "\uf110"
-let g:lightline#ale#indicator_warnings = "\uf071"
-let g:lightline#ale#indicator_errors = "\uf05e"
-let g:lightline#ale#indicator_ok = "\uf00c"
-
 
 """" lion
 let b:lion_squeeze_spaces = 1
 
-"""" ncm2
-set shortmess+=c
-set completeopt=noinsert,menuone,noselect
-
-
 """" polyglot
 " This holds settings for plugins brought in via vim-polygot
 let g:vim_markdown_new_list_item_indent = 0
-"""" ultisnips
-let g:UltiSnipsSnippetsDir="~/.config/nvim/UltiSnips"
-let g:UltiSnipsEditSplit="horizontal"
-let g:UltiSnipsExpandTrigger="<tab>"
-let g:UltiSnipsJumpForwardTrigger="<tab>"
-let g:UltiSnipsJumpBackwardTrigger="<s-tab>"
 
 """" vim-diff-enhanced
 if &diff
