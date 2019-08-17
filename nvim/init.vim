@@ -178,6 +178,10 @@ endfunc
 
 """" lightline functions
 
+function! CocCurrentFunction()
+    return get(b:, 'coc_current_function', '')
+endfunction
+
 function! LLMode() abort
   let fname = expand('%:t')
   return lightline#mode() == 'NORMAL' ? 'N' :
@@ -406,7 +410,7 @@ let g:lightline = {
     \             [ 'fugitive'],[ 'bufferline' ] ],
     \ 'right': [ [ 'lineinfo' ],
     \            [ 'percent' ],
-    \            [ 'linter_checking', 'linter_warnings', 'linter_errors', 'linter_ok' ],
+    \            [ 'cocstatus', 'currentfunction'],
     \            [ 'filetype' ] ]
   \ },
   \ 'component_function': {
@@ -416,6 +420,8 @@ let g:lightline = {
     \   'mode': 'LLMode',
     \   'bufferline': 'MyBufferLine',
     \   'filetype': 'MyFiletype',
+    \   'cocstatus': 'coc#status',
+    \   'currentfunction': 'CocCurrentFunction',
   \ },
   \ 'component_type': {
   \     'linter_checking': 'left',
