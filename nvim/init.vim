@@ -366,6 +366,9 @@ let g:gutentags_cache_dir = "~/.config/nvim/tags"
 
 """" coc
 
+" Install plugins
+let g:coc_global_extensions = [ 'coc-python', 'coc-json' ]
+
 " Better display for messages
 set cmdheight=2
 
