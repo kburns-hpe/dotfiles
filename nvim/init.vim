@@ -73,6 +73,7 @@ Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
 Plug 'junegunn/fzf.vim'
 
 " Language-Specific
+Plug 'fatih/vim-go'
 Plug 'sheerun/vim-polyglot'
 
 " Lightline
@@ -466,6 +467,11 @@ endif
 let g:better_whitespace_enabled=1
 let g:strip_whitespace_on_save=1
 let g:strip_whitespace_confirm=0
+
+"""" vim-go
+" disable vim-go :GoDef short cut (gd)
+" this is handled by LanguageClient [LC]
+let g:go_def_mapping_enabled = 0
 
 """" vim-test
 if exists('$TMUX')
