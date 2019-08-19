@@ -87,8 +87,12 @@ Plug 'airblade/vim-gitgutter'
 " Movement
 Plug 'justinmk/vim-sneak'
 
+" Test
+Plug 'janko/vim-test'
+
 " Tmux-specific plugins
 if exists('$TMUX')
+  Plug 'benmills/vimux'
   Plug 'christoomey/vim-tmux-navigator'
 endif
 
@@ -314,6 +318,15 @@ nnoremap <leader>p "+p
 nmap <leader>qf  <Plug>(coc-fix-current)
 nmap <leader>rn <Plug>(coc-rename)
 nnoremap <leader>rv :source $MYVIMRC<CR>
+nmap <silent> <leader>tn :TestNearest<CR>
+nmap <silent> <leader>tf :TestFile<CR>
+nmap <silent> <leader>ts :TestSuite<CR>
+nmap <silent> <leader>tl :TestLast<CR>
+nmap <silent> <leader>tv :TestVisit<CR>
+nmap <Leader>vp :VimuxPromptCommand<CR>
+nmap <Leader>vl :VimuxRunLastCommand<CR>
+nmap <Leader>vi :VimuxInspectRunner<CR>
+nmap <Leader>vz :VimuxZoomRunner<CR>
 nnoremap <leader>wd :pclose<CR>
 nnoremap <silent> <leader>we :call ToggleList("Quickfix List", 'c')<CR>
 nnoremap <silent> <leader>wl :call ToggleList("Location List", 'l')<CR>
@@ -453,6 +466,19 @@ endif
 let g:better_whitespace_enabled=1
 let g:strip_whitespace_on_save=1
 let g:strip_whitespace_confirm=0
+
+"""" vim-test
+if exists('$TMUX')
+  let test#strategy = "vimux"
+endif
+let test#python#runner = 'pytest'
+
+augroup test
+  autocmd!
+  autocmd BufWrite * if test#exists() |
+    \   TestFile |
+    \ endif
+augroup END
 
 """ END
 
