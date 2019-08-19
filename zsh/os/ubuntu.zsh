@@ -5,7 +5,8 @@ export BROWSER=chromium-browser
 export EDITOR=nvim
 
 # Set Path
-export PATH="$HOME/.local/bin:$HOME/.gem/ruby/2.5.0/bin:$HOME/bin:$PATH:$HOME/go/bin"
+export GOBIN="$HOME/go/bin"
+export PATH="$HOME/.local/bin:$HOME/.gem/ruby/2.5.0/bin:$HOME/bin:$PATH:$GOBIN"
 export PATH="$PATH:/snap/bin:$HOME/.yarn/bin"
 export GOPATH="$HOME/go"
 
