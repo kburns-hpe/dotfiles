@@ -79,7 +79,11 @@ Plug 'sheerun/vim-polyglot'
 " Lightline
 Plug 'bling/vim-bufferline'
 Plug 'itchyny/lightline.vim'
+Plug 'maximbaz/lightline-ale'
 Plug 'ryanoasis/vim-devicons'
+
+" Linter
+Plug 'dense-analysis/ale'
 
 " Git
 Plug 'tpope/vim-fugitive'
@@ -139,6 +143,7 @@ augroup END
 " Misc autocmd grouping
 augroup Misc
   autocmd!
+  autocmd User ALELint call lightline#update()
   autocmd FileType * setlocal formatoptions-=r formatoptions-=o
 augroup end
 
@@ -230,6 +235,27 @@ endfunction
 
 function! MyFiletype() abort
   return winwidth(0) > 70 ? (strlen(&filetype) ? &filetype . ' ' . WebDevIconsGetFileTypeSymbol() : 'no ft') : ''
+endfunction
+
+function! LightlineLinterErrors() abort
+  let l:counts = ale#statusline#Count(bufnr(''))
+  let l:all_errors = l:counts.error + l:counts.style_error
+  let l:all_non_errors = l:counts.total - l:all_errors
+  return l:counts.total == 0 ? '' : printf('%d >>', all_errors)
+endfunction
+
+function! LightlineLinterOK() abort
+  let l:counts = ale#statusline#Count(bufnr(''))
+  let l:all_errors = l:counts.error + l:counts.style_error
+  let l:all_non_errors = l:counts.total - l:all_errors
+  return l:counts.total == 0 ? '✓' : ''
+endfunction
+
+function! LightlineLinterWarnings() abort
+  let l:counts = ale#statusline#Count(bufnr(''))
+  let l:all_errors = l:counts.error + l:counts.style_error
+  let l:all_non_errors = l:counts.total - l:all_errors
+  return l:counts.total == 0 ? '' : printf('%d --', all_non_errors)
 endfunction
 
 """ MAPPINGS
@@ -374,6 +400,17 @@ colorscheme cobalt2
 
 """ PLUGIN SPECIFIC SETTINGS
 
+"""" ale
+let g:ale_fixers = {
+\   'ruby': ['rubocop'],
+\}
+
+" Disable linters that we're using coc for
+let g:ale_linters = {
+\   'go': [''],
+\   'python': [''],
+\}
+
 """" ctags
 let g:gutentags_cache_dir = "~/.config/nvim/tags"
 
@@ -427,6 +464,7 @@ let g:lightline = {
     \             [ 'fugitive'],[ 'bufferline' ] ],
     \ 'right': [ [ 'lineinfo' ],
     \            [ 'percent' ],
+    \            [ 'linter_checking', 'linter_warnings', 'linter_errors', 'linter_ok' ],
     \            [ 'cocstatus', 'currentfunction'],
     \            [ 'filetype' ] ]
   \ },
@@ -440,6 +478,12 @@ let g:lightline = {
     \   'cocstatus': 'coc#status',
     \   'currentfunction': 'CocCurrentFunction',
   \ },
+  \ 'component_expand': {
+  \  'linter_checking': 'lightline#ale#checking',
+  \  'linter_warnings': 'lightline#ale#warnings',
+  \  'linter_errors': 'lightline#ale#errors',
+  \  'linter_ok': 'lightline#ale#ok',
+  \ },
   \ 'component_type': {
   \     'linter_checking': 'left',
   \     'linter_warnings': 'warning',
@@ -450,6 +494,11 @@ let g:lightline = {
 
 set laststatus=2
 set noshowmode
+
+let g:lightline#ale#indicator_checking = "\uf110"
+let g:lightline#ale#indicator_warnings = "\uf071"
+let g:lightline#ale#indicator_errors = "\uf05e"
+let g:lightline#ale#indicator_ok = "\uf00c"
 
 """" lion
 let b:lion_squeeze_spaces = 1
