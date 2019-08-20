@@ -24,8 +24,8 @@ alias glp="git log -p --decorate"
 alias gmv="git mv"
 alias gp='git push origin HEAD'
 alias gpo='git push origin'
-alias gpu='git pull --rebase-merges --prune'
-alias gpub='git pull --rebase-merges --prune origin'
+alias gpu='git pull --rebase=merges --prune'
+alias gpub='git pull --rebase=merges --prune origin'
 alias gr="git rm"
 alias grb="git rebase"
 alias grh="git reset HEAD"
@@ -77,5 +77,5 @@ function grm() {
 }
 
 function gu() {
-  git fetch $1 --prune; git merge --ff-only $1/$2 || git rebase --rebase-merges $1/$2;
+  git fetch $1 --prune; git merge --ff-only $1/$2 || git rebase --rebase=merges $1/$2;
 }
