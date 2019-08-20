@@ -528,13 +528,6 @@ if exists('$TMUX')
 endif
 let test#python#runner = 'pytest'
 
-augroup test
-  autocmd!
-  autocmd BufWrite * if test#exists() |
-    \   TestFile |
-    \ endif
-augroup END
-
 """ END
 
 " Load all plugins now.
