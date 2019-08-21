@@ -92,6 +92,9 @@ Plug 'airblade/vim-gitgutter'
 " Movement
 Plug 'justinmk/vim-sneak'
 
+" tag
+Plug 'SirVer/ultisnips'
+
 " Test
 Plug 'janko/vim-test'
 
@@ -423,7 +426,7 @@ let g:gutentags_cache_dir = "~/.config/nvim/tags"
 """" coc
 
 " Install plugins
-let g:coc_global_extensions = [ 'coc-python', 'coc-json' ]
+let g:coc_global_extensions = [ 'coc-python', 'coc-json', 'coc-snippets' ]
 
 " Better display for messages
 set cmdheight=2
