@@ -411,9 +411,10 @@ let g:ale_linters = {
 \   'python': [''],
 \}
 
-" Only lint on opening file or saving
+" Only lint on saving
 let g:ale_lint_on_text_changed = 'never'
 let g:ale_lint_on_insert_leave = 0
+let g:ale_lint_on_enter = 0
 
 """" ctags
 let g:gutentags_cache_dir = "~/.config/nvim/tags"
