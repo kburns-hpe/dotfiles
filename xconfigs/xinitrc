@@ -20,7 +20,6 @@ start-pulseaudio-x11 &
 udiskie &
 unclutter &
 dunst &
-redshift &
 dropbox &
 blueman-applet &
 
