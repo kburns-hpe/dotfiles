@@ -33,8 +33,8 @@ for_window [title="video0 - mpv"] floating enable
 for_window [title="video0 - mpv"] sticky enable
 
 # gaps
-gaps inner 10
-gaps outer 5
+#gaps inner 10
+#gaps outer 5
 
 # config colors
 # class                 border  backgr. text    indicator
