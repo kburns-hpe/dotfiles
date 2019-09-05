@@ -368,6 +368,8 @@ nnoremap <leader>wd :pclose<CR>
 nnoremap <silent> <leader>we :call ToggleList("Quickfix List", 'c')<CR>
 nnoremap <silent> <leader>wl :call ToggleList("Location List", 'l')<CR>
 nnoremap <silent> <leader>Q vapJgqap
+nmap <silent> <leader>[c <Plug>(coc-diagnostic-prev)
+nmap <silent> <leader>]c <Plug>(coc-diagnostic-next)
 xmap <leader>a  <Plug>(coc-codeaction-selected)
 xmap <leader>f  <Plug>(coc-format-selected)
 
@@ -391,8 +393,6 @@ nnoremap <silent> Q gqap
 nnoremap <silent> p p`]
 nnoremap ZQ :qa<CR>
 nnoremap ZZ :wqa<CR>
-nmap <silent> [c <Plug>(coc-diagnostic-prev)
-nmap <silent> ]c <Plug>(coc-diagnostic-next)
 nmap [h <Plug>GitGutterPrevHunk
 nmap ]h <Plug>GitGutterNextHunk
 vnoremap <silent> p p`]
