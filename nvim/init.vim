@@ -435,9 +435,6 @@ let g:gutentags_cache_dir = "~/.config/nvim/tags"
 " Install plugins
 let g:coc_global_extensions = [ 'coc-python', 'coc-json', 'coc-snippets' ]
 
-" Better display for messages
-set cmdheight=2
-
 " You will have bad experience for diagnostic messages when it's default 4000.
 set updatetime=300
 
@@ -525,6 +522,9 @@ let b:lion_squeeze_spaces = 1
 """" polyglot
 " This holds settings for plugins brought in via vim-polygot
 let g:vim_markdown_new_list_item_indent = 0
+
+"""" vim-bufferline
+let g:bufferline_echo = 0
 
 """" vim-diff-enhanced
 if &diff
