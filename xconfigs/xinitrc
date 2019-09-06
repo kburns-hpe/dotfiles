@@ -32,11 +32,8 @@ setxkbmap -option terminate:ctrl_alt_bksp
 xmodmap ~/.Xmodmap
 xcape -e 'Control_R=Escape;Super_R=Tab'
 
-# Disable touchpad on Thinkpad
-xinput set-prop "SynPS/2 Synaptics TouchPad" "Device Enabled" 0
-
-# Slow down trackpoint
-#xinput set-prop 'TPPS/2 Elan TrackPoint' 'libinput Accel Speed' -.15
+# Speed up touchpad a little
+xinput set-prop "SynPS/2 Synaptics TouchPad" "libinput Accel Speed" .3
 
 # This is needed for mutt
 export GPG_AGENT_INFO="${XDG_RUNTIME_DIR}/gnupg/S.gpg-agent"
