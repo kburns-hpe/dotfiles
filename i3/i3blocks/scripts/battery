@@ -13,7 +13,7 @@ watts=$(echo "scale=2;$power / 1000000" | bc)
 
 GRAY="<span rise='2000' font='10' foreground='#ffffff' background='#808080'>"
 BLUE="<span foreground='#ffffff' background='#1478db'>"
-SPACER="<span font='6'> </span>"
+SPACER="<span font='6'>  </span>"
 COLOREND="</span>"
 
 
