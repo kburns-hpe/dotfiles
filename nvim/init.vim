@@ -77,7 +77,7 @@ Plug 'fatih/vim-go'
 Plug 'sheerun/vim-polyglot'
 
 " Lightline
-Plug 'bling/vim-bufferline'
+Plug 'mengelbrecht/lightline-bufferline'
 Plug 'itchyny/lightline.vim'
 Plug 'maximbaz/lightline-ale'
 Plug 'ryanoasis/vim-devicons'
@@ -231,13 +231,12 @@ function! LLFugitive() abort
   return exists('*fugitive#head') ? fugitive#head() : ''
 endfunction
 
-function! MyBufferLine() abort
-  let st=g:bufferline#refresh_status()
-  return g:bufferline_status_info.before . g:bufferline_status_info.current . g:bufferline_status_info.after
+function! MyFiletype() abort
+  return winwidth(0) > 70 ? (strlen(&filetype) ? &filetype : 'no ft') : ''
 endfunction
 
-function! MyFiletype() abort
-  return winwidth(0) > 70 ? (strlen(&filetype) ? &filetype . ' ' . WebDevIconsGetFileTypeSymbol() : 'no ft') : ''
+function! MyFileIcon() abort
+  return winwidth(0) > 70 ? (WebDevIconsGetFileTypeSymbol()) : ''
 endfunction
 
 function! LightlineLinterErrors() abort
@@ -324,9 +323,16 @@ nnoremap <F9> :call ToggleCompletion()<cr>
 """" Leader Mappings
 nnoremap <leader>' <C-w>s
 nnoremap <leader>; <C-w>v
-nnoremap <leader>1 :diffput 1<cr>:diffupdate<cr>
-nnoremap <leader>2 :diffget 2<cr>:diffupdate<cr>
-nnoremap <leader>3 :diffget 3<cr>:diffupdate<cr>
+nmap <Leader>1 <Plug>lightline#bufferline#go(1)
+nmap <Leader>2 <Plug>lightline#bufferline#go(2)
+nmap <Leader>3 <Plug>lightline#bufferline#go(3)
+nmap <Leader>4 <Plug>lightline#bufferline#go(4)
+nmap <Leader>5 <Plug>lightline#bufferline#go(5)
+nmap <Leader>6 <Plug>lightline#bufferline#go(6)
+nmap <Leader>7 <Plug>lightline#bufferline#go(7)
+nmap <Leader>8 <Plug>lightline#bufferline#go(8)
+nmap <Leader>9 <Plug>lightline#bufferline#go(9)
+nmap <Leader>0 <Plug>lightline#bufferline#go(10)
 nnoremap <leader>P "+P
 nmap <leader>a  <Plug>(coc-codeaction-selected)
 nmap <leader>ac  <Plug>(coc-codeaction)
@@ -374,6 +380,9 @@ xmap <leader>a  <Plug>(coc-codeaction-selected)
 xmap <leader>f  <Plug>(coc-format-selected)
 
 """" Leader Leader Mappings
+nnoremap <leader><leader>1 :diffput 1<cr>:diffupdate<cr>
+nnoremap <leader><leader>2 :diffget 2<cr>:diffupdate<cr>
+nnoremap <leader><leader>3 :diffget 3<cr>:diffupdate<cr>
 nnoremap <silent> <leader><leader>a  :<C-u>CocList diagnostics<cr>
 nnoremap <silent> <leader><leader>c  :<C-u>CocList commands<cr>
 nnoremap <silent> <leader><leader>e  :<C-u>CocList extensions<cr>
@@ -471,26 +480,53 @@ let g:UltiSnipsExpandTrigger='<Nop>'
 
 """" fzf
 let $FZF_DEFAULT_COMMAND = 'rg --files --hidden --follow --glob "!.git/*" --glob "!.gitkeep"'
+let $FZF_DEFAULT_OPTS=' --color=dark --color=bg:#253F52,bg+:#253F52 --layout=reverse  --margin=1,4'
+
+
+let g:fzf_layout = { 'window': 'call FloatingFZF()' }
+
+function! FloatingFZF()
+  let buf = nvim_create_buf(v:false, v:true)
+  call setbufvar(buf, '&signcolumn', 'no')
+
+  let height = float2nr(10)
+  let width = float2nr(80)
+  let horizontal = float2nr((&columns - width) / 2)
+  let vertical = 1
+
+  let opts = {
+        \ 'relative': 'editor',
+        \ 'row': vertical,
+        \ 'col': horizontal,
+        \ 'width': width,
+        \ 'height': height,
+        \ 'style': 'minimal'
+        \ }
+
+  call nvim_open_win(buf, v:true, opts)
+endfunction
 
 """" lightline
 let g:lightline = {
   \ 'colorscheme': 'cobalt2',
   \ 'active': {
-    \   'left': [ [ 'mode', 'paste' ],
-    \             [ 'fugitive'],[ 'bufferline' ] ],
-    \ 'right': [ [ 'lineinfo' ],
-    \            [ 'percent' ],
+    \ 'left': [ [ 'mode', 'paste' ],
+    \             [ 'fugitive'], [ 'separator' ], [ 'buffers' ] ],
+    \ 'right': [ [ 'percent' ], [ 'separator' ],
+    \            [ 'filetype' ], [ 'fticon' ],
     \            [ 'linter_checking', 'linter_warnings', 'linter_errors', 'linter_ok' ],
-    \            [ 'cocstatus', 'currentfunction'],
-    \            [ 'filetype' ] ]
+    \            [ 'cocstatus', 'currentfunction' ] ]
+  \ },
+  \ 'component': {
+    \ 'separator': ' '
   \ },
   \ 'component_function': {
     \   'fugitive': 'LLFugitive',
     \   'readonly': 'LLReadonly',
     \   'modified': 'LLModified',
     \   'mode': 'LLMode',
-    \   'bufferline': 'MyBufferLine',
     \   'filetype': 'MyFiletype',
+    \   'fticon': 'MyFileIcon',
     \   'cocstatus': 'coc#status',
     \   'currentfunction': 'CocCurrentFunction',
   \ },
@@ -499,14 +535,22 @@ let g:lightline = {
   \  'linter_warnings': 'lightline#ale#warnings',
   \  'linter_errors': 'lightline#ale#errors',
   \  'linter_ok': 'lightline#ale#ok',
+  \  'buffers': 'lightline#bufferline#buffers',
   \ },
   \ 'component_type': {
   \     'linter_checking': 'left',
   \     'linter_warnings': 'warning',
   \     'linter_errors': 'error',
   \     'linter_ok': 'left',
+  \     'buffers': 'tabsel',
   \ }
 \ }
+
+autocmd BufWritePost,TextChanged,TextChangedI * call lightline#update()
+
+let g:lightline#bufferline#show_number = 2
+let g:lightline#bufferline#number_separator = ': '
+let g:lightline#bufferline#unnamed = '[No Name]'
 
 set laststatus=2
 set noshowmode
