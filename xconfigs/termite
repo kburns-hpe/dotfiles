@@ -31,13 +31,13 @@ browser = chromium-browser
 #modify_other_keys = false
 
 [colors]
-cursor = #F0CC09
-foreground = #ffffff
+cursor = #FFC600
+foreground = #C7C7C7
 foreground_bold = #ffffff
 background = #193549
 
 # if unset, will reverse foreground and background
-highlight = #0050a4
+highlight = #1F4662
 
 # colors from color0 to color254 can be set
 # Black
