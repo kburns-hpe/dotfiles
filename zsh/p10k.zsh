@@ -814,3 +814,8 @@
 
 (( ${#p10k_config_opts} )) && setopt ${p10k_config_opts[@]}
 'builtin' 'unset' 'p10k_config_opts'
+
+# Set PS2
+PS2='%014F─%012F─(%003F%_%012F)─%014F─'
+PS3='%014F─%012F─(%003F?#%012F)─%014F─'
+PS4='%014F─%012F─(%003F+%N:%i%012F)─%014F─'
