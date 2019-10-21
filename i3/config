@@ -41,7 +41,7 @@ gaps outer 5
 client.focused          #214561 #0088ff #ffffff #0088ff
 client.focused_inactive #214561 #214561 #a6a6a6 #214561
 client.unfocused        #214561 #214561 #a6a6a6 #214561
-client.urgent           #193549 #ff0900 #ffffff #ff0900
+client.urgent           #1F4662 #ff0900 #ffffff #ff0900
 
 # Key shortcuts
 
@@ -236,12 +236,12 @@ bar {
     status_command i3blocks
     strip_workspace_numbers yes
     colors {
-      background #193549
+      background #1F4662
       statusline #FFFFFF
 
-      focused_workspace  #193549 #1478db #ffffff
-      active_workspace   #193549 #00c5c7 #ffffff
-      inactive_workspace #193549 #808080 #ffffff
-      urgent_workspace   #193549 #ff2600 #ffffff
+      focused_workspace  #1F4662 #1478db #ffffff
+      active_workspace   #1F4662 #00c5c7 #ffffff
+      inactive_workspace #1F4662 #808080 #ffffff
+      urgent_workspace   #1F4662 #ff2600 #ffffff
     }
 }
