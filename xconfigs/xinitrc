@@ -22,7 +22,6 @@ unclutter &
 dunst &
 dropbox &
 blueman-applet &
-compton &
 
 # Start Screensaver
 xautolock -time 7 -locker "glitchlock" -corners --00  -cornerdelay 4 -cornerredelay 4 -detectsleep &
