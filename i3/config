@@ -8,7 +8,8 @@ set $hyper Mod3
 font pango:DejaVuSansMono Nerd Font
 
 # Set border size
-for_window [class="^.*"] border pixel 0
+for_window [class="^.*"] border pixel 2
+smart_borders on
 
 #make notifications behave
 for_window [class="Xfce4-notifyd"] floating enable
@@ -33,15 +34,15 @@ for_window [title="video0 - mpv"] floating enable
 for_window [title="video0 - mpv"] sticky enable
 
 # gaps
-#gaps inner 10
-#gaps outer 5
+gaps inner 10
+gaps outer 5
 
 # config colors
 # class                 border  backgr. text    indicator
 client.focused          #214561 #0088ff #ffffff #0088ff
 client.focused_inactive #214561 #214561 #a6a6a6 #214561
 client.unfocused        #214561 #214561 #a6a6a6 #214561
-client.urgent           #193549 #ff0900 #ffffff #ff0900
+client.urgent           #1F4662 #ff0900 #ffffff #ff0900
 
 # Key shortcuts
 
@@ -236,12 +237,14 @@ bar {
     status_command i3blocks
     strip_workspace_numbers yes
     colors {
-      background #193549
+      background #1F4662
       statusline #FFFFFF
 
-      focused_workspace  #193549 #193549 #1478db
-      active_workspace   #193549 #193549 #00c5c7
-      inactive_workspace #193549 #193549 #808080
-      urgent_workspace   #193549 #193549 #ff2600
+      focused_workspace  #1F4662 #1F4662 #1478db
+      active_workspace   #1F4662 #1F4662 #00c5c7
+      inactive_workspace #1F4662 #1F4662 #808080
+      urgent_workspace   #1F4662 #1F4662 #ff2600
     }
 }
+
+exec --no-startup-id "compton -b"
