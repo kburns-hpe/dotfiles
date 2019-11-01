@@ -10,15 +10,15 @@
 
 let s:p = {"normal": {}, "inactive": {}, "insert": {}, "replace": {}, "visual": {}, "tabline": {} }
 
-let s:p.normal.left = [[["#FFFFFF", 252], ["#1478DB", 25]], [["#FFFFFF", 252], ["#808080", 241]]]
+let s:p.normal.left = [[["#FFFFFF", 252], ["#808080", 25]], [["#FFFFFF", 252], ["#1478DB", 241]]]
 let s:p.normal.middle = [[["#FFFFFF", 252], ["#193549", 237]]]
 let s:p.normal.right = [[["#FFFFFF", 252], ["#193549", 241]], [["#FFFFFF", 237], ["#1478DB", 247]], [["#FFFFFF", 252], ["#808080", 241]]]
 let s:p.normal.error = [[["#FFFFFF", 252], ["#902020", 88]]]
 let s:p.normal.warning = [[["#193549", 237], ["#FF9D00", 214]]]
 
-let s:p.insert.left = [[["#193549", 237], ["#70b950", 71]], [["#FFFFFF", 252], ["#808080", 241]]]
-let s:p.replace.left = [[["#EE80E1", 212], ["#902020", 88]], [["#FFFFFF", 252], ["#808080", 241]]]
-let s:p.visual.left = [[["#193549", 237], ["#FF9D00", 214]], [["#FFFFFF", 252], ["#808080", 241]]]
+let s:p.insert.left = [[["#193549", 237], ["#70b950", 71]], [["#FFFFFF", 252], ["#1478DB", 241]]]
+let s:p.replace.left = [[["#EE80E1", 212], ["#902020", 88]], [["#FFFFFF", 252], ["#1478DB", 241]]]
+let s:p.visual.left = [[["#193549", 237], ["#FF9D00", 214]], [["#FFFFFF", 252], ["#1478DB", 241]]]
 
 let s:p.tabline.left = [[["#FFFFFF", 252], ["808080", 237]]]
 let s:p.tabline.tabsel = [[["#FFFFFF", 252], ["#1478DB", 25]]]
