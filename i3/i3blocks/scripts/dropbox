@@ -8,3 +8,6 @@ elif echo "$status" | grep -q 'Sync'; then
 else
   echo "<span foreground='#ff2600'> </span>"
 fi
+case $BLOCK_BUTTON in
+  1) notify-send dropbox "$status" ;;
+esac
