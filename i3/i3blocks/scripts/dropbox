@@ -1,0 +1,10 @@
+#!/bin/sh
+status="$(dropbox-cli status)"
+
+if echo "$status" | grep -q '^Up to date'; then
+  echo "<span foreground='#ffffff'> </span>"
+elif echo "$status" | grep -q 'Sync'; then
+  echo "<span foreground='#005c7c'> </span>"
+else
+  echo "<span foreground='#ff2600'> </span>"
+fi
