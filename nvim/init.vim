@@ -2,7 +2,10 @@
 set hidden " Allow switching buffers without saving first
 set mouse= " Disable mouse support
 set grepprg=rg\ --vimgrep " Use rg for grep
-set title " Enable Terminal title
+
+" Configure Terminal Title
+set title
+set titlestring=nvim:\ %t\ \(%{expand('%:~:h')}\)
 
 " Backup configuration
 set nobackup
