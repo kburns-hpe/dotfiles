@@ -7,8 +7,9 @@ export EDITOR="nvim"
 # Set Path
 export PATH="$HOME/bin::/usr/local/bin:/usr/bin:/sbin:/bin:/usr/sbin"
 export PATH="$PATH:$HOME/Library/Python/2.7/bin:$HOME/node_modules/.bin"
-export PATH="$PATH:$HOME/Library/Python/3.6/bin/"
+export PATH="$PATH:$HOME/Library/Python/3.7/bin/"
 export PATH="$PATH:/Users/soleblaze/.gem/ruby/2.3.0/bin"
+export PATH="$PATH:/Applications/Visual Studio Code.app/Contents/Resources/app/bin"
 
 # Set fpath for zsh-completion (homebrew package)
 fpath=(/usr/local/share/zsh-completions $fpath)
