@@ -2,6 +2,7 @@
 set hidden " Allow switching buffers without saving first
 set mouse= " Disable mouse support
 set grepprg=rg\ --vimgrep " Use rg for grep
+set title " Enable Terminal title
 
 " Backup configuration
 set nobackup
@@ -50,6 +51,7 @@ set undoreload=10000
 
 " Visual Settings
 set termguicolors
+
 
 """ PLUGIN SECTION
 
