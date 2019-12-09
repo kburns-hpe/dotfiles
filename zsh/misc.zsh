@@ -50,3 +50,7 @@ if [ ! -S ~/.ssh/ssh_auth_sock ] && [ -S "$SSH_AUTH_SOCK" ] && ssh-add -l | grep
   SSH_AUTH_SOCK="${HOME}/.ssh/ssh_auth_sock"
 fi
 
+
+# Set title bar prompt
+precmd () {print -Pn "\e]0;%n@%m: %~\a"}
+preexec () {print -Pn "\e]0;%n@%m: $1 (%~)\a"}
