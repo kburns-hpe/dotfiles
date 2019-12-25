@@ -30,3 +30,10 @@ export "SSH_AUTH_SOCK=${HOME}/.gnupg/S.gpg-agent.ssh"
 # Disable homebrew git token request
 export HOMEBREW_NO_GITHUB_API=TRUE
 
+
+# Launch gpg-agent if it isn't running
+if ! pgrep -q gpg-entry; then
+  gpgconf --launch gpg-agent
+fi
+export SSH_AUTH_SOCKET=$HOME/.gnupg/S.gpg-agent.ssh
+
