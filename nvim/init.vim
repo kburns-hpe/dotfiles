@@ -2,6 +2,7 @@
 set hidden " Allow switching buffers without saving first
 set mouse= " Disable mouse support
 set grepprg=rg\ --vimgrep " Use rg for grep
+set number " show line numbers
 
 " Configure Terminal Title
 set title
