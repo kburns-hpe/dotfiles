@@ -114,6 +114,7 @@ endif
 Plug 'andrewradev/splitjoin.vim'
 Plug 'chrisbra/vim-diff-enhanced'
 Plug 'ntpeters/vim-better-whitespace'
+Plug 'rizzatti/dash.vim'
 Plug 'tommcdo/vim-lion'
 Plug 'tpope/vim-commentary'
 Plug 'tpope/vim-repeat'
