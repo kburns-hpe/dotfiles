@@ -111,6 +111,7 @@ if exists('$TMUX')
 endif
 
 " Utility
+Plug 'andrewradev/splitjoin.vim'
 Plug 'chrisbra/vim-diff-enhanced'
 Plug 'ntpeters/vim-better-whitespace'
 Plug 'tommcdo/vim-lion'
@@ -352,25 +353,25 @@ nnoremap <leader>fl :Lines<cr>
 nmap <leader>fs  <Plug>(coc-format-selected)
 nnoremap <leader>ft :BTags<cr>
 nnoremap <leader>fT :Tags<cr>
-nnoremap <leader>ga :Gwrite<cr>
-nnoremap <leader>gb :Gblame<cr>
-nnoremap <leader>gc :Gcommit -v<cr>
-nnoremap <leader>gd :Gdiff<cr>
-nnoremap <leader>ge :Gedit<cr>
-nnoremap <leader>gl :Glog<cr>
-nnoremap <leader>gp :Gpush origin HEAD<cr>
-nnoremap <leader>gr :Gread<cr>
-nnoremap <leader>gs :Gstatus<cr><c-w>
+autocmd FileType go nmap <leader>ga :GoAlternate<CR>
+autocmd FileType go nmap <leader>gb <Plug>(go-build)
+autocmd FileType go nmap <Leader>gc <Plug>(go-coverage-toggle)
+autocmd FileType go nmap <Leader>gd :GoDef<CR>
+autocmd FileType go nmap <Leader>gf :GoDecls<CR>
+autocmd FileType go nmap <Leader>gg :GoDeclsDir<CR>
+autocmd FileType go nmap <Leader>gh :GoDoc<CR>
+autocmd FileType go nmap <Leader>gi <Plug>(go-info)
+autocmd FileType go nmap <leader>gt <Plug>(go-test)
 nnoremap <leader>nf :Neoformat<cr>
 nnoremap <leader>nv :NV<cr>
 nnoremap <leader>p "+p
 nmap <leader>qf  <Plug>(coc-fix-current)
 nmap <leader>rn <Plug>(coc-rename)
 nnoremap <leader>rv :source $MYVIMRC<CR>
-nmap <silent> <leader>tn :TestNearest<CR>
 nmap <silent> <leader>tf :TestFile<CR>
-nmap <silent> <leader>ts :TestSuite<CR>
 nmap <silent> <leader>tl :TestLast<CR>
+nmap <silent> <leader>tn :TestNearest<CR>
+nmap <silent> <leader>ts :TestSuite<CR>
 nmap <silent> <leader>tv :TestVisit<CR>
 nmap <Leader>vp :VimuxPromptCommand<CR>
 nmap <Leader>vl :VimuxRunLastCommand<CR>
@@ -392,6 +393,15 @@ nnoremap <leader><leader>3 :diffget 3<cr>:diffupdate<cr>
 nnoremap <silent> <leader><leader>a  :<C-u>CocList diagnostics<cr>
 nnoremap <silent> <leader><leader>c  :<C-u>CocList commands<cr>
 nnoremap <silent> <leader><leader>e  :<C-u>CocList extensions<cr>
+nnoremap <silent> <leader><leader>ga :Gwrite<cr>
+nnoremap <silent> <leader><leader>gb :Gblame<cr>
+nnoremap <silent> <leader><leader>gc :Gcommit -v<cr>
+nnoremap <silent> <leader><leader>gd :Gdiff<cr>
+nnoremap <silent> <leader><leader>ge :Gedit<cr>
+nnoremap <silent> <leader><leader>gl :Glog<cr>
+nnoremap <silent> <leader><leader>gp :Gpush origin HEAD<cr>
+nnoremap <silent> <leader><leader>gr :Gread<cr>
+nnoremap <silent> <leader><leader>gs :Gstatus<cr><c-w>
 nnoremap <silent> <leader><leader>j  :<C-u>CocNext<CR>
 nnoremap <silent> <leader><leader>k  :<C-u>CocPrev<CR>
 nnoremap <silent> <leader><leader>o  :<C-u>CocList outline<cr>
@@ -589,7 +599,26 @@ let g:strip_whitespace_confirm=0
 """" vim-go
 " disable vim-go :GoDef short cut (gd)
 " this is handled by LanguageClient [LC]
+let g:go_auto_type_info = 1
 let g:go_def_mapping_enabled = 0
+let g:go_fmt_command = "goimports"
+let g:go_metalinter_autosave = 1
+let g:go_auto_sameids = 1
+
+let g:go_highlight_build_constraints = 1
+let g:go_highlight_extra_types = 1
+let g:go_highlight_fields = 1
+let g:go_highlight_function_calls = 1
+let g:go_highlight_functions = 1
+let g:go_highlight_operators = 1
+let g:go_highlight_types = 1
+
+autocmd BufNewFile,BufRead *.go setlocal noexpandtab tabstop=4 shiftwidth=4
+autocmd Filetype go command! -bang A call go#alternate#Switch(<bang>0, 'edit')
+autocmd Filetype go command! -bang AV call go#alternate#Switch(<bang>0, 'vsplit')
+autocmd Filetype go command! -bang AS call go#alternate#Switch(<bang>0, 'split')
+autocmd Filetype go command! -bang AT call go#alternate#Switch(<bang>0, 'tabe')
+
 
 """" vim-test
 if exists('$TMUX')
