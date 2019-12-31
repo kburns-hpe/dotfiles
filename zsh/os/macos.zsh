@@ -23,6 +23,9 @@ alias ls="ls -CGFh"
 alias vim="nvim"
 alias vi="nvim"
 
+# Use ctags installed via brew instead of xcode
+alias ctags="/usr/local/bin/ctags"
+
 # Setup SSH keys via gpg
 export "GPG_TTY=$(tty)"
 export "SSH_AUTH_SOCK=${HOME}/.gnupg/S.gpg-agent.ssh"
