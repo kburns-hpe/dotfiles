@@ -112,7 +112,10 @@ endif
 
 " Utility
 Plug 'andrewradev/splitjoin.vim'
+Plug 'chaoren/vim-wordmotion'
+Plug 'chiel92/vim-autoformat'
 Plug 'chrisbra/vim-diff-enhanced'
+Plug 'michaeljsmith/vim-indent-object'
 Plug 'ntpeters/vim-better-whitespace'
 Plug 'rizzatti/dash.vim'
 Plug 'tommcdo/vim-lion'
@@ -122,8 +125,6 @@ Plug 'tpope/vim-rsi'
 Plug 'tpope/vim-surround'
 Plug 'tpope/vim-unimpaired'
 Plug 'wellle/targets.vim'
-Plug 'michaeljsmith/vim-indent-object'
-Plug 'chaoren/vim-wordmotion'
 
 call plug#end()
 
@@ -146,9 +147,9 @@ augroup end
 
 " Enable file specific settings
 augroup FiletypeGroup
-    autocmd!
-    autocmd BufRead,BufNewFile *.yml set filetype=ansible.yaml
-    autocmd BufRead,BufNewFile *.rb if expand('%:p:h:t') == "recipes" | set filetype=ruby.chef | endif
+  autocmd!
+  autocmd BufRead,BufNewFile *.yml set filetype=ansible.yaml
+  autocmd BufRead,BufNewFile *.rb if expand('%:p:h:t') == "recipes" | set filetype=ruby.chef | endif
 augroup END
 
 " Misc autocmd grouping
@@ -157,6 +158,9 @@ augroup Misc
   autocmd User ALELint call lightline#update()
   autocmd FileType * setlocal formatoptions-=r formatoptions-=o
 augroup end
+
+" Autoformat on save
+au BufWrite * :Autoformat
 
 """ FUNCTIONS
 
@@ -177,9 +181,9 @@ function! ToggleList(bufname, pfx) abort
     endif
   endfor
   if a:pfx == 'l' && len(getloclist(0)) == 0
-      echohl ErrorMsg
-      echo "Location List is Empty."
-      return
+    echohl ErrorMsg
+    echo "Location List is Empty."
+    return
   endif
   let winnr = winnr()
   exec(a:pfx.'open')
@@ -200,17 +204,17 @@ endfunc
 """" lightline functions
 
 function! CocCurrentFunction()
-    return get(b:, 'coc_current_function', '')
+  return get(b:, 'coc_current_function', '')
 endfunction
 
 function! LLMode() abort
   let fname = expand('%:t')
   return lightline#mode() == 'NORMAL' ? 'N' :
-  \ lightline#mode() == 'INSERT' ? 'I' :
-  \ lightline#mode() == 'VISUAL' ? 'V' :
-  \ lightline#mode() == 'V-LINE' ? 'V' :
-  \ lightline#mode() == 'V-BLOCK' ? 'V' :
-  \ lightline#mode() == 'REPLACE' ? 'R' : lightline#mode()
+        \ lightline#mode() == 'INSERT' ? 'I' :
+        \ lightline#mode() == 'VISUAL' ? 'V' :
+        \ lightline#mode() == 'V-LINE' ? 'V' :
+        \ lightline#mode() == 'V-BLOCK' ? 'V' :
+        \ lightline#mode() == 'REPLACE' ? 'R' : lightline#mode()
 endfunction
 
 function! LLModified() abort
@@ -427,10 +431,10 @@ xnoremap <silent> Q gq
 
 """" COLORS
 augroup MyColors
-    autocmd!
-autocmd ColorScheme * highlight GitGutterAdd guifg=#3ad900 ctermfg=2
-                  \ | highlight GitGutterChange guifg=#ffc600 ctermfg=3
-                  \ | highlight GitGutterDelete guifg=#ff2600 ctermfg=1
+  autocmd!
+  autocmd ColorScheme * highlight GitGutterAdd guifg=#3ad900 ctermfg=2
+        \ | highlight GitGutterChange guifg=#ffc600 ctermfg=3
+        \ | highlight GitGutterDelete guifg=#ff2600 ctermfg=1
 augroup end
 colorscheme cobalt2
 
@@ -438,14 +442,14 @@ colorscheme cobalt2
 
 """" ale
 let g:ale_fixers = {
-\   'ruby': ['rubocop'],
-\}
+      \   'ruby': ['rubocop'],
+      \}
 
 " Disable linters that we're using coc for
 let g:ale_linters = {
-\   'go': [''],
-\   'python': [''],
-\}
+      \   'go': [''],
+      \   'python': [''],
+      \}
 
 " Only lint on saving
 let g:ale_lint_on_text_changed = 'never'
@@ -525,43 +529,43 @@ endfunction
 
 """" lightline
 let g:lightline = {
-  \ 'colorscheme': 'cobalt2',
-  \ 'active': {
-    \ 'left': [ [ 'mode', 'paste' ],
-    \             [ 'fugitive'], [ 'separator' ], [ 'buffers' ] ],
-    \ 'right': [ [ 'percent' ],
-    \            [ 'filetype' ], [ 'fticon' ],
-    \            [ 'linter_checking', 'linter_warnings', 'linter_errors', 'linter_ok' ],
-    \            [ 'cocstatus', 'currentfunction' ] ]
-  \ },
-  \ 'component': {
-    \ 'separator': ' '
-  \ },
-  \ 'component_function': {
-    \   'fugitive': 'LLFugitive',
-    \   'readonly': 'LLReadonly',
-    \   'modified': 'LLModified',
-    \   'mode': 'LLMode',
-    \   'filetype': 'MyFiletype',
-    \   'fticon': 'MyFileIcon',
-    \   'cocstatus': 'coc#status',
-    \   'currentfunction': 'CocCurrentFunction',
-  \ },
-  \ 'component_expand': {
-  \  'linter_checking': 'lightline#ale#checking',
-  \  'linter_warnings': 'lightline#ale#warnings',
-  \  'linter_errors': 'lightline#ale#errors',
-  \  'linter_ok': 'lightline#ale#ok',
-  \  'buffers': 'lightline#bufferline#buffers',
-  \ },
-  \ 'component_type': {
-  \     'linter_checking': 'left',
-  \     'linter_warnings': 'warning',
-  \     'linter_errors': 'error',
-  \     'linter_ok': 'left',
-  \     'buffers': 'tabsel',
-  \ }
-\ }
+      \ 'colorscheme': 'cobalt2',
+      \ 'active': {
+      \ 'left': [ [ 'mode', 'paste' ],
+      \             [ 'fugitive'], [ 'separator' ], [ 'buffers' ] ],
+      \ 'right': [ [ 'percent' ],
+      \            [ 'filetype' ], [ 'fticon' ],
+      \            [ 'linter_checking', 'linter_warnings', 'linter_errors', 'linter_ok' ],
+      \            [ 'cocstatus', 'currentfunction' ] ]
+      \ },
+      \ 'component': {
+      \ 'separator': ' '
+      \ },
+      \ 'component_function': {
+      \   'fugitive': 'LLFugitive',
+      \   'readonly': 'LLReadonly',
+      \   'modified': 'LLModified',
+      \   'mode': 'LLMode',
+      \   'filetype': 'MyFiletype',
+      \   'fticon': 'MyFileIcon',
+      \   'cocstatus': 'coc#status',
+      \   'currentfunction': 'CocCurrentFunction',
+      \ },
+      \ 'component_expand': {
+      \  'linter_checking': 'lightline#ale#checking',
+      \  'linter_warnings': 'lightline#ale#warnings',
+      \  'linter_errors': 'lightline#ale#errors',
+      \  'linter_ok': 'lightline#ale#ok',
+      \  'buffers': 'lightline#bufferline#buffers',
+      \ },
+      \ 'component_type': {
+      \     'linter_checking': 'left',
+      \     'linter_warnings': 'warning',
+      \     'linter_errors': 'error',
+      \     'linter_ok': 'left',
+      \     'buffers': 'tabsel',
+      \ }
+      \ }
 
 autocmd BufWritePost,TextChanged,TextChangedI * call lightline#update()
 
