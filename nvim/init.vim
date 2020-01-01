@@ -588,6 +588,9 @@ let b:lion_squeeze_spaces = 1
 " This holds settings for plugins brought in via vim-polygot
 let g:vim_markdown_new_list_item_indent = 0
 
+"""" vim-autoformat
+let g:formatters_python = ['black']
+
 """" vim-bufferline
 let g:bufferline_echo = 0
 
