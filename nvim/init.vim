@@ -160,7 +160,7 @@ augroup Misc
 augroup end
 
 " Autoformat on save
-au BufWrite * :Autoformat
+" au BufWrite * :Autoformat
 
 """ FUNCTIONS
 
@@ -348,6 +348,7 @@ nmap <Leader>0 <Plug>lightline#bufferline#go(10)
 nnoremap <leader>P "+P
 nmap <leader>a  <Plug>(coc-codeaction-selected)
 nmap <leader>ac  <Plug>(coc-codeaction)
+nmap <leader>af :Autoformat<CR>
 nnoremap <leader>c "+y
 nnoremap <leader>d :bd<CR>
 nnoremap <leader>fa :Ag<cr>
