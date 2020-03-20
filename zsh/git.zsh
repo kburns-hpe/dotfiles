@@ -11,6 +11,7 @@ alias gbl="git for-each-ref --count=30 --sort=-committerdate refs/heads/ --forma
 alias gc="git commit"
 alias gcb="git checkout -b"
 alias gch="git checkout"
+alias gcl="git clone"
 alias gcm="git commit -m"
 alias gd="git diff"
 alias gdm="git diff origin/master"
