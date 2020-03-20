@@ -5,6 +5,7 @@ alias free="free -m"
 alias grep="grep --color -i"
 alias grepc="grep --color=always -i"
 alias sz="source ~/.zshrc"
+alias rgi="rg -i"
 
 # Command Alternatives
 alias cat='bat'
@@ -13,7 +14,7 @@ alias ndu="ncdu --color dark -rr -x --exclude .git --exclude node_modules"
 
 # VIM aliases
 alias vi=nvim
-alias svi="sudoedit"
+alias svi="sudo -e"
 
 # extra dots
 alias -g ...="../.."
