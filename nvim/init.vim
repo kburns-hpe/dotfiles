@@ -537,7 +537,7 @@ let g:lightline = {
       \ 'active': {
       \ 'left': [ [ 'mode', 'paste' ],
       \             [ 'fugitive'], [ 'separator' ], [ 'buffers' ] ],
-      \ 'right': [ [ 'percent' ],
+      \ 'right': [ [ 'lineinfo' ],
       \            [ 'filetype' ], [ 'fticon' ],
       \            [ 'linter_checking', 'linter_warnings', 'linter_errors', 'linter_ok' ],
       \            [ 'cocstatus', 'currentfunction' ] ]
