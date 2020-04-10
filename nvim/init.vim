@@ -148,7 +148,7 @@ augroup end
 " Enable file specific settings
 augroup FiletypeGroup
   autocmd!
-  autocmd BufRead,BufNewFile *.yml set filetype=ansible.yaml
+  autocmd BufRead,BufNewFile *ansible*/*.yml set filetype=ansible.yaml
   autocmd BufRead,BufNewFile *.rb if expand('%:p:h:t') == "recipes" | set filetype=ruby.chef | endif
 augroup END
 
@@ -452,6 +452,7 @@ let g:ale_fixers = {
 let g:ale_linters = {
       \   'go': [''],
       \   'python': [''],
+      \   'yaml': [''],
       \}
 
 " Only lint on saving
@@ -466,7 +467,7 @@ let g:gutentags_cache_dir = "~/.config/nvim/tags"
 """" coc
 
 " Install plugins
-let g:coc_global_extensions = [ 'coc-python', 'coc-json', 'coc-snippets' ]
+let g:coc_global_extensions = [ 'coc-python', 'coc-json', 'coc-snippets', 'coc-yaml' ]
 
 " You will have bad experience for diagnostic messages when it's default 4000.
 set updatetime=300
