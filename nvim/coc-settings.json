@@ -6,5 +6,7 @@
       "rootPatterns": ["go.mod", ".vim/", ".git/", ".hg/"],
       "filetypes": ["go"]
     }
-  }
+  },
+  "yaml.format.enable": true,
+  "yaml.validate": true
 }
