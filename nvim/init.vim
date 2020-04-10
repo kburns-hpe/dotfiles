@@ -580,10 +580,10 @@ let g:lightline#bufferline#unnamed = '[No Name]'
 set laststatus=2
 set noshowmode
 
-let g:lightline#ale#indicator_checking = "\uf110"
-let g:lightline#ale#indicator_warnings = "\uf071"
-let g:lightline#ale#indicator_errors = "\uf05e"
-let g:lightline#ale#indicator_ok = "\uf00c"
+let g:lightline#ale#indicator_checking = "\uf110 "
+let g:lightline#ale#indicator_warnings = "\uf071 "
+let g:lightline#ale#indicator_errors = "\uf05e "
+let g:lightline#ale#indicator_ok = "\uf00c "
 
 """" lion
 let b:lion_squeeze_spaces = 1
