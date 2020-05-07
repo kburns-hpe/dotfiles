@@ -9,7 +9,7 @@ alias rgi="rg -i"
 
 # Command Alternatives
 alias cat='batcat'
-alias cap='batcat -p'
+alias cap='batcat -pp'
 alias ping='prettyping --nolegend'
 alias ndu="ncdu --color dark -rr -x --exclude .git --exclude node_modules"
 
