@@ -8,7 +8,8 @@ alias sz="source ~/.zshrc"
 alias rgi="rg -i"
 
 # Command Alternatives
-alias cat='bat'
+alias cat='batcat'
+alias cap='batcat -p'
 alias ping='prettyping --nolegend'
 alias ndu="ncdu --color dark -rr -x --exclude .git --exclude node_modules"
 
