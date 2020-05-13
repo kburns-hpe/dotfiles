@@ -29,6 +29,10 @@ function lsfa() {
   find ${1-.} -maxdepth 1 -type f | sed 's|^\./||' | xargs -r ls --color=auto -CFh
 }
 
+# bat aliases
+alias cat='batcat'
+alias cap='batcat -pp'
+
 # Ubuntu PKG Management
 alias aptc="sudo apt autoclean"
 alias aptd="sudo apt update && sudo apt dist-upgrade"
@@ -56,7 +60,6 @@ function shl() {
 
     find . -type f -exec egrep -i "$searchfor" {} /dev/null \; | ack-grep -i --passthru --color --pager="less -R" "$highlight"
 }
-
 
 # BTRFS DF alias
 alias bdf="btrfs filesystem df"

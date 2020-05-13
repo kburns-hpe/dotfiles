@@ -43,14 +43,15 @@ export LESS_TERMCAP_se=$'\E[0m'        # reset reverse video
 export LESS_TERMCAP_us=$'\E[1;32m'     # begin underline
 export LESS_TERMCAP_ue=$'\E[0m'        # reset underline
 
-
 # Fix SSH-Agent forwarding and tmux
 if [ ! -S ~/.ssh/ssh_auth_sock ] && [ -S "$SSH_AUTH_SOCK" ] && ssh-add -l | grep -q RSA; then
   ln -sf $SSH_AUTH_SOCK ~/.ssh/ssh_auth_sock
   SSH_AUTH_SOCK="${HOME}/.ssh/ssh_auth_sock"
 fi
 
-
 # Set title bar prompt
 precmd () {print -Pn "\e]0;%n@%m: %~\a"}
 preexec () {print -Pn "\e]0;%n@%m: $1 (%~)\a"}
+
+# Set batcat theme
+export BAT_THEME="cobalt2"
