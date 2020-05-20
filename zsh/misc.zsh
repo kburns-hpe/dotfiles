@@ -19,13 +19,6 @@ setopt noshwordsplit
 # allow use of comments in interactive code
 setopt interactivecomments
 
-# useful for path editing — backward-delete-word, but with / as additional delimiter
-backward-delete-to-slash () {
-  local WORDCHARS=${WORDCHARS//\//}
-  zle .backward-delete-word
-}
-zle -N backward-delete-to-slash
-
 # Enable extended globs (i.e. **/)
 setopt extended_glob
 
