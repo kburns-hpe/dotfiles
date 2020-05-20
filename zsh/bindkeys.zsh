@@ -1,6 +1,5 @@
 #!/bin/zsh
 
-bindkey -v
 # Setup substring search
 ## Set Bind Keys if tmux/screen is running
 bindkey '^[[A' history-substring-search-up
@@ -23,5 +22,5 @@ bindkey '^P' up-history
 bindkey '^N' down-history
 bindkey '^w' backward-kill-word
 bindkey '^r' history-incremental-search-backward
-bindkey '^A' vi-beginning-of-line
-bindkey '^E' vi-end-of-line
+bindkey '^A' beginning-of-line
+bindkey '^E' end-of-line
