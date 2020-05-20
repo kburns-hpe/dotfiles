@@ -30,8 +30,9 @@ function lsfa() {
 }
 
 # bat aliases
-alias cat='batcat'
-alias cap='batcat -pp'
+alias cat='batcat -pp'
+alias catl='batcat --pager=never'
+alias catp='batcat'
 
 # Ubuntu PKG Management
 alias aptc="sudo apt autoclean"
