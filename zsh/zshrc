@@ -25,7 +25,6 @@ fi
 # Other zsh plugins
 zplug "MichaelAquilina/zsh-you-should-use"
 zplug "hlissner/zsh-autopair", defer:2
-zplug "oz/safe-paste"
 zplug "rupa/z", use:z.sh
 zplug "changyuheng/fz", defer:1
 zplug "zdharma/fast-syntax-highlighting", defer:2
