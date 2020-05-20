@@ -29,7 +29,6 @@ zplug "rupa/z", use:z.sh
 zplug "changyuheng/fz", defer:1
 zplug "zdharma/fast-syntax-highlighting", defer:2
 zplug "zsh-users/zsh-history-substring-search"
-zplug 'wfxr/forgit', defer:1
 
 # Competions
 zplug 'g-plane/zsh-yarn-autocompletions'
