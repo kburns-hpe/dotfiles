@@ -20,7 +20,7 @@ bindkey '^f' forward-word
 bindkey "\e[Z" reverse-menu-complete # Shift+n
 bindkey '^P' up-history
 bindkey '^N' down-history
-bindkey '^w' backward-kill-word
+bindkey '^w' backward-delete-to-slash
 bindkey '^r' history-incremental-search-backward
 bindkey '^A' beginning-of-line
 bindkey '^E' end-of-line
