@@ -29,7 +29,7 @@ backward-delete-local () {
   zle .backward-delete-word
 }
 zle -N backward-delete-local
-bindkey '^w' backward-delete-to-slash
+bindkey '^w' backward-delete-local
 
 backward-word-local () {
   local WORDCHARS='*?_[]~/&;!#$%^(){}<>,"'"'"
