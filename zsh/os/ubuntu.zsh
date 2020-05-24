@@ -8,6 +8,7 @@ export EDITOR=nvim
 export GOBIN="$HOME/go/bin"
 export PATH="$HOME/.local/bin:$HOME/.gem/ruby/2.5.0/bin:$HOME/bin:$PATH:$GOBIN"
 export PATH="$PATH:/snap/bin:$HOME/.yarn/bin"
+export PATH="${PATH}:${HOME}/.krew/bin"
 export GOPATH="$HOME/go"
 
 # Linux LS aliases
