@@ -116,6 +116,7 @@ Plug 'chaoren/vim-wordmotion'
 Plug 'chiel92/vim-autoformat'
 Plug 'chrisbra/vim-diff-enhanced'
 Plug 'michaeljsmith/vim-indent-object'
+Plug 'nathanaelkane/vim-indent-guides'
 Plug 'ntpeters/vim-better-whitespace'
 Plug 'rizzatti/dash.vim'
 Plug 'tommcdo/vim-lion'
@@ -440,6 +441,10 @@ augroup MyColors
         \ | highlight GitGutterDelete guifg=#ff2600 ctermfg=1
 augroup end
 colorscheme cobalt2
+
+"""" Color Columns
+set colorcolumn=80,120
+hi ColorColumn guifg=NONE guibg=#204563 gui=NONE
 
 """ PLUGIN SPECIFIC SETTINGS
 
