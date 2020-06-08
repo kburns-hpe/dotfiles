@@ -445,6 +445,7 @@ colorscheme cobalt2
 """" Color Columns
 set colorcolumn=80,120
 hi ColorColumn guifg=NONE guibg=#204563 gui=NONE
+hi clear SignColumn
 
 """ PLUGIN SPECIFIC SETTINGS
 
