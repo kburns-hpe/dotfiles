@@ -473,7 +473,7 @@ let g:gutentags_cache_dir = "~/.config/nvim/tags"
 """" coc
 
 " Install plugins
-let g:coc_global_extensions = [ 'coc-python', 'coc-json', 'coc-snippets', 'coc-yaml' ]
+let g:coc_global_extensions = [ 'coc-go', 'coc-python', 'coc-json', 'coc-snippets', 'coc-yaml' ]
 
 " You will have bad experience for diagnostic messages when it's default 4000.
 set updatetime=300
@@ -620,7 +620,7 @@ let g:strip_whitespace_confirm=0
 let g:go_auto_type_info = 1
 let g:go_def_mapping_enabled = 0
 let g:go_fmt_command = "goimports"
-let g:go_metalinter_autosave = 1
+let g:go_metalinter_autosave = 0
 let g:go_auto_sameids = 1
 
 let g:go_highlight_build_constraints = 1
