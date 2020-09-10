@@ -26,11 +26,11 @@ alias es="exercism s"
 
 # bat aliases
 if which batcat >/dev/null; then
-  alias cat='batcat -pp'
-  alias catl='batcat --pager=never'
-  alias catp='batcat'
+  alias cat='batcat -pp --theme=cobalt2'
+  alias catl='batcat --pager=never --theme=cobalt2'
+  alias catp='batcat --theme=cobalt2'
 else
-  alias cat='bat -pp'
-  alias catl='bat --pager=never'
-  alias catp='bat'
+  alias cat='bat -pp --theme=cobalt2'
+  alias catl='bat --pager=never --theme=cobalt2'
+  alias catp='bat --theme=cobalt2'
 fi
