@@ -23,3 +23,14 @@ alias -g .....="../../../.."
 # Exercism aliases
 alias ef="exercism f"
 alias es="exercism s"
+
+# bat aliases
+if which batcat >/dev/null; then
+  alias cat='batcat -pp'
+  alias catl='batcat --pager=never'
+  alias catp='batcat'
+else
+  alias cat='bat -pp'
+  alias catl='bat --pager=never'
+  alias catp='bat'
+fi

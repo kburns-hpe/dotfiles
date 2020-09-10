@@ -30,11 +30,6 @@ function lsfa() {
   find ${1-.} -maxdepth 1 -type f | sed 's|^\./||' | xargs -r ls --color=auto -CFh
 }
 
-# bat aliases
-alias cat='batcat -pp'
-alias catl='batcat --pager=never'
-alias catp='batcat'
-
 # Ubuntu PKG Management
 alias aptc="sudo apt autoclean"
 alias aptd="sudo apt update && sudo apt dist-upgrade"

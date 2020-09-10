@@ -19,11 +19,6 @@ fpath=(/usr/local/share/zsh-completions $fpath)
 alias ls="ls -CGFh"
 #export JAVA_HOME=$(/usr/libexec/java_home)
 
-# bat aliases
-alias cat='bat -pp'
-alias catl='bat --pager=never'
-alias catp='bat'
-
 # Use neovim instead of vim
 alias vim="nvim"
 alias vi="nvim"
