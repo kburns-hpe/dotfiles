@@ -11,15 +11,6 @@ export PATH="$PATH:/snap/bin:$HOME/.yarn/bin"
 export PATH="${PATH}:${HOME}/.krew/bin"
 export GOPATH="$HOME/go"
 
-# Linux LS aliases
-alias ls="ls --color=auto -CFh --group-directories-first"
-alias la="ls -A"
-alias sl="ls"
-alias ll="ls -l"
-alias lx="ls -X"
-alias lv="ls -v"
-alias lsd="\ls --color=auto -Ch -d */"
-
 function lsf() {
   find ${1-.} -maxdepth 1 -type f -a ! -iname '\.*' | sed 's|^\./||' | xargs -r ls --color=auto -CFh
 }

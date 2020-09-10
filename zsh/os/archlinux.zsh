@@ -28,13 +28,6 @@ alias pacu="sudo pacman -U"
 alias hl='ack --color --pager="most"'
 alias hla='ack --passthru --color --pager="most"'
 
-# Linux LS aliases
-alias ls="ls --color=auto -CFh"
-alias sl="ls"
-alias ll="ls -l"
-alias lx="ls -X"
-alias lv="ls -v"
-
 # Force tmux to always use 256 colors
 alias tmux="tmux -2"
 

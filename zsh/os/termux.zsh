@@ -7,13 +7,6 @@ export EDITOR=nvim
 # Set Path
 export PATH="$HOME/.local/bin:$HOME/.gem/ruby/2.3.0/bin:$HOME/bin:$PATH:$HOME/go/bin"
 
-# Linux LS aliases
-alias ls="ls --color=auto -CFh"
-alias sl="ls"
-alias ll="ls -l"
-alias lx="ls -X"
-alias lv="ls -v"
-
 # Highlight a specific search and pipe it through less
 alias hla='ack-grep -i --passthru --color --pager="less -R"'
 

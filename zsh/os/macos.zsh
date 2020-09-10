@@ -15,9 +15,6 @@ export PATH="$PATH:/Applications/Visual Studio Code.app/Contents/Resources/app/b
 # Set fpath for zsh-completion (homebrew package)
 fpath=(/usr/local/share/zsh-completions $fpath)
 
-# Over-ride ls alias
-alias ls="ls -CGFh"
-#export JAVA_HOME=$(/usr/libexec/java_home)
 
 # Use neovim instead of vim
 alias vim="nvim"

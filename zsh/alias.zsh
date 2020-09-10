@@ -7,6 +7,13 @@ alias grepc="grep --color=always -i"
 alias sz="source ~/.zshrc"
 alias rgi="rg -i"
 
+# ls aliases
+alias ls="exa --color=always --group-directories-first"
+alias ll="ls -l"
+alias la="ls -a"
+alias lal="ls -la"
+alias ld="ls -D"
+alias ldl="ls -Dl"
 # Command Alternatives
 alias ping='prettyping --nolegend'
 alias ndu="ncdu --color dark -rr -x --exclude .git --exclude node_modules"
