@@ -2,7 +2,6 @@
 set hidden " Allow switching buffers without saving first
 set mouse= " Disable mouse support
 set grepprg=rg\ --vimgrep " Use rg for grep
-set number " show line numbers
 
 " Configure Terminal Title
 set title
@@ -242,16 +241,8 @@ function! LLReadonly() abort
   endif
 endfunction
 
-function! LLFugitive() abort
-  return exists('*fugitive#head') ? fugitive#head() : ''
-endfunction
-
 function! MyFiletype() abort
   return winwidth(0) > 70 ? (strlen(&filetype) ? &filetype : 'no ft') : ''
-endfunction
-
-function! MyFileIcon() abort
-  return winwidth(0) > 70 ? (WebDevIconsGetFileTypeSymbol()) : ''
 endfunction
 
 function! LightlineLinterErrors() abort
@@ -443,7 +434,6 @@ augroup end
 colorscheme cobalt2
 
 """" Color Columns
-set colorcolumn=80,120
 hi ColorColumn guifg=NONE guibg=#204563 gui=NONE
 hi clear SignColumn
 
@@ -542,22 +532,18 @@ let g:lightline = {
       \ 'colorscheme': 'cobalt2',
       \ 'active': {
       \ 'left': [ [ 'mode', 'paste' ],
-      \             [ 'fugitive'], [ 'separator' ], [ 'buffers' ] ],
+      \             [ 'fugitive'], [ 'buffers' ] ],
       \ 'right': [ [ 'lineinfo' ],
-      \            [ 'filetype' ], [ 'fticon' ],
+      \            [ 'filetype' ],
       \            [ 'linter_checking', 'linter_warnings', 'linter_errors', 'linter_ok' ],
       \            [ 'cocstatus', 'currentfunction' ] ]
       \ },
-      \ 'component': {
-      \ 'separator': ' '
-      \ },
       \ 'component_function': {
-      \   'fugitive': 'LLFugitive',
+      \   'fugitive': 'FugitiveHead',
       \   'readonly': 'LLReadonly',
       \   'modified': 'LLModified',
       \   'mode': 'LLMode',
       \   'filetype': 'MyFiletype',
-      \   'fticon': 'MyFileIcon',
       \   'cocstatus': 'coc#status',
       \   'currentfunction': 'CocCurrentFunction',
       \ },
@@ -569,10 +555,10 @@ let g:lightline = {
       \  'buffers': 'lightline#bufferline#buffers',
       \ },
       \ 'component_type': {
-      \     'linter_checking': 'left',
+      \     'linter_checking': 'right',
       \     'linter_warnings': 'warning',
       \     'linter_errors': 'error',
-      \     'linter_ok': 'left',
+      \     'linter_ok': 'green',
       \     'buffers': 'tabsel',
       \ }
       \ }
@@ -580,16 +566,16 @@ let g:lightline = {
 autocmd BufWritePost,TextChanged,TextChangedI * call lightline#update()
 
 let g:lightline#bufferline#show_number = 2
-let g:lightline#bufferline#number_separator = ': '
+let g:lightline#bufferline#number_separator = ':'
 let g:lightline#bufferline#unnamed = '[No Name]'
 
 set laststatus=2
 set noshowmode
 
-let g:lightline#ale#indicator_checking = "\uf110 "
-let g:lightline#ale#indicator_warnings = "\uf071 "
-let g:lightline#ale#indicator_errors = "\uf05e "
-let g:lightline#ale#indicator_ok = "\uf00c "
+let g:lightline#ale#indicator_checking = "\uf110"
+let g:lightline#ale#indicator_warnings = "\uf071"
+let g:lightline#ale#indicator_errors = "\uf05e"
+let g:lightline#ale#indicator_ok = "\uf00c"
 
 """" lion
 let b:lion_squeeze_spaces = 1
