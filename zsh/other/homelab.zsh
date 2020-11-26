@@ -1,6 +1,6 @@
 export FLUX_NAMESPACE="flux-system"
 export VELERO_NAMESPACE="storage"
-export CEPH_NAMESPACE="storage"
+export CEPH_NAMESPACE="rook-ceph"
 
 alias ap="ansible-playbook --vault-password-file ${VAULT_PASS_FILE} -K -u ansible"
 alias aves="ansible-vault encrypt_string --vault-password-file ${VAULT_PASS_FILE}"
