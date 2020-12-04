@@ -80,3 +80,7 @@ function grm() {
 function gu() {
   git fetch $1 --prune; git merge --ff-only $1/$2 || git rebase --rebase=merges $1/$2;
 }
+
+function gsearch() {
+  git rev-list --all | xargs git grep -F "$*"
+}
