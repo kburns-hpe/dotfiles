@@ -34,6 +34,7 @@ zplug "zsh-users/zsh-history-substring-search"
 zplug 'g-plane/zsh-yarn-autocompletions'
 zplug 'srijanshetty/zsh-pip-completion'
 zplug 'zsh-users/zsh-completions'
+zplug 'ttscoff/doing', use:doing.completion.zsh
 
 # prompt
 zplug romkatv/powerlevel10k, as:theme, depth:1
