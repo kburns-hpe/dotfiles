@@ -96,7 +96,7 @@ Plug 'tpope/vim-fugitive'
 Plug 'airblade/vim-gitgutter'
 
 " Movement
-Plug 'justinmk/vim-sneak'
+Plug 'Lokaltog/vim-easymotion'
 
 " tag
 Plug 'SirVer/ultisnips'
@@ -354,6 +354,8 @@ nnoremap <leader>fl :Lines<cr>
 nmap <leader>fs  <Plug>(coc-format-selected)
 nnoremap <leader>ft :BTags<cr>
 nnoremap <leader>fT :Tags<cr>
+map <Leader>j <Plug>(easymotion-j)
+map <Leader>k <Plug>(easymotion-k)
 autocmd FileType go nmap <leader>ga :GoAlternate<CR>
 autocmd FileType go nmap <leader>gb <Plug>(go-build)
 autocmd FileType go nmap <Leader>gc <Plug>(go-coverage-toggle)
@@ -364,7 +366,6 @@ autocmd FileType go nmap <Leader>gh :GoDoc<CR>
 autocmd FileType go nmap <Leader>gi <Plug>(go-info)
 autocmd FileType go nmap <leader>gt <Plug>(go-test)
 nnoremap <leader>nf :Neoformat<cr>
-nnoremap <leader>nv :NV<cr>
 nnoremap <leader>p "+p
 nmap <leader>qf  <Plug>(coc-fix-current)
 nmap <leader>rn <Plug>(coc-rename)
@@ -417,6 +418,7 @@ nmap <silent> gr <Plug>(coc-references)
 nnoremap <silent> K :call <SID>show_documentation()<CR>
 nnoremap <silent> Q gqap
 nnoremap <silent> p p`]
+nmap s <Plug>(easymotion-s2)
 nnoremap ZQ :qa<CR>
 nnoremap ZZ :wqa<CR>
 nmap [h <Plug>GitGutterPrevHunk
@@ -424,6 +426,8 @@ nmap ]h <Plug>GitGutterNextHunk
 vnoremap <silent> p p`]
 vnoremap <silent> y y`]
 xnoremap <silent> Q gq
+
+omap t <Plug>(easymotion-bd-tl)
 
 """" COLORS
 augroup MyColors
@@ -595,6 +599,18 @@ let g:bufferline_echo = 0
 if &diff
   let &diffexpr='EnhancedDiff#Diff("git diff", "--diff-algorithm=patience")'
 endif
+
+"""" vim-easymotion
+" Use uppercase target labels and type as a lower case
+let g:EasyMotion_use_upper = 1
+" type `l` and match `l`&`L`
+let g:EasyMotion_smartcase = 1
+" Smartsign (type `3` and match `3`&`#`)
+let g:EasyMotion_use_smartsign_us = 1
+
+let g:EasyMotion_startofline = 0 " keep cursor colum when JK motion
+let g:EasyMotion_smartcase = 1
+let g:EasyMotion_enter_jump_first = 1
 
 """" vim-better-whitespace
 let g:better_whitespace_enabled=1
