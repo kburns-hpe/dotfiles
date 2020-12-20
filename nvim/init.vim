@@ -106,7 +106,6 @@ Plug 'janko/vim-test'
 
 " Tmux-specific plugins
 if exists('$TMUX')
-  Plug 'benmills/vimux'
   Plug 'christoomey/vim-tmux-navigator'
 endif
 
@@ -117,10 +116,12 @@ Plug 'chiel92/vim-autoformat'
 Plug 'chrisbra/vim-diff-enhanced'
 Plug 'michaeljsmith/vim-indent-object'
 Plug 'nathanaelkane/vim-indent-guides'
+Plug 'neomake/neomake'
 Plug 'ntpeters/vim-better-whitespace'
 Plug 'rizzatti/dash.vim'
 Plug 'tommcdo/vim-lion'
 Plug 'tpope/vim-commentary'
+Plug 'tpope/vim-dispatch'
 Plug 'tpope/vim-repeat'
 Plug 'tpope/vim-rsi'
 Plug 'tpope/vim-surround'
@@ -159,6 +160,13 @@ augroup Misc
   autocmd User ALELint call lightline#update()
   autocmd FileType * setlocal formatoptions-=r formatoptions-=o
 augroup end
+
+" Neomake Status integration
+augroup neomake_hook
+  au!
+  autocmd User NeomakeJobFinished call TestFinished()
+  autocmd User NeomakeJobStarted call TestStarted()
+augroup END
 
 " Autoformat on save
 au BufWrite * :Autoformat
@@ -205,6 +213,30 @@ function! NumberToggle() abort
 endfunc
 
 """" lightline functions
+
+" Test Status
+"" initially empty status
+let g:testing_status = ''
+
+"" Start test
+function! TestStarted() abort
+  let g:testing_status = '⌛'
+endfunction
+
+"" Show message when all tests are passing
+function! TestFinished() abort
+  let context = g:neomake_hook_context
+  if context.jobinfo.exit_code == 0
+    let g:testing_status = '✅'
+  endif
+  if context.jobinfo.exit_code == 1
+    let g:testing_status = '❌'
+  endif
+endfunction
+
+function! TestStatus() abort
+  return g:testing_status
+endfunction
 
 function! CocCurrentFunction()
   return get(b:, 'coc_current_function', '')
@@ -375,10 +407,6 @@ nmap <silent> <leader>tl :TestLast<CR>
 nmap <silent> <leader>tn :TestNearest<CR>
 nmap <silent> <leader>ts :TestSuite<CR>
 nmap <silent> <leader>tv :TestVisit<CR>
-nmap <Leader>vp :VimuxPromptCommand<CR>
-nmap <Leader>vl :VimuxRunLastCommand<CR>
-nmap <Leader>vi :VimuxInspectRunner<CR>
-nmap <Leader>vz :VimuxZoomRunner<CR>
 nnoremap <leader>wd :pclose<CR>
 nnoremap <silent> <leader>we :call ToggleList("Quickfix List", 'c')<CR>
 nnoremap <silent> <leader>wl :call ToggleList("Location List", 'l')<CR>
@@ -422,7 +450,11 @@ nmap s <Plug>(easymotion-s2)
 nnoremap ZQ :qa<CR>
 nnoremap ZZ :wqa<CR>
 nmap [h <Plug>GitGutterPrevHunk
+nnoremap [q :cprevious<CR>
+nnoremap [Q :cfirst<CR>
 nmap ]h <Plug>GitGutterNextHunk
+nnoremap ]q :cnext<CR>
+nnoremap ]Q :clast<CR>
 vnoremap <silent> p p`]
 vnoremap <silent> y y`]
 xnoremap <silent> Q gq
@@ -541,7 +573,7 @@ let g:lightline = {
       \ 'right': [ [ 'lineinfo' ],
       \            [ 'filetype' ],
       \            [ 'linter_checking', 'linter_warnings', 'linter_errors', 'linter_ok' ],
-      \            [ 'cocstatus', 'currentfunction' ] ]
+      \            [ 'cocstatus', 'teststatus', 'currentfunction' ] ]
       \ },
       \ 'component_function': {
       \   'fugitive': 'FugitiveHead',
@@ -550,6 +582,7 @@ let g:lightline = {
       \   'mode': 'LLMode',
       \   'filetype': 'MyFiletype',
       \   'cocstatus': 'coc#status',
+      \   'teststatus': 'TestStatus',
       \   'currentfunction': 'CocCurrentFunction',
       \ },
       \ 'component_expand': {
@@ -642,9 +675,8 @@ autocmd Filetype go command! -bang AT call go#alternate#Switch(<bang>0, 'tabe')
 
 
 """" vim-test
-if exists('$TMUX')
-  let test#strategy = "vimux"
-endif
+let test#strategy = "neomake"
+let g:neomake_open_list = 0
 let test#python#runner = 'pytest'
 
 """ END
