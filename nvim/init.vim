@@ -386,6 +386,7 @@ nnoremap <leader>fl :Lines<cr>
 nmap <leader>fs  <Plug>(coc-format-selected)
 nnoremap <leader>ft :BTags<cr>
 nnoremap <leader>fT :Tags<cr>
+nmap <silent> <leader>h <Plug>DashSearch
 map <Leader>j <Plug>(easymotion-j)
 map <Leader>k <Plug>(easymotion-k)
 autocmd FileType go nmap <leader>ga :GoAlternate<CR>
