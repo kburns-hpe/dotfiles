@@ -376,7 +376,7 @@ nnoremap <leader>P "+P
 nmap <leader>a  <Plug>(coc-codeaction-selected)
 nmap <leader>ac  <Plug>(coc-codeaction)
 nmap <leader>af :Autoformat<CR>
-nnoremap <leader>c "+y
+nnoremap <leader>c :close<CR>
 nnoremap <leader>d :bd<CR>
 nnoremap <leader>fa :Ag<cr>
 nnoremap <leader>fb :BLines<cr>
@@ -414,6 +414,7 @@ nnoremap <silent> <leader>wl :call ToggleList("Location List", 'l')<CR>
 nnoremap <silent> <leader>Q vapJgqap
 nmap <silent> <leader>[c <Plug>(coc-diagnostic-prev)
 nmap <silent> <leader>]c <Plug>(coc-diagnostic-next)
+nnoremap <leader>y "+y
 xmap <leader>a  <Plug>(coc-codeaction-selected)
 xmap <leader>f  <Plug>(coc-format-selected)
 
