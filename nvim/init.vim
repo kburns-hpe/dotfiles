@@ -391,10 +391,14 @@ nmap <leader>af :Autoformat<CR>
 nnoremap <leader>c :close<CR>
 nnoremap <leader>d :bd<CR>
 nnoremap <leader>fa :Ag<cr>
-nnoremap <leader>fb :BLines<cr>
+nnoremap <leader>fb :Buffers<cr>
+nnoremap <leader>fc :BCommits<cr>
+nnoremap <leader>fC :Commits<cr>
 nnoremap <leader>ff :Files<cr>
 nnoremap <leader>fg :GFiles<cr>
-nnoremap <leader>fl :Lines<cr>
+nnoremap <leader>fl :BLines<cr>
+nnoremap <leader>fL :Lines<cr>
+nnoremap <leader>fm :Marks<cr>
 nmap <leader>fs  <Plug>(coc-format-selected)
 nnoremap <leader>ft :BTags<cr>
 nnoremap <leader>fT :Tags<cr>
