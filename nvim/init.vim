@@ -175,6 +175,17 @@ let g:autoformat_retab = 0
 
 """ FUNCTIONS
 
+function! FzfTagsCurrentWord()
+  let l:word = expand('<cword>')
+  let l:list = taglist(l:word)
+  if len(l:list) == 1
+    execute ':tag ' . l:word
+  else
+    call fzf#vim#tags(l:word)
+  endif
+endfunction
+
+
 " Toggle List windows
 function! GetBufferList() abort
   redir =>buflist
@@ -334,6 +345,7 @@ xmap <silent> <S-TAB> <Plug>(coc-range-select-backword)
 nnoremap <A-]> :vsp<CR>:exec("tag ".expand("<cword>"))<CR>q
 
 """" Ctrl Mappings
+noremap <c-]> :call FzfTagsCurrentWord()<cr>
 nnoremap <C-H> <C-W><C-H>
 nnoremap <C-J> <C-W><C-J>
 nnoremap <C-K> <C-W><C-K>
@@ -549,8 +561,8 @@ function! FloatingFZF()
   let buf = nvim_create_buf(v:false, v:true)
   call setbufvar(buf, '&signcolumn', 'no')
 
-  let height = float2nr(10)
-  let width = float2nr(80)
+  let height = float2nr(20)
+  let width = float2nr(120)
   let horizontal = float2nr((&columns - width) / 2)
   let vertical = 1
 
