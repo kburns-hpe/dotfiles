@@ -402,16 +402,16 @@ nnoremap <leader>fm :Marks<cr>
 nmap <leader>fs  <Plug>(coc-format-selected)
 nnoremap <leader>ft :BTags<cr>
 nnoremap <leader>fT :Tags<cr>
+nnoremap <silent> <leader>ga :Gwrite<cr>
+nnoremap <silent> <leader>gb :Gblame<cr>
+nnoremap <silent> <leader>gc :Gcommit -v<cr>
+nnoremap <silent> <leader>gd :Gdiff<cr>
+nnoremap <silent> <leader>ge :Gedit<cr>
+nnoremap <silent> <leader>gl :Glog<cr>
+nnoremap <silent> <leader>gp :Gpush origin HEAD<cr>
+nnoremap <silent> <leader>gr :Gread<cr>
+nnoremap <silent> <leader>gs :Gstatus<cr><c-w>
 nmap <silent> <leader>h <Plug>DashSearch
-autocmd FileType go nmap <leader>ga :GoAlternate<CR>
-autocmd FileType go nmap <leader>gb <Plug>(go-build)
-autocmd FileType go nmap <Leader>gc <Plug>(go-coverage-toggle)
-autocmd FileType go nmap <Leader>gd :GoDef<CR>
-autocmd FileType go nmap <Leader>gf :GoDecls<CR>
-autocmd FileType go nmap <Leader>gg :GoDeclsDir<CR>
-autocmd FileType go nmap <Leader>gh :GoDoc<CR>
-autocmd FileType go nmap <Leader>gi <Plug>(go-info)
-autocmd FileType go nmap <leader>gt <Plug>(go-test)
 nnoremap <leader>nf :Neoformat<cr>
 nnoremap <leader>p "+p
 nmap <leader>qf  <Plug>(coc-fix-current)
@@ -439,15 +439,15 @@ nnoremap <leader><leader>3 :diffget 3<cr>:diffupdate<cr>
 nnoremap <silent> <leader><leader>a  :<C-u>CocList diagnostics<cr>
 nnoremap <silent> <leader><leader>c  :<C-u>CocList commands<cr>
 nnoremap <silent> <leader><leader>e  :<C-u>CocList extensions<cr>
-nnoremap <silent> <leader><leader>ga :Gwrite<cr>
-nnoremap <silent> <leader><leader>gb :Gblame<cr>
-nnoremap <silent> <leader><leader>gc :Gcommit -v<cr>
-nnoremap <silent> <leader><leader>gd :Gdiff<cr>
-nnoremap <silent> <leader><leader>ge :Gedit<cr>
-nnoremap <silent> <leader><leader>gl :Glog<cr>
-nnoremap <silent> <leader><leader>gp :Gpush origin HEAD<cr>
-nnoremap <silent> <leader><leader>gr :Gread<cr>
-nnoremap <silent> <leader><leader>gs :Gstatus<cr><c-w>
+autocmd FileType go nmap <leader><leader>ga :GoAlternate<CR>
+autocmd FileType go nmap <leader><leader>gb <Plug>(go-build)
+autocmd FileType go nmap <leader><leader>gc <Plug>(go-coverage-toggle)
+autocmd FileType go nmap <leader><leader>gd :GoDef<CR>
+autocmd FileType go nmap <leader><leader>gf :GoDecls<CR>
+autocmd FileType go nmap <leader><leader>gg :GoDeclsDir<CR>
+autocmd FileType go nmap <leader><leader>gh :GoDoc<CR>
+autocmd FileType go nmap <leader><leader>gi <Plug>(go-info)
+autocmd FileType go nmap <leader><leader>gt <Plug>(go-test)
 nnoremap <silent> <leader><leader>j  :<C-u>CocNext<CR>
 nnoremap <silent> <leader><leader>k  :<C-u>CocPrev<CR>
 nnoremap <silent> <leader><leader>o  :<C-u>CocList outline<cr>
