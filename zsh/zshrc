@@ -9,7 +9,8 @@ fi
 source ~/.zplug/init.zsh
 
 # My zsh dotfiles
-if ls /etc/*release 2>/dev/null >/dev/null; then
+setopt +o nomatch
+if stat --printf='' /etc/*release 2>/dev/null >/dev/null; then
   if grep -q "Arch Linux" /etc/*release; then
     zplug "soleblaze/dotfiles", use:"zsh/{*.zsh,os/archlinux.zsh,other/gpg.zsh}"
   elif grep -q "Ubuntu" /etc/*release; then
@@ -20,6 +21,7 @@ if ls /etc/*release 2>/dev/null >/dev/null; then
 else
   zplug "soleblaze/dotfiles", use:"zsh/{*.zsh,os/macos.zsh,other/gpg.zsh}"
 fi
+setopt -o nomatch
 
 
 # Other zsh plugins
