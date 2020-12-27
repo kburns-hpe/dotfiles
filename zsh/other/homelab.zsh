@@ -5,7 +5,6 @@ export CEPH_NAMESPACE="rook-ceph"
 alias ap="ansible-playbook --vault-password-file ${VAULT_PASS_FILE} -K -u ansible"
 alias aves="ansible-vault encrypt_string --vault-password-file ${VAULT_PASS_FILE}"
 
-alias cephtk="kubectl -n ${CEPH_NAMESPACE} exec -it $(kubectl -n ${CEPH_NAMESPACE} get pod -l 'app=rook-ceph-tools' -o jsonpath='{.items[0].metadata.name}') bash"
 alias fluxctl="fluxctl --k8s-fwd-ns ${FLUX_NAMESPACE}"
 alias fluxlogs="kubectl -n ${FLUX_NAMESPACE} logs deployment/source-controller -f --tail=100"
 alias fluxhelmlogs="kubectl -n ${FLUX_NAMESPACE} logs deployment/helm-controller -f --tail=100"
@@ -19,3 +18,8 @@ if command -v velero 2>&1 >/dev/null; then
   source <(velero completion zsh)
   alias velero="velero -n ${VELERO_NAMESPACE}"
 fi
+
+cephtk() {
+  POD=$(kubectl -n ${CEPH_NAMESPACE} get pod -l 'app=rook-ceph-tools' -o jsonpath='{.items[0].metadata.name}')
+  kubectl -n ${CEPH_NAMESPACE} exec -it $POD bash
+}
