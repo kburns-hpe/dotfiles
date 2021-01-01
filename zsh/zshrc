@@ -12,14 +12,14 @@ source ~/.zplug/init.zsh
 setopt +o nomatch
 if stat --printf='' /etc/*release 2>/dev/null >/dev/null; then
   if grep -q "Arch Linux" /etc/*release; then
-    zplug "soleblaze/dotfiles", use:"zsh/{os/archlinux.zsh,*.zsh}"
+    zplug "soleblaze/dotfiles", use:"zsh/{*.zsh,os/archlinux.zsh,other/gpg.zsh}"
   elif grep -q "Ubuntu" /etc/*release; then
-    zplug "soleblaze/dotfiles", use:"zsh/{os/ubuntu.zsh,*.zsh}"
+    zplug "soleblaze/dotfiles", use:"zsh/{*.zsh,os/ubuntu.zsh,other/homelab.zsh}"
   elif grep -q "Debian" /etc/*release; then
-    zplug "soleblaze/dotfiles", use:"zsh/{os/ubuntu.zsh,*.zsh}"
+    zplug "soleblaze/dotfiles", use:"zsh/{*.zsh,os/ubuntu.zsh}"
   fi
 else
-  zplug "soleblaze/dotfiles", use:"zsh/{*.zsh,other/gpg.zsh}"
+  zplug "soleblaze/dotfiles", use:"zsh/{*.zsh,os/macos.zsh,other/gpg.zsh}"
 fi
 setopt -o nomatch
 
