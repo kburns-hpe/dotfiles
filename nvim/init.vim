@@ -30,6 +30,9 @@ let g:matchparen_insert_timeout = 20
 let g:matchparen_timeout = 20
 set nocursorline
 
+" Set Python path
+let g:python3_host_prog = "/usr/bin/python3"
+
 " SpellCheck
 set spelllang=en
 set spellsuggest=5
