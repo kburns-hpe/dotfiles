@@ -5,14 +5,28 @@ export CEPH_NAMESPACE="rook-ceph"
 alias ap="ansible-playbook --vault-password-file ${VAULT_PASS_FILE} -K -u ansible"
 alias aves="ansible-vault encrypt_string --vault-password-file ${VAULT_PASS_FILE}"
 
-alias fluxctl="fluxctl --k8s-fwd-ns ${FLUX_NAMESPACE}"
-alias fluxlogs="kubectl -n ${FLUX_NAMESPACE} logs deployment/source-controller -f --tail=100"
-alias fluxhelmlogs="kubectl -n ${FLUX_NAMESPACE} logs deployment/helm-controller -f --tail=100"
-alias fluxlogsall="kubectl -n ${FLUX_NAMESPACE} logs deployment/source-controller -f"
-alias fluxhelmlogsall="kubectl -n ${FLUX_NAMESPACE} logs deployment/helm-controller -f"
+# flux
+alias fghs="flux get hs"
+alias fgks="flux get ks"
+alias fgs="flux get sources"
+alias fgsg="flux get sources git"
+alias fgsh="flux get sources helm"
+alias frks="flux reconcile ks"
+alias frhr="flux reconcile ks"
+alias frs="flux reconcile source"
+alias frsg="flux reconcile source git"
+alias frsh="flux reconcile source helm"
+alias floh="kubectl -n ${FLUX_NAMESPACE} logs deployment/helm-controller -f --tail=100"
+alias flloha="kubectl -n ${FLUX_NAMESPACE} logs deployment/helm-controller -f"
+alias flos="kubectl -n ${FLUX_NAMESPACE} logs deployment/source-controller -f --tail=100"
+alias flosa="kubectl -n ${FLUX_NAMESPACE} logs deployment/source-controller -f"
+
+
 alias ksealsecret="kubeseal --format=yaml --cert=/home/soleblaze/git/flux/pub-cert.pem"
 alias kubeseal="kubeseal --controller-name=sealed-secrets"
+
 alias s3cmd="s3cmd --host=${AWS_HOST}"
+
 
 if command -v velero 2>&1 >/dev/null; then
   source <(velero completion zsh)
