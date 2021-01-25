@@ -17,7 +17,7 @@ fi
 source ~/.zinit/bin/zinit.zsh
 
 # My zsh dotfiles
-zinit lucid load for \
+zinit lucid light-mode for \
   atinit"zicompinit; zicdreplay" \
       zdharma/fast-syntax-highlighting \
   blockf atpull'zinit creinstall -q .' \
@@ -35,7 +35,7 @@ if [[ $OSTYPE =~ "darwin" ]]; then
 else
   zinit ice pick"zsh/os/ubuntu.zsh" multisrc"{zsh/*.zsh,zsh/other/gpg.zsh}"
 fi
-zinit load soleblaze/dotfiles
+zinit light soleblaze/dotfiles
 
 zinit ice depth=1
 zinit light romkatv/powerlevel10k
