@@ -41,16 +41,6 @@ zplug 'ttscoff/doing', use:doing.completion.zsh
 # prompt
 zplug romkatv/powerlevel10k, as:theme, depth:1
 
-# Install additional apps
-zplug 'junegunn/fzf-bin', \
-    as:command, \
-    from:gh-r, \
-    rename-to:"fzf"
-zplug 'BurntSushi/ripgrep', \
-    from:gh-r, \
-    as:command, \
-    rename-to:"rg"
-
 # Install plugins if there are plugins that have not been installed
 if ! zplug check --verbose; then
     printf "Install? [y/N]: "
