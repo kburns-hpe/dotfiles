@@ -1,56 +1,44 @@
+# Enable Powerlevel10k instant prompt. Should stay close to the top of ~/.zshrc.
+# Initialization code that may require console input (password prompts, [y/n]
+# confirmations, etc.) must go above this block; everything else may go below.
+if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]; then
+  source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
+fi
+
 #!/bin/zsh
 
 # Install zplug if it doesn't exist
-if [ ! -d "$HOME/.zplug" ]; then
-  curl -sL --proto-redir -all,https https://raw.githubusercontent.com/zplug/installer/master/installer.zsh | zsh
+if [ ! -d "$HOME/.zinit" ]; then
+  mkdir ~/.zinit
+  git clone https://github.com/zdharma/zinit.git ~/.zinit/bin
 fi
 
 # Plugins
-source ~/.zplug/init.zsh
+source ~/.zinit/bin/zinit.zsh
 
 # My zsh dotfiles
-setopt +o nomatch
-if stat --printf='' /etc/*release 2>/dev/null >/dev/null; then
-  if grep -q "Arch Linux" /etc/*release; then
-    zplug "soleblaze/dotfiles", use:"zsh/{*.zsh,os/archlinux.zsh,other/gpg.zsh}"
-  elif grep -q "Ubuntu" /etc/*release; then
-    zplug "soleblaze/dotfiles", use:"zsh/{*.zsh,os/ubuntu.zsh,other/homelab.zsh}"
-  elif grep -q "Debian" /etc/*release; then
-    zplug "soleblaze/dotfiles", use:"zsh/{*.zsh,os/ubuntu.zsh}"
-  fi
+zinit lucid load for \
+  atinit"zicompinit; zicdreplay" \
+      zdharma/fast-syntax-highlighting \
+  blockf atpull'zinit creinstall -q .' \
+      zsh-users/zsh-completions \
+  MichaelAquilina/zsh-you-should-use \
+  pick"z.sh" rupa/z \
+  zsh-users/zsh-history-substring-search \
+  changyuheng/fz \
+  hlissner/zsh-autopair \
+  g-plane/zsh-yarn-autocompletions \
+  srijanshetty/zsh-pip-completion
+
+if [[ $OSTYPE =~ "darwin" ]]; then
+  zinit ice pick"zsh/os/macos.zsh" multisrc"{zsh/*.zsh,zsh/other/gpg.zsh}"
 else
-  zplug "soleblaze/dotfiles", use:"zsh/{*.zsh,os/macos.zsh,other/gpg.zsh}"
+  zinit ice pick"zsh/os/ubuntu.zsh" multisrc"{zsh/*.zsh,zsh/other/gpg.zsh}"
 fi
-setopt -o nomatch
+zinit load soleblaze/dotfiles
 
-
-# Other zsh plugins
-zplug "MichaelAquilina/zsh-you-should-use"
-zplug "hlissner/zsh-autopair", defer:2
-zplug "rupa/z", use:z.sh
-zplug "changyuheng/fz", defer:1
-zplug "zdharma/fast-syntax-highlighting", defer:2
-zplug "zsh-users/zsh-history-substring-search"
-
-# Competions
-zplug 'g-plane/zsh-yarn-autocompletions'
-zplug 'srijanshetty/zsh-pip-completion'
-zplug 'zsh-users/zsh-completions'
-zplug 'ttscoff/doing', use:doing.completion.zsh
-
-# prompt
-zplug romkatv/powerlevel10k, as:theme, depth:1
-
-# Install plugins if there are plugins that have not been installed
-if ! zplug check --verbose; then
-    printf "Install? [y/N]: "
-    if read -q; then
-        echo; zplug install
-    fi
-fi
-
-# Then, source plugins and add commands to $PATH
-zplug load
+zinit ice depth=1
+zinit light romkatv/powerlevel10k
 
 # Source local zshrc if it exists
 if [ -f "$HOME/.zshrc_local" ]; then
