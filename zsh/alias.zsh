@@ -41,3 +41,6 @@ else
   alias catl='bat --pager=never --theme=cobalt2'
   alias catp='bat --theme=cobalt2'
 fi
+
+# ssh/scp aliases
+alias scpnh='scp -o "StrictHostKeyChecking no" -o "UserKnownHostsFile /dev/null"'

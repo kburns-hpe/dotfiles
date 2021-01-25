@@ -47,7 +47,6 @@ alias xqf="xdg-mime query filetype"
 alias xqd="xdg-mime query default"
 alias xd="xdg-mime default"
 alias k="kitchen"
-alias scpnh='scp -o "StrictHostKeyChecking no" -o "UserKnownHostsFile /dev/null"'
 
 # Update dircolors
 eval $(dircolors ~/.dircolors)

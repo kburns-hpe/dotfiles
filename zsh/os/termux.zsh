@@ -31,5 +31,4 @@ alias open="xdg-open"
 alias xqf="xdg-mime query filetype"
 alias xqd="xdg-mime query default"
 alias xd="xdg-mime default"
-alias scpnh='scp -o "StrictHostKeyChecking no" -o "UserKnownHostsFile /dev/null"'
 
